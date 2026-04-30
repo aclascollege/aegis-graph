@@ -1,14 +1,2 @@
-# ð¡ï¸?Aegis-Graph: ì£¼ê¶ ê°ì¬ ë¤í¸ìí¬ (ê°ì)
-
-> [!IMPORTANT]
-> **ì£¼ê¶ AIë¡?êµì¡ì?ë¯¸ëë¥?ì§í¤ë¤.**  
-> **ìíëí ìì ì¸ë¬¸ê³¼íëí?(ACLAS College)** ê¸°ì  ììí?ê°ë°.
-
----
-
-### ð íµì¬ ìì½
-
-**Aegis-Graph**ë?ìì±í?AIë¥?ì´ì©í?íì  ë¶ì ?íìì?ëìíê¸?ìí´ ì¤ê³ë?ì¤í ìì¤ íë¡í ì½ìëë?
-
----
-[GitHubë¡?ëìê°ê¸°](https://github.com/aclascollege/aegis-graph)
+# 🛡️ Aegis-Graph Documentation (KR)
+Defending academic integrity with Sovereign AI.
