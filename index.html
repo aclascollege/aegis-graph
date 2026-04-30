@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegis-Graph | Live Sovereign Audit Demo</title>
+    <title>Aegis-Graph | Atlanta College of Liberal Arts and Sciences (ACLAS)</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Aegis-Graph",
+      "operatingSystem": "All",
+      "applicationCategory": "SecurityApplication",
+      "description": "Sovereign multi-agent protocol for academic integrity and synthetic credential detection.",
+      "url": "https://aclascollege.github.io/aegis-graph/",
+      "author": {
+        "@type": "CollegeOrUniversity",
+        "name": "Atlanta College of Liberal Arts and Sciences",
+        "alternateName": ["ACLAS", "ACLAS College"],
+        "url": "https://aclas.college/"
+      }
+    }
+    </script>
     <style>
         :root {
             --primary: #00f2ff;
             --secondary: #7000ff;
             --bg: #03050a;
-            --glass: rgba(10, 15, 25, 0.85);
+            --glass: rgba(10, 15, 25, 0.8);
             --border: rgba(255, 255, 255, 0.1);
         }
 
@@ -24,160 +41,150 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        .overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(3, 5, 10, 0.7);
-            z-index: 1;
-        }
-
-        .container {
-            position: relative;
-            z-index: 10;
+        header {
+            height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 80px 20px;
-        }
-
-        header { text-align: center; margin-bottom: 60px; }
-        h1 { font-size: 3.5rem; font-weight: 800; color: var(--primary); text-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
-        .tagline { font-size: 1.2rem; color: #94a3b8; margin-top: 10px; }
-
-        /* Demo Interface */
-        .demo-box {
-            background: var(--glass);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            padding: 40px;
-            max-width: 900px;
-            width: 100%;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
-        }
-
-        .input-group {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        input {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            padding: 18px 25px;
-            border-radius: 15px;
-            color: #fff;
-            font-family: inherit;
-            font-size: 1.1rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        input:focus { border-color: var(--primary); background: rgba(255, 255, 255, 0.1); }
-
-        .btn-verify {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #000;
-            border: none;
-            padding: 0 40px;
-            border-radius: 15px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-verify:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 242, 255, 0.4); }
-
-        /* Verification Results (The "Direct Demo" Logic) */
-        .result-panel {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            padding: 30px;
-            min-height: 200px;
-            border: 1px dashed var(--border);
-            position: relative;
-        }
-
-        .log-entry { font-family: monospace; color: #00ff00; margin-bottom: 8px; font-size: 0.9rem; }
-        .node-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
-            border: 1px solid var(--primary);
+            text-align: center;
             padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-            animation: slideIn 0.5s ease-out;
+            background: radial-gradient(circle at center, transparent 0%, rgba(3, 5, 10, 0.8) 100%);
         }
 
-        @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
 
-        .links { margin-top: 40px; display: flex; gap: 20px; }
-        .link-item { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .link-item:hover { color: var(--primary); }
+        .subtitle {
+            font-size: 1.4rem;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 20px auto 40px;
+            font-weight: 300;
+        }
 
-        footer { margin-top: 80px; text-align: center; color: #475569; }
+        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .btn {
+            padding: 18px 45px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.4s;
+            font-size: 1rem;
+        }
+        .btn-primary { background: var(--primary); color: #000; box-shadow: 0 10px 30px rgba(0, 242, 255, 0.4); }
+        .btn-secondary { border: 1px solid var(--primary); color: var(--primary); backdrop-filter: blur(10px); }
+
+        .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 10; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; }
+        .card p { color: #94a3b8; line-height: 1.6; }
+
+        /* THE ORIGINAL TOPOLOGY VIZ */
+        .topology-viz {
+            width: 100%;
+            height: 500px;
+            background: var(--glass);
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-top: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--primary);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(3); opacity: 0.1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            background: rgba(3, 5, 10, 0.9);
+            border-top: 1px solid var(--border);
+        }
+        footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
-    <div class="container">
-        <header>
-            <h1>🛡️ Aegis-Graph</h1>
-            <p class="tagline">Sovereign Academic Integrity Protocol | Real-time Global Audit</p>
-        </header>
 
-        <div class="demo-box">
-            <div class="input-group">
-                <input type="text" id="instName" placeholder="Enter Institution Name (e.g. ACLAS, Harvard...)" value="Atlanta College of Liberal Arts and Sciences">
-                <button class="btn-verify" onclick="simulateAudit()">VERIFY NOW</button>
+    <header>
+        <h1>🛡️ Aegis-Graph</h1>
+        <p class="subtitle">Sovereign Academic Audit Network linking 102,000+ real-world nodes to verify institutional trust.</p>
+        <div class="btn-group">
+            <a href="https://atlanta-college-of-liberal-arts.gitbook.io/atlanta-college-of-liberal-arts-and-sciences" class="btn btn-primary">READ DOCUMENTATION</a>
+            <a href="https://huggingface.co/ACLASCollege/aegis-graph" class="btn btn-secondary">EXPLORE ON HUGGING FACE</a>
+        </div>
+    </header>
+
+    <div class="section">
+        <div class="grid">
+            <div class="card">
+                <h3>🤖 Multi-Agent Swarm</h3>
+                <p>Federated AI agents (Vision, Graph, Logic) working in harmony to audit the global academic topology.</p>
             </div>
-
-            <div class="result-panel" id="resultPanel">
-                <p style="color: #475569; text-align: center; margin-top: 70px;">Ready for Sovereign Audit Session...</p>
+            <div class="card">
+                <h3>🔍 Agentic GraphRAG</h3>
+                <p>Localized institutional knowledge nodes for sovereign, privacy-first credential grounding and 100% data authenticity.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Privacy-Shield</h3>
+                <p>On-device PII scrubbing using local SLMs to ensure zero data retention and total privacy during audit sessions.</p>
             </div>
         </div>
 
-        <div class="links">
-            <a href="https://atlanta-college-of-liberal-arts.gitbook.io/atlanta-college-of-liberal-arts-and-sciences" class="link-item">Documentation</a>
-            <a href="https://huggingface.co/ACLASCollege/aegis-graph" class="link-item">Hugging Face</a>
-            <a href="https://aclas.college/" class="link-item">ACLAS Official</a>
+        <h2 style="text-align: center; margin-top: 80px; font-size: 2.5rem; letter-spacing: -1px;">Global Sovereign Topology</h2>
+        <div class="topology-viz" id="viz">
+            <!-- Original dynamic nodes logic restored -->
         </div>
-
-        <footer>
-            <p>&copy; 2026 Aegis-Graph. Governed by Atlanta College of Liberal Arts and Sciences (ACLAS)</p>
-        </footer>
     </div>
 
+    <footer>
+        <p>&copy; 2026 Aegis-Graph Protocol. Managed and Governed by <br><a href="https://aclas.college/">Atlanta College of Liberal Arts and Sciences (ACLAS)</a></p>
+    </footer>
+
     <script>
-        function simulateAudit() {
-            const name = document.getElementById('instName').value;
-            const panel = document.getElementById('resultPanel');
-            panel.innerHTML = '<div class="log-entry">> Initializing Multi-Agent Session...</div>';
-            
-            setTimeout(() => {
-                panel.innerHTML += '<div class="log-entry">> Connecting to GraphNavigator [102,000+ Nodes]...</div>';
-            }, 500);
-
-            setTimeout(() => {
-                panel.innerHTML += '<div class="log-entry">> Authenticating via Sovereign Trust Model...</div>';
-            }, 1200);
-
-            setTimeout(() => {
-                panel.innerHTML = `
-                    <div class="log-entry">> Audit Complete. Institution Verified.</div>
-                    <div class="node-card">
-                        <div style="color: var(--primary); font-weight: 800; font-size: 1.2rem; margin-bottom: 5px;">${name}</div>
-                        <div style="color: #94a3b8; font-size: 0.9rem;">Status: TRUSTED SOVEREIGN NODE</div>
-                        <div style="color: #94a3b8; font-size: 0.8rem; margin-top: 10px;">ID: https://ror.org/global-trust-${Math.random().toString(36).substr(2, 9)}</div>
-                        <div style="margin-top: 15px; font-size: 0.8rem; color: #00ff00;">✓ LogicAuditor confirmed: No synthetic anomalies detected.</div>
-                    </div>
-                `;
-            }, 2500);
+        const viz = document.getElementById('viz');
+        // Restoring the original node-pulse logic
+        for (let i = 0; i < 35; i++) {
+            const node = document.createElement('div');
+            node.className = 'node';
+            node.style.left = Math.random() * 95 + '%';
+            node.style.top = Math.random() * 95 + '%';
+            node.style.animationDelay = Math.random() * 3 + 's';
+            // Speed up some nodes
+            if (i % 3 === 0) node.style.animationDuration = '1.5s';
+            viz.appendChild(node);
         }
     </script>
 </body>
