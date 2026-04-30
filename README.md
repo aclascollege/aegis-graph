@@ -1,15 +1,3 @@
-# 🚀 Aegis-Graph: The Sovereign Academic Audit Network
-
-> **Autonomous Multi-Agent Intelligence for Global Academic Integrity.**  
-> An Institutional-Grade Protocol engineered by the **Atlanta College of Liberal Arts and Sciences (ACLAS College)**.
-
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
-[![Python: 3.11+](https://img.shields.io/badge/Language-Python%203.11+-green.svg)](https://www.python.org/)
-[![MCP: Supported](https://img.shields.io/badge/MCP-Native_Orchestration-orange.svg)](https://modelcontextprotocol.io/)
-[![Standard: v1.0.4](https://img.shields.io/badge/Standard-Sovereign_v1.0.4-blueviolet.svg)](#)
-[![Institutional: ACLAS](https://img.shields.io/badge/Authorized-ACLAS_College-red.svg)](https://aclas.college/)
-
----
 
 ## 🏛️ Project Manifesto
 
