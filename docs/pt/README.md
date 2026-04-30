@@ -1,1 +1,3 @@
-‣鿰ꆛ룯䄿来獩䜭慲桰›敒敤搠⁥畁楤潴楲⁡潓敢慲慮⠠湉牴摯썵쎧澣਩㸊嬠䤡偍剏䅔呎੝‾⨪敄敦摮湥潤漠映瑵牵⁯慤攠畤慣ꟃꏃ⁯潣⁭䅉猠扯牥湡⹡⨪†㸊䐠獥湥潶癬摩⁯数潬䌠浯瑩꫃吠꧃湣捩⁯潤⨠䄪汴湡慴䌠汯敬敧漠⁦楌敢慲⁬牁獴愠摮匠楣湥散⁳䄨䱃十䌠汯敬敧⨩⸪ਊⴭਭ⌊⌣貟ₐ敒畳潭䔠數畣楴潶ਊ⨪敁楧⵳片灡⩨‪꧃甠⁭牰瑯捯汯⁯敤挠돃楤潧愠敢瑲⁯牰橯瑥摡⁯慰慲挠浯慢整⁲牦畡敤⁳捡摡꫃業慣⁳獡楳瑳摩獡瀠牯䤠⹁ਊⴭਭ噛汯慴⁲潡䜠瑩畈嵢栨瑴獰⼺术瑩畨⹢潣⽭捡慬捳汯敬敧愯来獩札慲桰਩
+# 🛡️ Aegis-Graph: Protocolo de Auditoria Académica Soberana
+Defendendo o futuro da educação com IA Soberana e Inteligência Agêntica.
+- [Introdução](pt/README.md)

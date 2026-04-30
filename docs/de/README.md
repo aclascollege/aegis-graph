@@ -1,1 +1,3 @@
-‣鿰ꆛ룯䄿来獩䜭慲桰›潓癵牥꓃敮⁳牐볃湦瑥睺牥⁫䔨湩썦梼畲杮਩㸊嬠䤡偍剏䅔呎੝‾⨪楄⁥畚畫普⁴敤⁲楂摬湵⁧業⁴潳癵牥꓃敮⁲䥋瘠牥整摩杩湥⨮‪ਠ‾湅睴捩敫瑬瘠浯琠捥湨獩档湥䬠浯瑩敥搠獥⨠䄪汴湡慴䌠汯敬敧漠⁦楌敢慲⁬牁獴愠摮匠楣湥散⁳䄨䱃十䌠汯敬敧⨩⸪ਊⴭਭ⌊⌣貟ₐ畚慳浭湥慦獳湵੧⨊䄪来獩䜭慲桰⨪椠瑳攠湩焠敵汬景敦敮⁳牐瑯歯汯⁬畺⁲敂썫涤晰湵⁧潶⁮歡摡浥獩档浥䈠瑥畲⁧畤捲⁨敧敮慲楴敶䬠⹉圠物猠瑥敺⁮畡⁦⨪楴晥敧敨摮⁥潬楧捳敨嘠牥晩穩敩畲杮⨪ਮⴊⴭ嬊畚썲掼⁫畺䜠瑩畈嵢栨瑴獰⼺术瑩畨⹢潣⽭捡慬捳汯敬敧愯来獩札慲桰਩
+# 🛡️ Aegis-Graph: Souveränes Akademisches Audit-Protokoll
+Verteidigung der Zukunft der Bildung mit Souveräner KI & Agentischer Intelligenz.
+- [Einführung](de/README.md)
