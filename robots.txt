@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aclascollege.github.io/aegis-graph/sitemap.xml
