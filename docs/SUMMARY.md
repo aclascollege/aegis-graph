@@ -15,7 +15,14 @@
 * [FAQ](en/faq.md)
 
 ## 🌍 GLOBAL MIRRORS
-* [中文 (ZH)](zh/README.md)
+
+### 🇨🇳 中文 (ZH)
+* [项目简介](zh/README.md)
+* [第1章：AI 时代的学术危机](zh/chapter1-crisis.md)
+* [第2章：核心技术架构](zh/chapter2-arch.md)
+* [第3章：智能体协作矩阵](zh/chapter3-agents.md)
+
+### 🌍 Other Languages
 * [Français (FR)](fr/README.md)
 * [Español (ES)](es/README.md)
 * [Deutsch (DE)](de/README.md)
