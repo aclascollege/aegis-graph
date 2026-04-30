@@ -97,7 +97,7 @@
             <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px;"><span data-i18n="agent_v">Vision Forensics</span><span id="v-status">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="v-fill"></div></div></div>
             <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px;"><span data-i18n="agent_g">Graph Navigator</span><span id="g-status">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="g-fill"></div></div></div>
             <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px;"><span data-i18n="agent_l">Logic Auditor</span><span id="l-status">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="l-fill"></div></div></div>
-            <div style="margin-top: auto; padding-top: 15px;"><p class="label" data-i18n="label_node_title">Institutional Node</p><p style="font-size: 13px; font-weight: 700; color:var(--accent);">Atlanta College</p><p style="font-size: 10px; color:var(--dim); margin-top: 4px;">SOV_ATL_0782</p></div>
+            <div style="margin-top: auto; padding-top: 15px;"><p class="label" data-i18n="label_node_title">Institutional Node</p><p style="font-size: 11px; font-weight: 700; color:var(--accent);">ACLAS_SOV_0782</p><p style="font-size: 10px; color:var(--text);">Atlanta College of Liberal Arts and Sciences (ACLAS College) Node</p></div>
         </div>
         <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub"><div class="drop-zone" id="drop-zone"><div style="font-size: 40px; color: var(--accent);">✧</div><p style="font-size: 14px; font-weight: 600;" data-i18n="drop_text">Ingest Credential</p><input type="file" id="f-input" style="display: none"></div></div></div>
         <div class="bento" style="grid-row: span 2;"><p class="label" data-i18n="label_telemetry">Live Telemetry</p><div class="terminal" id="console"><div>[SYSTEM] Global Node Active.</div></div></div>
@@ -177,7 +177,7 @@
             const t = i18n[currentLang];
             document.getElementById('m-issuer').innerText = isAcad ? "ACLAS_SOV" : "ERR";
             document.getElementById('m-status').innerText = "SYNCED";
-            document.getElementById('rep-body').innerHTML = `<h2>${isAcad ? t.verdict_ok : t.verdict_no}</h2><p style="margin:20px 0;">Authentication complete.</p><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
+            document.getElementById('rep-body').innerHTML = `<h2>${isAcad ? t.verdict_ok : t.verdict_no}</h2><p style="margin:20px 0;">Authentication logic complete. Credential from <strong>Atlanta College of Liberal Arts and Sciences (ACLAS College)</strong> validated.</p><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
         }
     </script>
 </body>
