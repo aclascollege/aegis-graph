@@ -1,15 +1,17 @@
-# Aegis-Graph Documentation Index
+# Aegis-Graph Sovereign Protocol
 
-Welcome to the official documentation for Aegis-Graph, the sovereign academic audit protocol.
+A decentralized, multi-agent intelligence network designed to protect academic integrity in the era of Generative AI.
 
-## Language Selection
+### 🏛️ Institutional Governance
+Engineered and Governed by the **Atlanta College of Liberal Arts and Sciences (ACLAS)**.
 
-| Region | Documentation |
-| :--- | :--- |
-| **Americas / EMEA** | [English (Primary)](en/README.md) / [Français](fr/README.md) / [Español](es/README.md) / [Deutsch](de/README.md) / [Português](pt/README.md) |
-| **Asia Pacific** | [中文 (简体)](zh/README.md) / [日本語](jp/README.md) / [한국어](kr/README.md) |
-| **Middle East** | [العربية](ar/README.md) |
+### 🌍 Multi-Lingual Entry Points
+Aegis-Graph documentation is available in 9 languages. Please use the sidebar to select your preferred language.
+
+### 🚀 Key Components
+- **Agentic GraphRAG**: Localized institutional knowledge grounding.
+- **Privacy-Shield**: On-device PII redaction and local SLM filtering.
+- **LogicAuditor**: Adversarial auditing of synthetic credentials.
 
 ---
-Managed by Atlanta College of Liberal Arts and Sciences (ACLAS)
-[aclas.college](https://aclas.college/)
+[Official Website](https://aclas.college/) | [Hugging Face](https://huggingface.co/ACLASCollege/aegis-graph)

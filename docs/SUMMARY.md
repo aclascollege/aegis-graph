@@ -1,8 +1,8 @@
 # Table of contents
 
-* [Language Selection](README.md)
+* [🛡️ Language Selection](README.md)
 
-## ENGLISH
+## 🏛️ CORE PROTOCOL (EN)
 * [Introduction](en/README.md)
 * [Chapter 1: The GenAI Threat](en/chapter1-the-genai-threat.md)
 * [Chapter 2: Core Architecture](en/chapter2-core-architecture.md)
@@ -14,7 +14,7 @@
 * [Chapter 8: Node Deployment Guide](en/chapter8-node-deployment.md)
 * [FAQ](en/faq.md)
 
-## LANGUAGES
+## 🌍 GLOBAL MIRRORS
 * [中文 (ZH)](zh/README.md)
 * [Français (FR)](fr/README.md)
 * [Español (ES)](es/README.md)
@@ -23,3 +23,6 @@
 * [한국어 (KR)](kr/README.md)
 * [العربية (AR)](ar/README.md)
 * [Português (PT)](pt/README.md)
+
+---
+* [Institutional Authority](https://aclas.college/)
