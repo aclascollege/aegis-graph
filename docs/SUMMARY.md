@@ -9,10 +9,13 @@
 * [Chapter 1: The GenAI Threat](en/chapter1-the-genai-threat.md)
 * [Chapter 2: Core Architecture](en/chapter2-core-architecture.md)
 * [Chapter 3: Multi-Agent Framework](en/chapter3-multi-agent-framework.md)
+* [Chapter 4: Mathematical Trust Models](en/chapter4-mathematical-trust-models.md)
+* [Chapter 5: Cryptography & Privacy](en/chapter5-cryptography-and-privacy.md)
+* [Chapter 6: Token Economics](en/chapter6-token-economics.md)
+* [Chapter 7: Developer API](en/chapter7-developer-api.md)
 
 ### 🇭🇰 繁體中文
 * [簡介 (Introduction)](zh/README.md)
-* [第一章：GenAI 威脅機制](zh/chapter1.md)
 
 ### 🇫🇷 Français
 * [Introduction](fr/README.md)
