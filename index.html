@@ -51,20 +51,20 @@
                 <!-- Language Switcher -->
                 <div class="lang-selector"
                     style="position: relative; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; color: var(--accent-dim)">
-                    <span id="current-lang-flag">馃嚭馃嚫</span>
+                    <span id="current-lang-flag">🇺🇸</span>
                     <select id="lang-switch"
                         style="background: none; border: none; color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; cursor: pointer; outline: none; appearance: none; padding-right: 12px">
                         <option value="en">English</option>
-                        <option value="fr">Fran莽ais</option>
-                        <option value="es">Espa帽ol</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
                         <option value="de">Deutsch</option>
-                        <option value="jp">鏃ユ湰瑾?/option>
-                        <option value="kr">頃滉淡鞏?/option>
-                        <option value="zh">绻侀珨涓枃</option>
-                        <option value="ar">丕賱毓乇亘賷丞</option>
-                        <option value="pt">Portugu锚s</option>
+                        <option value="jp">日本語</option>
+                        <option value="kr">한국어</option>
+                        <option value="zh">繁體中文</option>
+                        <option value="ar">العربية</option>
+                        <option value="pt">Português</option>
                     </select>
-                    <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); pointer-events: none; opacity: 0.5">鈻?/div>
+                    <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); pointer-events: none; opacity: 0.5">▾</div>
                 </div>
 
                 <button id="theme-toggle" title="Toggle Theme"
@@ -205,7 +205,7 @@
                     </div>
                     <div class="scanner" id="scan-bar"></div>
                     <input type="file" id="file-input" style="display: none">
-                    <div class="upload-icon">馃攳</div>
+                    <div class="upload-icon">🔍</div>
                     <h1>Drop credentials or click to browse</h1>
                     <p class="dim">Supported formats: PDF, PNG, HEIC (Max 20MB)</p>
                     <div id="file-indicator" style="margin-top: 24px; display: none; font-size: 13px; color: #fff">
@@ -411,9 +411,9 @@
             log('SYSTEM', `New payload detected: ${file.name}. Initializing NPU handshake...`);
 
             // --- 2026 Strict Mode Logic ---
-            const academicKeywords = ['aclas', 'transcript', 'diploma', 'harvard', 'stanford', 'degree', '瀛︿綅', '澶у', '鎴愮哗鍗?, '璇佷功', 'mba', 'bba', 'phd', 'master', 'bachelor'];
+            const academicKeywords = ['aclas', 'transcript', 'diploma', 'harvard', 'stanford', 'degree', '学位', '大学', '成绩单', '证书', 'mba', 'bba', 'phd', 'master', 'bachelor'];
             const isAcademic = academicKeywords.some(keyword => fileName.toLowerCase().includes(keyword));
-            const isKnownFraud = fileName.toLowerCase().includes('fake') || fileName.toLowerCase().includes('fraud') || fileName.toLowerCase().includes('茅脗聙脗聽脙楼脗聛脗聡');
+            const isKnownFraud = fileName.toLowerCase().includes('fake') || fileName.toLowerCase().includes('fraud') || fileName.toLowerCase().includes('éÂÂ Ã¥ÂÂ');
 
             if (isKnownFraud || !isAcademic) {
                 window.demoVerdict = 'REJECTED';
@@ -446,7 +446,7 @@
 
         const TRANSLATIONS = {
             en: {
-                flag: '馃嚭馃嚫',
+                flag: '🇺🇸',
                 title: 'Aegis-Graph: Sovereign Audit Network',
                 subtitle: 'Drop credentials or click to browse',
                 init_btn: 'Initiate Audit',
@@ -458,97 +458,97 @@
                 footer: 'BY ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
             },
             fr: {
-                flag: '馃嚝馃嚪',
-                title: 'Aegis-Graph : R茅seau d\'audit souverain',
-                subtitle: 'D茅posez les documents ou cliquez pour parcourir',
+                flag: '🇫🇷',
+                title: 'Aegis-Graph : Réseau d\'audit souverain',
+                subtitle: 'Déposez les documents ou cliquez pour parcourir',
                 init_btn: 'Initier l\'audit',
                 docs: 'DOCS',
-                pillars: ['Confiance souveraine', 'GraphRAG agentique', 'Confidentialit茅 ZK'],
+                pillars: ['Confiance souveraine', 'GraphRAG agentique', 'Confidentialité ZK'],
                 agents: ['Expertise Vision', 'Navigateur de Graphe', 'Auditeur Logique'],
                 log_init: 'Initialisation du protocole Aegis-Graph...',
-                log_ready: 'Syst猫me pr锚t. Veuillez t茅l茅charger un document.',
+                log_ready: 'Système prêt. Veuillez télécharger un document.',
                 footer: 'PAR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
             },
             es: {
-                flag: '馃嚜馃嚫',
-                title: 'Aegis-Graph: Red de Auditor铆a Soberana',
+                flag: '🇪🇸',
+                title: 'Aegis-Graph: Red de Auditoría Soberana',
                 subtitle: 'Suelte los documentos o haga clic para buscar',
-                init_btn: 'Iniciar Auditor铆a',
+                init_btn: 'Iniciar Auditoría',
                 docs: 'DOCS',
-                pillars: ['Confianza Soberana', 'GraphRAG Ag茅ntico', 'Privacidad ZK'],
-                agents: ['Forense de Visi贸n', 'Navegador de Grafos', 'Auditor L贸gico'],
+                pillars: ['Confianza Soberana', 'GraphRAG Agéntico', 'Privacidad ZK'],
+                agents: ['Forense de Visión', 'Navegador de Grafos', 'Auditor Lógico'],
                 log_init: 'Iniciando protocolo Aegis-Graph...',
                 log_ready: 'Sistema listo. Cargue un documento.',
                 footer: 'POR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
             },
             de: {
-                flag: '馃嚛馃嚜',
-                title: 'Aegis-Graph: Souver盲nes Pr眉fnetzwerk',
+                flag: '🇩🇪',
+                title: 'Aegis-Graph: Souveränes Prüfnetzwerk',
                 subtitle: 'Unterlagen ablegen oder zum Durchsuchen klicken',
-                init_btn: 'Pr眉fung einleiten',
+                init_btn: 'Prüfung einleiten',
                 docs: 'DOCS',
-                pillars: ['Souver盲nes Vertrauen', 'Agentisches GraphRAG', 'ZK-Datenschutz'],
+                pillars: ['Souveränes Vertrauen', 'Agentisches GraphRAG', 'ZK-Datenschutz'],
                 agents: ['Vision Forensik', 'Graph-Navigator', 'Logik-Auditor'],
                 log_init: 'Initialisierung des Aegis-Graph-Protokolls...',
                 log_ready: 'System bereit. Bitte Dokument hochladen.',
                 footer: 'VON ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
             },
             jp: {
-                flag: '馃嚡馃嚨',
-                title: 'Aegis-Graph: 涓绘ī鐨勭洠鏌汇儘銉冦儓銉兗銈?,
-                subtitle: '瑾嶈鎯呭牨銈掋儔銉儍銉椼仚銈嬨亱銆併偗銉儍銈仐銇﹀弬鐓?,
-                init_btn: '鐩ｆ熁銈掗枊濮?,
-                docs: '銉夈偔銉ャ儭銉炽儓',
-                pillars: ['涓绘ī鐨勩仾淇￠牸', '銈ㄣ兗銈搞偋銉炽儓鍨婫raphRAG', '銈笺儹鐭ヨ瓨銉椼儵銈ゃ儛銈枫兗'],
-                agents: ['瑕栬銉曘偐銉兂銈搞儍銈?, '銈般儵銉曘儕銉撱偛銉笺偪銉?, '銉偢銉冦偗鐩ｆ熁浜?],
-                log_init: 'Aegis-Graph銉椼儹銉堛偝銉倰鍒濇湡鍖栦腑...',
-                log_ready: '銈枫偣銉嗐儬婧栧倷瀹屼簡銆傘儔銈儱銉°兂銉堛倰銈儍銉椼儹銉笺儔銇椼仸銇忋仩銇曘亜銆?,
-                footer: '銈儓銉┿兂銈裤兓銉儥銉┿儷銈兗銉勩兓銈点偆銈ㄣ兂銈瑰ぇ瀛?(ACLAS COLLEGE) 鎻愪緵'
+                flag: '🇯🇵',
+                title: 'Aegis-Graph: 主権的監査ネットワーク',
+                subtitle: '認証情報をドロップするか、クリックして参照',
+                init_btn: '監査を開始',
+                docs: 'ドキュメント',
+                pillars: ['主権的な信頼', 'エージェント型GraphRAG', 'ゼロ知識プライバシー'],
+                agents: ['視覚フォレンジック', 'グラフナビゲーター', 'ロジック監査人'],
+                log_init: 'Aegis-Graphプロトコルを初期化中...',
+                log_ready: 'システム準備完了。ドキュメントをアップロードしてください。',
+                footer: 'アトランタ・リベラルアーツ・サイエンス大学 (ACLAS COLLEGE) 提供'
             },
             kr: {
-                flag: '馃嚢馃嚪',
-                title: 'Aegis-Graph: 欤缄秾 臧愳偓 雱ろ姼鞗岉伂',
-                subtitle: '鞛愱博 歃濍獏鞚?霌滊…頃橁卑雮?韥措Ν頃橃棳 韮愳儔',
-                init_btn: '臧愳偓 鞁滌瀾',
-                docs: '氍胳劀',
-                pillars: ['欤缄秾鞝?鞁犽', '鞐愳澊鞝勴姼 旮半皹 GraphRAG', '鞓侅鞁?頂勲澕鞚措矂鞁?],
-                agents: ['鞁滉皝 韽爩鞁?, '攴鸽灅頂?雱る箘瓴岇澊韯?, '雲茧Μ 臧愳偓甏€'],
-                log_init: 'Aegis-Graph 頂勲韱犾綔 齑堦赴頇?欷?..',
-                log_ready: '鞁滌姢韰?欷€牍?鞕勲. 氍胳劀毳?鞐呺霌滍暣 欤检劯鞖?',
-                footer: '鞎勴媭霝€韮€ 鞛愳湢鞚鸽瓿柬暀雽€頃?(ACLAS COLLEGE) 鞝滉车'
+                flag: '🇰🇷',
+                title: 'Aegis-Graph: 주권 감사 네트워크',
+                subtitle: '자격 증명을 드롭하거나 클릭하여 탐색',
+                init_btn: '감사 시작',
+                docs: '문서',
+                pillars: ['주권적 신뢰', '에이전트 기반 GraphRAG', '영지식 프라이버시'],
+                agents: ['시각 포렌식', '그래프 네비게이터', '논리 감사관'],
+                log_init: 'Aegis-Graph 프로토콜 초기화 중...',
+                log_ready: '시스템 준비 완료. 문서를 업로드해 주세요.',
+                footer: '아틀란타 자유인문과학대학 (ACLAS COLLEGE) 제공'
             },
             zh: {
-                flag: '馃嚟馃嚢',
-                title: 'Aegis-Graph: 涓绘瑠瀵╄▓缍茬怠',
-                subtitle: '鎷栨斁鎲戣瓑鎴栭粸鎿婄€忚',
-                init_btn: '鍟熷嫊瀵╄▓',
-                docs: '鏂囨獢',
-                pillars: ['涓绘瑠淇′换', '浠ｇ悊寮?GraphRAG', '闆剁煡璀橀毐绉?],
-                agents: ['瑕栬鍙栬瓑', '鍦栬瓬灏庤埅鍣?, '閭忚集瀵╄▓甯?],
-                log_init: '姝ｅ湪鍒濆鍖?Aegis-Graph 鍗旇...',
-                log_ready: '绯荤当灏辩窉銆傝珛涓婂偝鏂囦欢杩涜椹楄瓑銆?,
-                footer: '鐢变簽鐗硅槶澶ф枃鐞嗗闄?(ACLAS COLLEGE) 闁嬬櫦'
+                flag: '🇭🇰',
+                title: 'Aegis-Graph: 主權審計網絡',
+                subtitle: '拖放憑證或點擊瀏覽',
+                init_btn: '啟動審計',
+                docs: '文檔',
+                pillars: ['主權信任', '代理式 GraphRAG', '零知識隱私'],
+                agents: ['視覺取證', '圖譜導航器', '邏輯審計師'],
+                log_init: '正在初始化 Aegis-Graph 協議...',
+                log_ready: '系統就緒。請上傳文件进行驗證。',
+                footer: '由亞特蘭大文理學院 (ACLAS COLLEGE) 開發'
             },
             ar: {
-                flag: '馃嚫馃嚘',
-                title: 'Aegis-Graph: 卮亘賰丞 丕賱鬲丿賯賷賯 丕賱爻賷丕丿賷',
-                subtitle: '賯賲 亘廿爻賯丕胤 丕賱賲爻鬲賳丿丕鬲 兀賵 丕賳賯乇 賱賱鬲氐賮丨',
-                init_btn: '亘丿亍 丕賱鬲丿賯賷賯',
-                docs: '丕賱賲爻鬲賳丿丕鬲',
-                pillars: ['丕賱孬賯丞 丕賱爻賷丕丿賷丞', '賵賰賷賱 GraphRAG', '丕賱禺氐賵氐賷丞 丕賱氐賮乇賷丞'],
-                agents: ['丕賱胤亘 丕賱卮乇毓賷 丕賱亘氐乇賷', '賲賱丕丨 丕賱乇爻賵賲 丕賱亘賷丕賳賷丞', '賲丿賯賯 丕賱賲賳胤賯'],
-                log_init: '鬲賴賷卅丞 亘乇賵鬲賵賰賵賱 Aegis-Graph...',
-                log_ready: '丕賱賳馗丕賲 噩丕賴夭. 賷乇噩賶 鬲丨賲賷賱 丕賱賲爻鬲賳丿.',
-                footer: '亘賵丕爻胤丞 賰賱賷丞 兀鬲賱丕賳鬲丕 賱賱賮賳賵賳 丕賱賱賷亘乇丕賱賷丞 賵丕賱毓賱賵賲 (ACLAS COLLEGE)'
+                flag: '🇸🇦',
+                title: 'Aegis-Graph: شبكة التدقيق السيادي',
+                subtitle: 'قم بإسقاط المستندات أو انقر للتصفح',
+                init_btn: 'بدء التدقيق',
+                docs: 'المستندات',
+                pillars: ['الثقة السيادية', 'وكيل GraphRAG', 'الخصوصية الصفرية'],
+                agents: ['الطب الشرعي البصري', 'ملاح الرسوم البيانية', 'مدقق المنطق'],
+                log_init: 'تهيئة بروتوكول Aegis-Graph...',
+                log_ready: 'النظام جاهز. يرجى تحميل المستند.',
+                footer: 'بواسطة كلية أتلانتا للفنون الليبرالية والعلوم (ACLAS COLLEGE)'
             },
             pt: {
-                flag: '馃嚨馃嚬',
+                flag: '🇵🇹',
                 title: 'Aegis-Graph: Rede de Auditoria Soberana',
                 subtitle: 'Solte as credenciais ou clique para procurar',
                 init_btn: 'Iniciar Auditoria',
                 docs: 'DOCS',
-                pillars: ['Confian莽a Soberana', 'GraphRAG Ag锚ntico', 'Privacidade ZK'],
-                agents: ['Forense de Vis茫o', 'Navegador de Grafos', 'Auditor L贸gico'],
+                pillars: ['Confiança Soberana', 'GraphRAG Agêntico', 'Privacidade ZK'],
+                agents: ['Forense de Visão', 'Navegador de Grafos', 'Auditor Lógico'],
                 log_init: 'Iniciando o protocolo Aegis-Graph...',
                 log_ready: 'Sistema pronto. Carregue um documento.',
                 footer: 'POR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
@@ -822,7 +822,7 @@
         <div class="faq-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
             <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
                 <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">What is Aegis-Graph?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Aegis-Graph is the world's first open-source Sovereign Academic Audit Protocol. It uses Agentic GraphRAG鈥攁 federated swarm of specialized AI agents鈥攖o perform deep logical verification of academic credentials.</p>
+                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Aegis-Graph is the world's first open-source Sovereign Academic Audit Protocol. It uses Agentic GraphRAG—a federated swarm of specialized AI agents—to perform deep logical verification of academic credentials.</p>
             </div>
             <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
                 <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">How is it sovereign?</h3>
