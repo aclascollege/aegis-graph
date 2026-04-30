@@ -139,7 +139,16 @@ python main_pipeline.py --input examples/sample_transcript.pdf
   </a>
 </div>
 
-<br>
+---
+
+## 🧪 ACLAS Open-Source Ecosystem
+
+| Project | Description | Link |
+| :--- | :--- | :--- |
+| **Aegis-Graph** | Sovereign Academic Audit Protocol | [View →](https://github.com/aclascollege/aegis-graph) |
+| **Neuro-Edu** | AI-Powered Educational Sandbox | [View →](https://github.com/aclascollege/neuro-edu) |
+
+---
 
 <div align="center">
   <p>© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.</p>
