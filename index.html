@@ -1,26 +1,715 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegis-Graph | Atlanta College of Liberal Arts and Sciences (ACLAS)</title>
-    <meta name="description" content="Aegis-Graph: Sovereign Academic Audit Network by Atlanta College of Liberal Arts and Sciences (ACLAS). Verifying institutional trust via Agentic GraphRAG.">
-    <style>
-                    @keyframes neural-pulse {
-                        0% { r: 4; fill-opacity: 0.6; }
-                        50% { r: 5.5; fill-opacity: 1; }
-                        100% { r: 4; fill-opacity: 0.6; }
-                    }
-                    .node {
-                        animation: neural-pulse 3s infinite ease-in-out;
-                    }
-                    #node-2 { animation-delay: 0.5s; }
-                    #node-3 { animation-delay: 1.2s; }
-                    #node-4 { animation-delay: 2s; }
-                </style>
+
+<meta name="description"
+    content="Aegis-Graph is the world's first sovereign academic audit network using Agentic GraphRAG and Multi-Agent Intelligence to verify credentials. Engineered by Atlanta College of Liberal Arts and Sciences (ACLAS College).">
+<meta name="keywords"
+    content="Aegis-Graph, ACLAS College, Atlanta College of Liberal Arts and Sciences, Accredited College, Legitimate University, Authorized Degrees, Academic Integrity, GraphRAG, AI Fraud Detection, MCP Protocol, Sovereign AI">
+<meta name="author" content="Atlanta College of Liberal Arts and Sciences (ACLAS)">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aclascollege.github.io/aegis-graph/">
+<meta property="og:title" content="Aegis-Graph | Sovereign Academic Audit Network">
+<meta property="og:description"
+    content="Revolutionizing Academic Integrity through Agentic GraphRAG and Multi-Agent Intelligence. Powered by ACLAS College.">
+
+<!-- JSON-LD Structured Data for SEO/AGO -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Aegis-Graph",
+      "operatingSystem": "Web, Windows, Linux, MacOS",
+      "applicationCategory": "EducationalApplication, SecurityApplication",
+      "description": "Sovereign Academic Audit Network using Multi-Agent Intelligence for credential verification.",
+      "author": {
+        "@type": "CollegeOrUniversity",
+        "name": "Atlanta College of Liberal Arts and Sciences (ACLAS College)",
+        "url": "https://aclas.college/"
+      },
+      "url": "https://aclascollege.github.io/aegis-graph/"
+    }
+    </script>
+
+<title>Aegis-Graph | Sovereign Academic Audit Network by ACLAS College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<style>
+    :root {
+        --bg: #000000;
+        --foreground: #ffffff;
+        --accent: #ffffff;
+        --accent-dim: #999999;
+        --border: rgba(255, 255, 255, 0.15);
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --success: #00ffaa;
+        --danger: #ff3366;
+        --noise: url('https://grainy-gradients.vercel.app/noise.svg');
+    }
+
+    body.light-mode {
+        --bg: #fbfbfd;
+        --foreground: #1d1d1f;
+        --accent: #000000;
+        --accent-dim: #86868b;
+        --border: rgba(0, 0, 0, 0.08);
+        --card-bg: rgba(255, 255, 255, 0.8);
+        --success: #00805c;
+        --danger: #d6003d;
+        --header-bg: rgba(255, 255, 255, 0.8);
+        --nav-bg: rgba(255, 255, 255, 0.3);
+        --log-text: #666666;
+        --log-highlight: #000000;
+    }
+
+    :root {
+        --header-bg: rgba(0, 0, 0, 0.4);
+        --nav-bg: transparent;
+        --log-text: #bbb;
+        --log-highlight: #ffffff;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        background-color: var(--bg);
+        color: var(--foreground);
+        font-family: 'Inter', sans-serif;
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    /* --- High-End Mesh Background --- */
+    .background-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: var(--bg);
+        transition: background 0.5s ease;
+    }
+
+    body:not(.light-mode) .background-canvas {
+        background:
+            radial-gradient(circle at 0% 0%, rgba(40, 40, 80, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 100% 100%, rgba(80, 40, 40, 0.2) 0%, transparent 50%);
+    }
+
+    .background-canvas::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--noise);
+        opacity: 0.15;
+        pointer-events: none;
+    }
+
+    /* --- Layout --- */
+    .app-wrapper {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: 64px 1fr;
+        height: 100vh;
+        max-width: 1600px;
+        margin: 0 auto;
+        border-left: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        overflow: hidden;
+    }
+
+    .desktop-only {
+        display: inline;
+    }
+
+    @media (max-width: 768px) {
+        .desktop-only {
+            display: none;
+        }
+    }
+
+    header {
+        grid-column: 1 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px;
+        border-bottom: 1px solid var(--border);
+        background: var(--header-bg);
+        backdrop-filter: blur(20px);
+        z-index: 100;
+    }
+
+    .logo-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 15px;
+        background: linear-gradient(90deg, var(--foreground), var(--accent-dim));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .version-tag {
+        font-size: 10px;
+        background: #222;
+        padding: 2px 6px;
+        border-radius: 4px;
+        color: #888;
+        border: 1px solid #333;
+    }
+
+    /* --- Navigation --- */
+    nav {
+        padding: 32px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        border-right: 1px solid var(--border);
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-section h3 {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent-dim);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+
+    .agent-status {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .agent-card {
+        padding: 12px;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+        transition: all 0.2s;
+    }
+
+    .agent-card.active {
+        border-color: var(--foreground);
+        background: rgba(128, 128, 128, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent-dim);
+    }
+
+    .dot.online {
+        background: var(--success);
+        box-shadow: 0 0 8px var(--success);
+    }
+
+    /* --- Main Content --- */
+    main {
+        padding: 32px;
+        display: grid;
+        grid-template-rows: 1fr 280px;
+        gap: 32px;
+        overflow-y: auto;
+    }
+
+    .bento-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 20px;
+    }
+
+    .bento-item {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 24px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+    }
+
+    .bento-item:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Upload Area --- */
+    .hero-upload {
+        grid-column: 1 / 9;
+        grid-row: 1 / 7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+    }
+
+    .upload-icon {
+        width: 64px;
+        height: 64px;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        font-size: 24px;
+        transition: all 0.3s;
+    }
+
+    .hero-upload:hover .upload-icon {
+        border-color: var(--foreground);
+        transform: translateY(-5px);
+    }
+
+    /* --- Result Side --- */
+    .graph-card {
+        grid-column: 9 / 13;
+        grid-row: 1 / 3;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-card {
+        grid-column: 9 / 13;
+        grid-row: 3 / 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .decision-card {
+        grid-column: 9 / 13;
+        grid-row: 5 / 7;
+        background: #fff;
+        color: #000;
+    }
+
+    /* --- Custom Scrollbar --- */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--accent-dim);
+        border-radius: 10px;
+        opacity: 0.5;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--foreground);
+    }
+
+    /* --- Terminal / Log --- */
+    .log-viewport {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 20px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        line-height: 1.6;
+        color: var(--log-text);
+        overflow-y: auto;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .log-line {
+        margin-bottom: 4px;
+    }
+
+    .log-line span {
+        color: var(--log-highlight);
+        margin-right: 8px;
+    }
+
+    /* --- Scan Animation --- */
+    .scanner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #fff, transparent);
+        z-index: 5;
+        opacity: 0;
+    }
+
+    @keyframes scanMove {
+        0% {
+            top: 0%;
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            top: 100%;
+            opacity: 0;
+        }
+    }
+
+    /* --- Modal Report --- */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .report-modal {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        width: 90%;
+        max-width: 500px;
+        padding: 32px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(20px);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+    }
+
+    .modal-overlay.active .report-modal {
+        transform: translateY(0);
+    }
+
+    .report-modal h2 {
+        font-family: 'Outfit', sans-serif;
+        margin-bottom: 24px;
+        color: var(--foreground);
+    }
+
+    .report-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        font-size: 13px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 8px;
+    }
+
+    .report-row span:first-child {
+        color: var(--accent-dim);
+    }
+
+    .report-row span:last-child {
+        color: var(--foreground);
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: var(--accent-dim);
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .close-modal:hover {
+        color: var(--foreground);
+    }
+
+    /* --- Print Styles for PDF Export --- */
+    @media print {
+        @page {
+            size: A4;
+            margin: 0;
+            /* Removes default browser headers/footers */
+        }
+
+        body {
+            background: white !important;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .app-wrapper {
+            display: none !important;
+        }
+
+        .background-canvas {
+            display: none !important;
+        }
+
+        .modal-overlay {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: white !important;
+            display: block !important;
+            opacity: 1 !important;
+            backdrop-filter: none !important;
+            padding: 15mm !important;
+            box-sizing: border-box !important;
+        }
+
+        .report-modal {
+            box-shadow: none !important;
+            /* Formal Certificate Border */
+            border: 4px double #111 !important;
+            outline: 2px solid #111 !important;
+            outline-offset: 4px !important;
+
+            width: 100% !important;
+            min-height: 260mm !important;
+            /* Force A4 height */
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 40px 50px !important;
+            background: transparent !important;
+            color: black !important;
+            transform: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            box-sizing: border-box !important;
+        }
+
+        .report-modal::before {
+            content: 'CERTIFIED';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 160px;
+            color: rgba(0, 255, 170, 0.04);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            z-index: -1;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .report-modal .print-header-container {
+            text-align: center;
+            margin-bottom: 50px !important;
+        }
+
+        .report-modal svg {
+            width: 80px !important;
+            height: 80px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .report-modal h2 {
+            color: black !important;
+            font-size: 32px !important;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+            margin-bottom: 0 !important;
+            display: inline-block;
+        }
+
+        .report-row {
+            border-bottom: 1px dashed #ccc !important;
+            padding: 24px 0 !important;
+            font-size: 16px !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        .report-row span:first-child {
+            color: #333 !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px !important;
+            flex: 1;
+        }
+
+        .report-row span:last-child {
+            color: black !important;
+            font-size: 15px !important;
+            font-family: 'JetBrains Mono', monospace !important;
+            text-align: right;
+            word-break: break-all;
+            flex: 2;
+            font-weight: 600;
+        }
+
+        .close-modal,
+        .report-modal .btn-primary {
+            display: none !important;
+        }
+    }
+
+    /* --- Typography --- */
+    h1 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        font-size: 28px;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+    }
+
+    p.dim {
+        color: #ccc;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        background: var(--foreground);
+        color: var(--bg);
+        border: none;
+        padding: 12px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        opacity: 0.9;
+    }
+
+    /* --- Micro-Interactions --- */
+    .typing::after {
+        content: "|";
+        animation: blink 1s infinite;
+    }
+
+    /* --- Responsive Design --- */
+    @media (max-width: 1024px) {
+        .app-wrapper {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto 1fr;
+            overflow-y: auto;
+            height: auto;
+        }
+
+        nav {
+            border-right: none;
+            border-bottom: 1px solid var(--border);
+            padding: 20px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        main {
+            padding: 20px;
+            grid-template-rows: auto auto;
+        }
+
+        .bento-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+
+        .hero-upload,
+        .graph-card,
+        .stat-card,
+        .decision-card {
+            grid-column: 1 / -1 !important;
+            grid-row: auto !important;
+        }
+
+        .hero-upload {
+            min-height: 300px;
+        }
+
+        .log-viewport {
+            min-height: 200px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 0 16px;
+            flex-direction: column;
+            height: auto;
+            padding-bottom: 16px;
+        }
+
+        .logo-group {
+            padding-top: 16px;
+            margin-bottom: 12px;
+        }
+
+        nav {
+            padding: 16px;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
 </head>
+
 <body>
-    
     <div class="background-canvas"></div>
 
     <div class="app-wrapper">
@@ -33,24 +722,22 @@
                         LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)</a></span>
                 <span class="version-tag">STABLE_v1.0</span>
             </div>
-            <div class="header-actions" style="display: flex; gap: 16px; align-items: center">
+            <div style="display: flex; gap: 16px; align-items: center">
                 <!-- Language Switcher -->
-                <div class="lang-selector"
-                    style="position: relative; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; color: var(--accent-dim)">
-                    <span id="current-lang-flag">🇺🇸</span>
-                    <select id="lang-switch"
-                        style="background: none; border: none; color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; cursor: pointer; outline: none; appearance: none; padding-right: 12px">
+                <div class="lang-selector" style="position: relative; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; color: var(--accent-dim)">
+                    <span id="current-lang-flag">馃嚭馃嚫</span>
+                    <select id="lang-switch" style="background: none; border: none; color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; cursor: pointer; outline: none; appearance: none; padding-right: 12px">
                         <option value="en">English</option>
-                        <option value="fr">Français</option>
-                        <option value="es">Español</option>
+                        <option value="fr">Fran莽ais</option>
+                        <option value="es">Espa帽ol</option>
                         <option value="de">Deutsch</option>
-                        <option value="jp">日本語</option>
-                        <option value="kr">한국어</option>
-                        <option value="zh">繁體中文</option>
-                        <option value="ar">العربية</option>
-                        <option value="pt">Português</option>
+                        <option value="jp">鏃ユ湰瑾?/option>
+                        <option value="kr">頃滉淡鞏?/option>
+                        <option value="zh">绻侀珨涓枃</option>
+                        <option value="ar">丕賱毓乇亘賷丞</option>
+                        <option value="pt">Portugu锚s</option>
                     </select>
-                    <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); pointer-events: none; opacity: 0.5">▾</div>
+                    <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); pointer-events: none; opacity: 0.5">鈻?/div>
                 </div>
 
                 <button id="theme-toggle" title="Toggle Theme"
@@ -72,8 +759,8 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <a href="https://atlanta-college-of-liberal-arts.gitbook.io/atlanta-college-of-liberal-arts-and-sciences"
-                    target="_blank" rel="noopener noreferrer"
+                <a href="https://atlanta-college-of-liberal-arts-and-sciences.gitbook.io/atlanta-college-of-liberal-arts-and-sciences/aegis-graph"
+                    target="_blank"
                     style="color: var(--accent-dim); text-decoration: none; font-size: 11px; font-weight: 600; border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; transition: all 0.2s; display: flex; align-items: center; gap: 6px">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -85,7 +772,9 @@
                 <a href="https://github.com/aclascollege/aegis-graph" target="_blank" title="View on GitHub"
                     style="color: var(--foreground); opacity: 0.8; transition: opacity 0.2s">
                     <svg height="24" viewBox="0 0 16 16" width="24" fill="currentColor">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                        </path>
                     </svg>
                 </a>
                 <span style="font-size: 11px; color: #aaa; font-weight: 600" class="desktop-only">NETWORK STATUS: <span
@@ -134,52 +823,6 @@
                     <p style="font-size: 11px; opacity: 0.8">Sovereign Knowledge Node #0782</p>
                 </div>
             </div>
-
-            <!-- Community & Social -->
-            <div class="nav-section">
-                <h3>Connect & Community</h3>
-                <div style="display: flex; gap: 12px; margin-top: 8px">
-                    <a href="https://x.com/aclascollege" target="_blank" title="Follow on X"
-                        style="color: var(--accent-dim); transition: color 0.2s">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/school/aclas-college/" target="_blank" title="LinkedIn"
-                        style="color: var(--accent-dim); transition: color 0.2s">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="mailto:info@aclas.college" title="Email Us"
-                        style="color: var(--accent-dim); transition: color 0.2s">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </a>
-                    <a href="https://aclas.college/" target="_blank" title="Official Website"
-                        style="color: var(--accent-dim); transition: color 0.2s">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                        </svg>
-                    </a>
-                    <a href="https://huggingface.co/ACLASCollege" target="_blank" title="Hugging Face Models"
-                        style="color: var(--accent-dim); transition: color 0.2s">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm2.5 14.5c-1.381 0-2.5-1.119-2.5-2.5s1.119-2.5 2.5-2.5 2.5 1.119 2.5 2.5-1.119 2.5-2.5 2.5zM9.5 14.5c-1.381 0-2.5-1.119-2.5-2.5s1.119-2.5 2.5-2.5 2.5 1.119 2.5 2.5-1.119 2.5-2.5 2.5zM12 11c-.552 0-1-.448-1-1s.448-1 1-1 1 .448 1 1-.448 1-1 1z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
         </nav>
 
         <main>
@@ -191,7 +834,7 @@
                     </div>
                     <div class="scanner" id="scan-bar"></div>
                     <input type="file" id="file-input" style="display: none">
-                    <div class="upload-icon">🔍</div>
+                    <div class="upload-icon">鈫?/div>
                     <h1>Drop credentials or click to browse</h1>
                     <p class="dim">Supported formats: PDF, PNG, HEIC (Max 20MB)</p>
                     <div id="file-indicator" style="margin-top: 24px; display: none; font-size: 13px; color: #fff">
@@ -200,19 +843,6 @@
                 </div>
 
                 <!-- Graph Topology Bento (New) -->
-                <style>
-                    @keyframes neural-pulse {
-                        0% { r: 4; fill-opacity: 0.6; }
-                        50% { r: 5.5; fill-opacity: 1; }
-                        100% { r: 4; fill-opacity: 0.6; }
-                    }
-                    .node {
-                        animation: neural-pulse 3s infinite ease-in-out;
-                    }
-                    #node-2 { animation-delay: 0.5s; }
-                    #node-3 { animation-delay: 1.2s; }
-                    #node-4 { animation-delay: 2s; }
-                </style>
                 <div class="bento-item graph-card">
                     <h3 style="font-size: 11px; color: #999; margin-bottom: 12px; font-weight: 600">GRAPH TOPOLOGY</h3>
                     <div id="graph-visual" style="flex: 1; display: flex; align-items: center; justify-content: center">
@@ -224,7 +854,7 @@
                             <line x1="53" y1="45" x2="77" y2="30" stroke="#444" stroke-width="1" id="edge-4" />
 
                             <!-- Nodes -->
-                            <circle cx="20" cy="30" r="4" fill="var(--accent)" class="node" id="node-1" />
+                            <circle cx="20" cy="30" r="4" fill="#999" class="node" id="node-1" />
                             <text x="20" y="40" fill="#aaa" font-size="4" text-anchor="middle"
                                 font-family="monospace">DOC</text>
 
@@ -397,9 +1027,9 @@
             log('SYSTEM', `New payload detected: ${file.name}. Initializing NPU handshake...`);
 
             // --- 2026 Strict Mode Logic ---
-            const academicKeywords = ['aclas', 'transcript', 'diploma', 'harvard', 'stanford', 'degree', '学位', '大学', '成绩单', '证书', 'mba', 'bba', 'phd', 'master', 'bachelor'];
+            const academicKeywords = ['aclas', 'transcript', 'diploma', 'harvard', 'stanford', 'degree', '瀛︿綅', '澶у', '鎴愮哗鍗?, '璇佷功', 'mba', 'bba', 'phd', 'master', 'bachelor'];
             const isAcademic = academicKeywords.some(keyword => fileName.toLowerCase().includes(keyword));
-            const isKnownFraud = fileName.toLowerCase().includes('fake') || fileName.toLowerCase().includes('fraud') || fileName.toLowerCase().includes('éÂÂ Ã¥ÂÂ');
+            const isKnownFraud = fileName.toLowerCase().includes('fake') || fileName.toLowerCase().includes('fraud') || fileName.toLowerCase().includes('閫犲亣');
 
             if (isKnownFraud || !isAcademic) {
                 window.demoVerdict = 'REJECTED';
@@ -432,7 +1062,7 @@
 
         const TRANSLATIONS = {
             en: {
-                flag: '🇺🇸',
+                flag: '馃嚭馃嚫',
                 title: 'Aegis-Graph: Sovereign Audit Network',
                 subtitle: 'Drop credentials or click to browse',
                 init_btn: 'Initiate Audit',
@@ -444,97 +1074,97 @@
                 footer: 'BY ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
             },
             fr: {
-                flag: '🇫🇷',
-                title: 'Aegis-Graph : Réseau d\'audit souverain',
-                subtitle: 'Déposez les documents ou cliquez pour parcourir',
+                flag: '馃嚝馃嚪',
+                title: 'Aegis-Graph : R茅seau d\'audit souverain',
+                subtitle: 'D茅posez les documents ou cliquez pour parcourir',
                 init_btn: 'Initier l\'audit',
                 docs: 'DOCS',
-                pillars: ['Confiance souveraine', 'GraphRAG agentique', 'Confidentialité ZK'],
+                pillars: ['Confiance souveraine', 'GraphRAG agentique', 'Confidentialit茅 ZK'],
                 agents: ['Expertise Vision', 'Navigateur de Graphe', 'Auditeur Logique'],
                 log_init: 'Initialisation du protocole Aegis-Graph...',
-                log_ready: 'Système prêt. Veuillez télécharger un document.',
+                log_ready: 'Syst猫me pr锚t. Veuillez t茅l茅charger un document.',
                 footer: 'PAR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
             },
             es: {
-                flag: '🇪🇸',
-                title: 'Aegis-Graph: Red de Auditoría Soberana',
+                flag: '馃嚜馃嚫',
+                title: 'Aegis-Graph: Red de Auditor铆a Soberana',
                 subtitle: 'Suelte los documentos o haga clic para buscar',
-                init_btn: 'Iniciar Auditoría',
+                init_btn: 'Iniciar Auditor铆a',
                 docs: 'DOCS',
-                pillars: ['Confianza Soberana', 'GraphRAG Agéntico', 'Privacidad ZK'],
-                agents: ['Forense de Visión', 'Navegador de Grafos', 'Auditor Lógico'],
+                pillars: ['Confianza Soberana', 'GraphRAG Ag茅ntico', 'Privacidad ZK'],
+                agents: ['Forense de Visi贸n', 'Navegador de Grafos', 'Auditor L贸gico'],
                 log_init: 'Iniciando protocolo Aegis-Graph...',
                 log_ready: 'Sistema listo. Cargue un documento.',
                 footer: 'POR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
             },
             de: {
-                flag: '🇩🇪',
-                title: 'Aegis-Graph: Souveränes Prüfnetzwerk',
+                flag: '馃嚛馃嚜',
+                title: 'Aegis-Graph: Souver盲nes Pr眉fnetzwerk',
                 subtitle: 'Unterlagen ablegen oder zum Durchsuchen klicken',
-                init_btn: 'Prüfung einleiten',
+                init_btn: 'Pr眉fung einleiten',
                 docs: 'DOCS',
-                pillars: ['Souveränes Vertrauen', 'Agentisches GraphRAG', 'ZK-Datenschutz'],
+                pillars: ['Souver盲nes Vertrauen', 'Agentisches GraphRAG', 'ZK-Datenschutz'],
                 agents: ['Vision Forensik', 'Graph-Navigator', 'Logik-Auditor'],
                 log_init: 'Initialisierung des Aegis-Graph-Protokolls...',
                 log_ready: 'System bereit. Bitte Dokument hochladen.',
                 footer: 'VON ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
             },
             jp: {
-                flag: '🇯🇵',
-                title: 'Aegis-Graph: 主権的監査ネットワーク',
-                subtitle: '認証情報をドロップするか、クリックして参照',
-                init_btn: '監査を開始',
-                docs: 'ドキュメント',
-                pillars: ['主権的な信頼', 'エージェント型GraphRAG', 'ゼロ知識プライバシー'],
-                agents: ['視覚フォレンジック', 'グラフナビゲーター', 'ロジック監査人'],
-                log_init: 'Aegis-Graphプロトコルを初期化中...',
-                log_ready: 'システム準備完了。ドキュメントをアップロードしてください。',
-                footer: 'アトランタ・リベラルアーツ・サイエンス大学 (ACLAS COLLEGE) 提供'
+                flag: '馃嚡馃嚨',
+                title: 'Aegis-Graph: 涓绘ī鐩ｆ熁銉嶃儍銉堛儻銉笺偗',
+                subtitle: '瑾嶈鎯呭牨銈掋儔銉儍銉椼仚銈嬨亱銆併偗銉儍銈仐銇﹀弬鐓?,
+                init_btn: '鐩ｆ熁銈掗枊濮?,
+                docs: '銉夈偔銉ャ儭銉炽儓',
+                pillars: ['涓绘ī鐨勪俊闋?, '銈ㄣ兗銈搞偋銉炽儓鍨婫raphRAG', '銈笺儹鐭ヨ瓨銉椼儵銈ゃ儛銈枫兗'],
+                agents: ['瑕栬銉曘偐銉兂銈搞儍銈?, '銈般儵銉曘儕銉撱偛銉笺偪銉?, '銉偢銉冦偗鐩ｆ熁浜?],
+                log_init: 'Aegis-Graph銉椼儹銉堛偝銉倰鍒濇湡鍖栦腑...',
+                log_ready: '銈枫偣銉嗐儬婧栧倷瀹屼簡銆傘儔銈儱銉°兂銉堛倰銈儍銉椼儹銉笺儔銇椼仸銇忋仩銇曘亜銆?,
+                footer: '銈儓銉┿兂銈裤兓銉儥銉┿儷銈兗銉勩兓銈点偆銈ㄣ兂銈瑰ぇ瀛?(ACLAS COLLEGE) 鎻愪緵'
             },
             kr: {
-                flag: '🇰🇷',
-                title: 'Aegis-Graph: 주권 감사 네트워크',
-                subtitle: '자격 증명을 드롭하거나 클릭하여 탐색',
-                init_btn: '감사 시작',
-                docs: '문서',
-                pillars: ['주권적 신뢰', '에이전트 기반 GraphRAG', '영지식 프라이버시'],
-                agents: ['시각 포렌식', '그래프 네비게이터', '논리 감사관'],
-                log_init: 'Aegis-Graph 프로토콜 초기화 중...',
-                log_ready: '시스템 준비 완료. 문서를 업로드해 주세요.',
-                footer: '아틀란타 자유인문과학대학 (ACLAS COLLEGE) 제공'
+                flag: '馃嚢馃嚪',
+                title: 'Aegis-Graph: 欤缄秾 臧愳偓 雱ろ姼鞗岉伂',
+                subtitle: '鞛愱博 歃濍獏鞚?霌滊…頃橁卑雮?韥措Ν頃橃棳 韮愳儔',
+                init_btn: '臧愳偓 鞁滌瀾',
+                docs: '氍胳劀',
+                pillars: ['欤缄秾鞝?鞁犽', '鞐愳澊鞝勴姼 旮半皹 GraphRAG', '鞓侅鞁?頂勲澕鞚措矂鞁?],
+                agents: ['鞁滉皝 韽爩鞁?, '攴鸽灅頂?雱る箘瓴岇澊韯?, '雲茧Μ 臧愳偓甏€'],
+                log_init: 'Aegis-Graph 頂勲韱犾綔 齑堦赴頇?欷?..',
+                log_ready: '鞁滌姢韰?欷€牍?鞕勲. 氍胳劀毳?鞐呺霌滍暣 欤检劯鞖?',
+                footer: '鞎勴媭霝€韮€ 鞛愳湢鞚鸽瓿柬暀雽€頃?(ACLAS COLLEGE) 鞝滉车'
             },
             zh: {
-                flag: '🇭🇰',
-                title: 'Aegis-Graph: 主權審計網絡',
-                subtitle: '拖放憑證或點擊瀏覽',
-                init_btn: '啟動審計',
-                docs: '文檔',
-                pillars: ['主權信任', '代理式 GraphRAG', '零知識隱私'],
-                agents: ['視覺取證', '圖譜導航器', '邏輯審計師'],
-                log_init: '正在初始化 Aegis-Graph 協議...',
-                log_ready: '系統就緒。請上傳文件进行驗證。',
-                footer: '由亞特蘭大文理學院 (ACLAS COLLEGE) 開發'
+                flag: '馃嚟馃嚢',
+                title: 'Aegis-Graph: 涓绘瑠瀵╄▓缍茬怠',
+                subtitle: '鎷栨斁鎲戣瓑鎴栭粸鎿婄€忚',
+                init_btn: '鍟熷嫊瀵╄▓',
+                docs: '鏂囨獢',
+                pillars: ['涓绘瑠淇′换', '浠ｇ悊寮?GraphRAG', '闆剁煡璀橀毐绉?],
+                agents: ['瑕栬鍙栬瓑', '鍦栬瓬灏庤埅鍣?, '閭忚集瀵╄▓甯?],
+                log_init: '姝ｅ湪鍒濆鍖?Aegis-Graph 鍗旇...',
+                log_ready: '绯荤当灏辩窉銆傝珛涓婂偝鏂囦欢閫茶椹楄瓑銆?,
+                footer: '鐢变簽鐗硅槶澶ф枃鐞嗗闄?(ACLAS COLLEGE) 闁嬬櫦'
             },
             ar: {
-                flag: '🇸🇦',
-                title: 'Aegis-Graph: شبكة التدقيق السيادي',
-                subtitle: 'قم بإسقاط المستندات أو انقر للتصفح',
-                init_btn: 'بدء التدقيق',
-                docs: 'المستندات',
-                pillars: ['الثقة السيادية', 'وكيل GraphRAG', 'الخصوصية الصفرية'],
-                agents: ['الطب الشرعي البصري', 'ملاح الرسوم البيانية', 'مدقق المنطق'],
-                log_init: 'تهيئة بروتوكول Aegis-Graph...',
-                log_ready: 'النظام جاهز. يرجى تحميل المستند.',
-                footer: 'بواسطة كلية أتلانتا للفنون الليبرالية والعلوم (ACLAS COLLEGE)'
+                flag: '馃嚫馃嚘',
+                title: 'Aegis-Graph: 卮亘賰丞 丕賱鬲丿賯賷賯 丕賱爻賷丕丿賷',
+                subtitle: '賯賲 亘廿爻賯丕胤 丕賱賲爻鬲賳丿丕鬲 兀賵 丕賳賯乇 賱賱鬲氐賮丨',
+                init_btn: '亘丿亍 丕賱鬲丿賯賷賯',
+                docs: '丕賱賲爻鬲賳丿丕鬲',
+                pillars: ['丕賱孬賯丞 丕賱爻賷丕丿賷丞', '賵賰賷賱 GraphRAG', '丕賱禺氐賵氐賷丞 丕賱氐賮乇賷丞'],
+                agents: ['丕賱胤亘 丕賱卮乇毓賷 丕賱亘氐乇賷', '賲賱丕丨 丕賱乇爻賵賲 丕賱亘賷丕賳賷丞', '賲丿賯賯 丕賱賲賳胤賯'],
+                log_init: '鬲賴賷卅丞 亘乇賵鬲賵賰賵賱 Aegis-Graph...',
+                log_ready: '丕賱賳馗丕賲 噩丕賴夭. 賷乇噩賶 鬲丨賲賷賱 丕賱賲爻鬲賳丿.',
+                footer: '亘賵丕爻胤丞 賰賱賷丞 兀鬲賱丕賳鬲丕 賱賱賮賳賵賳 丕賱賱賷亘乇丕賱賷丞 賵丕賱毓賱賵賲 (ACLAS COLLEGE)'
             },
             pt: {
-                flag: '🇵🇹',
+                flag: '馃嚨馃嚬',
                 title: 'Aegis-Graph: Rede de Auditoria Soberana',
                 subtitle: 'Solte as credenciais ou clique para procurar',
                 init_btn: 'Iniciar Auditoria',
                 docs: 'DOCS',
-                pillars: ['Confiança Soberana', 'GraphRAG Agêntico', 'Privacidade ZK'],
-                agents: ['Forense de Visão', 'Navegador de Grafos', 'Auditor Lógico'],
+                pillars: ['Confian莽a Soberana', 'GraphRAG Ag锚ntico', 'Privacidade ZK'],
+                agents: ['Forense de Vis茫o', 'Navegador de Grafos', 'Auditor L贸gico'],
                 log_init: 'Iniciando o protocolo Aegis-Graph...',
                 log_ready: 'Sistema pronto. Carregue um documento.',
                 footer: 'POR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
@@ -548,7 +1178,7 @@
             document.querySelector('.logo-text').innerText = 'AEGIS-GRAPH';
             document.querySelector('#init-btn').innerText = data.init_btn;
             document.querySelector('header .logo-group span:nth-child(2) a').innerText = data.footer;
-
+            
             // RTL support for Arabic
             if (lang === 'ar') {
                 document.body.style.direction = 'rtl';
@@ -788,507 +1418,6 @@
             }
         });
     </script>
-    <style>
-        @media (max-width: 768px) {
-            .faq-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .header-actions {
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .logo-group span:nth-child(2) {
-                display: none; /* Hide long institutional name on tiny screens */
-            }
-        }
-    </style>
-    <section id="faq" style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
-        <h2 style="font-family: 'Outfit', sans-serif; font-size: 32px; margin-bottom: 40px; text-align: center; font-weight: 700; letter-spacing: -1px;">Protocol Intelligence (FAQ)</h2>
-        <div class="faq-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
-                <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">What is Aegis-Graph?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Aegis-Graph is the world's first open-source Sovereign Academic Audit Protocol. It uses Agentic GraphRAG—a federated swarm of specialized AI agents—to perform deep logical verification of academic credentials.</p>
-            </div>
-            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
-                <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">How is it sovereign?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">The protocol runs entirely on institutional hardware. PII-scrubbing occurs at the source, ensuring raw data never touches the cloud. Institutions maintain their own Gold Standard Nodes.</p>
-            </div>
-            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
-                <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Who built Aegis-Graph?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Aegis-Graph is engineered by the Technical Committee at Atlanta College of Liberal Arts and Sciences (ACLAS College), based in Atlanta, Georgia, USA.</p>
-            </div>
-            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
-                <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Is it free to use?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Yes. Aegis-Graph is released under the CC BY-NC 4.0 license. Academic institutions and researchers can deploy it freely for non-commercial purposes.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Script to toggle FAQ (Optional) -->
-    <script>
-        // Making FAQ visible for search bots but subtle for users
-        // AI engines will see it in the DOM
-    </script>
-
-    <script>
-        const initBtn = document.getElementById('init-btn');
-        const themeToggle = document.getElementById('theme-toggle');
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
-        const reportBtnContainer = document.getElementById('report-action-container');
-        const reportModal = document.getElementById('report-modal-overlay');
-
-        document.getElementById('view-report-btn').addEventListener('click', () => {
-            document.getElementById('report-hash').innerText = '0x' + Array.from({ length: 40 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
-            document.getElementById('report-time').innerText = new Date().toISOString();
-            reportModal.classList.add('active');
-        });
-
-        document.getElementById('close-modal-btn').addEventListener('click', () => {
-            reportModal.classList.remove('active');
-        });
-
-        // --- Theme Logic ---
-        function toggleTheme() {
-            const isLight = document.body.classList.toggle('light-mode');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-            updateThemeIcons(isLight);
-        }
-
-        function updateThemeIcons(isLight) {
-            sunIcon.style.display = isLight ? 'inline' : 'none';
-            moonIcon.style.display = isLight ? 'none' : 'inline';
-        }
-
-        // Init theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            document.body.classList.add('light-mode');
-            updateThemeIcons(true);
-        }
-
-        themeToggle.addEventListener('click', toggleTheme);
-        const terminal = document.getElementById('terminal');
-        const scanBar = document.getElementById('scan-bar');
-        const verdict = document.getElementById('final-verdict');
-        const risk = document.getElementById('risk-score');
-        const dropZone = document.getElementById('drop-zone');
-        const fileInd = document.getElementById('file-indicator');
-        const fileInput = document.getElementById('file-input');
-
-        // --- Click to Upload ---
-        dropZone.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                handleFiles(e.target.files);
-            }
-        });
-
-        function handleFiles(files) {
-            const file = files[0];
-            const fileName = file.name.toLowerCase();
-            fileInd.innerText = `Source detected: ${file.name}`;
-            fileInd.style.display = 'block';
-            dropZone.style.borderColor = 'var(--border)';
-
-            log('SYSTEM', `New payload detected: ${file.name}. Initializing NPU handshake...`);
-
-            // --- 2026 Strict Mode Logic ---
-            const academicKeywords = ['aclas', 'transcript', 'diploma', 'harvard', 'stanford', 'degree', '学位', '大学', '成绩单', '证书', 'mba', 'bba', 'phd', 'master', 'bachelor'];
-            const isAcademic = academicKeywords.some(keyword => fileName.toLowerCase().includes(keyword));
-            const isKnownFraud = fileName.toLowerCase().includes('fake') || fileName.toLowerCase().includes('fraud') || fileName.toLowerCase().includes('éÂÂ Ã¥ÂÂ');
-
-            if (isKnownFraud || !isAcademic) {
-                window.demoVerdict = 'REJECTED';
-                window.rejectReason = isKnownFraud ? 'KNOWN_FRAUD_DB_MATCH' : 'NO_ACADEMIC_MARKERS_FOUND';
-            } else {
-                window.demoVerdict = 'APPROVED';
-                window.rejectReason = null;
-            }
-
-            window.isAclasFastTrack = fileName.includes('aclas') || fileName.includes('atlanta college') || fileName.includes('atlanta');
-
-            startAudit();
-        }
-
-        function log(agent, msg, color = "var(--log-highlight)", isMcp = false) {
-            const div = document.createElement('div');
-            div.className = 'log-line';
-            if (isMcp) {
-                div.style.fontSize = '10px';
-                div.style.opacity = '0.9';
-                div.style.fontStyle = 'italic';
-                div.innerHTML = `<span style="color: var(--log-text)">>> CALL: ${msg}</span>`;
-            } else {
-                div.innerHTML = `<span style="color: ${color}">[${agent}]</span> ${msg}`;
-            }
-            const stream = document.getElementById('mcp-stream');
-            stream.appendChild(div);
-            terminal.scrollTop = terminal.scrollHeight;
-        }
-
-        const TRANSLATIONS = {
-            en: {
-                flag: '🇺🇸',
-                title: 'Aegis-Graph: Sovereign Audit Network',
-                subtitle: 'Drop credentials or click to browse',
-                init_btn: 'Initiate Audit',
-                docs: 'DOCS',
-                pillars: ['Sovereign Trust', 'Agentic GraphRAG', 'Zero-Knowledge Privacy'],
-                agents: ['Vision Forensics', 'Graph Navigator', 'Logic Auditor'],
-                log_init: 'Initializing Aegis-Graph protocol...',
-                log_ready: 'System Ready. Please upload a document for verification.',
-                footer: 'BY ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
-            },
-            fr: {
-                flag: '🇫🇷',
-                title: 'Aegis-Graph : Réseau d\'audit souverain',
-                subtitle: 'Déposez les documents ou cliquez pour parcourir',
-                init_btn: 'Initier l\'audit',
-                docs: 'DOCS',
-                pillars: ['Confiance souveraine', 'GraphRAG agentique', 'Confidentialité ZK'],
-                agents: ['Expertise Vision', 'Navigateur de Graphe', 'Auditeur Logique'],
-                log_init: 'Initialisation du protocole Aegis-Graph...',
-                log_ready: 'Système prêt. Veuillez télécharger un document.',
-                footer: 'PAR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
-            },
-            es: {
-                flag: '🇪🇸',
-                title: 'Aegis-Graph: Red de Auditoría Soberana',
-                subtitle: 'Suelte los documentos o haga clic para buscar',
-                init_btn: 'Iniciar Auditoría',
-                docs: 'DOCS',
-                pillars: ['Confianza Soberana', 'GraphRAG Agéntico', 'Privacidad ZK'],
-                agents: ['Forense de Visión', 'Navegador de Grafos', 'Auditor Lógico'],
-                log_init: 'Iniciando protocolo Aegis-Graph...',
-                log_ready: 'Sistema listo. Cargue un documento.',
-                footer: 'POR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
-            },
-            de: {
-                flag: '🇩🇪',
-                title: 'Aegis-Graph: Souveränes Prüfnetzwerk',
-                subtitle: 'Unterlagen ablegen oder zum Durchsuchen klicken',
-                init_btn: 'Prüfung einleiten',
-                docs: 'DOCS',
-                pillars: ['Souveränes Vertrauen', 'Agentisches GraphRAG', 'ZK-Datenschutz'],
-                agents: ['Vision Forensik', 'Graph-Navigator', 'Logik-Auditor'],
-                log_init: 'Initialisierung des Aegis-Graph-Protokolls...',
-                log_ready: 'System bereit. Bitte Dokument hochladen.',
-                footer: 'VON ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
-            },
-            jp: {
-                flag: '🇯🇵',
-                title: 'Aegis-Graph: 主権的監査ネットワーク',
-                subtitle: '認証情報をドロップするか、クリックして参照',
-                init_btn: '監査を開始',
-                docs: 'ドキュメント',
-                pillars: ['主権的な信頼', 'エージェント型GraphRAG', 'ゼロ知識プライバシー'],
-                agents: ['視覚フォレンジック', 'グラフナビゲーター', 'ロジック監査人'],
-                log_init: 'Aegis-Graphプロトコルを初期化中...',
-                log_ready: 'システム準備完了。ドキュメントをアップロードしてください。',
-                footer: 'アトランタ・リベラルアーツ・サイエンス大学 (ACLAS COLLEGE) 提供'
-            },
-            kr: {
-                flag: '🇰🇷',
-                title: 'Aegis-Graph: 주권 감사 네트워크',
-                subtitle: '자격 증명을 드롭하거나 클릭하여 탐색',
-                init_btn: '감사 시작',
-                docs: '문서',
-                pillars: ['주권적 신뢰', '에이전트 기반 GraphRAG', '영지식 프라이버시'],
-                agents: ['시각 포렌식', '그래프 네비게이터', '논리 감사관'],
-                log_init: 'Aegis-Graph 프로토콜 초기화 중...',
-                log_ready: '시스템 준비 완료. 문서를 업로드해 주세요.',
-                footer: '아틀란타 자유인문과학대학 (ACLAS COLLEGE) 제공'
-            },
-            zh: {
-                flag: '🇭🇰',
-                title: 'Aegis-Graph: 主權審計網絡',
-                subtitle: '拖放憑證或點擊瀏覽',
-                init_btn: '啟動審計',
-                docs: '文檔',
-                pillars: ['主權信任', '代理式 GraphRAG', '零知識隱私'],
-                agents: ['視覺取證', '圖譜導航器', '邏輯審計師'],
-                log_init: '正在初始化 Aegis-Graph 協議...',
-                log_ready: '系統就緒。請上傳文件进行驗證。',
-                footer: '由亞特蘭大文理學院 (ACLAS COLLEGE) 開發'
-            },
-            ar: {
-                flag: '🇸🇦',
-                title: 'Aegis-Graph: شبكة التدقيق السيادي',
-                subtitle: 'قم بإسقاط المستندات أو انقر للتصفح',
-                init_btn: 'بدء التدقيق',
-                docs: 'المستندات',
-                pillars: ['الثقة السيادية', 'وكيل GraphRAG', 'الخصوصية الصفرية'],
-                agents: ['الطب الشرعي البصري', 'ملاح الرسوم البيانية', 'مدقق المنطق'],
-                log_init: 'تهيئة بروتوكول Aegis-Graph...',
-                log_ready: 'النظام جاهز. يرجى تحميل المستند.',
-                footer: 'بواسطة كلية أتلانتا للفنون الليبرالية والعلوم (ACLAS COLLEGE)'
-            },
-            pt: {
-                flag: '🇵🇹',
-                title: 'Aegis-Graph: Rede de Auditoria Soberana',
-                subtitle: 'Solte as credenciais ou clique para procurar',
-                init_btn: 'Iniciar Auditoria',
-                docs: 'DOCS',
-                pillars: ['Confiança Soberana', 'GraphRAG Agêntico', 'Privacidade ZK'],
-                agents: ['Forense de Visão', 'Navegador de Grafos', 'Auditor Lógico'],
-                log_init: 'Iniciando o protocolo Aegis-Graph...',
-                log_ready: 'Sistema pronto. Carregue um documento.',
-                footer: 'POR ATLANTA COLLEGE OF LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)'
-            }
-        };
-
-        function switchLanguage(lang) {
-            const data = TRANSLATIONS[lang] || TRANSLATIONS.en;
-            document.getElementById('current-lang-flag').innerText = data.flag;
-            document.querySelector('.hero-upload h1').innerText = data.subtitle;
-            document.querySelector('.logo-text').innerText = 'AEGIS-GRAPH';
-            document.querySelector('#init-btn').innerText = data.init_btn;
-            document.querySelector('header .logo-group span:nth-child(2) a').innerText = data.footer;
-
-            // RTL support for Arabic
-            if (lang === 'ar') {
-                document.body.style.direction = 'rtl';
-                document.querySelectorAll('.agent-card').forEach(el => el.style.flexDirection = 'row-reverse');
-            } else {
-                document.body.style.direction = 'ltr';
-                document.querySelectorAll('.agent-card').forEach(el => el.style.flexDirection = 'row');
-            }
-
-            // Update Agent Names
-            const agents = document.querySelectorAll('.agent-card span');
-            agents.forEach((span, i) => { if (data.agents[i]) span.innerText = data.agents[i]; });
-
-            addLog(data.log_ready, 'SYSTEM');
-            localStorage.setItem('aclas_lang', lang);
-        }
-
-        document.getElementById('lang-switch').addEventListener('change', (e) => {
-            switchLanguage(e.target.value);
-        });
-
-        // Initialize with saved lang or browser default
-        const savedLang = localStorage.getItem('aclas_lang') || 'en';
-        document.getElementById('lang-switch').value = savedLang;
-        setTimeout(() => switchLanguage(savedLang), 500);
-
-        async function sleep(ms) {
-            const delay = window.isAclasFastTrack ? ms * 0.1 : ms; // 10x faster for ACLAS VIPs
-            return new Promise(r => setTimeout(r, delay));
-        }
-
-
-        // --- Initialize NPU Stats ---
-        const npuStats = document.getElementById('npu-stats');
-        for (let i = 0; i < 16; i++) {
-            const core = document.createElement('div');
-            core.style.height = '6px';
-            core.style.background = '#222';
-            core.style.borderRadius = '1px';
-            core.style.transition = 'background-color 0.1s, box-shadow 0.1s';
-            core.id = `core-${i}`;
-            npuStats.appendChild(core);
-        }
-
-        function updateNpu(active = false) {
-            for (let i = 0; i < 16; i++) {
-                const core = document.getElementById(`core-${i}`);
-                if (active) {
-                    const isActive = Math.random() > 0.4;
-                    core.style.background = isActive ? 'var(--success)' : '#333';
-                    core.style.boxShadow = isActive ? '0 0 4px var(--success)' : 'none';
-                } else {
-                    core.style.background = '#222';
-                    core.style.boxShadow = 'none';
-                }
-            }
-            document.getElementById('npu-load').innerText = active ? Math.floor(Math.random() * 40 + 60) : '0';
-        }
-
-        function drawBox(top, left, width, height, label = "DETECTED") {
-            const overlay = document.getElementById('detection-overlay');
-            const box = document.createElement('div');
-            box.className = 'detection-box';
-            box.style.cssText = `
-                position: absolute; top: ${top}%; left: ${left}%; width: ${width}%; height: ${height}%;
-                border: 1px solid var(--success); background: rgba(0, 255, 170, 0.03);
-                box-shadow: inset 0 0 15px rgba(0, 255, 170, 0.2), 0 0 10px rgba(0, 255, 170, 0.4); 
-                opacity: 0; transition: opacity 0.4s ease-out;
-            `;
-
-            const labelTag = document.createElement('div');
-            labelTag.innerText = label;
-            labelTag.style.cssText = `
-                position: absolute; top: -14px; left: -1px; background: var(--success);
-                color: #000; font-size: 8px; font-weight: 700; padding: 2px 4px;
-                text-transform: uppercase; font-family: 'JetBrains Mono';
-            `;
-            box.appendChild(labelTag);
-
-            overlay.appendChild(box);
-            setTimeout(() => box.style.opacity = '1', 50);
-            return box;
-        }
-
-        function lightNode(id, color = 'var(--success)') {
-            const node = document.getElementById(`node-${id}`);
-            if (node) {
-                node.setAttribute('fill', color);
-                node.style.filter = `drop-shadow(0 0 5px ${color})`;
-            }
-        }
-
-        async function startAudit() {
-            initBtn.disabled = true;
-            initBtn.style.opacity = 0.5;
-            fileInd.style.display = 'block';
-            document.getElementById('detection-overlay').innerHTML = '';
-
-            // Reset Graph
-            for (let i = 1; i <= 4; i++) {
-                const n = document.getElementById(`node-${i}`);
-                if (n) n.setAttribute('fill', 'var(--accent-dim)');
-            }
-
-            // Animation
-            scanBar.style.animation = 'scanMove 2s infinite';
-            const npuInterval = setInterval(() => updateNpu(true), 100);
-
-            log('CORE', 'Starting high-precision audit sequence...');
-            await sleep(800);
-
-            // Step 0: PII Scrubbing (Zero-Knowledge)
-            log('PRIVACY', 'Local Presidio Scrubber engaged. Redacting PII (SSN, DOB)...', 'var(--success)');
-            await sleep(600);
-            log('PRIVACY', 'PII stripped successfully. Safe for Cloud Vision transfer.', 'var(--success)');
-            await sleep(400);
-
-            // Step 1: Vision
-            lightNode(1);
-            log('MCP', 'mcp_vision_analyze(source_uri: "...", scrub: true)', null, true);
-            log('VISION', 'Analyzing document forensics...', '#00f2ff');
-
-            // Draw labeled boxes
-            await sleep(500); drawBox(20, 25, 50, 8, 'INSTITUTION_HEADER');
-            await sleep(400); drawBox(35, 15, 70, 35, 'DATA_BLOCK_PRIMARY');
-            await sleep(300); drawBox(75, 20, 30, 10, 'SECURITY_MARKER_01');
-
-            document.getElementById('stat-res').innerText = '4096x2160';
-            document.getElementById('stat-entropy').innerText = (Math.random() * 0.01).toFixed(4);
-            document.getElementById('stat-citations').innerText = Math.floor(Math.random() * 50000 + 10000).toLocaleString();
-            document.getElementById('stat-cost').innerText = '$0.000' + Math.floor(Math.random() * 9 + 1);
-
-            log('VISION', 'Forensic metadata extracted. No pixel manipulation detected.', '#00f2ff');
-            await sleep(800);
-
-            if (window.rejectReason === 'NO_ACADEMIC_MARKERS_FOUND') {
-                log('VISION', '[ALERT] No valid institutional markers detected.', '#ff3366');
-                log('CORE', 'Aborting session: Entropy mismatch.', '#ff3366');
-                clearInterval(npuInterval); updateNpu(false);
-            } else {
-                log('VISION', 'OCR complete. Identity tokens masked via Local SLM.');
-            }
-
-            // Step 2: Graph
-            if (window.rejectReason !== 'NO_ACADEMIC_MARKERS_FOUND') {
-                lightNode(2); lightNode(3);
-                log('MCP', 'mcp_resolve_ror(query: "...", fuzzy: true)', null, true);
-                log('GRAPH', 'Traversing OpenAlex & ROR nodes...', '#bc00ff');
-                await sleep(1500);
-                if (window.rejectReason === 'KNOWN_FRAUD_DB_MATCH') {
-                    log('GRAPH', '[WARNING] Status: "Withdrawn/Suspicious" in ROR.', '#ff3366');
-                    lightNode(2, '#ff3366');
-                } else {
-                    log('GRAPH', 'Institution verified. Trust score: 0.998');
-                }
-            }
-
-            // Step 3: Logic
-            if (window.rejectReason !== 'NO_ACADEMIC_MARKERS_FOUND') {
-                lightNode(4);
-                // Positive Logic
-                log('MCP', 'mcp_logic_audit(graph_id: "782", heuristics: "STRICT")', null, true);
-                log('LOGIC', 'Running deep reasoning (CoT) conflict detection...', '#ffaa00');
-                await sleep(1500);
-                log('LOGIC', 'Verifying credit density: 120 credits / 48 months -> Normal.', '#ffaa00');
-                await sleep(1000);
-                log('LOGIC', 'Cross-referencing ROR establishment date with graduation year -> Valid.', '#ffaa00');
-                await sleep(800);
-                log('LOGIC', 'Temporal consistency confirmed.');
-            } else {
-                // Negative Logic
-                log('MCP', 'mcp_logic_audit(graph_id: "NULL", heuristics: "STRICT")', null, true);
-                log('LOGIC', 'Running deep reasoning (CoT) conflict detection...', '#ffaa00');
-                await sleep(2000);
-                if (window.rejectReason === 'KNOWN_FRAUD_DB_MATCH') {
-                    log('LOGIC', '[CONFLICT] Degree date mismatch vs ROR History.', '#ff3366');
-                    log('LOGIC', '[CONFLICT] OpenAlex works_count = 0. High probability of diploma mill.', '#ff3366');
-                    lightNode(4, '#ff3366');
-                } else {
-                    log('LOGIC', 'Temporal consistency confirmed.');
-                }
-            }
-
-            // Final
-            clearInterval(npuInterval); updateNpu(false);
-            scanBar.style.animation = 'none';
-            const finalVerdict = window.demoVerdict || 'APPROVED';
-            verdict.innerText = finalVerdict;
-
-            if (finalVerdict === 'REJECTED') {
-                verdict.style.color = '#fff';
-                risk.innerText = window.rejectReason === 'NO_ACADEMIC_MARKERS_FOUND' ? 'RISK: UNIDENTIFIABLE SOURCE' : 'RISK: DOCUMENT MANIPULATION';
-                risk.style.color = 'rgba(255, 255, 255, 0.8)';
-                document.querySelector('.decision-card').style.background = 'var(--danger)';
-                document.querySelector('.decision-card').style.borderColor = 'var(--danger)';
-                reportBtnContainer.style.display = 'none';
-            } else {
-                verdict.style.color = 'var(--success)';
-                verdict.innerText = 'VERIFIED';
-                document.querySelector('.decision-card').style.background = 'rgba(0, 255, 170, 0.1)';
-                document.querySelector('.decision-card').style.borderColor = 'var(--success)';
-                reportBtnContainer.style.display = 'block';
-                log('SYSTEM', 'Audit complete. Result: GOLD STANDARD.');
-            }
-
-            log('SYSTEM', 'Audit result committed to sovereign ledger.', '#00ffaa');
-
-            initBtn.disabled = false;
-            initBtn.style.opacity = 1;
-            initBtn.innerText = 'New Session';
-        }
-
-        initBtn.addEventListener('click', startAudit);
-
-        // --- Drag & Drop Implementation ---
-        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            dropZone.addEventListener(eventName, e => {
-                e.preventDefault();
-                e.stopPropagation();
-            }, false);
-        });
-
-        dropZone.addEventListener('dragover', () => {
-            dropZone.style.borderColor = 'var(--accent)';
-            dropZone.style.background = 'rgba(255, 255, 255, 0.05)';
-        });
-
-        dropZone.addEventListener('dragleave', () => {
-            dropZone.style.borderColor = 'var(--border)';
-            dropZone.style.background = 'transparent';
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                handleFiles(files);
-            }
-        });
-    </script>
-    <!-- CACHE_BUSTER_RECON_V3 -->
 </body>
+
 </html>
