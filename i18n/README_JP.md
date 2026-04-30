@@ -16,9 +16,9 @@
 
 | ð å°å | è¨èªãããªãã¯ã?|
 | :--- | :--- |
-| **ååã¢ã¡ãªã« / EMEA** | [ðºð¸ English](../README.md) â?[ð«ð· FranÃ§ais](README_FR.md) â?[ðªð¸ EspaÃ±ol](README_ES.md) â?[ð©ðª Deutsch](README_DE.md) â?[ðµð¹ PortuguÃªs](README_PT.md) |
-| **ã¢ã¸ã¢å¤ªå¹³æ´** | [ð­ð° ç¹é«ä¸­æ](README_ZH.md) â?[ð¯ðµ æ¥æ¬èª](README_JP.md) â?[ð°ð· íêµ­ì´](README_KR.md) |
-| **ä¸­æ±** | [ð¸ð¦ Ø§ÙØ¹Ø±Ø¨ÙØ© (RTL)](README_AR.md) |
+| **ååã¢ã¡ãªã« / EMEA** | [🇺🇸 English](../README.md) â?[🇫🇷 FranÃ§ais](README_FR.md) â?[🇪🇸 Español](README_ES.md) â?[🇩�� Deutsch](README_DE.md) â?[🇵🇹 PortuguÃªs](README_PT.md) |
+| **ã¢ã¸ã¢å¤ªå¹³æ´** | [🇭🇰 ç¹é«ä¸­æ](README_ZH.md) â?[🇯🇵 æ¥æ¬èª](README_JP.md) â?[🇰🇷 íêµ­ì´](README_KR.md) |
+| **ä¸­æ±** | [🇸🇦 Ø§ÙØ¹Ø±Ø¨ÙØ© (RTL)](README_AR.md) |
 
 ---
 
@@ -47,5 +47,5 @@ pip install -r requirements.txt
 ---
 
 <div align="center">
-  <p>Â© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All rights reserved.</p>
+  <p>© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All rights reserved.</p>
 </div>

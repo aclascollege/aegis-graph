@@ -1118,7 +1118,7 @@
             // --- 2026 Strict Mode Logic ---
             const academicKeywords = ['aclas', 'transcript', 'diploma', 'harvard', 'stanford', 'degree', '学位', '大学', '成绩单', '证书', 'mba', 'bba', 'phd', 'master', 'bachelor'];
             const isAcademic = academicKeywords.some(keyword => fileName.toLowerCase().includes(keyword));
-            const isKnownFraud = fileName.toLowerCase().includes('fake') || fileName.toLowerCase().includes('fraud') || fileName.toLowerCase().includes('Ã©ÂÂ Ã¥ÂÂ');
+            const isKnownFraud = fileName.toLowerCase().includes('fake') || fileName.toLowerCase().includes('fraud') || fileName.toLowerCase().includes('éÂÂ Ã¥ÂÂ');
 
             if (isKnownFraud || !isAcademic) {
                 window.demoVerdict = 'REJECTED';

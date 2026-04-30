@@ -177,4 +177,4 @@ Please do **not** open a public issue. Instead, email our security team at [info
 
 ---
 
-*Â© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.*
+*© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.*

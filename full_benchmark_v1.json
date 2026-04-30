@@ -1,0 +1,826 @@
+[
+    {
+        "institution_id": "https://ror.org/aclas_node_001",
+        "name": "Atlanta College of Liberal Arts and Sciences",
+        "reputation_score": 95.0,
+        "is_diploma_mill": false,
+        "status": "active",
+        "established": 1980
+    },
+    {
+        "institution_id": null,
+        "name": "Graham International University",
+        "reputation_score": 0.0,
+        "is_diploma_mill": true,
+        "status": "fraudulent",
+        "established": null
+    },
+    {
+        "institution_id": "https://ror.org/00xxxxxx",
+        "name": "Pacific Western University",
+        "reputation_score": 0.5,
+        "is_diploma_mill": false,
+        "status": "withdrawn",
+        "established": 1977
+    },
+    {
+        "institution_id": "MOCK-FRAUD-000",
+        "name": "Global Virtual University Branch 0",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-001",
+        "name": "Global Virtual University Branch 1",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-002",
+        "name": "Global Virtual University Branch 2",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-003",
+        "name": "Global Virtual University Branch 3",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-004",
+        "name": "Global Virtual University Branch 4",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-005",
+        "name": "Global Virtual University Branch 5",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-006",
+        "name": "Global Virtual University Branch 6",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-007",
+        "name": "Global Virtual University Branch 7",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-008",
+        "name": "Global Virtual University Branch 8",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-009",
+        "name": "Global Virtual University Branch 9",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-010",
+        "name": "Global Virtual University Branch 10",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-011",
+        "name": "Global Virtual University Branch 11",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-012",
+        "name": "Global Virtual University Branch 12",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-013",
+        "name": "Global Virtual University Branch 13",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-014",
+        "name": "Global Virtual University Branch 14",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-015",
+        "name": "Global Virtual University Branch 15",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-016",
+        "name": "Global Virtual University Branch 16",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-017",
+        "name": "Global Virtual University Branch 17",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-018",
+        "name": "Global Virtual University Branch 18",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-019",
+        "name": "Global Virtual University Branch 19",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-020",
+        "name": "Global Virtual University Branch 20",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-021",
+        "name": "Global Virtual University Branch 21",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-022",
+        "name": "Global Virtual University Branch 22",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-023",
+        "name": "Global Virtual University Branch 23",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-024",
+        "name": "Global Virtual University Branch 24",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-025",
+        "name": "Global Virtual University Branch 25",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-026",
+        "name": "Global Virtual University Branch 26",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-027",
+        "name": "Global Virtual University Branch 27",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-028",
+        "name": "Global Virtual University Branch 28",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-029",
+        "name": "Global Virtual University Branch 29",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-030",
+        "name": "Global Virtual University Branch 30",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-031",
+        "name": "Global Virtual University Branch 31",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-032",
+        "name": "Global Virtual University Branch 32",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-033",
+        "name": "Global Virtual University Branch 33",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-034",
+        "name": "Global Virtual University Branch 34",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-035",
+        "name": "Global Virtual University Branch 35",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-036",
+        "name": "Global Virtual University Branch 36",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-037",
+        "name": "Global Virtual University Branch 37",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-038",
+        "name": "Global Virtual University Branch 38",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-039",
+        "name": "Global Virtual University Branch 39",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-040",
+        "name": "Global Virtual University Branch 40",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-041",
+        "name": "Global Virtual University Branch 41",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-042",
+        "name": "Global Virtual University Branch 42",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-043",
+        "name": "Global Virtual University Branch 43",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-044",
+        "name": "Global Virtual University Branch 44",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-045",
+        "name": "Global Virtual University Branch 45",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-046",
+        "name": "Global Virtual University Branch 46",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-047",
+        "name": "Global Virtual University Branch 47",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-048",
+        "name": "Global Virtual University Branch 48",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-049",
+        "name": "Global Virtual University Branch 49",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-050",
+        "name": "Global Virtual University Branch 50",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-051",
+        "name": "Global Virtual University Branch 51",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-052",
+        "name": "Global Virtual University Branch 52",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-053",
+        "name": "Global Virtual University Branch 53",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-054",
+        "name": "Global Virtual University Branch 54",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-055",
+        "name": "Global Virtual University Branch 55",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-056",
+        "name": "Global Virtual University Branch 56",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-057",
+        "name": "Global Virtual University Branch 57",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-058",
+        "name": "Global Virtual University Branch 58",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-059",
+        "name": "Global Virtual University Branch 59",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-060",
+        "name": "Global Virtual University Branch 60",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-061",
+        "name": "Global Virtual University Branch 61",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-062",
+        "name": "Global Virtual University Branch 62",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-063",
+        "name": "Global Virtual University Branch 63",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-064",
+        "name": "Global Virtual University Branch 64",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-065",
+        "name": "Global Virtual University Branch 65",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-066",
+        "name": "Global Virtual University Branch 66",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-067",
+        "name": "Global Virtual University Branch 67",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-068",
+        "name": "Global Virtual University Branch 68",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-069",
+        "name": "Global Virtual University Branch 69",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-070",
+        "name": "Global Virtual University Branch 70",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-071",
+        "name": "Global Virtual University Branch 71",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-072",
+        "name": "Global Virtual University Branch 72",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-073",
+        "name": "Global Virtual University Branch 73",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-074",
+        "name": "Global Virtual University Branch 74",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-075",
+        "name": "Global Virtual University Branch 75",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-076",
+        "name": "Global Virtual University Branch 76",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-077",
+        "name": "Global Virtual University Branch 77",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-078",
+        "name": "Global Virtual University Branch 78",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-079",
+        "name": "Global Virtual University Branch 79",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-080",
+        "name": "Global Virtual University Branch 80",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-081",
+        "name": "Global Virtual University Branch 81",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-082",
+        "name": "Global Virtual University Branch 82",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-083",
+        "name": "Global Virtual University Branch 83",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-084",
+        "name": "Global Virtual University Branch 84",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-085",
+        "name": "Global Virtual University Branch 85",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-086",
+        "name": "Global Virtual University Branch 86",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-087",
+        "name": "Global Virtual University Branch 87",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-088",
+        "name": "Global Virtual University Branch 88",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-089",
+        "name": "Global Virtual University Branch 89",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-090",
+        "name": "Global Virtual University Branch 90",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-091",
+        "name": "Global Virtual University Branch 91",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-092",
+        "name": "Global Virtual University Branch 92",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-093",
+        "name": "Global Virtual University Branch 93",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-094",
+        "name": "Global Virtual University Branch 94",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-095",
+        "name": "Global Virtual University Branch 95",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-096",
+        "name": "Global Virtual University Branch 96",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-097",
+        "name": "Global Virtual University Branch 97",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-098",
+        "name": "Global Virtual University Branch 98",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    },
+    {
+        "institution_id": "MOCK-FRAUD-099",
+        "name": "Global Virtual University Branch 99",
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "status": "blacklisted",
+        "established": 2024
+    }
+]
