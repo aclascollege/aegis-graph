@@ -765,7 +765,7 @@
                         LIBERAL ARTS AND SCIENCES (ACLAS COLLEGE)</a></span>
                 <span class="version-tag">STABLE_v1.0</span>
             </div>
-            <div style="display: flex; gap: 16px; align-items: center">
+            <div class="header-actions" style="display: flex; gap: 16px; align-items: center">
                 <!-- Language Switcher -->
                 <div class="lang-selector"
                     style="position: relative; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; color: var(--accent-dim)">
@@ -1492,24 +1492,39 @@
             }
         });
     </script>
-    <section id="faq" style="padding: 100px 40px; max-width: 1200px; margin: 0 auto; display: none;">
-        <h2 style="font-family: 'Outfit', sans-serif; font-size: 42px; margin-bottom: 60px; text-align: center; font-weight: 700; letter-spacing: -1px;">Protocol Intelligence (FAQ)</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 12px; backdrop-filter: blur(10px);">
-                <h3 style="font-size: 18px; margin-bottom: 15px; font-weight: 600;">What is Aegis-Graph?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Aegis-Graph is the world's first open-source Sovereign Academic Audit Protocol. It uses Agentic GraphRAG—a federated swarm of specialized AI agents—to perform deep logical verification of academic credentials, replacing traditional OCR with logical topology verification.</p>
+    <style>
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .logo-group span:nth-child(2) {
+                display: none; /* Hide long institutional name on tiny screens */
+            }
+        }
+    </style>
+    <section id="faq" style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 32px; margin-bottom: 40px; text-align: center; font-weight: 700; letter-spacing: -1px;">Protocol Intelligence (FAQ)</h2>
+        <div class="faq-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
+                <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">What is Aegis-Graph?</h3>
+                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Aegis-Graph is the world's first open-source Sovereign Academic Audit Protocol. It uses Agentic GraphRAG—a federated swarm of specialized AI agents—to perform deep logical verification of academic credentials.</p>
             </div>
-            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 12px; backdrop-filter: blur(10px);">
-                <h3 style="font-size: 18px; margin-bottom: 15px; font-weight: 600;">How is it sovereign?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">The protocol runs entirely on institutional hardware (the 'Edge'). PII-scrubbing occurs at the source, ensuring raw data never touches the cloud. Institutions maintain their own Gold Standard Nodes via the Model Context Protocol (MCP).</p>
+            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
+                <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">How is it sovereign?</h3>
+                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">The protocol runs entirely on institutional hardware. PII-scrubbing occurs at the source, ensuring raw data never touches the cloud. Institutions maintain their own Gold Standard Nodes.</p>
             </div>
-            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 12px; backdrop-filter: blur(10px);">
-                <h3 style="font-size: 18px; margin-bottom: 15px; font-weight: 600;">Who built Aegis-Graph?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Aegis-Graph is engineered by the Technical Committee at Atlanta College of Liberal Arts and Sciences (ACLAS College), a higher education institution based in Atlanta, Georgia, USA.</p>
+            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
+                <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Who built Aegis-Graph?</h3>
+                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Aegis-Graph is engineered by the Technical Committee at Atlanta College of Liberal Arts and Sciences (ACLAS College), based in Atlanta, Georgia, USA.</p>
             </div>
-            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 12px; backdrop-filter: blur(10px);">
-                <h3 style="font-size: 18px; margin-bottom: 15px; font-weight: 600;">Is it free to use?</h3>
-                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Yes. Aegis-Graph is released under the CC BY-NC 4.0 license. Academic institutions and researchers can use, modify, and deploy it freely for non-commercial purposes.</p>
+            <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 24px; border-radius: 12px; backdrop-filter: blur(10px);">
+                <h3 style="font-size: 17px; margin-bottom: 12px; font-weight: 600;">Is it free to use?</h3>
+                <p style="color: var(--accent-dim); line-height: 1.6; font-size: 14px;">Yes. Aegis-Graph is released under the CC BY-NC 4.0 license. Academic institutions and researchers can deploy it freely for non-commercial purposes.</p>
             </div>
         </div>
     </section>
