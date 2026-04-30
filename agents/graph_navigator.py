@@ -72,8 +72,17 @@ class GraphNavigator:
         # Priority 1: Remote API
         remote_data = await self.fetch_remote(institution_name)
         if remote_data:
-            print(f"[LIVE] [Graph-Navigator] Live data retrieved from ROR network.")
-            return InstitutionProfile(**remote_data)
+            remote_name = remote_data.get("name", "")
+            # Validate: ensure the ROR result actually matches our query
+            query_words = set(institution_name.lower().split())
+            result_words = set(remote_name.lower().split()) if remote_name else set()
+            overlap = query_words & result_words
+            
+            if len(overlap) >= 2 and remote_name != "Unknown Institution":
+                print(f"[LIVE] [Graph-Navigator] Verified match from ROR: {remote_name}")
+                return InstitutionProfile(**remote_data)
+            else:
+                print(f"[SKIP] [Graph-Navigator] ROR result '{remote_name}' does not match query. Falling back.")
             
         # Priority 2: Local Gold Standard Cache
         local_data = self._get_local_cache(institution_name)
@@ -88,10 +97,11 @@ class GraphNavigator:
         print(f"⚠️ [Graph-Navigator] No verified node found. Using heuristic estimation.")
         return InstitutionProfile(name=institution_name, status="unverified")
 
+
 if __name__ == "__main__":
     # Test script
     async def run():
         nav = GraphNavigator()
         res = await nav.navigate("Atlanta College of Liberal Arts and Sciences")
-        print(result.json())
+        print(res.model_dump_json(indent=2))
     asyncio.run(run())
