@@ -13,6 +13,7 @@
 * [Chapter 5: Cryptography & Privacy](en/chapter5-cryptography-and-privacy.md)
 * [Chapter 6: Token Economics](en/chapter6-token-economics.md)
 * [Chapter 7: Developer API](en/chapter7-developer-api.md)
+* [❓ FAQ](en/faq.md)
 
 ### 🇭🇰 繁體中文
 * [簡介 (Introduction)](zh/README.md)
