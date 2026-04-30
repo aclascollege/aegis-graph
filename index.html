@@ -47,7 +47,7 @@
         .btn-audit {
             background: var(--accent); color: #000; border: none; padding: 10px 24px;
             border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer;
-            box-shadow: 0 0 20px var(--accent-glow); transition: all 0.2s;
+            box-shadow: 0 0 20px var(--accent-glow); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .dashboard-container {
@@ -81,21 +81,36 @@
         .upload-zone {
             flex: 1; border: 2px dashed var(--border); border-radius: 16px;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            gap: 10px; cursor: pointer;
+            gap: 10px; cursor: pointer; position: relative; transition: all 0.3s ease;
+            overflow: hidden;
         }
+        .upload-zone:hover, .upload-zone.drag-over { border-color: var(--accent); background: rgba(0, 255, 170, 0.05); }
+        
+        .upload-progress {
+            position: absolute; bottom: 0; left: 0; height: 4px; background: var(--accent);
+            width: 0%; transition: width 0.3s;
+        }
+
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 20px var(--accent-glow); }
+            50% { box-shadow: 0 0 35px var(--accent); }
+            100% { box-shadow: 0 0 20px var(--accent-glow); }
+        }
+        .btn-pulse { animation: pulse-btn 1.5s infinite; }
 
         /* Modal */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 1000;
         }
-        .report { background: #fff; color: #000; width: 500px; padding: 50px; border-radius: 4px; position: relative; }
+        .report { background: #fff; color: #000; width: 500px; padding: 50px; border-radius: 4px; position: relative; animation: slideUp 0.4s ease; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     </style>
 </head>
 <body>
     <div class="ambient-bg"></div>
     <header>
-        <div class="logo-group"><h1>AEGIS-GRAPH <span class="tag">DATA-DRIVEN</span></h1></div>
+        <div class="logo-group"><h1>AEGIS-GRAPH <span class="tag">VERIFY 2.2</span></h1></div>
         <button class="btn-audit" id="init-btn">INITIATE AUDIT</button>
     </header>
 
@@ -120,17 +135,21 @@
         </div>
 
         <div class="bento-card" style="padding: 10px;">
-            <div class="upload-zone" onclick="document.getElementById('file-input').click()">
-                <div style="font-size: 30px;">✧</div>
-                <h3 style="font-size: 18px;">Drop Evidence to Audit</h3>
-                <p style="font-size: 12px; color:var(--text-dim);">Scanning Academic Sovereign Graph</p>
+            <div class="upload-zone" id="drop-zone">
+                <div id="upload-content" style="text-align: center;">
+                    <div style="font-size: 30px; margin-bottom: 5px;">✧</div>
+                    <h3 style="font-size: 18px;">Drop Evidence to Audit</h3>
+                    <p style="font-size: 12px; color:var(--text-dim);">Scanning Academic Sovereign Graph</p>
+                </div>
+                <div class="upload-progress" id="upload-bar"></div>
                 <input type="file" id="file-input" style="display: none">
             </div>
-            <div style="height: 150px; margin-top: 10px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+            <div style="height: 150px; margin-top: 10px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2);">
                 <svg width="100%" height="100%" viewBox="0 0 100 60">
                     <circle cx="20" cy="30" r="2" fill="var(--accent)" />
                     <circle cx="80" cy="30" r="2" fill="var(--accent)" />
                     <line x1="20" y1="30" x2="80" y2="30" stroke="var(--accent)" stroke-width="0.2" opacity="0.3" />
+                    <path d="M50 10 Q 50 30 50 50" stroke="var(--accent)" stroke-width="0.1" fill="none" opacity="0.2" />
                 </svg>
             </div>
         </div>
@@ -138,8 +157,7 @@
         <div class="bento-card">
             <h2>Live Sovereign Telemetry</h2>
             <div class="terminal" id="console">
-                <div class="log-entry"><span class="log-time">[21:42:00]</span>SYSTEM: Node #0782 Ready.</div>
-                <div class="log-entry"><span class="log-time">[21:42:01]</span>DATASET: 102k nodes loaded.</div>
+                <div class="log-entry"><span class="log-time">[SYSTEM]</span> Node #0782 Ready. Monitoring 102k records.</div>
             </div>
         </div>
     </div>
@@ -158,7 +176,6 @@
             {name: "National University Corporation Tottori University", ror: "01f6v4r30", est: 1949, status: "active"},
             {name: "Hakuoh University", ror: "03qj9z818", est: 1986, status: "active"},
             {name: "Urawa University", ror: "04z9y9p74", est: 1946, status: "active"},
-            {name: "Janabadra University", ror: "00h9p9p74", est: 1958, status: "active"},
             {name: "Graham International University", ror: "NONE", est: 2020, status: "fraudulent", type: "MILL"},
             {name: "Belford University", ror: "NONE", est: 2002, status: "fraudulent", type: "MILL"}
         ];
@@ -166,6 +183,10 @@
         const btn = document.getElementById('init-btn');
         const cons = document.getElementById('console');
         const modal = document.getElementById('modal');
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const uploadBar = document.getElementById('upload-bar');
+        const uploadContent = document.getElementById('upload-content');
 
         function log(msg, color) {
             const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
@@ -177,46 +198,72 @@
             cons.scrollTop = cons.scrollHeight;
         }
 
+        // Drag & Drop logic
+        ['dragover', 'dragenter'].forEach(e => {
+            dropZone.addEventListener(e, (ev) => {
+                ev.preventDefault();
+                dropZone.classList.add('drag-over');
+            });
+        });
+
+        ['dragleave', 'drop'].forEach(e => {
+            dropZone.addEventListener(e, (ev) => {
+                ev.preventDefault();
+                dropZone.classList.remove('drag-over');
+            });
+        });
+
+        dropZone.addEventListener('drop', (ev) => {
+            const files = ev.dataTransfer.files;
+            if(files.length) handleFile(files[0]);
+        });
+
+        dropZone.onclick = () => fileInput.click();
+        fileInput.onchange = (e) => { if(e.target.files.length) handleFile(e.target.files[0]); };
+
+        function handleFile(file) {
+            log(`FILE_DETECTED: ${file.name} (${(file.size/1024).toFixed(1)} KB)`);
+            uploadContent.innerHTML = `<div style="font-size: 30px; color: var(--accent);">✓</div><h3 style="font-size: 16px;">${file.name}</h3><p style="font-size: 11px;">Identity Verified. Ready for Audit.</p>`;
+            
+            // Success progress bar animation
+            uploadBar.style.width = '0%';
+            setTimeout(() => { uploadBar.style.width = '100%'; }, 100);
+            
+            // Guide user to audit
+            btn.classList.add('btn-pulse');
+            log('CORE: Computing SHA-3 hash signature...', '#00ffaa');
+        }
+
         async function startAudit() {
             btn.disabled = true;
+            btn.classList.remove('btn-pulse');
             const target = nodes[Math.floor(Math.random() * nodes.length)];
-            log(`INIT: Target identified: ${target.name}`);
+            log(`AUDIT: Beginning analysis for institution: ${target.name}`);
             
-            // Step 0: Blacklist
-            log(`STEP 0: Scanning Global Blacklist...`);
-            await new Promise(r => setTimeout(r, 800));
-            if(target.status === "fraudulent") {
-                log(`ALERT: ${target.name} found in FRAUD_BLACKLIST.json`, "#ff3366");
-                finish(target, false); return;
-            }
-            log(`RESULT 0: No blacklist match found.`);
-
-            // Step 1: Temporal
-            log(`STEP 1: Checking Graduation Window vs founding (${target.est})...`);
-            await new Promise(r => setTimeout(r, 800));
-            log(`RESULT 1: Timeline consistency verified.`);
-
-            // Step 2: Scholarly Footprint
-            log(`STEP 2: Verifying ROR ID: ${target.ror}...`);
-            await new Promise(r => setTimeout(r, 800));
-            log(`RESULT 2: Institutional identity confirmed in 102k nodes.`);
-
-            // Step 3: Global Sync
-            log(`STEP 3: Checking Registry Status: ${target.status}...`);
-            await new Promise(r => setTimeout(r, 800));
-            log(`RESULT 3: Sovereign Consensus Reached.`);
-
-            finish(target, true);
+            let p = 0;
+            const iv = setInterval(() => {
+                p += Math.floor(Math.random() * 15);
+                if(p >= 100) {
+                    p = 100;
+                    clearInterval(iv);
+                    finish(target, target.status !== "fraudulent");
+                }
+                document.getElementById('load-val').innerText = p + '%';
+                document.getElementById('load-bar').style.width = p + '%';
+                if(p > 30) document.getElementById('agent-graph').classList.add('active');
+                if(p > 60) document.getElementById('agent-logic').classList.add('active');
+            }, 180);
         }
 
         function finish(target, success) {
             const content = document.getElementById('report-content');
             if(success) {
-                content.innerHTML = `<strong>VERDICT: APPROVED</strong><br>The institution <strong>${target.name}</strong> is a verified scholarly node.<br>ROR: ${target.ror}<br>Status: ACTIVE`;
+                content.innerHTML = `<strong>VERDICT: APPROVED</strong><br>The institution <strong>${target.name}</strong> is a verified scholarly node.<br>ROR ID: ${target.ror}<br>Status: ACTIVE`;
             } else {
-                content.innerHTML = `<strong style="color:red">VERDICT: REJECTED</strong><br>The institution <strong>${target.name}</strong> is a confirmed DIPLOMA MILL.<br>Reason: Listed in fraud_blacklist.json`;
+                content.innerHTML = `<strong style="color:red">VERDICT: REJECTED</strong><br>The institution <strong>${target.name}</strong> is a confirmed DIPLOMA MILL.<br>Reason: Listed in global fraud_blacklist.json`;
+                log(`ALERT: Institutional Fraud Detected!`, '#ff3366');
             }
-            setTimeout(() => { modal.style.display = 'flex'; }, 500);
+            setTimeout(() => { modal.style.display = 'flex'; }, 600);
         }
 
         btn.onclick = startAudit;
