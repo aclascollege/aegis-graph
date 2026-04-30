@@ -28,9 +28,14 @@ async def run_professional_demo():
     print("\n[SCENARIO B] Verifying Suspect Institution...")
     result_b = await engine.execute_audit("fake_degree_sample.png")
 
+    # SCENARIO 3: Known Diploma Mill / Degree Factory
+    print("\n[SCENARIO C] Verifying Graham International University Credential...")
+    result_c = await engine.execute_audit("graham_university_transcript.pdf")
+
     print("\n" + "="*70)
     print("   DEMO COMPLETE // DATA ANCHORED TO ACLAS COMPLIANCE LEDGER   ")
     print("="*70)
+
 
 if __name__ == "__main__":
     try:
