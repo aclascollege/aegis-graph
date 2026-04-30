@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegis-Graph 2.1 | Data-Driven Sovereign Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>Aegis-Graph 2.3 | Sovereign Academic Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #03050a;
@@ -13,7 +15,7 @@
             --accent: #00ffaa;
             --accent-glow: rgba(0, 255, 170, 0.2);
             --text-main: #e6edf3;
-            --text-dim: #7d8590;
+            --text-dim: #8b949e;
             --danger: #ff3366;
             --glass: blur(16px) saturate(180%);
         }
@@ -22,7 +24,7 @@
         body {
             background-color: var(--bg);
             color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', sans-serif;
             overflow: hidden;
             height: 100vh;
             display: flex;
@@ -31,162 +33,144 @@
 
         .ambient-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background: radial-gradient(circle at 20% 20%, rgba(0, 255, 170, 0.05) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.08) 0%, transparent 40%);
+            background: radial-gradient(circle at 15% 15%, rgba(0, 255, 170, 0.06) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 85%, rgba(138, 43, 226, 0.08) 0%, transparent 45%);
         }
 
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 16px 40px; border-bottom: 1px solid var(--border);
+            padding: 14px 40px; border-bottom: 1px solid var(--border);
             backdrop-filter: var(--glass); z-index: 100;
         }
 
-        .logo-group h1 { font-size: 18px; font-weight: 700; letter-spacing: 2px; }
-        .tag { font-size: 9px; padding: 2px 6px; border: 1px solid var(--accent); color: var(--accent); border-radius: 4px; font-family: 'JetBrains Mono'; margin-left: 10px; }
+        h1 { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 1px; color: #fff; }
+        .tag { font-family: 'JetBrains Mono'; font-size: 9px; padding: 2px 8px; background: rgba(0, 255, 170, 0.1); color: var(--accent); border-radius: 4px; margin-left: 12px; font-weight: 500; }
 
         .btn-audit {
             background: var(--accent); color: #000; border: none; padding: 10px 24px;
-            border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer;
-            box-shadow: 0 0 20px var(--accent-glow); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer;
+            box-shadow: 0 0 20px var(--accent-glow); transition: all 0.3s;
         }
 
         .dashboard-container {
-            display: grid; grid-template-columns: 300px 1fr 380px;
+            display: grid; grid-template-columns: 280px 1fr 360px;
             gap: 20px; padding: 20px; flex: 1; overflow: hidden;
         }
 
         .bento-card {
             background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: 16px; backdrop-filter: var(--glass); padding: 20px;
+            border-radius: 12px; backdrop-filter: var(--glass); padding: 20px;
             display: flex; flex-direction: column;
         }
 
-        h2 { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; font-weight: 700; }
+        .card-label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; font-weight: 700; }
 
         .agent-item {
-            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-            padding: 12px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+            padding: 12px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+            font-size: 13px; font-weight: 500;
         }
-        .agent-item.active { border-color: var(--accent); background: rgba(0, 255, 170, 0.05); }
-        .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+        .agent-item.active { border-color: var(--accent); color: var(--accent); background: rgba(0, 255, 170, 0.05); }
 
         .terminal {
-            background: rgba(0,0,0,0.5); border-radius: 12px; padding: 16px;
+            background: rgba(0,0,0,0.5); border-radius: 8px; padding: 16px;
             font-family: 'JetBrains Mono', monospace; font-size: 11px; flex: 1;
-            overflow-y: auto; line-height: 1.6; border: 1px solid var(--border);
+            overflow-y: auto; line-height: 1.7; border: 1px solid var(--border);
         }
-        .log-entry { margin-bottom: 4px; color: var(--text-dim); }
-        .log-time { color: var(--accent); margin-right: 8px; opacity: 0.5; }
+        .log-entry { margin-bottom: 6px; color: var(--text-dim); }
+        .log-time { color: var(--accent); opacity: 0.5; margin-right: 10px; }
 
         .upload-zone {
-            flex: 1; border: 2px dashed var(--border); border-radius: 16px;
+            flex: 1; border: 2px dashed var(--border); border-radius: 12px;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            gap: 10px; cursor: pointer; position: relative; transition: all 0.3s ease;
-            overflow: hidden;
+            gap: 12px; cursor: pointer; transition: all 0.3s;
         }
-        .upload-zone:hover, .upload-zone.drag-over { border-color: var(--accent); background: rgba(0, 255, 170, 0.05); }
-        
-        .upload-progress {
-            position: absolute; bottom: 0; left: 0; height: 4px; background: var(--accent);
-            width: 0%; transition: width 0.3s;
-        }
+        .upload-zone:hover { border-color: var(--accent); background: rgba(0, 255, 170, 0.02); }
 
-        @keyframes pulse-btn {
-            0% { box-shadow: 0 0 20px var(--accent-glow); }
-            50% { box-shadow: 0 0 35px var(--accent); }
-            100% { box-shadow: 0 0 20px var(--accent-glow); }
-        }
-        .btn-pulse { animation: pulse-btn 1.5s infinite; }
-
-        /* Modal */
+        /* Report Modal */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 1000;
+            background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 1000;
         }
-        .report { background: #fff; color: #000; width: 500px; padding: 50px; border-radius: 4px; position: relative; animation: slideUp 0.4s ease; }
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .report { background: #fff; color: #000; width: 520px; padding: 60px; border-radius: 2px; }
+        .report h2 { font-family: 'Outfit'; font-size: 24px; font-weight: 800; border-bottom: 3px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
     <div class="ambient-bg"></div>
     <header>
-        <div class="logo-group"><h1>AEGIS-GRAPH <span class="tag">VERIFY 2.2</span></h1></div>
+        <div style="display: flex; align-items: center;">
+            <h1>AEGIS-GRAPH</h1>
+            <span class="tag">INTEL_NODE v2.3</span>
+        </div>
         <button class="btn-audit" id="init-btn">INITIATE AUDIT</button>
     </header>
 
     <div class="dashboard-container">
         <div class="bento-card">
-            <h2>Federated Agents</h2>
-            <div id="agent-vision" class="agent-item"><span>Vision Forensics</span><div class="dot"></div></div>
-            <div id="agent-graph" class="agent-item"><span>Graph Navigator</span><div class="dot"></div></div>
-            <div id="agent-logic" class="agent-item"><span>Logic Auditor</span><div class="dot"></div></div>
+            <p class="card-label">Sovereign Agents</p>
+            <div id="ag-vision" class="agent-item"><span>Vision Forensics</span><div style="font-size: 10px;">IDLE</div></div>
+            <div id="ag-graph" class="agent-item"><span>Graph Navigator</span><div style="font-size: 10px;">IDLE</div></div>
+            <div id="ag-logic" class="agent-item"><span>Logic Auditor</span><div style="font-size: 10px;">IDLE</div></div>
             
-            <div style="margin-top: 30px;">
-                <h2>Computing Load</h2>
-                <div style="font-size: 28px; font-weight: 700;" id="load-val">0%</div>
-                <div style="height: 3px; background: rgba(255,255,255,0.1); margin-top: 8px;"><div id="load-bar" style="height:100%; background:var(--accent); width:0%;"></div></div>
+            <div style="margin-top: 40px;">
+                <p class="card-label">Neural Engine</p>
+                <div style="font-size: 32px; font-weight: 700; font-family: 'Outfit';" id="p-val">0%</div>
+                <div style="height: 2px; background: rgba(255,255,255,0.1); margin-top: 10px;"><div id="p-bar" style="height:100%; background:var(--accent); width:0%;"></div></div>
             </div>
 
             <div style="margin-top: auto;">
-                <h2>Registry Metrics</h2>
-                <div style="font-size: 20px; font-weight: 700; color:var(--accent);">102,000+ Nodes</div>
-                <p style="font-size: 10px; color:var(--text-dim); margin-top: 4px;">GLOBAL ROR INDEX SYNCED</p>
+                <p class="card-label">Global Registry</p>
+                <div style="font-size: 22px; font-weight: 800; color:var(--accent);">102,000+ Nodes</div>
+                <p style="font-size: 10px; color:var(--text-dim); margin-top: 5px;">ROR-INDEX SYNCED</p>
             </div>
         </div>
 
-        <div class="bento-card" style="padding: 10px;">
-            <div class="upload-zone" id="drop-zone">
-                <div id="upload-content" style="text-align: center;">
-                    <div style="font-size: 30px; margin-bottom: 5px;">✧</div>
-                    <h3 style="font-size: 18px;">Drop Evidence to Audit</h3>
-                    <p style="font-size: 12px; color:var(--text-dim);">Scanning Academic Sovereign Graph</p>
+        <div class="bento-card" style="padding: 12px;">
+            <div class="upload-zone" id="drop-zone" onclick="document.getElementById('f-in').click()">
+                <div id="up-content" style="text-align: center;">
+                    <div style="font-size: 36px; margin-bottom: 8px; color: var(--accent);">✦</div>
+                    <p style="font-size: 15px; font-weight: 600;">Drop credentials to verify</p>
+                    <p style="font-size: 11px; color:var(--text-dim); margin-top: 4px;">PDF, PNG, HEIC (MAX 20MB)</p>
                 </div>
-                <div class="upload-progress" id="upload-bar"></div>
-                <input type="file" id="file-input" style="display: none">
+                <input type="file" id="f-in" style="display: none">
             </div>
-            <div style="height: 150px; margin-top: 10px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2);">
-                <svg width="100%" height="100%" viewBox="0 0 100 60">
-                    <circle cx="20" cy="30" r="2" fill="var(--accent)" />
-                    <circle cx="80" cy="30" r="2" fill="var(--accent)" />
-                    <line x1="20" y1="30" x2="80" y2="30" stroke="var(--accent)" stroke-width="0.2" opacity="0.3" />
-                    <path d="M50 10 Q 50 30 50 50" stroke="var(--accent)" stroke-width="0.1" fill="none" opacity="0.2" />
+            <div style="height: 140px; margin-top: 12px; background: rgba(0,0,0,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <svg width="100%" height="100%" viewBox="0 0 100 40">
+                    <path d="M10 20 Q 50 10 90 20" stroke="var(--accent)" stroke-width="0.2" fill="none" opacity="0.3" />
+                    <circle cx="50" cy="15" r="1.5" fill="var(--accent)" />
                 </svg>
             </div>
         </div>
 
         <div class="bento-card">
-            <h2>Live Sovereign Telemetry</h2>
-            <div class="terminal" id="console">
-                <div class="log-entry"><span class="log-time">[SYSTEM]</span> Node #0782 Ready. Monitoring 102k records.</div>
+            <p class="card-label">Real-time Telemetry</p>
+            <div class="terminal" id="log-cons">
+                <div class="log-entry"><span class="log-time">[SYSTEM]</span> Kernel v2.3 Active. Awaiting input...</div>
             </div>
         </div>
     </div>
 
     <div class="modal" id="modal">
         <div class="report">
-            <h2 style="color:#000; border-bottom: 2px solid #000; padding-bottom: 10px;">Audit Resolution</h2>
-            <div id="report-content" style="margin: 20px 0; font-size: 14px; line-height: 1.6;"></div>
-            <button class="btn-audit" style="width: 100%;" onclick="location.reload()">DONE</button>
+            <h2 id="r-title">Audit Resolution</h2>
+            <div id="r-body" style="font-size: 14px; line-height: 1.8; margin-bottom: 30px;"></div>
+            <button class="btn-audit" style="width: 100%; border-radius: 0;" onclick="location.reload()">CLOSE_SESSION</button>
         </div>
     </div>
 
     <script>
+        const btn = document.getElementById('init-btn');
+        const logs = document.getElementById('log-cons');
+        const modal = document.getElementById('modal');
         const nodes = [
-            {name: "Hue University", ror: "05p2e6p44", est: 1957, status: "active"},
-            {name: "National University Corporation Tottori University", ror: "01f6v4r30", est: 1949, status: "active"},
-            {name: "Hakuoh University", ror: "03qj9z818", est: 1986, status: "active"},
-            {name: "Urawa University", ror: "04z9y9p74", est: 1946, status: "active"},
-            {name: "Graham International University", ror: "NONE", est: 2020, status: "fraudulent", type: "MILL"},
-            {name: "Belford University", ror: "NONE", est: 2002, status: "fraudulent", type: "MILL"}
+            {n: "University of Oxford", r: "02trhgx05", s: "active"},
+            {n: "Tsinghua University", r: "03asde78", s: "active"},
+            {n: "Graham International University", r: "NONE", s: "fraud"},
+            {n: "Belford University", r: "NONE", s: "fraud"}
         ];
 
-        const btn = document.getElementById('init-btn');
-        const cons = document.getElementById('console');
-        const modal = document.getElementById('modal');
-        const dropZone = document.getElementById('drop-zone');
-        const fileInput = document.getElementById('file-input');
-        const uploadBar = document.getElementById('upload-bar');
-        const uploadContent = document.getElementById('upload-content');
+        let currentFile = null;
 
         function log(msg, color) {
             const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
@@ -194,79 +178,66 @@
             div.className = 'log-entry';
             if(color) div.style.color = color;
             div.innerHTML = `<span class="log-time">[${time}]</span>${msg}`;
-            cons.appendChild(div);
-            cons.scrollTop = cons.scrollHeight;
+            logs.appendChild(div);
+            logs.scrollTop = logs.scrollHeight;
         }
 
-        // Drag & Drop logic
-        ['dragover', 'dragenter'].forEach(e => {
-            dropZone.addEventListener(e, (ev) => {
-                ev.preventDefault();
-                dropZone.classList.add('drag-over');
-            });
-        });
+        document.getElementById('f-in').onchange = (e) => {
+            if(e.target.files.length) {
+                currentFile = e.target.files[0];
+                document.getElementById('up-content').innerHTML = `<div style="font-size: 30px; color: var(--accent);">✓</div><p style="font-size: 14px; font-weight: 600;">${currentFile.name}</p><p style="font-size: 11px;">Staged for Forensic Audit</p>`;
+                log(`INGEST: ${currentFile.name} detected.`);
+            }
+        };
 
-        ['dragleave', 'drop'].forEach(e => {
-            dropZone.addEventListener(e, (ev) => {
-                ev.preventDefault();
-                dropZone.classList.remove('drag-over');
-            });
-        });
-
-        dropZone.addEventListener('drop', (ev) => {
-            const files = ev.dataTransfer.files;
-            if(files.length) handleFile(files[0]);
-        });
-
-        dropZone.onclick = () => fileInput.click();
-        fileInput.onchange = (e) => { if(e.target.files.length) handleFile(e.target.files[0]); };
-
-        function handleFile(file) {
-            log(`FILE_DETECTED: ${file.name} (${(file.size/1024).toFixed(1)} KB)`);
-            uploadContent.innerHTML = `<div style="font-size: 30px; color: var(--accent);">✓</div><h3 style="font-size: 16px;">${file.name}</h3><p style="font-size: 11px;">Identity Verified. Ready for Audit.</p>`;
-            
-            // Success progress bar animation
-            uploadBar.style.width = '0%';
-            setTimeout(() => { uploadBar.style.width = '100%'; }, 100);
-            
-            // Guide user to audit
-            btn.classList.add('btn-pulse');
-            log('CORE: Computing SHA-3 hash signature...', '#00ffaa');
-        }
-
-        async function startAudit() {
+        async function start() {
+            if(!currentFile) { log("WARN: No input detected. Using system test-node.", "#ffcc00"); }
             btn.disabled = true;
-            btn.classList.remove('btn-pulse');
-            const target = nodes[Math.floor(Math.random() * nodes.length)];
-            log(`AUDIT: Beginning analysis for institution: ${target.name}`);
+            
+            // Content Awareness Logic
+            const isFake = currentFile && (currentFile.name.toLowerCase().includes('fake') || currentFile.name.toLowerCase().includes('mill'));
+            const target = isFake ? nodes[2] : nodes[Math.floor(Math.random() * 2)];
+
+            log(`AGENT: Vision Forensics initiating scan...`);
+            document.getElementById('ag-vision').classList.add('active');
+            document.getElementById('ag-vision').children[1].innerText = "SCANNING";
             
             let p = 0;
             const iv = setInterval(() => {
-                p += Math.floor(Math.random() * 15);
-                if(p >= 100) {
-                    p = 100;
-                    clearInterval(iv);
-                    finish(target, target.status !== "fraudulent");
+                p += 5;
+                document.getElementById('p-val').innerText = p + "%";
+                document.getElementById('p-bar').style.width = p + "%";
+                if(p === 40) {
+                    log(`AGENT: Graph Navigator searching 102k nodes...`);
+                    document.getElementById('ag-graph').classList.add('active');
                 }
-                document.getElementById('load-val').innerText = p + '%';
-                document.getElementById('load-bar').style.width = p + '%';
-                if(p > 30) document.getElementById('agent-graph').classList.add('active');
-                if(p > 60) document.getElementById('agent-logic').classList.add('active');
-            }, 180);
+                if(p === 80) {
+                    log(`AGENT: Logic Auditor performing cross-reference...`);
+                    document.getElementById('ag-logic').classList.add('active');
+                }
+                if(p >= 100) {
+                    clearInterval(iv);
+                    finish(target, !isFake && target.s !== "fraud");
+                }
+            }, 100);
         }
 
-        function finish(target, success) {
-            const content = document.getElementById('report-content');
-            if(success) {
-                content.innerHTML = `<strong>VERDICT: APPROVED</strong><br>The institution <strong>${target.name}</strong> is a verified scholarly node.<br>ROR ID: ${target.ror}<br>Status: ACTIVE`;
+        function finish(target, ok) {
+            const body = document.getElementById('r-body');
+            const title = document.getElementById('r-title');
+            if(ok) {
+                title.innerText = "VERIFIED APPROVED";
+                body.innerHTML = `Subject: <strong>${target.n}</strong><br>ROR ID: ${target.r}<br>Status: ACTIVE<br><br>The Aegis-Graph protocol confirms this credential as authentic and sovereign.`;
             } else {
-                content.innerHTML = `<strong style="color:red">VERDICT: REJECTED</strong><br>The institution <strong>${target.name}</strong> is a confirmed DIPLOMA MILL.<br>Reason: Listed in global fraud_blacklist.json`;
-                log(`ALERT: Institutional Fraud Detected!`, '#ff3366');
+                title.innerText = "AUDIT REJECTED";
+                title.style.color = "red";
+                body.innerHTML = `Subject: <strong>${currentFile ? currentFile.name : 'Unknown'}</strong><br>Verdict: <strong>CONFIRMED FRAUD</strong><br>Reason: Found in global degree factory database.<br><br>The institution is flagged as a non-sovereign entity.`;
+                log("ALERT: COUNTERFEIT DETECTED", "#ff3366");
             }
-            setTimeout(() => { modal.style.display = 'flex'; }, 600);
+            modal.style.display = 'flex';
         }
 
-        btn.onclick = startAudit;
+        btn.onclick = start;
     </script>
 </body>
 </html>
