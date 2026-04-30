@@ -27,11 +27,23 @@ coverY: 0
 
 ---
 
-### 🔗 Authoritative Links
+### 🤝 Community & Social
 
-*   **Official Institutional Site**: [https://aclas.college/](https://aclas.college/)
-*   **Contact & Support**: [info@aclas.college](mailto:info@aclas.college)
-*   **Source Repository**: [GitHub - Aegis-Graph](https://github.com/aclas-college/aegis-graph)
+Connect with the ACLAS Engineering team and join the sovereign academic movement.
+
+*   **GitHub Organization**: [github.com/aclascollege](https://github.com/aclascollege)
+*   **Official Website**: [aclas.college](https://aclas.college/)
+*   **Technical Support**: [info@aclas.college](mailto:info@aclas.college)
+*   **X (Twitter)**: [Follow @aclascollege](https://x.com/aclascollege)
+
+---
+
+### 🌟 Recommended Projects
+
+Explore other pioneering open-source initiatives from ACLAS College:
+
+#### 🧠 [Neuro-Edu Sandbox](https://github.com/aclascollege/neuro-edu)
+The **Neuro-Edu Sandbox** is an AI-driven educational simulation environment designed to test cognitive learning models and neuro-adaptive curriculum delivery. It complements Aegis-Graph by providing a secure, verified environment for advanced academic exploration.
 
 ---
 *Proceed to [Chapter 1: The GenAI Threat Landscape](chapter1-the-genai-threat.md) to begin the technical deep dive.*
