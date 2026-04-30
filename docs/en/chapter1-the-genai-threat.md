@@ -16,7 +16,7 @@ In 2024-2025, the academic world witnessed a paradigm shift in document forgery.
 *   **Contextual Fraud**: Forgeries that match real institutional course codes but contain fictitious grades.
 *   **Agentic Forgery**: AI agents that can interact with simple verification portals to bypass "Human-in-the-Loop" checks.
 
-### 🛡️ Why Legacy Systems Fail
+### 🛡�?Why Legacy Systems Fail
 
 Traditional Verification (V1.0) relies on:
 1.  **OCR (Optical Character Recognition)**: Only reads pixels, not logic.
