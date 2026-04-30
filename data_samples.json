@@ -1,0 +1,23 @@
+[
+    {
+        "id": "ACLAS-SAMPLE-001",
+        "institution": "Atlanta College of Liberal Arts and Sciences",
+        "verdict": "APPROVED",
+        "risk_score": 0.0,
+        "logic_trace": "Sovereign node match. Historical topology verified."
+    },
+    {
+        "id": "ACLAS-SAMPLE-002",
+        "institution": "Graham International University",
+        "verdict": "REJECTED",
+        "risk_score": 100.0,
+        "logic_trace": "Step-0 Hard Rejection: Known Diploma Mill blacklist match."
+    },
+    {
+        "id": "ACLAS-SAMPLE-003",
+        "institution": "Stanford University",
+        "verdict": "APPROVED",
+        "risk_score": 0.04,
+        "logic_trace": "Vision Agent: Seals verified. Graph Agent: ROR ID active."
+    }
+]

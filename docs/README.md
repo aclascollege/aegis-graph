@@ -37,9 +37,9 @@ keywords:
 
 | ð Region | Documentation |
 | :--- | :--- |
-| **Americas / EMEA** | [ðºð¸ English (Primary)](en/) â?[ð«ð· FranÃ§ais](fr/) â?[ðªð¸ EspaÃ±ol](es/) â?[ð©ðª Deutsch](de/) â?[ðµð¹ PortuguÃªs](pt/) |
-| **Asia Pacific** | [ð­ð° ç¹é«ä¸­æ](zh/) â?[ð¯ðµ æ¥æ¬èª](jp/) â?[ð°ð· íêµ­ì´](kr/) |
-| **Middle East** | [ð¸ð¦ Ø§ÙØ¹Ø±Ø¨ÙØ©](ar/) |
+| **Americas / EMEA** | [🇺🇸 English (Primary)](en/) â?[🇫🇷 FranÃ§ais](fr/) â?[🇪🇸 Español](es/) â?[🇩�� Deutsch](de/) â?[🇵🇹 PortuguÃªs](pt/) |
+| **Asia Pacific** | [🇭🇰 ç¹é«ä¸­æ](zh/) â?[🇯🇵 æ¥æ¬èª](jp/) â?[🇰🇷 íêµ­ì´](kr/) |
+| **Middle East** | [🇸🇦 Ø§ÙØ¹Ø±Ø¨ÙØ©](ar/) |
 
 ---
 
@@ -75,4 +75,4 @@ keywords:
 
 ---
 
-*Â© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.*
+*© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.*

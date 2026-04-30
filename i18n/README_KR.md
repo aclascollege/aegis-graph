@@ -17,9 +17,9 @@
 
 | ð ì§ì?| ì¸ì´ ë§¤í¸ë¦­ì¤ |
 | :--- | :--- |
-| **ë¯¸ì£¼ / EMEA** | [ðºð¸ English](../README.md) â?[ð«ð· FranÃ§ais](README_FR.md) â?[ðªð¸ EspaÃ±ol](README_ES.md) â?[ð©ðª Deutsch](README_DE.md) â?[ðµð¹ PortuguÃªs](README_PT.md) |
-| **ììì?ííì?* | [ð­ð° ç¹é«ä¸­æ](README_ZH.md) â?[ð¯ðµ æ¥æ¬èª](README_JP.md) â?[ð°ð· íêµ­ì´](README_KR.md) |
-| **ì¤ë** | [ð¸ð¦ Ø§ÙØ¹Ø±Ø¨ÙØ© (RTL)](README_AR.md) |
+| **ë¯¸ì£¼ / EMEA** | [🇺🇸 English](../README.md) â?[🇫🇷 FranÃ§ais](README_FR.md) â?[🇪🇸 Español](README_ES.md) â?[🇩�� Deutsch](README_DE.md) â?[🇵🇹 PortuguÃªs](README_PT.md) |
+| **ììì?ííì?* | [🇭🇰 ç¹é«ä¸­æ](README_ZH.md) â?[🇯🇵 æ¥æ¬èª](README_JP.md) â?[🇰🇷 íêµ­ì´](README_KR.md) |
+| **ì¤ë** | [🇸🇦 Ø§ÙØ¹Ø±Ø¨ÙØ© (RTL)](README_AR.md) |
 
 ---
 
@@ -39,5 +39,5 @@
 ---
 
 <div align="center">
-  <p>Â© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All rights reserved.</p>
+  <p>© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All rights reserved.</p>
 </div>
