@@ -18,7 +18,7 @@ keywords:
 
 <img src="https://avatars.githubusercontent.com/u/195760091?v=4" width="100" height="100" alt="ACLAS Logo">
 
-# 🛡�?Aegis-Graph: Sovereign Audit Network
+# ð¡ï¸?Aegis-Graph: Sovereign Audit Network
 
 **Official Documentation Hub**
 
@@ -33,19 +33,19 @@ keywords:
 
 ---
 
-## 🌐 Select Language
+## ð Select Language
 
-| 🌍 Region | Documentation |
+| ð Region | Documentation |
 | :--- | :--- |
-| **Americas / EMEA** | [🇺🇸 English (Primary)](en/) �?[🇫🇷 Français](fr/) �?[🇪🇸 Español](es/) �?[🇩🇪 Deutsch](de/) �?[🇵🇹 Português](pt/) |
-| **Asia Pacific** | [🇭🇰 繁體中文](zh/) �?[🇯🇵 日本語](jp/) �?[🇰🇷 한국어](kr/) |
-| **Middle East** | [🇸🇦 العربية](ar/) |
+| **Americas / EMEA** | [ðºð¸ English (Primary)](en/) â?[ð«ð· FranÃ§ais](fr/) â?[ðªð¸ EspaÃ±ol](es/) â?[ð©ðª Deutsch](de/) â?[ðµð¹ PortuguÃªs](pt/) |
+| **Asia Pacific** | [ð­ð° ç¹é«ä¸­æ](zh/) â?[ð¯ðµ æ¥æ¬èª](jp/) â?[ð°ð· íêµ­ì´](kr/) |
+| **Middle East** | [ð¸ð¦ Ø§ÙØ¹Ø±Ø¨ÙØ©](ar/) |
 
 ---
 
-## 📖 What is Aegis-Graph?
+## ð What is Aegis-Graph?
 
-**Aegis-Graph** is the world's first open-source **Sovereign Academic Audit Protocol**. It uses **Agentic GraphRAG** and a federated swarm of specialized AI agents to perform deep logical verification of academic credentials �?far beyond what traditional OCR systems can achieve.
+**Aegis-Graph** is the world's first open-source **Sovereign Academic Audit Protocol**. It uses **Agentic GraphRAG** and a federated swarm of specialized AI agents to perform deep logical verification of academic credentials â?far beyond what traditional OCR systems can achieve.
 
 ### Key Capabilities
 - **Multi-Agent Forensics**: 3 specialized agents (Vision, Graph, Logic) collaborate in real-time.
@@ -55,7 +55,7 @@ keywords:
 
 ---
 
-## 🌐 Connect & Community
+## ð Connect & Community
 
 | Channel | Link |
 | :--- | :--- |
@@ -66,7 +66,7 @@ keywords:
 
 ---
 
-## 🧪 Explore Our Ecosystem
+## ð§ª Explore Our Ecosystem
 
 | Project | Description |
 | :--- | :--- |
@@ -75,4 +75,4 @@ keywords:
 
 ---
 
-*© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.*
+*Â© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.*

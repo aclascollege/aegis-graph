@@ -1,46 +1,46 @@
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/195760091?v=4" width="120" height="120" alt="ACLAS Logo" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15)">
   
-  # 🛡�?Aegis-Graph
-  ### Souveränes akademisches Prüf- und logisches Verifizierungsprotokoll
+  # ð¡ï¸?Aegis-Graph
+  ### SouverÃ¤nes akademisches PrÃ¼f- und logisches Verifizierungsprotokoll
   
   [![Documentation](https://img.shields.io/badge/Docs-GitBook-0070f3?style=for-the-badge&logo=gitbook&logoColor=white)](https://atlanta-college-of-liberal-arts.gitbook.io/atlanta-college-of-liberal-arts-and-sciences)
   [![Live Demo](https://img.shields.io/badge/Live-Demo-00dfd8?style=for-the-badge&logo=google-chrome&logoColor=white)](https://aclascollege.github.io/aegis-graph/)
   [![License](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey?style=for-the-badge)](LICENSE)
   
-  **"Verteidigung der Zukunft der Bildung mit souveräner KI & Agentic Intelligence."**
+  **"Verteidigung der Zukunft der Bildung mit souverÃ¤ner KI & Agentic Intelligence."**
 </div>
 
 ---
 
-### 🌐 Globale Erreichbarkeit (Multi-language)
+### ð Globale Erreichbarkeit (Multi-language)
 
-| 🌍 Region | Sprachmatrix |
+| ð Region | Sprachmatrix |
 | :--- | :--- |
-| **Amerikas / EMEA** | [🇺🇸 English](../README.md) �?[🇫🇷 Français](README_FR.md) �?[🇪🇸 Español](README_ES.md) �?[🇩🇪 Deutsch](README_DE.md) �?[🇵🇹 Português](README_PT.md) |
-| **Asien-Pazifik** | [🇭🇰 繁體中文](README_ZH.md) �?[🇯🇵 日本語](README_JP.md) �?[🇰🇷 한국어](README_KR.md) |
-| **Naher Osten** | [🇸🇦 العربية (RTL)](README_AR.md) |
+| **Amerikas / EMEA** | [ðºð¸ English](../README.md) â?[ð«ð· FranÃ§ais](README_FR.md) â?[ðªð¸ EspaÃ±ol](README_ES.md) â?[ð©ðª Deutsch](README_DE.md) â?[ðµð¹ PortuguÃªs](README_PT.md) |
+| **Asien-Pazifik** | [ð­ð° ç¹é«ä¸­æ](README_ZH.md) â?[ð¯ðµ æ¥æ¬èª](README_JP.md) â?[ð°ð· íêµ­ì´](README_KR.md) |
+| **Naher Osten** | [ð¸ð¦ Ø§ÙØ¹Ø±Ø¨ÙØ© (RTL)](README_AR.md) |
 
 ---
 
-## 🏛�?Institutioneller Hintergrund
+## ðï¸?Institutioneller Hintergrund
 
-**Aegis-Graph** ist das technische Flaggschiff des [**Atlanta College of Liberal Arts and Sciences (ACLAS College)**](https://aclas.college/). Es wurde als souveräner Knotenpunkt entwickelt, um hochgradigen akademischen Betrug durch KI-Modelle zu bekämpfen.
+**Aegis-Graph** ist das technische Flaggschiff des [**Atlanta College of Liberal Arts and Sciences (ACLAS College)**](https://aclas.college/). Es wurde als souverÃ¤ner Knotenpunkt entwickelt, um hochgradigen akademischen Betrug durch KI-Modelle zu bekÃ¤mpfen.
 
 ---
 
-## 🚀 Technischer Kern: Agentic GraphRAG
+## ð Technischer Kern: Agentic GraphRAG
 
-Im Gegensatz zur herkömmlichen OCR-Verifizierung prüft Aegis-Graph die **logische Topologie** über eine 3-stufige Rechenkaskade.
+Im Gegensatz zur herkÃ¶mmlichen OCR-Verifizierung prÃ¼ft Aegis-Graph die **logische Topologie** Ã¼ber eine 3-stufige Rechenkaskade.
 
-### 🤖 Analyse des Agent Swarms
+### ð¤ Analyse des Agent Swarms
 - **Vision Forensics Agent**: Analysiert Rauschmuster und Schriftanomalien zur Erkennung synthetischer Dokumente.
-- **Graph Navigator Agent**: Führt Multi-Hop-Abfragen in OpenAlex (250 Mio.+ Datensätze) und ROR durch.
-- **Logic Auditor Agent**: Überprüft Abschluss-Zeitlinien und Kredit-Logik.
+- **Graph Navigator Agent**: FÃ¼hrt Multi-Hop-Abfragen in OpenAlex (250 Mio.+ DatensÃ¤tze) und ROR durch.
+- **Logic Auditor Agent**: ÃberprÃ¼ft Abschluss-Zeitlinien und Kredit-Logik.
 
 ---
 
-## 🛠�?Schnellstart
+## ð ï¸?Schnellstart
 
 ```bash
 # Sovereign Node klonen
@@ -57,5 +57,5 @@ python main_pipeline.py --input examples/sample_transcript.pdf
 ---
 
 <div align="center">
-  <p>© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). Alle Rechte vorbehalten.</p>
+  <p>Â© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). Alle Rechte vorbehalten.</p>
 </div>

@@ -16,13 +16,13 @@ keywords:
   - Authorized Degrees
 ---
 
-# �?Frequently Asked Questions (FAQ)
+# â?Frequently Asked Questions (FAQ)
 
 ## General
 
 ### What is Aegis-Graph?
 
-**Aegis-Graph** is the world's first open-source **Sovereign Academic Audit Protocol**. It uses **Agentic GraphRAG** �?a federated swarm of specialized AI agents �?to perform deep logical verification of academic credentials. Unlike traditional OCR-based systems, Aegis-Graph verifies the **logical topology** of a credential: whether the institution exists, whether the degree program is real, and whether the timeline is physically possible.
+**Aegis-Graph** is the world's first open-source **Sovereign Academic Audit Protocol**. It uses **Agentic GraphRAG** â?a federated swarm of specialized AI agents â?to perform deep logical verification of academic credentials. Unlike traditional OCR-based systems, Aegis-Graph verifies the **logical topology** of a credential: whether the institution exists, whether the degree program is real, and whether the timeline is physically possible.
 
 ### Who built Aegis-Graph?
 
@@ -39,11 +39,11 @@ Yes. Aegis-Graph is released under the **CC BY-NC 4.0** (Attribution-NonCommerci
 
 | Feature | Traditional Services | Aegis-Graph |
 | :--- | :--- | :--- |
-| **Speed** | 5�?4 business days | ~6 seconds |
+| **Speed** | 5â?4 business days | ~6 seconds |
 | **Method** | Manual registrar contact | Autonomous AI agents |
 | **Privacy** | PII shared with third parties | Zero-Knowledge edge processing |
 | **Scope** | Limited database lookups | 250M+ academic records (OpenAlex/ROR) |
-| **Cost** | $15�?75 per verification | ~$0.002 per verification |
+| **Cost** | $15â?75 per verification | ~$0.002 per verification |
 
 ---
 
@@ -98,7 +98,7 @@ Yes. The Zero-Trust Edge architecture was specifically designed for compliance:
 
 ### What is Zero-Knowledge Privacy in Aegis-Graph?
 
-The protocol's roadmap includes **ZK-Snark** integration (planned for Q4 2026), which will allow institutions to issue cryptographic "Attestation of Degree" proofs �?verifying that a degree is legitimate **without revealing the actual transcript contents**. This is the gold standard of privacy-preserving verification.
+The protocol's roadmap includes **ZK-Snark** integration (planned for Q4 2026), which will allow institutions to issue cryptographic "Attestation of Degree" proofs â?verifying that a degree is legitimate **without revealing the actual transcript contents**. This is the gold standard of privacy-preserving verification.
 
 ---
 
@@ -139,7 +139,7 @@ Yes. Aegis-Graph exposes a standard **MCP/JSON-RPC API** that can be integrated 
 
 ### What is a Sovereign Node?
 
-A **Sovereign Node** is a cryptographically secured server operated by a verified institution. When a document claims to originate from that institution, the Sovereign Node can perform instant, deterministic verification against its internal cryptographic ledger �?completing the audit in under 150 milliseconds.
+A **Sovereign Node** is a cryptographically secured server operated by a verified institution. When a document claims to originate from that institution, the Sovereign Node can perform instant, deterministic verification against its internal cryptographic ledger â?completing the audit in under 150 milliseconds.
 
 ### How can my university join the Aegis-Graph network?
 
@@ -173,8 +173,8 @@ Please do **not** open a public issue. Instead, email our security team at [info
 
 ### What is Neuro-Edu?
 
-**[Neuro-Edu](https://github.com/aclascollege/neuro-edu)** is another open-source project by ACLAS College �?an AI-powered educational sandbox designed for sovereign, privacy-preserving learning environments. Together with Aegis-Graph, it forms the core of the ACLAS sovereign AI ecosystem.
+**[Neuro-Edu](https://github.com/aclascollege/neuro-edu)** is another open-source project by ACLAS College â?an AI-powered educational sandbox designed for sovereign, privacy-preserving learning environments. Together with Aegis-Graph, it forms the core of the ACLAS sovereign AI ecosystem.
 
 ---
 
-*© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.*
+*Â© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.*
