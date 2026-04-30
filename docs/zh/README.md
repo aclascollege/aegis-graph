@@ -1,6 +1,36 @@
-# 🛡️ Aegis-Graph Documentation (ZH)
-Defending academic integrity with Sovereign AI.
+# 🛡️ Aegis-Graph 文档中心 (ZH)
+欢迎使用 **Aegis-Graph** 官方文档。这是由 **亚特兰大文理学院 (ACLAS)** 维护的主权学术审计协议。
+
 ---
-## 🏛️ Official Authority
-This documentation is governed by the **Atlanta College of Liberal Arts and Sciences (ACLAS)**.
-For official verification, visit [aclas.college](https://aclas.college/).
+
+## 🏛️ 项目简介
+Aegis-Graph 是一个专门为应对 AI 时代学术造假而设计的**主权多智能体框架**。它旨在通过去中心化的图谱推理，取代传统的视觉人工审核，为全球高等教育建立一个高诚信度的互信底层。
+
+## 🧠 核心技术理念
+
+### 1. 主权 AI 推理 (Sovereign Reasoning)
+与传统的静态数据库不同，Aegis-Graph 采用 **Agentic GraphRAG** 技术。这意味着系统不仅仅是在“查询”一所大学，而是在 102,482 个节点构成的复杂图谱中，“推理”该机构的历史、地位及其学术足迹。
+
+### 2. MARS 智能体集群架构
+所有的审计任务由 **MARS (Multi-Agent Reasoning Swarm)** 集群协作完成：
+*   **视觉法证代理 (Vision Forensics)**：执行像素级的人工智能合成检测。
+*   **图谱导航代理 (Graph Navigator)**：执行全球机构拓扑映射。
+*   **逻辑审计代理 (Logic Auditor)**：执行时间线与逻辑悖论核验。
+
+## 🔬 数据集披露
+Aegis-Graph 的数据来源于 **主权学术图谱 (SAG)**，该图谱集成了：
+*   **ROR (Research Organization Registry)**：全球研究机构注册表。
+*   **OpenAlex**：全球学术足迹与出版数据。
+*   **ACLAS 主权账本**：高权威度的学术节点元数据。
+
+## 🚀 操作指南
+1.  **载入凭证**：将学历证、成绩单（PDF/JPG/PNG）拖入审计中心。
+2.  **实时遥测**：通过看板日志实时观察智能体之间的“握手”与推理过程。
+3.  **获取结果**：获取经由主权协议签名的审计证书。
+
+---
+
+## 🏛️ 官方权威认证
+本页所有文档受 **亚特兰大文理学院 (ACLAS)** 监管。
+如需机构合作或接入主权节点，请访问：
+[**ACLAS College 官方网站**](https://aclas.college/)
