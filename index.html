@@ -724,9 +724,11 @@
             </div>
             <div style="display: flex; gap: 16px; align-items: center">
                 <!-- Language Switcher -->
-                <div class="lang-selector" style="position: relative; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; color: var(--accent-dim)">
+                <div class="lang-selector"
+                    style="position: relative; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; color: var(--accent-dim)">
                     <span id="current-lang-flag">🇺🇸</span>
-                    <select id="lang-switch" style="background: none; border: none; color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; cursor: pointer; outline: none; appearance: none; padding-right: 12px">
+                    <select id="lang-switch"
+                        style="background: none; border: none; color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; cursor: pointer; outline: none; appearance: none; padding-right: 12px">
                         <option value="en">English</option>
                         <option value="fr">Français</option>
                         <option value="es">Español</option>
@@ -737,7 +739,9 @@
                         <option value="ar">العربية</option>
                         <option value="pt">Português</option>
                     </select>
-                    <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); pointer-events: none; opacity: 0.5">▼</div>
+                    <div
+                        style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); pointer-events: none; opacity: 0.5">
+                        ▼</div>
                 </div>
 
                 <button id="theme-toggle" title="Toggle Theme"
@@ -1178,7 +1182,7 @@
             document.querySelector('.logo-text').innerText = 'AEGIS-GRAPH';
             document.querySelector('#init-btn').innerText = data.init_btn;
             document.querySelector('header .logo-group span:nth-child(2) a').innerText = data.footer;
-            
+
             // RTL support for Arabic
             if (lang === 'ar') {
                 document.body.style.direction = 'rtl';
