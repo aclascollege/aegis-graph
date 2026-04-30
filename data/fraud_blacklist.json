@@ -1,0 +1,31 @@
+{
+    "version": "1.0.0",
+    "last_updated": "2026-04-30",
+    "authority": "Atlanta College of Liberal Arts and Sciences (ACLAS)",
+    "blacklist": [
+        {
+            "name": "Graham International University",
+            "aliases": ["GIU", "Graham University"],
+            "reason": "Confirmed Diploma Mill - No physical campus, unauthorized degree granting.",
+            "severity": "CRITICAL"
+        },
+        {
+            "name": "Pacific Western University",
+            "aliases": ["PWU"],
+            "reason": "Historically flagged as a degree mill in multiple jurisdictions.",
+            "severity": "HIGH"
+        },
+        {
+            "name": "Belford University",
+            "aliases": [],
+            "reason": "Online degree mill shut down by court order.",
+            "severity": "CRITICAL"
+        },
+        {
+            "name": "Almeda University",
+            "aliases": [],
+            "reason": "Unaccredited life-experience degree mill.",
+            "severity": "CRITICAL"
+        }
+    ]
+}
