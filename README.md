@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/195760091?v=4" width="120" height="120" alt="ACLAS Logo" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15)">
   
-  # 🛡�?Aegis-Graph
+  # ð¡ï¸?Aegis-Graph
   ### Sovereign Academic Audit & Logical Verification Protocol
   
   [![Documentation](https://img.shields.io/badge/Docs-GitBook-0070f3?style=for-the-badge&logo=gitbook&logoColor=white)](https://atlanta-college-of-liberal-arts.gitbook.io/atlanta-college-of-liberal-arts-and-sciences)
@@ -13,17 +13,17 @@
 
 ---
 
-### 🌐 Global Accessibility (Multi-language)
+### ð Global Accessibility (Multi-language)
 
-| 🌍 Region | Language Matrix |
+| ð Region | Language Matrix |
 | :--- | :--- |
-| **Americas / EMEA** | [🇺🇸 English](README.md) �?[🇫🇷 Français](i18n/README_FR.md) �?[🇪🇸 Español](i18n/README_ES.md) �?[🇩🇪 Deutsch](i18n/README_DE.md) �?[🇵🇹 Português](i18n/README_PT.md) |
-| **Asia Pacific** | [🇭🇰 繁體中文](i18n/README_ZH.md) �?[🇯🇵 日本語](i18n/README_JP.md) �?[🇰🇷 한국어](i18n/README_KR.md) |
-| **Middle East** | [🇸🇦 العربية (RTL)](i18n/README_AR.md) |
+| **Americas / EMEA** | [ðºð¸ English](README.md) â?[ð«ð· FranÃ§ais](i18n/README_FR.md) â?[ðªð¸ EspaÃ±ol](i18n/README_ES.md) â?[ð©ðª Deutsch](i18n/README_DE.md) â?[ðµð¹ PortuguÃªs](i18n/README_PT.md) |
+| **Asia Pacific** | [ð­ð° ç¹é«ä¸­æ](i18n/README_ZH.md) â?[ð¯ðµ æ¥æ¬èª](i18n/README_JP.md) â?[ð°ð· íêµ­ì´](i18n/README_KR.md) |
+| **Middle East** | [ð¸ð¦ Ø§ÙØ¹Ø±Ø¨ÙØ© (RTL)](i18n/README_AR.md) |
 
 ---
 
-## 🏛�?Project Manifesto
+## ðï¸?Project Manifesto
 
 In the era of Generative AI, the barriers to creating high-fidelity fraudulent academic credentials have collapsed. **Aegis-Graph**, a flagship initiative of the [**Atlanta College of Liberal Arts and Sciences (ACLAS College)**](https://aclas.college/), is the first open-source response to this existential threat to academic meritocracy.
 
@@ -31,7 +31,7 @@ Aegis-Graph is not a mere OCR tool. It is a **Sovereign Multi-Agent Network** th
 
 ---
 
-## 🚀 Technical Core: Agentic GraphRAG
+## ð Technical Core: Agentic GraphRAG
 
 Unlike traditional OCR verification, Aegis-Graph verifies **Logical Topology** through a 3-tier compute cascade.
 
@@ -51,14 +51,14 @@ graph TD
     H --> I[Certified Audit Report]
 ```
 
-### 🤖 The Agent Swarm Breakdown
+### ð¤ The Agent Swarm Breakdown
 - **Vision Forensics Agent**: Analyzes noise patterns, metadata consistency, and font-kerning anomalies to detect high-fidelity synthetic generation.
 - **Graph Navigator Agent**: Executes multi-hop queries across OpenAlex (250M+ records) and ROR to verify institutional legitimacy and academic lineage.
 - **Logic Auditor Agent**: Cross-references graduation timelines, course dependencies, and credit logic to detect internal semantic inconsistencies.
 
 ---
 
-## 🔒 Security & Privacy by Design
+## ð Security & Privacy by Design
 
 Aegis-Graph implements a **"Sovereign Edge"** security model:
 *   **PII Scrubbing**: Personally Identifiable Information is hashed or removed at the edge (NPU level) before graph traversal.
@@ -67,7 +67,7 @@ Aegis-Graph implements a **"Sovereign Edge"** security model:
 
 ---
 
-## 🗺�?2026-2027 Roadmap
+## ðºï¸?2026-2027 Roadmap
 
 - **Q3 2026**: Global Node Launch (EU & APAC Institutional Clusters).
 - **Q4 2026**: Integration of ZK-Privacy Layer for non-disclosure attestations.
@@ -76,7 +76,7 @@ Aegis-Graph implements a **"Sovereign Edge"** security model:
 
 ---
 
-## 💼 Use Cases
+## ð¼ Use Cases
 
 | Industry | Implementation |
 | :--- | :--- |
@@ -86,7 +86,7 @@ Aegis-Graph implements a **"Sovereign Edge"** security model:
 
 ---
 
-## 🛠�?Technical Stack
+## ð ï¸?Technical Stack
 
 - **Core**: Python 3.11+, MCP (Model Context Protocol).
 - **Intelligence**: Agentic Swarm (LLM/LVM Orchestration).
@@ -95,7 +95,7 @@ Aegis-Graph implements a **"Sovereign Edge"** security model:
 
 ---
 
-## ⚙️ Configuration & Setup
+## âï¸ Configuration & Setup
 
 ```bash
 # 1. Clone the node
@@ -114,7 +114,7 @@ python main_pipeline.py --input examples/sample_transcript.pdf
 
 ---
 
-## 🤝 Governance & Community
+## ð¤ Governance & Community
 
 - **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Security**: See [SECURITY.md](SECURITY.md)
@@ -122,7 +122,7 @@ python main_pipeline.py --input examples/sample_transcript.pdf
 
 ---
 
-## 🌐 Connect & Support
+## ð Connect & Support
 
 <div align="center">
   <a href="https://x.com/aclascollege" target="_blank">
@@ -141,16 +141,16 @@ python main_pipeline.py --input examples/sample_transcript.pdf
 
 ---
 
-## 🧪 ACLAS Open-Source Ecosystem
+## ð§ª ACLAS Open-Source Ecosystem
 
 | Project | Description | Link |
 | :--- | :--- | :--- |
-| **Aegis-Graph** | Sovereign Academic Audit Protocol | [View →](https://github.com/aclascollege/aegis-graph) |
-| **Neuro-Edu** | AI-Powered Educational Sandbox | [View →](https://github.com/aclascollege/neuro-edu) |
+| **Aegis-Graph** | Sovereign Academic Audit Protocol | [View â](https://github.com/aclascollege/aegis-graph) |
+| **Neuro-Edu** | AI-Powered Educational Sandbox | [View â](https://github.com/aclascollege/neuro-edu) |
 
 ---
 
 <div align="center">
-  <p>© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.</p>
+  <p>Â© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.</p>
   <p>Building the next generation of Sovereign Academic Intelligence.</p>
 </div>
