@@ -4,7 +4,7 @@ cover: >-
 coverY: 0
 ---
 
-<img src="https://firebasestorage.googleapis.com/v0/b/gitbook-x-prod.appspot.com/o/organizations%2Fq5snVoFjMfhUmGEsMCri%2Flogo%2FVhH5l8QoE4f2cLejz9T2%2FLOGO%20512%20x%20512%20pixels.png?alt=media" width="120" />
+<img src="https://avatars.githubusercontent.com/u/195760091?v=4" width="100" />
 
 # 🛡️ Aegis-Graph: Sovereign Audit Network
 
