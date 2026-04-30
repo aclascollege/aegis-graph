@@ -1,4 +1,3 @@
-ror_id,name,country,established,status
 https://ror.org/04bm3wy68,Hue University,Vietnam,1957,Verified_Institution
 https://ror.org/024yc3q36,National University Corporation Tottori University,Japan,1949,Verified_Institution
 https://ror.org/059fmyk31,Soai University,Japan,1888,Verified_Institution
@@ -44,7 +43,7 @@ https://ror.org/0394w2w14,CARE,India,2008,Verified_Institution
 https://ror.org/0582p8j71,Jagannath University,India,2013,Verified_Institution
 https://ror.org/01r5xd980,Madonna University,Nigeria,1999,Verified_Institution
 https://ror.org/03am10p12,Amrita University,India,2003,Verified_Institution
-https://ror.org/01pwyb445,Vivek University,India,,Verified_Institution
+https://ror.org/01pwyb445,Vivek University,India,N/A,Verified_Institution
 https://ror.org/04a97mm30,Kafrelsheikh University,Egypt,2006,Verified_Institution
 https://ror.org/05c2p1f98,Devi Ahilya Vishwavidyalaya,India,1964,Verified_Institution
 https://ror.org/02yqqv993,Federal State Autonomous Educational Institution of Higher Education I.M. Sechenov First Moscow State Medical University of the Ministry of Health of the Russian Federation,Russia,1758,Verified_Institution
@@ -148,7 +147,7 @@ https://ror.org/00n5htd36,Westmar University,United States,1887,Verified_Institu
 https://ror.org/038cpkc46,Northrop Aeronautical Institute,United States,1942,Verified_Institution
 https://ror.org/00f2txz25,Kitasato Daigaku,Japan,1970,Verified_Institution
 https://ror.org/00s9dpb54,Myongji University,South Korea,1948,Verified_Institution
-https://ror.org/03aam9155,KLE University,India,,Verified_Institution
+https://ror.org/03aam9155,KLE University,India,N/A,Verified_Institution
 https://ror.org/03n20pp93,APS University,India,1968,Verified_Institution
 https://ror.org/04r69jb93,Kokushikan Daigaku,Japan,1917,Verified_Institution
 https://ror.org/038e9x269,Kumaun University,India,1973,Verified_Institution
@@ -215,7 +214,7 @@ https://ror.org/01defpn95,SIST,India,1987,Verified_Institution
 https://ror.org/0250jpt55,Saurashtra University,India,1967,Verified_Institution
 https://ror.org/029gksw03,Semnan University,Iran,1974,Verified_Institution
 https://ror.org/04x0k0m51,SKU,South Korea,1947,Verified_Institution
-https://ror.org/01adsjd47,Seonam University,South Korea,,Verified_Institution
+https://ror.org/01adsjd47,Seonam University,South Korea,N/A,Verified_Institution
 https://ror.org/05crs8s98,Periyar University,India,1997,Verified_Institution
 https://ror.org/0418a3v02,Setsunan University,Japan,1922,Verified_Institution
 https://ror.org/0286g6711,SGU,China,1958,Verified_Institution
@@ -532,7 +531,7 @@ https://ror.org/0560jvm78,Purvanchal University,India,1987,Verified_Institution
 https://ror.org/02pxsrh16,Singhania University,India,2007,Verified_Institution
 https://ror.org/04kc6x746,Otemae University,Japan,1946,Verified_Institution
 https://ror.org/054jv7347,Hampi Kannada University,India,1991,Verified_Institution
-https://ror.org/02a7zg443,Humanities University,Mongolia,,Verified_Institution
+https://ror.org/02a7zg443,Humanities University,Mongolia,N/A,Verified_Institution
 https://ror.org/04zj95y60,Dravidian University,India,1997,Verified_Institution
 https://ror.org/00y93ak93,Shepherd College,United States,1871,Verified_Institution
 https://ror.org/05hnmtf25,Shorter University,United States,1873,Verified_Institution
@@ -695,7 +694,7 @@ https://ror.org/001x6y413,Palamuru University,India,2008,Verified_Institution
 https://ror.org/00g49fd96,Pandit Deendayal Upadhyaya Shekhawati University,India,2012,Verified_Institution
 https://ror.org/048j6n969,Shubun University,Japan,2008,Verified_Institution
 https://ror.org/01qzkbq71,MU,United States,1936,Verified_Institution
-https://ror.org/01hnnne31,Siddhartha University,Nepal,,Verified_Institution
+https://ror.org/01hnnne31,Siddhartha University,Nepal,N/A,Verified_Institution
 https://ror.org/03gdf8x58,Şifa University,Türkiye,2010,Verified_Institution
 https://ror.org/02jkgrk30,Parwan University,Afghanistan,2006,Verified_Institution
 https://ror.org/02n0ams94,PBU,United States,1979,Verified_Institution
@@ -744,7 +743,7 @@ https://ror.org/0560jvm78,Purvanchal University,India,1987,Verified_Institution
 https://ror.org/02pxsrh16,Singhania University,India,2007,Verified_Institution
 https://ror.org/04kc6x746,Otemae University,Japan,1946,Verified_Institution
 https://ror.org/054jv7347,Hampi Kannada University,India,1991,Verified_Institution
-https://ror.org/02a7zg443,Humanities University,Mongolia,,Verified_Institution
+https://ror.org/02a7zg443,Humanities University,Mongolia,N/A,Verified_Institution
 https://ror.org/04zj95y60,Dravidian University,India,1997,Verified_Institution
 https://ror.org/059fmyk31,Soai University,Japan,1888,Verified_Institution
 https://ror.org/00dcg0248,YDBU,Myanmar,2000,Verified_Institution
@@ -865,7 +864,7 @@ https://ror.org/016j41127,Changji University,China,1959,Verified_Institution
 https://ror.org/04jjswc10,Universidad Yachay Tech,Ecuador,2014,Verified_Institution
 https://ror.org/0075gfd51,Loyola University,Spain,2010,Verified_Institution
 https://ror.org/03218pf76,PU,India,2015,Verified_Institution
-https://ror.org/01svbkm65,HSNC University,India,,Verified_Institution
+https://ror.org/01svbkm65,HSNC University,India,N/A,Verified_Institution
 https://ror.org/04mjt7f73,Sunway University,Malaysia,2004,Verified_Institution
 https://ror.org/04vpyax58,DSPU,Ukraine,1940,Verified_Institution
 https://ror.org/02778hg05,Trier University,Germany,1970,Verified_Institution
@@ -895,7 +894,7 @@ https://ror.org/0523w7v09,Almaty Institute of National Economy,Kazakhstan,1963,V
 https://ror.org/01x8j4206,Université de webster,United States,1915,Verified_Institution
 https://ror.org/01rvhet58,Farhangian University,Iran,2012,Verified_Institution
 https://ror.org/007gerq75,AIMST,Malaysia,2001,Verified_Institution
-https://ror.org/012ngjb50,Higher Mining Metallurgical Institute,Cuba,,Verified_Institution
+https://ror.org/012ngjb50,Higher Mining Metallurgical Institute,Cuba,N/A,Verified_Institution
 https://ror.org/02rvbpq83,Takhar University,Afghanistan,1991,Verified_Institution
 https://ror.org/046q22e19,KU,Uzbekistan,2019,Verified_Institution
 https://ror.org/038n03236,Idlib University,Syria,2015,Verified_Institution
@@ -915,7 +914,7 @@ https://ror.org/05pacqm37,Bluffton University,United States,1899,Verified_Instit
 https://ror.org/05crd7855,PC,United States,1965,Verified_Institution
 https://ror.org/0319y6677,SU,Uganda,2015,Verified_Institution
 https://ror.org/04asgtj30,Baoding University,China,1904,Verified_Institution
-https://ror.org/01kfqj356,TIER,Russia,,Verified_Institution
+https://ror.org/01kfqj356,TIER,Russia,N/A,Verified_Institution
 https://ror.org/029jy4332,Military University,Russia,1919,Verified_Institution
 https://ror.org/05495v729,Luliang University,China,1978,Verified_Institution
 https://ror.org/012czx379,Jingdezhen University,China,1977,Verified_Institution
@@ -957,7 +956,7 @@ https://ror.org/015scty35,Kastamonu University,Türkiye,2006,Verified_Institutio
 https://ror.org/00wdq3744,Thapar Institute of Engineering & Technology,India,1956,Verified_Institution
 https://ror.org/05h33bt13,Qinghai University,China,1958,Verified_Institution
 https://ror.org/047g8vk19,Erciyes University,Türkiye,1978,Verified_Institution
-https://ror.org/0257kt353,Högskolan Väst,Sweden,,Verified_Institution
+https://ror.org/0257kt353,Högskolan Väst,Sweden,N/A,Verified_Institution
 https://ror.org/059djzq42,WYU,China,1958,Verified_Institution
 https://ror.org/02x93ka62,STEKPI,Indonesia,1988,Verified_Institution
 https://ror.org/016j41127,Changji University,China,1959,Verified_Institution
@@ -981,13 +980,13 @@ https://ror.org/031q06g37,Himeji University,Japan,1951,Verified_Institution
 https://ror.org/05ap66461,US,United States,1890,Verified_Institution
 https://ror.org/01jj16t33,Santosh University,India,1995,Verified_Institution
 https://ror.org/03k722897,IASE,India,1950,Verified_Institution
-https://ror.org/01yvchj11,Horizon University,United States,,Verified_Institution
+https://ror.org/01yvchj11,Horizon University,United States,N/A,Verified_Institution
 https://ror.org/01jc8rs51,IGU,United States,2008,Verified_Institution
 https://ror.org/052rpb648,ResU,United States,1914,Verified_Institution
 https://ror.org/05vb1qq28,Shiloh University,United States,2006,Verified_Institution
 https://ror.org/0428azw09,Talmudic University,United States,1974,Verified_Institution
 https://ror.org/058k9k832,European University,Serbia,2000,Verified_Institution
-https://ror.org/05msvfx67,Gedik University,Türkiye,,Verified_Institution
+https://ror.org/05msvfx67,Gedik University,Türkiye,N/A,Verified_Institution
 https://ror.org/01n3nvq33,Ipek University,Türkiye,2011,Verified_Institution
 https://ror.org/00ewfne71,Metropolitan University,Serbia,2005,Verified_Institution
 https://ror.org/00rmfhk22,Cuiavian University,Poland,1995,Verified_Institution
@@ -1091,17 +1090,17 @@ https://ror.org/00hnc9t77,Kundoz University,Afghanistan,1967,Verified_Institutio
 https://ror.org/03je5c526,Ata,Türkiye,1957,Verified_Institution
 https://ror.org/0188yz413,Kyorin University,Japan,1970,Verified_Institution
 https://ror.org/04tstaj46,NXU,United States,2018,Verified_Institution
-https://ror.org/05e571q11,Ikuei Daigaku,Japan,,Verified_Institution
+https://ror.org/05e571q11,Ikuei Daigaku,Japan,N/A,Verified_Institution
 https://ror.org/023mv6842,Al-Naji University,Iraq,2024,Verified_Institution
 https://ror.org/05c1b7t53,MHRU,Yemen,2022,Verified_Institution
 https://ror.org/00d1mx684,CLU,Nigeria,2015,Verified_Institution
 https://ror.org/003qdfg20,Soka University,Japan,1971,Verified_Institution
 https://ror.org/0518nb352,Nelson University,United States,1927,Verified_Institution
-https://ror.org/02p066h55,PU,Iran,,Verified_Institution
-https://ror.org/052hbwv48,L. J. Institute of Engineering and Technology,India,,Verified_Institution
+https://ror.org/02p066h55,PU,Iran,N/A,Verified_Institution
+https://ror.org/052hbwv48,L. J. Institute of Engineering and Technology,India,N/A,Verified_Institution
 https://ror.org/03s53tn92,APoż,Poland,1982,Verified_Institution
 https://ror.org/02kv0px94,Hadhramout University,Yemen,1993,Verified_Institution
-https://ror.org/02bdf7k74,BLDE (Deemed to be University),India,,Verified_Institution
+https://ror.org/02bdf7k74,BLDE (Deemed to be University),India,N/A,Verified_Institution
 https://ror.org/04xtznh26,Adam University,Kyrgyzstan,1994,Verified_Institution
 https://ror.org/034baah44,Cyber University,Indonesia,2018,Verified_Institution
 https://ror.org/03fatne33,Mamun University,Uzbekistan,2020,Verified_Institution
@@ -1122,7 +1121,7 @@ https://ror.org/03nz8qe97,Ariel University,Israel,1982,Verified_Institution
 https://ror.org/048arep70,SU,United States,1871,Verified_Institution
 https://ror.org/05dpv4c71,AMET University,India,1992,Verified_Institution
 https://ror.org/00j9qag85,LNU,Sweden,2010,Verified_Institution
-https://ror.org/00j2a7k55,Jiaxing University,China,,Verified_Institution
+https://ror.org/00j2a7k55,Jiaxing University,China,N/A,Verified_Institution
 https://ror.org/02brte405,SAMÜ,Türkiye,2018,Verified_Institution
 https://ror.org/05fq50484,Université York,Canada,1959,Verified_Institution
 https://ror.org/04zyhq975,Heilongjiang University,China,1941,Verified_Institution
@@ -1228,7 +1227,7 @@ https://ror.org/00316zc91,Nekemte University,Ethiopia,2007,Verified_Institution
 https://ror.org/004pc5924,ITM University,India,1997,Verified_Institution
 https://ror.org/02qp25a50,BU,Canada,1890,Verified_Institution
 https://ror.org/03znjxt55,Mercatorum University,Italy,2006,Verified_Institution
-https://ror.org/05xkpwy13,Westcliff University,United States,,Verified_Institution
+https://ror.org/05xkpwy13,Westcliff University,United States,N/A,Verified_Institution
 https://ror.org/00dygpn15,Maasai Mara University,Kenya,2013,Verified_Institution
 https://ror.org/01xqkk481,Caldwell College,United States,1939,Verified_Institution
 https://ror.org/028qtbk54,Dāneshgāh-e-Shirāz,Iran,1946,Verified_Institution
@@ -1260,7 +1259,7 @@ https://ror.org/02hnc0643,VCCU,United States,2019,Verified_Institution
 https://ror.org/0376rfz34,TecMilenio University,Mexico,2002,Verified_Institution
 https://ror.org/04mgz4b37,Meanchey University,Cambodia,2008,Verified_Institution
 https://ror.org/03k2z3e59,KDU,Nigeria,2016,Verified_Institution
-https://ror.org/01px0dw39,Pratap University,India,,Verified_Institution
+https://ror.org/01px0dw39,Pratap University,India,N/A,Verified_Institution
 https://ror.org/055a4rj94,Kashgar Normal College,China,1962,Verified_Institution
 https://ror.org/04nqdwb39,Mersin University,Türkiye,1992,Verified_Institution
 https://ror.org/04t5xt781,NEU,United States,1898,Verified_Institution
@@ -1268,14 +1267,14 @@ https://ror.org/00w49ww42,AKROTCOE,Ghana,1962,Verified_Institution
 https://ror.org/01dq3qq95,Beibu Gulf University,China,1973,Verified_Institution
 https://ror.org/01sewfq88,ISALUD University,Argentina,1991,Verified_Institution
 https://ror.org/05vwjwk52,Aisyah University,Indonesia,2019,Verified_Institution
-https://ror.org/05p8d2v16,Bengbu University,China,,Verified_Institution
-https://ror.org/02s78cg64,Mustaqbal University,Saudi Arabia,,Verified_Institution
-https://ror.org/03a77cf20,Fasa University,Iran,,Verified_Institution
+https://ror.org/05p8d2v16,Bengbu University,China,N/A,Verified_Institution
+https://ror.org/02s78cg64,Mustaqbal University,Saudi Arabia,N/A,Verified_Institution
+https://ror.org/03a77cf20,Fasa University,Iran,N/A,Verified_Institution
 https://ror.org/01gaw2478,Teikyo University,Japan,1931,Verified_Institution
 https://ror.org/05hffr360,KUSTAR,United Arab Emirates,2007,Verified_Institution
 https://ror.org/037p13h95,CES University,Colombia,1977,Verified_Institution
 https://ror.org/002yp7f20,Mahawitthayalai Thammasat,Thailand,1934,Verified_Institution
-https://ror.org/04s6kmw55,Arsi University,Ethiopia,,Verified_Institution
+https://ror.org/04s6kmw55,Arsi University,Ethiopia,N/A,Verified_Institution
 https://ror.org/05cz9j146,LU,Qatar,2020,Verified_Institution
 https://ror.org/01mgaqp12,ARSU,Kazakhstan,1966,Verified_Institution
 https://ror.org/0230c9q89,ESIC,Spain,1965,Verified_Institution
@@ -1285,7 +1284,7 @@ https://ror.org/03f90br77,MU,Sudan,2003,Verified_Institution
 https://ror.org/05pqx1c24,Denison University,United States,1831,Verified_Institution
 https://ror.org/059et2b68,Es Sénia University,Algeria,1961,Verified_Institution
 https://ror.org/0407f1r36,Higher School of Social Psychology,Poland,1996,Verified_Institution
-https://ror.org/013dxmv67,Gorontalo University,Indonesia,,Verified_Institution
+https://ror.org/013dxmv67,Gorontalo University,Indonesia,N/A,Verified_Institution
 https://ror.org/044xay220,Geoje University,South Korea,1989,Verified_Institution
 https://ror.org/02vpw2d22,RU,India,2012,Verified_Institution
 https://ror.org/03efxn362,Universidad Veracruzana,Mexico,1944,Verified_Institution
@@ -1293,7 +1292,7 @@ https://ror.org/04beeeh24,Saybrook University,United States,1971,Verified_Instit
 https://ror.org/035ky6r06,Civilization University,Yemen,2012,Verified_Institution
 https://ror.org/04c7yen31,International University,South Korea,1997,Verified_Institution
 https://ror.org/01mwmfm08,Concord University,United States,1872,Verified_Institution
-https://ror.org/05252fg05,Deraya University,Egypt,,Verified_Institution
+https://ror.org/05252fg05,Deraya University,Egypt,N/A,Verified_Institution
 https://ror.org/00xy44n04,YU ,Japan,1878,Verified_Institution
 https://ror.org/01hjzeq58,Chiba Daigaku,Japan,1949,Verified_Institution
 https://ror.org/03t78wx29,Hiroshima Daigaku,Japan,1929,Verified_Institution
@@ -1301,7 +1300,7 @@ https://ror.org/0465bzv04,Chuo Kikuu cha Tharaka,Kenya,2017,Verified_Institution
 https://ror.org/01p7qe739,Tokai University,Japan,1942,Verified_Institution
 https://ror.org/04g5gcg95,Heilbronn University,Germany,1961,Verified_Institution
 https://ror.org/04hx99g79,XIM University,India,2013,Verified_Institution
-https://ror.org/05sy4b952,Saba Medical School,"Bonaire, Sint Eustatius, and Saba",,Verified_Institution
+https://ror.org/05sy4b952,Saba Medical School,"Bonaire, Sint Eustatius, and Saba",N/A,Verified_Institution
 https://ror.org/059b5pb30,Konan Gakuen Middle School,Japan,1919,Verified_Institution
 https://ror.org/04chrp450,Nagoya Daigaku,Japan,1871,Verified_Institution
 https://ror.org/02g1jdz81,Al Hikma University,Yemen,2008,Verified_Institution
@@ -1310,9 +1309,9 @@ https://ror.org/016jp5b92,Tanta University,Egypt,1972,Verified_Institution
 https://ror.org/01a099706,STU,China,1981,Verified_Institution
 https://ror.org/04b682n55,Enber,United States,2019,Verified_Institution
 https://ror.org/03gvsr558,KAZGUU University,Kazakhstan,1994,Verified_Institution
-https://ror.org/03hq50145,EDP University,Portugal,,Verified_Institution
+https://ror.org/03hq50145,EDP University,Portugal,N/A,Verified_Institution
 https://ror.org/03ahebw65,RUB,Bangladesh,2017,Verified_Institution
-https://ror.org/05njtdr40,MILA University,Malaysia,,Verified_Institution
+https://ror.org/05njtdr40,MILA University,Malaysia,N/A,Verified_Institution
 https://ror.org/05n7bzj69,Mahatma Gandhi University,India,2007,Verified_Institution
 https://ror.org/01h3hm524,Ahl Al Bayt University,Iraq,2003,Verified_Institution
 https://ror.org/01p6ew896,GMU,Ethiopia,2014,Verified_Institution
@@ -1336,7 +1335,7 @@ https://ror.org/00316zc91,Nekemte University,Ethiopia,2007,Verified_Institution
 https://ror.org/004pc5924,ITM University,India,1997,Verified_Institution
 https://ror.org/02qp25a50,BU,Canada,1890,Verified_Institution
 https://ror.org/03znjxt55,Mercatorum University,Italy,2006,Verified_Institution
-https://ror.org/05xkpwy13,Westcliff University,United States,,Verified_Institution
+https://ror.org/05xkpwy13,Westcliff University,United States,N/A,Verified_Institution
 https://ror.org/00dygpn15,Maasai Mara University,Kenya,2013,Verified_Institution
 https://ror.org/01xqkk481,Caldwell College,United States,1939,Verified_Institution
 https://ror.org/02sps0775,Chubu University,Japan,1938,Verified_Institution
@@ -1413,13 +1412,13 @@ https://ror.org/007tbc964,Baze University,Nigeria,2011,Verified_Institution
 https://ror.org/05eyrmk93,Machakos University,Kenya,1957,Verified_Institution
 https://ror.org/02b6gy972,Alisher Navoiy nomidagi Samarqand Davlat Universiteti,Uzbekistan,1927,Verified_Institution
 https://ror.org/01afbkc02,Sveučilište Sjever,Croatia,2015,Verified_Institution
-https://ror.org/056mwwj30,Intifada University,Libya,,Verified_Institution
+https://ror.org/056mwwj30,Intifada University,Libya,N/A,Verified_Institution
 https://ror.org/02y2cxp25,HELP Institute,Malaysia,1986,Verified_Institution
 https://ror.org/03sbnrq14,Lúrio University,Mozambique,2006,Verified_Institution
 https://ror.org/05byh2e17,EARTH,Costa Rica,1990,Verified_Institution
 https://ror.org/0062tve42,Pancasila University,Indonesia,1966,Verified_Institution
 https://ror.org/01pp0fx48,Northern Indiana Normal School and Business Institute,United States,1859,Verified_Institution
-https://ror.org/05252fg05,Deraya University,Egypt,,Verified_Institution
+https://ror.org/05252fg05,Deraya University,Egypt,N/A,Verified_Institution
 https://ror.org/00xy44n04,YU ,Japan,1878,Verified_Institution
 https://ror.org/01hjzeq58,Chiba Daigaku,Japan,1949,Verified_Institution
 https://ror.org/03t78wx29,Hiroshima Daigaku,Japan,1929,Verified_Institution
@@ -1427,7 +1426,7 @@ https://ror.org/0465bzv04,Chuo Kikuu cha Tharaka,Kenya,2017,Verified_Institution
 https://ror.org/01p7qe739,Tokai University,Japan,1942,Verified_Institution
 https://ror.org/04g5gcg95,Heilbronn University,Germany,1961,Verified_Institution
 https://ror.org/04hx99g79,XIM University,India,2013,Verified_Institution
-https://ror.org/05sy4b952,Saba Medical School,"Bonaire, Sint Eustatius, and Saba",,Verified_Institution
+https://ror.org/05sy4b952,Saba Medical School,"Bonaire, Sint Eustatius, and Saba",N/A,Verified_Institution
 https://ror.org/059b5pb30,Konan Gakuen Middle School,Japan,1919,Verified_Institution
 https://ror.org/04chrp450,Nagoya Daigaku,Japan,1871,Verified_Institution
 https://ror.org/02g1jdz81,Al Hikma University,Yemen,2008,Verified_Institution
@@ -1436,9 +1435,9 @@ https://ror.org/016jp5b92,Tanta University,Egypt,1972,Verified_Institution
 https://ror.org/01a099706,STU,China,1981,Verified_Institution
 https://ror.org/04b682n55,Enber,United States,2019,Verified_Institution
 https://ror.org/03gvsr558,KAZGUU University,Kazakhstan,1994,Verified_Institution
-https://ror.org/03hq50145,EDP University,Portugal,,Verified_Institution
+https://ror.org/03hq50145,EDP University,Portugal,N/A,Verified_Institution
 https://ror.org/03ahebw65,RUB,Bangladesh,2017,Verified_Institution
-https://ror.org/05njtdr40,MILA University,Malaysia,,Verified_Institution
+https://ror.org/05njtdr40,MILA University,Malaysia,N/A,Verified_Institution
 https://ror.org/05n7bzj69,Mahatma Gandhi University,India,2007,Verified_Institution
 https://ror.org/01h3hm524,Ahl Al Bayt University,Iraq,2003,Verified_Institution
 https://ror.org/01p6ew896,GMU,Ethiopia,2014,Verified_Institution
@@ -1500,7 +1499,7 @@ https://ror.org/05rp1t554,Suide Normal College,China,1958,Verified_Institution
 https://ror.org/00tkrft03,HKR,Sweden,1977,Verified_Institution
 https://ror.org/05abbep66,Brandeis University,United States,1948,Verified_Institution
 https://ror.org/01afbkc02,Sveučilište Sjever,Croatia,2015,Verified_Institution
-https://ror.org/056mwwj30,Intifada University,Libya,,Verified_Institution
+https://ror.org/056mwwj30,Intifada University,Libya,N/A,Verified_Institution
 https://ror.org/02y2cxp25,HELP Institute,Malaysia,1986,Verified_Institution
 https://ror.org/03sbnrq14,Lúrio University,Mozambique,2006,Verified_Institution
 https://ror.org/05byh2e17,EARTH,Costa Rica,1990,Verified_Institution
@@ -1571,7 +1570,7 @@ https://ror.org/015scty35,Kastamonu University,Türkiye,2006,Verified_Institutio
 https://ror.org/00wdq3744,Thapar Institute of Engineering & Technology,India,1956,Verified_Institution
 https://ror.org/05h33bt13,Qinghai University,China,1958,Verified_Institution
 https://ror.org/047g8vk19,Erciyes University,Türkiye,1978,Verified_Institution
-https://ror.org/0257kt353,Högskolan Väst,Sweden,,Verified_Institution
+https://ror.org/0257kt353,Högskolan Väst,Sweden,N/A,Verified_Institution
 https://ror.org/059djzq42,WYU,China,1958,Verified_Institution
 https://ror.org/0563pg902,LN,Hong Kong,1888,Verified_Institution
 https://ror.org/04wy7gp54,KBÜ,Türkiye,2007,Verified_Institution
@@ -1581,12 +1580,12 @@ https://ror.org/03ejnre35,Niğde University,Türkiye,1992,Verified_Institution
 https://ror.org/05mey9k78,TLÜ,Estonia,2005,Verified_Institution
 https://ror.org/0188yz413,Kyorin University,Japan,1970,Verified_Institution
 https://ror.org/04tstaj46,NXU,United States,2018,Verified_Institution
-https://ror.org/05e571q11,Ikuei Daigaku,Japan,,Verified_Institution
+https://ror.org/05e571q11,Ikuei Daigaku,Japan,N/A,Verified_Institution
 https://ror.org/023mv6842,Al-Naji University,Iraq,2024,Verified_Institution
 https://ror.org/05c1b7t53,MHRU,Yemen,2022,Verified_Institution
 https://ror.org/00d1mx684,CLU,Nigeria,2015,Verified_Institution
 https://ror.org/01r277z15,Ilam University,Iran,1355,Verified_Institution
-https://ror.org/05khk0h97,Mudanya Universitesi,Türkiye,,Verified_Institution
+https://ror.org/05khk0h97,Mudanya Universitesi,Türkiye,N/A,Verified_Institution
 https://ror.org/02bpnkx55,TSU,China,2002,Verified_Institution
 https://ror.org/00ndhrx30,SU,Egypt,2012,Verified_Institution
 https://ror.org/04ded0672,Andalas University,Indonesia,1955,Verified_Institution
@@ -1620,7 +1619,7 @@ https://ror.org/03bqmcz70,Jagiellonian University,Poland,1364,Verified_Instituti
 https://ror.org/05crjpb27,Bocconi University,Italy,1902,Verified_Institution
 https://ror.org/0418kp584,LSU,China,1907,Verified_Institution
 https://ror.org/0532dea97,Fairland University,Uganda,2001,Verified_Institution
-https://ror.org/02nkb2y52,Rozgan University,Afghanistan,,Verified_Institution
+https://ror.org/02nkb2y52,Rozgan University,Afghanistan,N/A,Verified_Institution
 https://ror.org/03kp2qt98,RKMVERI,India,2005,Verified_Institution
 https://ror.org/00ta7wy41,University PIM,Bosnia and Herzegovina,2003,Verified_Institution
 https://ror.org/0148jn964,AUO,Nigeria,2017,Verified_Institution
@@ -1638,7 +1637,7 @@ https://ror.org/02mvf8z51,AUC,Iraq,2013,Verified_Institution
 https://ror.org/05j136930,Army University,Ecuador,1922,Verified_Institution
 https://ror.org/024d6js02,Charles University,Czechia,1348,Verified_Institution
 https://ror.org/05cncd958,Cranfield University,United Kingdom,1993,Verified_Institution
-https://ror.org/05fk72r68,Esfarayen University,Iran,,Verified_Institution
+https://ror.org/05fk72r68,Esfarayen University,Iran,N/A,Verified_Institution
 https://ror.org/033003e23,Tampere University,Finland,2019,Verified_Institution
 https://ror.org/04hasps36,ALT,Kazakhstan,1931,Verified_Institution
 https://ror.org/04pe1sa24,ECOTEC,Ecuador,2007,Verified_Institution
@@ -1710,7 +1709,7 @@ https://ror.org/035hzws46,Luxor University,Egypt,2019,Verified_Institution
 https://ror.org/00ehj1e38,AZU,Libya,1986,Verified_Institution
 https://ror.org/01ppj9r51,Gauhati University,India,1948,Verified_Institution
 https://ror.org/04rk76w86,TU,Bangladesh,2023,Verified_Institution
-https://ror.org/04nvecq41,Bondoukou University,Ivory Coast,,Verified_Institution
+https://ror.org/04nvecq41,Bondoukou University,Ivory Coast,N/A,Verified_Institution
 https://ror.org/01x7tft50,Ninevah University,Iraq,2014,Verified_Institution
 https://ror.org/00g30e956,Hamburg University,Germany,1919,Verified_Institution
 https://ror.org/0573jvt10,Mandume University,Angola,1963,Verified_Institution
@@ -1738,27 +1737,27 @@ https://ror.org/03xv17r49,Sa'ada University,Yemen,2010,Verified_Institution
 https://ror.org/02j4mf075,Haluoleo University,Indonesia,1964,Verified_Institution
 https://ror.org/04jybm820,Alshatti University,Libya,2022,Verified_Institution
 https://ror.org/01e70kg07,Munger University,India,2018,Verified_Institution
-https://ror.org/032f7hg16,BU,Ukraine,,Verified_Institution
+https://ror.org/032f7hg16,BU,Ukraine,N/A,Verified_Institution
 https://ror.org/00aqdmx54,Tyndale University,Canada,1894,Verified_Institution
 https://ror.org/05sz0hh57,KU,Azerbaijan,2023,Verified_Institution
 https://ror.org/033eqas34,Giessen University,Germany,1607,Verified_Institution
 https://ror.org/022tv9y30,Christ,India,1969,Verified_Institution
 https://ror.org/015ya8798,Jeddah University,Saudi Arabia,1435,Verified_Institution
-https://ror.org/00ag2p577,GU,Iraq,,Verified_Institution
-https://ror.org/04yhfw911,SABU,Libya,,Verified_Institution
+https://ror.org/00ag2p577,GU,Iraq,N/A,Verified_Institution
+https://ror.org/04yhfw911,SABU,Libya,N/A,Verified_Institution
 https://ror.org/05x0g9h76,College of Dunaújváros,Hungary,1953,Verified_Institution
 https://ror.org/00xsr9m91,TJPU,China,1912,Verified_Institution
 https://ror.org/01k1m6p08,Rahman Institute of Higher Education,Iran,2006,Verified_Institution
 https://ror.org/03tmbn325,GM University,India,2023,Verified_Institution
 https://ror.org/044n25186,Chernivtsi National University,Ukraine,1875,Verified_Institution
-https://ror.org/0129qb137,Adventus University,Romania,,Verified_Institution
-https://ror.org/050k1mp73,Khurasan University,Afghanistan,,Verified_Institution
-https://ror.org/02t19h583,Jaamacada Lafoole,Somalia,,Verified_Institution
-https://ror.org/00basmr24,Aljazeera University,Syria,,Verified_Institution
-https://ror.org/05xpbkj44,Khemarak University,Cambodia,,Verified_Institution
+https://ror.org/0129qb137,Adventus University,Romania,N/A,Verified_Institution
+https://ror.org/050k1mp73,Khurasan University,Afghanistan,N/A,Verified_Institution
+https://ror.org/02t19h583,Jaamacada Lafoole,Somalia,N/A,Verified_Institution
+https://ror.org/00basmr24,Aljazeera University,Syria,N/A,Verified_Institution
+https://ror.org/05xpbkj44,Khemarak University,Cambodia,N/A,Verified_Institution
 https://ror.org/0445d5g14,Hachinohe Gakuin University,Japan,1981,Verified_Institution
-https://ror.org/017t2xn54,Chalermkarnchana University,Thailand,,Verified_Institution
-https://ror.org/052tgfs08,AGSB University,Switzerland,,Verified_Institution
+https://ror.org/017t2xn54,Chalermkarnchana University,Thailand,N/A,Verified_Institution
+https://ror.org/052tgfs08,AGSB University,Switzerland,N/A,Verified_Institution
 https://ror.org/03pqe2b21,Larkano University,Pakistan,2023,Verified_Institution
 https://ror.org/03r0k4b69,BU,Bangladesh,2011,Verified_Institution
 https://ror.org/025h1m602,Konkuk University,South Korea,1946,Verified_Institution
@@ -1796,13 +1795,13 @@ https://ror.org/04bgbsx11,JU,Lebanon,1988,Verified_Institution
 https://ror.org/046yatd98,MWU,United States,1900,Verified_Institution
 https://ror.org/04tkhxj35,Shingyeong University,South Korea,2000,Verified_Institution
 https://ror.org/00r1j9q42,City University,Bangladesh,2002,Verified_Institution
-https://ror.org/048mc3281,BKU,India,,Verified_Institution
+https://ror.org/048mc3281,BKU,India,N/A,Verified_Institution
 https://ror.org/049ezvq17,NC,Czechia,2004,Verified_Institution
 https://ror.org/036xnae80,KU,Nepal,1991,Verified_Institution
 https://ror.org/03hv1ad10,Akita Daigaku,Japan,1949,Verified_Institution
 https://ror.org/00vp5ry21,Iranshahr University,Iran,1372,Verified_Institution
 https://ror.org/02r276210,Avondale College of Higher Education,Australia,1897,Verified_Institution
-https://ror.org/036ttgc90,"Private University of Huancayo ""Franklin Roosevelt""",Peru,,Verified_Institution
+https://ror.org/036ttgc90,"Private University of Huancayo ""Franklin Roosevelt""",Peru,N/A,Verified_Institution
 https://ror.org/04mmwq306,TRU,Türkiye,2018,Verified_Institution
 https://ror.org/02vg6t997,DU,Slovakia,2004,Verified_Institution
 https://ror.org/00dk0pe94,Hillsdale Free Will Baptist College,United States,1905,Verified_Institution
@@ -1812,7 +1811,7 @@ https://ror.org/045tmdc16,CODE,Germany,2017,Verified_Institution
 https://ror.org/01nkhmn89,Biruni University,Türkiye,2014,Verified_Institution
 https://ror.org/01k9xac83,Rush University,United States,1972,Verified_Institution
 https://ror.org/03rh3e906,TERI University,India,1998,Verified_Institution
-https://ror.org/05czq7m38,Caspian University,Kazakhstan,,Verified_Institution
+https://ror.org/05czq7m38,Caspian University,Kazakhstan,N/A,Verified_Institution
 https://ror.org/03y5p5264,Nur University,Bolivia,1982,Verified_Institution
 https://ror.org/027bh9e22,Leiden University,The Netherlands,1575,Verified_Institution
 https://ror.org/03mezqr97,Shujitsu Junior College,Japan,1904,Verified_Institution
@@ -1835,7 +1834,7 @@ https://ror.org/05gt1vc06,Howard University,United States,1867,Verified_Institut
 https://ror.org/041zje040,HZU,China,1949,Verified_Institution
 https://ror.org/0319y6677,SU,Uganda,2015,Verified_Institution
 https://ror.org/04asgtj30,Baoding University,China,1904,Verified_Institution
-https://ror.org/01kfqj356,TIER,Russia,,Verified_Institution
+https://ror.org/01kfqj356,TIER,Russia,N/A,Verified_Institution
 https://ror.org/0397szj42,Tarsus University,Türkiye,2018,Verified_Institution
 https://ror.org/034yc4v31,Debark University,Ethiopia,2015,Verified_Institution
 https://ror.org/01eqh1863,Yango University,China,2001,Verified_Institution
@@ -1863,7 +1862,7 @@ https://ror.org/04khhej38,MPU,United States,2019,Verified_Institution
 https://ror.org/010f1sq29,NWU,South Africa,2004,Verified_Institution
 https://ror.org/030reqw53,Goa University,India,1985,Verified_Institution
 https://ror.org/03cv9h790,UU,India,1998,Verified_Institution
-https://ror.org/01e6x5f94,KCMC University,Tanzania,,Verified_Institution
+https://ror.org/01e6x5f94,KCMC University,Tanzania,N/A,Verified_Institution
 https://ror.org/04haebc03,MUN,Canada,1925,Verified_Institution
 https://ror.org/05pda3078,MNC University,Indonesia,2022,Verified_Institution
 https://ror.org/05x21tp94,Zaozhuang University,China,1971,Verified_Institution
@@ -1991,7 +1990,7 @@ https://ror.org/04bgbsx11,JU,Lebanon,1988,Verified_Institution
 https://ror.org/046yatd98,MWU,United States,1900,Verified_Institution
 https://ror.org/04tkhxj35,Shingyeong University,South Korea,2000,Verified_Institution
 https://ror.org/00r1j9q42,City University,Bangladesh,2002,Verified_Institution
-https://ror.org/048mc3281,BKU,India,,Verified_Institution
+https://ror.org/048mc3281,BKU,India,N/A,Verified_Institution
 https://ror.org/049ezvq17,NC,Czechia,2004,Verified_Institution
 https://ror.org/036xnae80,KU,Nepal,1991,Verified_Institution
 https://ror.org/03hv1ad10,Akita Daigaku,Japan,1949,Verified_Institution
