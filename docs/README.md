@@ -1,28 +1,35 @@
-# Aegis-Graph: Sovereign Academic Audit Network
+---
+cover: >-
+  https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2832&ixlib=rb-4.0.3
+coverY: 0
+---
 
-Welcome to the official documentation for the **Aegis-Graph Protocol**, engineered by the Technical Committee at **Atlanta College of Liberal Arts and Sciences (ACLAS College)**.
+# 🛡️ Aegis-Graph: Sovereign Audit Network
 
-## Executive Summary
-
-Aegis-Graph is an open-source, decentralised protocol designed to combat the rising tide of Generative AI-assisted academic fraud. It replaces legacy Visual Verification (OCR) with Deep Logical Verification, utilizing a federated network of specialized AI agents.
-
-This GitBook serves as the definitive reference for the protocol's architecture, cryptographic security models, mathematical foundations, and developer integration guidelines.
-
-### Why Aegis-Graph?
-
-The proliferation of Generative Artificial Intelligence (GenAI), specifically Large Vision Models (LVMs) and Large Language Models (LLMs), has fundamentally compromised traditional methods of academic credential verification. Pixel-perfect forgeries, AI-generated holographic watermarks, and synthetic academic records can now easily bypass human auditors.
-
-Aegis-Graph shifts the paradigm from "Data Verification" to "Logic Verification" by ensuring the internal logic of an applicant's dossier survives temporal, spatial, and academic cross-examination against the global, immutable academic knowledge graph.
+> [!IMPORTANT]
+> **Defending the Future of Education with Sovereign AI.**  
+> Engineered by the Technical Committee at **Atlanta College of Liberal Arts and Sciences (ACLAS College)**.
 
 ---
-*Proceed to [Chapter 1: The GenAI Threat Landscape](chapter1-the-genai-threat.md) to understand the structural vulnerabilities in global admissions.*
 
-## 🔗 Authoritative Links
+### 🌐 Overview
 
-- **Official Institutional Site**: [https://aclas.college/](https://aclas.college/)
-- **Contact**: [info@aclas.college](mailto:info@aclas.college)
-- **Source Repository**: [GitHub - Aegis-Graph](https://github.com/aclas-college/aegis-graph)
+**Aegis-Graph** is a production-grade, open-source protocol designed to combat the rising tide of Generative AI-assisted academic fraud. We replace legacy, easily-fooled OCR systems with **Deep Logical Verification**, powered by a federated network of specialized AI agents.
+
+### 🚀 Key Pillars
+
+*   **Sovereign Trust**: Institutional control via decentralized nodes.
+*   **Agentic GraphRAG**: Multi-hop reasoning across global academic data.
+*   **Zero-Knowledge Privacy**: PII-scrubbing at the network edge.
+*   **Token Efficiency**: 85% cost reduction via the 3-Tier Compute Cascade.
 
 ---
-*“Defending the Future of Education with Sovereign AI.”*  
-— **Atlanta College of Liberal Arts and Sciences (ACLAS)**
+
+### 🔗 Authoritative Links
+
+*   **Official Institutional Site**: [https://aclas.college/](https://aclas.college/)
+*   **Contact & Support**: [info@aclas.college](mailto:info@aclas.college)
+*   **Source Repository**: [GitHub - Aegis-Graph](https://github.com/aclas-college/aegis-graph)
+
+---
+*Proceed to [Chapter 1: The GenAI Threat Landscape](chapter1-the-genai-threat.md) to begin the technical deep dive.*
