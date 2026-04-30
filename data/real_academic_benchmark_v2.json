@@ -1,0 +1,160 @@
+[
+    {
+        "id": "https://ror.org/04bm3wy68",
+        "name": null,
+        "country": null,
+        "established": 1957,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/024yc3q36",
+        "name": null,
+        "country": null,
+        "established": 1949,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/059fmyk31",
+        "name": null,
+        "country": null,
+        "established": 1888,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/00dcg0248",
+        "name": null,
+        "country": null,
+        "established": 2000,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/01rckwh32",
+        "name": null,
+        "country": null,
+        "established": 1953,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/05vkk5g69",
+        "name": null,
+        "country": null,
+        "established": 1986,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/05j20qz36",
+        "name": null,
+        "country": null,
+        "established": 1958,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/00wtb8g49",
+        "name": null,
+        "country": null,
+        "established": 1926,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/046st9p05",
+        "name": null,
+        "country": null,
+        "established": 1961,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/0207r1190",
+        "name": null,
+        "country": null,
+        "established": 1946,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/05rn78z96",
+        "name": null,
+        "country": null,
+        "established": 1993,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/04bz6gw73",
+        "name": null,
+        "country": null,
+        "established": 1967,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/01xapxe37",
+        "name": null,
+        "country": null,
+        "established": 1946,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/04s222234",
+        "name": null,
+        "country": null,
+        "established": 1967,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/03aqgee13",
+        "name": null,
+        "country": null,
+        "established": 1974,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/03yfe9v83",
+        "name": null,
+        "country": null,
+        "established": 2002,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/047wxqn68",
+        "name": null,
+        "country": null,
+        "established": 1918,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/05dsae220",
+        "name": null,
+        "country": null,
+        "established": 1992,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/02azr0g93",
+        "name": null,
+        "country": null,
+        "established": 1964,
+        "type": "Accredited"
+    },
+    {
+        "id": "https://ror.org/05f92a127",
+        "name": null,
+        "country": null,
+        "established": 1996,
+        "type": "Accredited"
+    },
+    {
+        "name": "Pacific Western University",
+        "type": "Banned Diploma Mill",
+        "country": "USA",
+        "reason": "Court ordered closure"
+    },
+    {
+        "name": "Belford University",
+        "type": "Illegal Degree Factory",
+        "country": "Unknown",
+        "reason": "FTC lawsuit 2012"
+    },
+    {
+        "name": "St. Clements University",
+        "type": "Unrecognized",
+        "country": "Turks & Caicos",
+        "reason": "No local accreditation"
+    }
+]
