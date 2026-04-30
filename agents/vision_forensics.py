@@ -21,6 +21,12 @@ class VisionForensicsAgent:
                 graduation_year=2025,
                 gpa=3.8
             )
+        elif "graham" in source_path.lower():
+            return Transcript(
+                institution_name="Graham International University",
+                graduation_year=2024,
+                gpa=3.9
+            )
         elif "fake" in source_path.lower() or "fraud" in source_path.lower():
             return Transcript(
                 institution_name="Pacific Western University",
@@ -33,3 +39,4 @@ class VisionForensicsAgent:
                 graduation_year=2024,
                 gpa=3.5
             )
+

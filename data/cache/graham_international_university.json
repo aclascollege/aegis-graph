@@ -1,0 +1,19 @@
+{
+  "name": "Graham International University",
+  "ror_id": null,
+  "openalex_id": null,
+  "status": "fraudulent",
+  "country": "Unknown",
+  "established_year": null,
+  "reputation_score": 0.0,
+  "is_verified": false,
+  "is_diploma_mill": true,
+  "warning": "⚠️ DIPLOMA MILL / DEGREE FACTORY — This institution is NOT recognized by any legitimate accreditation body. All credentials issued by this entity are considered fraudulent.",
+  "raw_metadata": {
+    "classification": "diploma_mill",
+    "threat_level": "critical",
+    "accreditation_status": "none",
+    "known_aliases": ["Graham International University", "Graham University"],
+    "notes": "No verifiable faculty, no campus, no scholarly output. Zero citations in OpenAlex. Not listed in any government accreditation registry."
+  }
+}

@@ -8,6 +8,7 @@ class AuditResolution(BaseModel):
     risk_score: float
     reasoning_steps: List[str]
     mcp_trace: str
+    warning: str = ""
 
 class LogicAuditor:
     """
@@ -23,6 +24,31 @@ class LogicAuditor:
         
         reasoning_steps = []
         anomalies = []
+        diploma_mill_warning = ""
+
+        # Step 0: Known Diploma Mill / Degree Factory Hard-Rejection
+        is_diploma_mill = profile.get("is_diploma_mill", False)
+        profile_status = profile.get("status", "")
+        if is_diploma_mill or profile_status == "fraudulent":
+            warning_msg = profile.get("warning", "")
+            diploma_mill_warning = warning_msg or "[!!!] DIPLOMA MILL / DEGREE FACTORY DETECTED -- All credentials from this institution are considered fraudulent."
+            print(f"\n{'!'*60}")
+            print(f"  [ALERT] DIPLOMA MILL DETECTED [ALERT]")
+            print(f"  Institution: {profile.get('name', 'Unknown')}")
+            print(f"  {diploma_mill_warning}")
+            print(f"{'!'*60}\n")
+
+            return AuditResolution(
+                verdict="REJECTED — DIPLOMA MILL / DEGREE FACTORY",
+                risk_score=100.0,
+                reasoning_steps=[
+                    "Step 0: Known Diploma Mill / Degree Factory check.",
+                    f"Result 0: HARD REJECTION. '{profile.get('name', 'Unknown')}' is flagged as a confirmed diploma mill.",
+                    "No further analysis required. All credentials from this entity are fraudulent."
+                ],
+                mcp_trace=call.trace_id,
+                warning=diploma_mill_warning
+            )
 
         # Step 1: Temporal Contextualization
         reasoning_steps.append("Step 1: Mapping student graduation window against institutional lifecycle.")
