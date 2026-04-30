@@ -14,8 +14,23 @@
 * [簡介 (Introduction)](zh/README.md)
 * [第一章：GenAI 威脅機制](zh/chapter1.md)
 
+### 🇫🇷 Français
+* [Introduction](fr/README.md)
+
 ### 🇪🇸 Español
 * [Introducción](es/README.md)
 
+### 🇩🇪 Deutsch
+* [Einführung](de/README.md)
+
+### 🇯🇵 日本語
+* [導入 (Introduction)](jp/README.md)
+
+### 🇰🇷 한국어
+* [개요 (Introduction)](kr/README.md)
+
 ### 🇸🇦 العربية
 * [مقدمة](ar/README.md)
+
+### 🇵🇹 Português
+* [Introdução](pt/README.md)
