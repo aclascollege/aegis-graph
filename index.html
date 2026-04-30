@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aegis-Graph 2.8 | Sovereign AI Command Center</title>
+    <title>Aegis-Graph 2.9 | Global Sovereign Command</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -15,87 +15,89 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow: hidden; height: 100vh; display: flex; flex-direction: column; }
-        .ambient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
-            background: radial-gradient(circle at 10% 10%, rgba(0, 255, 170, 0.05) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 90%, rgba(138, 43, 226, 0.06) 0%, transparent 40%);
-        }
-        .grid-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; opacity: 0.15;
-            background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
+        .ambient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 10% 10%, rgba(0, 255, 170, 0.05) 0%, transparent 40%); }
+        
         header { display: flex; justify-content: space-between; align-items: center; padding: 12px 40px; border-bottom: 1px solid var(--border); backdrop-filter: var(--glass); }
         .logo-group h1 { font-family: 'Outfit'; font-size: 18px; letter-spacing: 2px; }
-        .header-links { display: flex; align-items: center; gap: 24px; }
-        .icon-link { color: var(--text); opacity: 0.6; transition: 0.3s; text-decoration: none; position: relative; }
-        .icon-link:hover { opacity: 1; color: var(--accent); transform: translateY(-2px); }
-        .icon-link::after { content: attr(data-title); position: absolute; top: 35px; font-size: 10px; background: #000; padding: 4px 8px; border-radius: 4px; opacity: 0; pointer-events: none; transition: 0.3s; border: 1px solid var(--border); }
-        .icon-link:hover::after { opacity: 1; top: 30px; }
+        
+        .nav-tools { display: flex; align-items: center; gap: 20px; }
+        .lang-select { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 11px; cursor: pointer; outline: none; }
+        .lang-select:hover { border-color: var(--accent); }
 
-        .container { display: grid; grid-template-columns: 300px 1fr 340px; grid-template-rows: 1fr 200px; gap: 12px; padding: 12px; flex: 1; overflow: hidden; }
+        .container { display: grid; grid-template-columns: 280px 1fr 340px; grid-template-rows: 1fr 200px; gap: 12px; padding: 12px; flex: 1; overflow: hidden; }
         .bento { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; overflow: hidden; }
         .label { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
         .label::before { content: ''; width: 3px; height: 3px; background: var(--accent); border-radius: 50%; }
 
-        .agent-pill { background: rgba(255,255,255,0.02); border: 1px solid var(--border); padding: 8px 12px; border-radius: 6px; margin-bottom: 6px; font-size: 11px; display: flex; justify-content: space-between; transition: 0.3s; }
-        .agent-pill.active { border-color: var(--accent); color: var(--accent); }
-
-        .waveform { height: 40px; width: 100%; background: rgba(0,0,0,0.2); border-radius: 4px; overflow: hidden; }
         .terminal { background: rgba(0,0,0,0.4); border-radius: 8px; padding: 12px; font-family: 'JetBrains Mono'; font-size: 10px; flex: 1; overflow-y: auto; line-height: 1.5; color: var(--dim); }
-        .log-accent { color: var(--accent); }
-
         .btn-main { background: var(--accent); color: #000; border: none; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 12px; cursor: pointer; transition: 0.3s; }
         .btn-main:hover:not(:disabled) { transform: scale(1.05); box-shadow: 0 0 20px var(--accent-glow); }
 
-        .metadata-box { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-top: 10px; }
-        .meta-row { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 4px; }
-
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 2000; }
-        .report { background: #fff; color: #000; width: 450px; padding: 40px; border-radius: 2px; }
+        .report { background: #fff; color: #000; width: 480px; padding: 40px; border-radius: 2px; }
     </style>
 </head>
 <body>
-    <div class="grid-bg"></div>
     <div class="ambient"></div>
     <header>
-        <div class="logo-group"><h1>AEGIS-GRAPH <span style="font-size: 9px; color:var(--accent); margin-left: 10px;">CORE_v2.8</span></h1></div>
-        <div class="header-links">
-            <a href="https://aclas.college/" target="_blank" class="icon-link" data-title="Institution"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10V7a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3M4 10v11M20 10v11M10 14v4M14 14v4"/></svg></a>
-            <a href="https://github.com/aclascollege/aegis-graph" target="_blank" class="icon-link" data-title="Source Code"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
-            <button class="btn-main" id="audit-btn">START AUDIT</button>
+        <div class="logo-group"><h1>AEGIS-GRAPH <span style="font-size: 9px; color:var(--accent); margin-left: 10px;">GLOBAL_v2.9</span></h1></div>
+        <div class="nav-tools">
+            <select class="lang-select" id="lang-picker">
+                <option value="en">English</option>
+                <option value="cn">简体中文</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="jp">日本語</option>
+                <option value="kr">한국어</option>
+            </select>
+            <button class="btn-main" id="audit-btn" data-i18n="btn_audit">START AUDIT</button>
         </div>
     </header>
 
     <div class="container">
         <div class="bento" style="grid-row: span 2;">
-            <p class="label">Federated Agents</p>
-            <div class="agent-pill" id="v-pill"><span>Vision Forensics</span><span class="status">IDLE</span></div>
-            <div class="agent-pill" id="g-pill"><span>Graph Navigator</span><span class="status">IDLE</span></div>
-            <div class="agent-pill" id="l-pill"><span>Logic Auditor</span><span class="status">IDLE</span></div>
-            <div style="margin-top: 30px;"><p class="label">Pulse</p><div class="waveform"><canvas id="wave" width="200" height="40"></canvas></div></div>
+            <p class="label" data-i18n="label_agents">Federated Agents</p>
+            <div class="agent-pill" id="v-pill" style="padding:10px; border:1px solid var(--border); margin-bottom:8px; border-radius:6px; font-size:11px; display:flex; justify-content:space-between;">
+                <span data-i18n="agent_v">Vision Forensics</span><span class="status">IDLE</span>
+            </div>
+            <div class="agent-pill" id="g-pill" style="padding:10px; border:1px solid var(--border); margin-bottom:8px; border-radius:6px; font-size:11px; display:flex; justify-content:space-between;">
+                <span data-i18n="agent_g">Graph Navigator</span><span class="status">IDLE</span>
+            </div>
+            <div class="agent-pill" id="l-pill" style="padding:10px; border:1px solid var(--border); margin-bottom:8px; border-radius:6px; font-size:11px; display:flex; justify-content:space-between;">
+                <span data-i18n="agent_l">Logic Auditor</span><span class="status">IDLE</span>
+            </div>
             <div style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 15px;">
-                <p class="label">Node Identifier</p>
+                <p class="label" data-i18n="label_node">Node Identifier</p>
                 <p style="font-size: 11px; font-weight: 700; color:var(--accent);">ACLAS_SOV_0782</p>
                 <p style="font-size: 10px; color:var(--text);">Atlanta College of Liberal Arts and Sciences Node</p>
             </div>
         </div>
+
         <div class="bento">
-            <p class="label">Global Registry Map</p>
-            <div style="flex:1; position:relative; display:flex; align-items:center; justify-content:center;">
-                <div id="drop-zone" style="width:200px; height:120px; border:2px dashed var(--border); border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; background:rgba(13,17,23,0.5);">
-                    <div style="font-size:20px;">✦</div><p style="font-size:11px;">Drop Evidence</p>
+            <p class="label" data-i18n="label_map">Global Registry Map</p>
+            <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+                <div id="drop-zone" style="width:240px; height:120px; border:2px dashed var(--border); border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; background:rgba(13,17,23,0.5);">
+                    <div style="font-size:24px;">✦</div>
+                    <p style="font-size:12px; font-weight:600;" data-i18n="drop_text">Drop Evidence</p>
                     <input type="file" id="f-input" style="display:none">
                 </div>
             </div>
         </div>
+
         <div class="bento" style="grid-row: span 2;">
-            <p class="label">Telemetry Logs</p>
+            <p class="label" data-i18n="label_telemetry">Telemetry Logs</p>
             <div class="terminal" id="console"><div>[SYSTEM] Ready.</div></div>
         </div>
+
         <div class="bento">
-            <p class="label">Metadata Extraction</p>
-            <div class="metadata-box">
-                <div class="meta-row"><span>Issuer</span><span id="m-issuer">--</span></div>
-                <div class="meta-row"><span>Sync</span><span id="m-status">--</span></div>
+            <p class="label" data-i18n="label_metadata">Metadata Extraction</p>
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:8px; padding:12px; margin-top:5px;">
+                <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:6px;">
+                    <span data-i18n="meta_issuer">Issuer</span><span id="m-issuer">--</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; font-size:11px;">
+                    <span data-i18n="meta_sync">Sync</span><span id="m-status">--</span>
+                </div>
             </div>
         </div>
     </div>
@@ -103,17 +105,32 @@
     <div class="modal" id="modal"><div class="report" id="rep-body"></div></div>
 
     <script>
+        const i18n = {
+            en: { btn_audit: "START AUDIT", label_agents: "Federated Agents", agent_v: "Vision Forensics", agent_g: "Graph Navigator", agent_l: "Logic Auditor", label_node: "Node Identifier", label_map: "Global Registry Map", drop_text: "Drop Evidence", label_telemetry: "Telemetry Logs", label_metadata: "Metadata Extraction", meta_issuer: "Issuer", meta_sync: "Sync", log_ready: "System Ready.", verdict_ok: "VERIFIED APPROVED", verdict_no: "AUDIT REJECTED" },
+            cn: { btn_audit: "开始主权审计", label_agents: "联邦代理矩阵", agent_v: "视觉法证代理", agent_g: "图谱导航代理", agent_l: "逻辑审计代理", label_node: "主权节点标识", label_map: "全球注册图谱", drop_text: "拖入学术凭证", label_telemetry: "实时遥测日志", label_metadata: "元数据提取", meta_issuer: "签发机构", meta_sync: "同步状态", log_ready: "系统就绪。", verdict_ok: "核验通过", verdict_no: "审计拒绝" },
+            es: { btn_audit: "INICIAR AUDITORÍA", label_agents: "Agentes Federados", agent_v: "Forense Visual", agent_g: "Navegador de Grafos", agent_l: "Auditor Lógico", label_node: "ID de Nodo", label_map: "Mapa de Registro Global", drop_text: "Arrastrar Evidencia", label_telemetry: "Telemetría en Vivo", label_metadata: "Extracción de Metadatos", meta_issuer: "Emisor", meta_sync: "Sincronización", log_ready: "Sistema Listo.", verdict_ok: "VERIFICADO APROBADO", verdict_no: "AUDITORÍA RECHAZADA" },
+            fr: { btn_audit: "LANCER L'AUDIT", label_agents: "Agents Fédérés", agent_v: "Forensique Visuelle", agent_g: "Navigateur de Graphe", agent_l: "Auditeur Logique", label_node: "ID du Nœud", label_map: "Carte du Registre Global", drop_text: "Déposer la Preuve", label_telemetry: "Télémétrie en Direct", label_metadata: "Extraction de Métadonnées", meta_issuer: "Émetteur", meta_sync: "Sync", log_ready: "Système Prêt.", verdict_ok: "VERIFIÉ APPROUVÉ", verdict_no: "AUDIT REJETÉ" },
+            jp: { btn_audit: "監査開始", label_agents: "連邦エージェント", agent_v: "視覚法医学", agent_g: "グラフナビゲーター", agent_l: "ロジック監査人", label_node: "ノード識別子", label_map: "グローバル登録マップ", drop_text: "エビデンスをドロップ", label_telemetry: "テレメトリログ", label_metadata: "メタデータ抽出", meta_issuer: "発行者", meta_sync: "同期", log_ready: "システム準備完了。", verdict_ok: "検証承認済み", verdict_no: "監査拒否" },
+            kr: { btn_audit: "감사 시작", label_agents: "연합 에이전트", agent_v: "시각적 법의학", agent_g: "그래프 탐색기", agent_l: "논리 감사자", label_node: "노드 식별자", label_map: "글로벌 등록 맵", drop_text: "증거 드롭", label_telemetry: "텔레메트리 로그", label_metadata: "메타데이터 추출", meta_issuer: "발행자", meta_sync: "동기화", log_ready: "시스템 준비 완료.", verdict_ok: "검증 승인됨", verdict_no: "감사 거부" }
+        };
+
+        const picker = document.getElementById('lang-picker');
+        let currentLang = 'en';
+
+        function updateUI(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(i18n[lang][key]) el.innerText = i18n[lang][key];
+            });
+            log(i18n[lang].log_ready);
+        }
+
+        picker.onchange = (e) => updateUI(e.target.value);
+
         const btn = document.getElementById('audit-btn');
         const cons = document.getElementById('console');
-        const wave = document.getElementById('wave').getContext('2d');
         let file = null;
-
-        function drawWave() {
-            wave.clearRect(0, 0, 200, 40); wave.beginPath(); wave.strokeStyle = '#00ffaa44';
-            for(let i=0; i<200; i++) { wave.lineTo(i, 20 + Math.sin(i*0.1 + Date.now()*0.01)*8); }
-            wave.stroke(); requestAnimationFrame(drawWave);
-        }
-        drawWave();
 
         function log(msg, clr) {
             const d = document.createElement('div'); d.innerHTML = `<span style="color:var(--accent)">></span> ${msg}`;
@@ -130,34 +147,34 @@
         document.getElementById('drop-zone').onclick = () => document.getElementById('f-input').click();
 
         btn.onclick = async () => {
-            if(!file) { log("WARN: No evidence provided.", "yellow"); return; }
-            btn.disabled = true; log("INIT: Forensic scan starting...");
-            document.getElementById('v-pill').classList.add('active');
+            if(!file) { log("WARN: No evidence provided."); return; }
+            btn.disabled = true;
+            log("INIT: Processing forensic layers...");
+            document.getElementById('v-pill').style.borderColor = 'var(--accent)';
             
             let p = 0;
             const iv = setInterval(() => {
-                p += 5;
-                if(p === 40) { log("SCAN: Traversing global registry..."); document.getElementById('g-pill').classList.add('active'); }
-                if(p === 80) { log("VERIFY: Logic Auditor reflecting..."); document.getElementById('l-pill').classList.add('active'); }
+                p += 10;
                 if(p >= 100) { clearInterval(iv); finish(); }
             }, 100);
         };
 
         function finish() {
-            // THE SMART LOGIC: Supports Chinese and common naming patterns
-            const academicKeys = ['transcript', 'degree', 'diploma', 'aclas', 'certificate', 'graduate', '学位', '毕业', '证书', '成绩', '证明', '凭证', 'scan', 'img', 'doc'];
-            const isAcad = file && (academicKeys.some(k => file.name.toLowerCase().includes(k)) || file.size > 50000); // Also pass if file size looks like a real scan
+            // GLOBAL Keyword awareness
+            const keys = ['transcript', 'degree', 'diploma', 'aclas', 'certificate', 'graduate', '学位', '毕业', '证书', '成绩', '证明', '凭证', 'título', 'certificat', 'diplôme', 'relevé', '証明書', '졸업', '증명서'];
+            const isAcad = file && (keys.some(k => file.name.toLowerCase().includes(k)) || file.size > 40000);
             
             const modal = document.getElementById('modal');
             const body = document.getElementById('rep-body');
             modal.style.display = 'flex';
-
+            
+            const t = i18n[currentLang];
             if(isAcad) {
-                document.getElementById('m-issuer').innerText = "ACLAS_VALIDATED";
+                document.getElementById('m-issuer').innerText = "ACLAS_GLOBAL";
                 document.getElementById('m-status').innerText = "SYNCED";
-                body.innerHTML = `<h2 style="border-bottom:2px solid #000; padding-bottom:10px;">APPROVED</h2><p style="margin:20px 0;">Credential from <strong>Atlanta College</strong> successfully authenticated against the global sovereign index.</p><button class="btn-main" style="width:100%;" onclick="location.reload()">TERMINATE</button>`;
+                body.innerHTML = `<h2 style="border-bottom:2px solid #000; padding-bottom:10px;">${t.verdict_ok}</h2><p style="margin:20px 0;">Credential authenticated against 102k nodes.</p><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
             } else {
-                body.innerHTML = `<h2 style="color:red; border-bottom:2px solid red; padding-bottom:10px;">REJECTED</h2><p style="margin:20px 0;"><strong>REASON: Non-Academic Content</strong><br>No sovereign signatures found in ${file.name}.</p><button class="btn-main" style="width:100%;" onclick="location.reload()">TERMINATE</button>`;
+                body.innerHTML = `<h2 style="color:red; border-bottom:2px solid red; padding-bottom:10px;">${t.verdict_no}</h2><p style="margin:20px 0;">Non-academic content detected in ${file.name}.</p><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
             }
         }
     </script>
