@@ -12,6 +12,7 @@
 * [Chapter 5: Cryptography & Privacy](en/chapter5-cryptography-and-privacy.md)
 * [Chapter 6: Token Economics](en/chapter6-token-economics.md)
 * [Chapter 7: Developer API](en/chapter7-developer-api.md)
+* [Chapter 8: Node Deployment Guide](en/chapter8-node-deployment.md)
 * [❓ FAQ](en/faq.md)
 
 ## 🇭🇰 Chinese
