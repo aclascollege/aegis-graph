@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aegis-Graph | Sovereign Academic Audit Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- REMOVED EXTERNAL FONTS FOR HF SPACE COMPATIBILITY -->
     <style>
         :root {
             --primary: #00f2ff;
             --secondary: #7000ff;
-            --accent: #ff00c8;
             --bg: #03050a;
-            --glass: rgba(10, 15, 25, 0.7);
+            --glass: rgba(10, 15, 25, 0.85);
             --border: rgba(255, 255, 255, 0.1);
         }
 
@@ -22,7 +19,7 @@
         body {
             background: var(--bg);
             color: #ffffff;
-            font-family: 'Outfit', sans-serif;
+            font-family: sans-serif; /* Use system font for max compatibility */
             overflow-x: hidden;
             background-image: url('aegis_graph_sovereign_bg_1777546038401.png');
             background-size: cover;
@@ -33,9 +30,8 @@
         .overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, rgba(3, 5, 10, 0.8) 100%);
+            background: rgba(3, 5, 10, 0.7);
             z-index: 1;
-            pointer-events: none;
         }
 
         .container {
@@ -51,160 +47,68 @@
 
         .glass-card {
             background: var(--glass);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border);
-            border-radius: 40px;
-            padding: 60px;
-            max-width: 1000px;
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 800px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .logo-area { margin-bottom: 30px; }
-        .logo-shield {
-            font-size: 80px;
-            filter: drop-shadow(0 0 20px var(--primary));
-            margin-bottom: 20px;
-            display: inline-block;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 900;
         }
 
         p.subtitle {
-            font-size: clamp(1rem, 4vw, 1.4rem);
-            color: #94a3b8;
-            max-width: 700px;
-            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
             line-height: 1.6;
-            font-weight: 300;
         }
-
-        .stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item { text-align: center; }
-        .stat-value { font-size: 2rem; font-weight: 800; color: var(--primary); }
-        .stat-label { font-size: 0.9rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
 
         .cta-group {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 18px 45px;
-            border-radius: 100px;
+            padding: 15px 35px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #000;
-            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.3);
-        }
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-secondary { border: 1px solid var(--primary); color: var(--primary); }
 
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 242, 255, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #475569;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        footer b { color: #94a3b8; }
-
-        /* Mobile Adjustments */
-        @media (max-width: 640px) {
-            .glass-card { padding: 40px 20px; border-radius: 30px; }
-            .stats-row { gap: 20px; }
-        }
+        footer { margin-top: 40px; color: #666; font-size: 0.8rem; }
+        footer a { color: var(--primary); text-decoration: none; }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="container">
         <div class="glass-card">
-            <div class="logo-area">
-                <div class="logo-shield">🛡️</div>
-            </div>
-            <h1>Aegis-Graph</h1>
-            <p class="subtitle">A sovereign multi-agent protocol for decentralized academic verification, ensuring the integrity of institutional trust in a synthetic world.</p>
+            <h1>🛡️ Aegis-Graph</h1>
+            <p class="subtitle">Sovereign Multi-Agent Protocol for Global Academic Verification. Linking 102,000+ Institutional Trust Nodes.</p>
             
-            <div class="stats-row">
-                <div class="stat-item">
-                    <div class="stat-value">102K+</div>
-                    <div class="stat-label">Global Nodes</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">Sovereign</div>
-                    <div class="stat-label">Architecture</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">Verified</div>
-                    <div class="stat-label">Institutions</div>
-                </div>
-            </div>
-
             <div class="cta-group">
-                <a href="https://atlanta-college-of-liberal-arts.gitbook.io/atlanta-college-of-liberal-arts-and-sciences" class="btn btn-primary">ENTER DOCUMENTATION</a>
-                <a href="https://huggingface.co/ACLASCollege/aegis-graph" class="btn btn-secondary">EXPLORE PROTOCOL</a>
+                <a href="https://atlanta-college-of-liberal-arts.gitbook.io/atlanta-college-of-liberal-arts-and-sciences" class="btn btn-primary" target="_blank">DOCUMENTATION</a>
+                <a href="https://huggingface.co/ACLASCollege/aegis-graph" class="btn btn-secondary" target="_blank">EXPLORE PROTOCOL</a>
             </div>
         </div>
 
         <footer>
-            <p>&copy; 2026 Aegis-Graph Protocol. Governed by <b>Atlanta College of Liberal Arts and Sciences (ACLAS)</b></p>
-            <p style="margin-top: 10px;"><a href="https://aclas.college/" style="color: inherit; text-decoration: none;">aclas.college</a></p>
+            <p>&copy; 2026 Aegis-Graph. Governed by <a href="https://aclas.college/">Atlanta College of Liberal Arts and Sciences (ACLAS)</a></p>
         </footer>
     </div>
 </body>
