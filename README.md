@@ -85,7 +85,26 @@ pip install -r requirements.txt
 
 ---
 
+## 🌐 Connect & Support
+
+<div align="center">
+  <a href="https://x.com/aclascollege" target="_blank">
+    <img src="https://img.shields.io/badge/X-Follow%20Us-black?style=for-the-badge&logo=x&logoColor=white" alt="X">
+  </a>
+  <a href="https://www.linkedin.com/school/aclas-college/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="https://aclas.college" target="_blank">
+    <img src="https://img.shields.io/badge/Website-aclas.college-red?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website">
+  </a>
+  <a href="mailto:info@aclas.college">
+    <img src="https://img.shields.io/badge/Email-Contact_Us-lightgrey?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+</div>
+
+<br>
+
 <div align="center">
   <p>© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College). All Rights Reserved.</p>
-  <p>Technical Committee: <a href="mailto:info@aclas.college">info@aclas.college</a></p>
+  <p>Building the next generation of Sovereign Academic Intelligence.</p>
 </div>
