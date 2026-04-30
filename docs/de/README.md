@@ -1,3 +1,2 @@
-# 🛡️ Aegis-Graph: Souveränes Akademisches Audit-Protokoll
-Verteidigung der Zukunft der Bildung mit Souveräner KI & Agentischer Intelligenz.
-- [Einführung](de/README.md)
+# 🛡️ Aegis-Graph Documentation (DE)
+Defending academic integrity with Sovereign AI.
