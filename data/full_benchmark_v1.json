@@ -1,0 +1,1002 @@
+[
+    {
+        "audit_id": "AG-2026-1000",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 1999,
+        "reputation_score": 0.98,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1001",
+        "institution_name": "Columbia State University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 1996,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1002",
+        "institution_name": "Rochville University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2007,
+        "reputation_score": 0.22,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1003",
+        "institution_name": "Kingsbridge University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 1996,
+        "reputation_score": 0.23,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1004",
+        "institution_name": "Western Michigan State University (Fake)",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2021,
+        "reputation_score": 0.18,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1005",
+        "institution_name": "Parkwood University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2000,
+        "reputation_score": 0.23,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1006",
+        "institution_name": "Barrington University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2019,
+        "reputation_score": 0.18,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1007",
+        "institution_name": "McFord University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 1996,
+        "reputation_score": 0.25,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1008",
+        "institution_name": "Barrington University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2005,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1009",
+        "institution_name": "Rochville University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2001,
+        "reputation_score": 0.25,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1010",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2014,
+        "reputation_score": 0.93,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1011",
+        "institution_name": "Glencullen University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2019,
+        "reputation_score": 0.12,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1012",
+        "institution_name": "Almeda University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2017,
+        "reputation_score": 0.26,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1013",
+        "institution_name": "McFord University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2018,
+        "reputation_score": 0.14,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1014",
+        "institution_name": "Kingsbridge University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2011,
+        "reputation_score": 0.12,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1015",
+        "institution_name": "Glencullen University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2002,
+        "reputation_score": 0.16,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1016",
+        "institution_name": "Rochville University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2005,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1017",
+        "institution_name": "Dublin Metropolitan University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2008,
+        "reputation_score": 0.23,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1018",
+        "institution_name": "Belford University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 1997,
+        "reputation_score": 0.16,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1019",
+        "institution_name": "International University of America",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2008,
+        "reputation_score": 0.19,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1020",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 1999,
+        "reputation_score": 0.94,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1021",
+        "institution_name": "University of Wolverton",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2001,
+        "reputation_score": 0.22,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1022",
+        "institution_name": "International University of America",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2005,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1023",
+        "institution_name": "Parkwood University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2022,
+        "reputation_score": 0.13,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1024",
+        "institution_name": "Atlantic International University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2004,
+        "reputation_score": 0.11,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1025",
+        "institution_name": "Almeda University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2001,
+        "reputation_score": 0.28,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1026",
+        "institution_name": "Glencullen University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2009,
+        "reputation_score": 0.16,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1027",
+        "institution_name": "Canterbury University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2008,
+        "reputation_score": 0.26,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1028",
+        "institution_name": "Yorker International University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2012,
+        "reputation_score": 0.3,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1029",
+        "institution_name": "St. Clements University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2017,
+        "reputation_score": 0.26,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1030",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2002,
+        "reputation_score": 0.91,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1031",
+        "institution_name": "Dublin Metropolitan University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 1997,
+        "reputation_score": 0.19,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1032",
+        "institution_name": "Atlantic International University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2019,
+        "reputation_score": 0.15,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1033",
+        "institution_name": "Canterbury University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2024,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1034",
+        "institution_name": "International University of America",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2017,
+        "reputation_score": 0.22,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1035",
+        "institution_name": "St. Clements University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2005,
+        "reputation_score": 0.25,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1036",
+        "institution_name": "Parkwood University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2008,
+        "reputation_score": 0.14,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1037",
+        "institution_name": "Pacific Western University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 1997,
+        "reputation_score": 0.14,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1038",
+        "institution_name": "Preston University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2003,
+        "reputation_score": 0.23,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1039",
+        "institution_name": "St. Clements University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2021,
+        "reputation_score": 0.11,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1040",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2018,
+        "reputation_score": 0.94,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1041",
+        "institution_name": "Belford University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2012,
+        "reputation_score": 0.25,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1042",
+        "institution_name": "Canterbury University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2001,
+        "reputation_score": 0.21,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1043",
+        "institution_name": "Kingsbridge University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2008,
+        "reputation_score": 0.21,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1044",
+        "institution_name": "Almeda University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2009,
+        "reputation_score": 0.21,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1045",
+        "institution_name": "Mid-Atlantic University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2009,
+        "reputation_score": 0.25,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1046",
+        "institution_name": "Yorker International University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2024,
+        "reputation_score": 0.15,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1047",
+        "institution_name": "Kingsbridge University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2001,
+        "reputation_score": 0.21,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1048",
+        "institution_name": "McFord University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2000,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1049",
+        "institution_name": "Belford University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2007,
+        "reputation_score": 0.23,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1050",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 1995,
+        "reputation_score": 0.97,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1051",
+        "institution_name": "St. Clements University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2006,
+        "reputation_score": 0.23,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1052",
+        "institution_name": "St. Clements University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2012,
+        "reputation_score": 0.11,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1053",
+        "institution_name": "Almeda University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 1999,
+        "reputation_score": 0.26,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1054",
+        "institution_name": "Kingsbridge University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2010,
+        "reputation_score": 0.18,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1055",
+        "institution_name": "Almeda University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2000,
+        "reputation_score": 0.28,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1056",
+        "institution_name": "Columbia State University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2016,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1057",
+        "institution_name": "McFord University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2008,
+        "reputation_score": 0.26,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1058",
+        "institution_name": "Canterbury University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2010,
+        "reputation_score": 0.2,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1059",
+        "institution_name": "Yorker International University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2022,
+        "reputation_score": 0.11,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1060",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2000,
+        "reputation_score": 0.98,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1061",
+        "institution_name": "University of Wolverton",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2005,
+        "reputation_score": 0.14,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1062",
+        "institution_name": "Western Michigan State University (Fake)",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2002,
+        "reputation_score": 0.25,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1063",
+        "institution_name": "Almeda University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2008,
+        "reputation_score": 0.24,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1064",
+        "institution_name": "McFord University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2019,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1065",
+        "institution_name": "Atlantic International University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2019,
+        "reputation_score": 0.29,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1066",
+        "institution_name": "Glencullen University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2002,
+        "reputation_score": 0.27,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1067",
+        "institution_name": "Preston University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2001,
+        "reputation_score": 0.13,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1068",
+        "institution_name": "Parkwood University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2009,
+        "reputation_score": 0.12,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1069",
+        "institution_name": "Barrington University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2017,
+        "reputation_score": 0.13,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1070",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2008,
+        "reputation_score": 0.93,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1071",
+        "institution_name": "Barrington University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2016,
+        "reputation_score": 0.21,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1072",
+        "institution_name": "Dublin Metropolitan University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 1998,
+        "reputation_score": 0.22,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1073",
+        "institution_name": "Mid-Atlantic University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2017,
+        "reputation_score": 0.15,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1074",
+        "institution_name": "International University of America",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2015,
+        "reputation_score": 0.12,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1075",
+        "institution_name": "University of Wolverton",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2006,
+        "reputation_score": 0.28,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1076",
+        "institution_name": "Preston University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2004,
+        "reputation_score": 0.26,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1077",
+        "institution_name": "Pacific Western University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2002,
+        "reputation_score": 0.24,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1078",
+        "institution_name": "Glencullen University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 1998,
+        "reputation_score": 0.12,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1079",
+        "institution_name": "Pacific Western University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2010,
+        "reputation_score": 0.1,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1080",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2002,
+        "reputation_score": 0.91,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1081",
+        "institution_name": "Almeda University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 1996,
+        "reputation_score": 0.18,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1082",
+        "institution_name": "University of Wolverton",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2019,
+        "reputation_score": 0.13,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1083",
+        "institution_name": "McFord University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 1998,
+        "reputation_score": 0.13,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1084",
+        "institution_name": "Canterbury University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2006,
+        "reputation_score": 0.22,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1085",
+        "institution_name": "Almeda University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2022,
+        "reputation_score": 0.18,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1086",
+        "institution_name": "McFord University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2017,
+        "reputation_score": 0.22,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1087",
+        "institution_name": "Preston University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2002,
+        "reputation_score": 0.27,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1088",
+        "institution_name": "Columbia State University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2024,
+        "reputation_score": 0.13,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1089",
+        "institution_name": "Pacific Western University",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2019,
+        "reputation_score": 0.13,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1090",
+        "institution_name": "Atlanta College of Liberal Arts and Sciences",
+        "degree_claimed": "PhD in Quantum Physics",
+        "graduation_year": 2002,
+        "reputation_score": 0.98,
+        "is_diploma_mill": false,
+        "audit_status": "Approved",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1091",
+        "institution_name": "Mid-Atlantic University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2019,
+        "reputation_score": 0.26,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1092",
+        "institution_name": "Preston University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 1997,
+        "reputation_score": 0.21,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1093",
+        "institution_name": "Mid-Atlantic University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2005,
+        "reputation_score": 0.14,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1094",
+        "institution_name": "Dublin Metropolitan University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2009,
+        "reputation_score": 0.23,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1095",
+        "institution_name": "Pacific Western University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2014,
+        "reputation_score": 0.27,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1096",
+        "institution_name": "Parkwood University",
+        "degree_claimed": "Master of Business Administration (MBA)",
+        "graduation_year": 2004,
+        "reputation_score": 0.18,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    },
+    {
+        "audit_id": "AG-2026-1097",
+        "institution_name": "Dublin Metropolitan University",
+        "degree_claimed": "Master of Arts in Global Governance",
+        "graduation_year": 2012,
+        "reputation_score": 0.25,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1098",
+        "institution_name": "Barrington University",
+        "degree_claimed": "B.Sc. in Computer Science",
+        "graduation_year": 2023,
+        "reputation_score": 0.22,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "ROR/OpenAlex Mismatch"
+    },
+    {
+        "audit_id": "AG-2026-1099",
+        "institution_name": "Columbia State University",
+        "degree_claimed": "Bachelor of Laws (LLB)",
+        "graduation_year": 2008,
+        "reputation_score": 0.13,
+        "is_diploma_mill": true,
+        "audit_status": "Flagged",
+        "reasoning_tag": "Temporal Paradox"
+    }
+]
