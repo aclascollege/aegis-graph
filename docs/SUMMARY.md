@@ -1,10 +1,21 @@
-# Table of contents
+# Aegis-Graph Global Docs
 
-* [Introduction to Aegis-Graph](README.md)
-* [Chapter 1: The GenAI Threat Landscape](chapter1-the-genai-threat.md)
-* [Chapter 2: Core Protocol Architecture](chapter2-core-architecture.md)
-* [Chapter 3: The Multi-Agent Framework](chapter3-multi-agent-framework.md)
-* [Chapter 4: Mathematical Trust Models](chapter4-mathematical-trust-models.md)
-* [Chapter 5: Cryptography and Privacy](chapter5-cryptography-and-privacy.md)
-* [Chapter 6: Token Economics and Efficiency](chapter6-token-economics.md)
-* [Chapter 7: Developer API and MCP Specs](chapter7-developer-api.md)
+* [🌍 Language Selection](README.md)
+
+---
+
+### 🇺🇸 English
+* [Introduction](en/README.md)
+* [Chapter 1: The GenAI Threat](en/chapter1-the-genai-threat.md)
+* [Chapter 2: Core Architecture](en/chapter2-core-architecture.md)
+* [Chapter 3: Multi-Agent Framework](en/chapter3-multi-agent-framework.md)
+
+### 🇭🇰 繁體中文
+* [簡介 (Introduction)](zh/README.md)
+* [第一章：GenAI 威脅機制](zh/chapter1.md)
+
+### 🇪🇸 Español
+* [Introducción](es/README.md)
+
+### 🇸🇦 العربية
+* [مقدمة](ar/README.md)
