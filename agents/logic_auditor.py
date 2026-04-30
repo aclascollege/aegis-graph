@@ -1,4 +1,5 @@
 import asyncio
+import json
 from typing import List, Dict, Any
 from pydantic import BaseModel, Field
 from core.mcp_protocol import mcp_call
@@ -29,6 +30,18 @@ class LogicAuditor:
         # Step 0: Known Diploma Mill / Degree Factory Hard-Rejection
         is_diploma_mill = profile.get("is_diploma_mill", False)
         profile_status = profile.get("status", "")
+        inst_name = profile.get("name", "").lower()
+
+        # Load global blacklist for safety
+        try:
+            with open("data/fraud_blacklist.json", "r", encoding="utf-8") as f:
+                blacklist_data = json.load(f)
+                global_blacklist = [b["name"].lower() for b in blacklist_data["blacklist"]]
+                if inst_name in global_blacklist:
+                    is_diploma_mill = True
+        except Exception:
+            pass
+
         if is_diploma_mill or profile_status == "fraudulent":
             warning_msg = profile.get("warning", "")
             diploma_mill_warning = warning_msg or "[!!!] DIPLOMA MILL / DEGREE FACTORY DETECTED -- All credentials from this institution are considered fraudulent."

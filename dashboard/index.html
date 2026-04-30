@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Dashboard | Aegis-Graph Sovereign Node</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: rgba(15, 15, 15, 0.8);
+            --border: rgba(255, 255, 255, 0.08);
+            --foreground: #ffffff;
+            --accent: #00ffaa;
+            --accent-dim: #008855;
+            --success: #00ffaa;
+            --warning: #ffaa00;
+            --danger: #ff4444;
+            --sidebar-width: 260px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--foreground);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* --- Sidebar --- */
+        aside {
+            width: var(--sidebar-width);
+            border-right: 1px solid var(--border);
+            background: rgba(10, 10, 10, 0.5);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+        }
+
+        .node-info {
+            margin-bottom: 40px;
+        }
+
+        .node-info h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .node-tag {
+            font-size: 10px;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(0, 255, 170, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        nav ul { list-style: none; }
+        nav li {
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav li:hover, nav li.active {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--foreground);
+        }
+
+        nav li.active { border: 1px solid var(--border); }
+
+        /* --- Main Content --- */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            height: 70px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .search-bar {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 100px;
+            width: 400px;
+            font-size: 13px;
+            color: #ccc;
+        }
+
+        .status-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 32px;
+            overflow-y: auto;
+        }
+
+        .grid-dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 16px;
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover { transform: translateY(-2px); }
+
+        .stat-label { font-size: 12px; color: #888; margin-bottom: 8px; font-weight: 600; }
+        .stat-value { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; }
+
+        /* --- Audit Table --- */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-header h2 { font-family: 'Outfit', sans-serif; font-size: 20px; }
+
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .audit-table th, .audit-table td {
+            padding: 16px 24px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        .audit-table th { color: #888; font-weight: 600; text-transform: uppercase; font-size: 11px; }
+
+        .verdict-approved { color: var(--success); font-weight: 600; }
+        .verdict-rejected { color: var(--danger); font-weight: 600; }
+
+        /* --- Agent Swarm --- */
+        .swarm-container {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .agent-pill {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .dot { width: 6px; height: 6px; border-radius: 50%; }
+        .dot.online { background: var(--success); box-shadow: 0 0 8px var(--success); }
+
+    </style>
+</head>
+<body>
+    <aside>
+        <div class="node-info">
+            <h2>ACLAS College</h2>
+            <span class="node-tag">NODE_0782_ATL</span>
+        </div>
+        <nav>
+            <ul>
+                <li class="active">Overview</li>
+                <li>Verification Queue</li>
+                <li>Institutional Nodes</li>
+                <li>Agent Configuration</li>
+                <li>System Logs</li>
+                <li>Security & Keys</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <div class="search-bar">Search verification IDs, hashes or institutions...</div>
+            <div class="status-pill">
+                <div class="pulse"></div>
+                Sovereign Network: Online
+            </div>
+        </header>
+
+        <div class="content-area">
+            <div class="section-header">
+                <h2>Network Overview</h2>
+                <div style="font-size: 12px; color: #666">LAST SYNC: 2026-04-30 15:58:27</div>
+            </div>
+
+            <div class="grid-dashboard">
+                <div class="stat-card">
+                    <div class="stat-label">TOTAL AUDITS</div>
+                    <div class="stat-value">12,482</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">TRUST VELOCITY</div>
+                    <div class="stat-value">98.4%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">REJECTED (FRAUD)</div>
+                    <div class="stat-value" style="color: var(--danger)">412</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Recent Verifications</h2>
+            </div>
+
+            <table class="audit-table">
+                <thead>
+                    <tr>
+                        <th>Verification ID</th>
+                        <th>Institution</th>
+                        <th>Status</th>
+                        <th>Agent Verdict</th>
+                        <th>Risk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-family: 'JetBrains Mono'">#AG-782-01</td>
+                        <td>Harvard University</td>
+                        <td class="verdict-approved">VERIFIED</td>
+                        <td>Swarm Consensus</td>
+                        <td>0.02</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: 'JetBrains Mono'">#AG-782-02</td>
+                        <td>Graham International University</td>
+                        <td class="verdict-rejected">REJECTED</td>
+                        <td>Step-0 Filter</td>
+                        <td>100.0</td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: 'JetBrains Mono'">#AG-782-03</td>
+                        <td>Stanford University</td>
+                        <td class="verdict-approved">VERIFIED</td>
+                        <td>Vision Analysis</td>
+                        <td>0.05</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div class="swarm-container">
+        <div class="agent-pill">
+            <div class="dot online"></div>
+            VISION_FORENSICS
+        </div>
+        <div class="agent-pill">
+            <div class="dot online"></div>
+            GRAPH_NAVIGATOR
+        </div>
+        <div class="agent-pill">
+            <div class="dot online"></div>
+            LOGIC_AUDITOR
+        </div>
+    </div>
+</body>
+</html>
