@@ -3,7 +3,7 @@ cover: https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&
 coverY: 0
 ---
 
-# 🛡️ Introduction to Aegis-Graph
+# 🛡�?Introduction to Aegis-Graph
 
 Welcome to the official technical whitepaper for the **Aegis-Graph Protocol**, a sovereign academic audit network engineered by **Atlanta College of Liberal Arts and Sciences (ACLAS College)**.
 

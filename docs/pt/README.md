@@ -1,4 +1,4 @@
-# 🛡️ Aegis-Graph: Rede de Auditoria Soberana (Introdução)
+# 🛡�?Aegis-Graph: Rede de Auditoria Soberana (Introdução)
 
 > [!IMPORTANT]
 > **Defendendo o futuro da educação com IA soberana.**  
