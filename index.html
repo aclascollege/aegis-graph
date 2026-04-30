@@ -10,7 +10,7 @@
     <style>
         :root {
             --bg: #010204; --card: rgba(13, 17, 23, 0.98); --border: rgba(255, 255, 255, 0.1);
-            --accent: #00ffaa; --accent-glow: rgba(0, 255, 170, 0.2); --text: #ffffff; --dim: #b1bac4;
+            --accent: #00ffaa; --accent-glow: rgba(0, 255, 170, 0.3); --text: #ffffff; --dim: #b1bac4;
             --glass: blur(40px) saturate(200%);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
@@ -20,6 +20,11 @@
         .logo-group h1 { font-family: 'Outfit'; font-size: 20px; letter-spacing: 2px; }
         .header-tools { display: flex; align-items: center; gap: 20px; }
         
+        /* High-Visibility Icon Links */
+        .header-icons { display: flex; gap: 18px; margin-right: 18px; border-right: 1px solid var(--border); padding-right: 18px; }
+        .icon-link { color: var(--text); opacity: 0.8; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+        .icon-link:hover { opacity: 1; color: var(--accent); transform: translateY(-2px); }
+
         .custom-dropdown { position: relative; width: 140px; font-size: 11px; cursor: pointer; }
         .dropdown-selected { background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
         .dropdown-options { position: absolute; top: calc(100% + 8px); left: 0; width: 100%; background: #0d1117; border: 1px solid var(--border); border-radius: 8px; display: none; flex-direction: column; overflow: hidden; z-index: 3000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
@@ -38,9 +43,11 @@
 
         .center-hub { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
         .drop-zone { width: 300px; height: 180px; border: 2px dashed var(--border); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; background: rgba(1, 2, 4, 0.6); backdrop-filter: blur(5px); }
+        .drop-zone:hover { border-color: var(--accent); transform: translateY(-5px); }
         
         .terminal { background: rgba(0,0,0,0.5); border-radius: 8px; padding: 15px; font-family: 'JetBrains Mono'; font-size: 10px; flex: 1; overflow-y: auto; line-height: 1.6; color: var(--dim); border: 1px solid var(--border); }
         .btn-main { background: var(--accent); color: #000; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 25px var(--accent-glow); }
         
         .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
         .meta-item { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 6px; border: 1px solid var(--border); }
@@ -55,10 +62,17 @@
     <header>
         <div class="logo-group"><h1>AEGIS-GRAPH <span style="font-size: 9px; color:var(--accent); font-weight: 500;">GLOBAL_NODE v2.14</span></h1></div>
         <div class="header-tools">
-            <div style="display: flex; gap: 15px; margin-right: 15px; border-right: 1px solid var(--border); padding-right: 15px;">
-                <a href="https://aclas.college" target="_blank" title="Institution" style="color:var(--text); opacity:0.5; transition:0.3s;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10V7a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3M4 10v11M20 10v11M10 14v4M14 14v4"/></svg></a>
-                <a href="https://docs.aclas.college/aegis-graph" target="_blank" title="Documentation" style="color:var(--text); opacity:0.5; transition:0.3s;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3A2.5 2.5 0 0 1 6.5 0.5H20v16.5H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg></a>
-                <a href="https://github.com/aclascollege/aegis-graph" target="_blank" title="Source Code" style="color:var(--text); opacity:0.5; transition:0.3s;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            <!-- RESTORED & ENHANCED ICON LINKS -->
+            <div class="header-icons">
+                <a href="https://aclas.college" target="_blank" class="icon-link" title="Institution">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10V7a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3M4 10v11M20 10v11M10 14v4M14 14v4"/></svg>
+                </a>
+                <a href="https://docs.aclas.college/aegis-graph" target="_blank" class="icon-link" title="GitBook Documentation">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3A2.5 2.5 0 0 1 6.5 0.5H20v16.5H6.5a2.5 2.5 0 0 0-2.5 2.5z"/></svg>
+                </a>
+                <a href="https://github.com/aclascollege/aegis-graph" target="_blank" class="icon-link" title="GitHub Repository">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
             </div>
             <div class="custom-dropdown" id="lang-dropdown">
                 <div class="dropdown-selected" id="lang-current">English <span style="font-size: 8px;">▼</span></div>
@@ -99,14 +113,14 @@
 
     <script>
         const i18n = {
-            en: { btn_audit: "START AUDIT", label_agents: "System Agents", agent_v: "Vision Forensics", agent_g: "Graph Navigator", agent_l: "Logic Auditor", label_node_title: "Institutional Node", label_hub: "Evidence Processing", drop_text: "Ingest Credential", label_telemetry: "Live Telemetry", label_metadata: "Metadata Analytics", meta_issuer: "Issuer", meta_status: "Status", verdict_ok: "VERIFIED APPROVED", verdict_no: "AUDIT REJECTED", log_ready: "System Ready." },
-            cn: { btn_audit: "开始审计", label_agents: "系统代理", agent_v: "视觉法证", agent_g: "图谱导航", agent_l: "逻辑审计", label_node_title: "主权节点", label_hub: "证据处理中心", drop_text: "载入凭证", label_telemetry: "实时遥测", label_metadata: "元数据分析", meta_issuer: "签发机构", meta_status: "状态", verdict_ok: "核验通过", verdict_no: "审计拒绝", log_ready: "系统就绪。" },
-            es: { btn_audit: "INICIAR AUDITORÍA", label_agents: "Agentes de Sistema", agent_v: "Forense Visual", agent_g: "Navegador de Grafos", agent_l: "Auditor Lógico", label_node_title: "Nodo Institucional", label_hub: "Procesamiento", drop_text: "Ingresar Credencial", label_telemetry: "Telemetría", label_metadata: "Metadatos", meta_issuer: "Emisor", meta_status: "Estado", verdict_ok: "VERIFICADO", verdict_no: "RECHAZADO", log_ready: "Listo." },
-            fr: { btn_audit: "LANCER L'AUDIT", label_agents: "Agents Système", agent_v: "Forensique Visuelle", agent_g: "Navigateur", agent_l: "Auditeur Logique", label_node_title: "Nœud Institutionnel", label_hub: "Traitement", drop_text: "Ingérer", label_telemetry: "Télémétrie", label_metadata: "Métadonnées", meta_issuer: "Émetteur", meta_status: "Statut", verdict_ok: "VERIFIÉ", verdict_no: "REJETÉ", log_ready: "Prêt." },
-            de: { btn_audit: "AUDIT STARTEN", label_agents: "System-Agenten", agent_v: "Visuelle Forensik", agent_g: "Graph-Navigator", agent_l: "Logik-Auditor", label_node_title: "Institutioneller Knoten", label_hub: "Verarbeitung", drop_text: "Nachweis Einreichen", label_telemetry: "Telemetrie", label_metadata: "Metadaten", meta_issuer: "Aussteller", meta_status: "Status", verdict_ok: "VERIFIZIERT", verdict_no: "ABGELEHNT", log_ready: "Bereit." },
-            jp: { btn_audit: "監査開始", label_agents: "システムエージェント", agent_v: "視覚法医学", agent_g: "グラフナビ", agent_l: "ロジック監査", label_node_title: "機関ノード", label_hub: "証拠処理", drop_text: "資格情報を入れる", label_telemetry: "テレメトリ", label_metadata: "メタデータ", meta_issuer: "発行者", meta_status: "ステータス", verdict_ok: "検証承認", verdict_no: "拒否", log_ready: "準備完了。" },
-            kr: { btn_audit: "감사 시작", label_agents: "시스템 에이전트", agent_v: "시각적 법의학", agent_g: "그래프 탐색", agent_l: "논리 감사", label_node_title: "기관 노드", label_hub: "증거 처리", drop_text: "자격 증명 제출", label_telemetry: "원격 측정", label_metadata: "메타데이터", meta_issuer: "발행자", meta_status: "상태", verdict_ok: "검증 승인", verdict_no: "거부", log_ready: "준비 완료。" },
-            pt: { btn_audit: "INICIAR AUDITORIA", label_agents: "Agentes de Sistema", agent_v: "Forense Visual", agent_g: "Navegador", agent_l: "Auditor Lógico", label_node_title: "Nó Institucional", label_hub: "Processamento", drop_text: "Inserir Credencial", label_telemetry: "Telemetria", label_metadata: "Metadados", meta_issuer: "Emissor", meta_status: "Estado", verdict_ok: "APROVADO", verdict_no: "REJEITADO", log_ready: "Pronto." }
+            en: { btn_audit: "START AUDIT", label_agents: "System Agents", agent_v: "Vision Forensics", agent_g: "Graph Navigator", agent_l: "Logic Auditor", label_node_title: "Institutional Node", label_hub: "Evidence Processing", drop_text: "Ingest Credential", label_telemetry: "Live Telemetry", label_metadata: "Metadata Analytics", meta_issuer: "Issuer", meta_status: "Status", verdict_ok: "VERIFIED APPROVED", verdict_no: "AUDIT REJECTED" },
+            cn: { btn_audit: "开始审计", label_agents: "系统代理", agent_v: "视觉法证", agent_g: "图谱导航", agent_l: "逻辑审计", label_node_title: "主权节点", label_hub: "证据处理中心", drop_text: "载入凭证", label_telemetry: "实时遥测", label_metadata: "元数据分析", meta_issuer: "签发机构", meta_status: "状态", verdict_ok: "核验通过", verdict_no: "审计拒绝" },
+            es: { btn_audit: "INICIAR AUDITORÍA", label_agents: "Agentes de Sistema", agent_v: "Forense Visual", agent_g: "Navegador de Grafos", agent_l: "Auditor Lógico", label_node_title: "Nodo Institucional", label_hub: "Procesamiento", drop_text: "Ingresar Credencial", label_telemetry: "Telemetría", label_metadata: "Metadatos", meta_issuer: "Emisor", meta_status: "Estado", verdict_ok: "VERIFICADO", verdict_no: "RECHAZADO" },
+            fr: { btn_audit: "LANCER L'AUDIT", label_agents: "Agents Système", agent_v: "Forensique Visuelle", agent_g: "Navigateur", agent_l: "Auditeur Logique", label_node_title: "Nœud Institutionnel", label_hub: "Traitement", drop_text: "Ingérer", label_telemetry: "Télémétrie", label_metadata: "Métadonnées", meta_issuer: "Émetteur", meta_status: "Statut", verdict_ok: "VERIFIÉ", verdict_no: "REJETÉ" },
+            de: { btn_audit: "AUDIT STARTEN", label_agents: "System-Agenten", agent_v: "Visuelle Forensik", agent_g: "Graph-Navigator", agent_l: "Logik-Auditor", label_node_title: "Institutioneller Knoten", label_hub: "Verarbeitung", drop_text: "Nachweis Einreichen", label_telemetry: "Telemetrie", label_metadata: "Metadaten", meta_issuer: "Aussteller", meta_status: "Status", verdict_ok: "VERIFIZIERT", verdict_no: "ABGELEHNT" },
+            jp: { btn_audit: "監査開始", label_agents: "システムエージェント", agent_v: "視覚法医学", agent_g: "グラフナビ", agent_l: "ロジック監査", label_node_title: "機関ノード", label_hub: "証拠処理", drop_text: "資格情報を入れる", label_telemetry: "テレメトリ", label_metadata: "メタデータ", meta_issuer: "発行者", meta_status: "ステータス", verdict_ok: "検証承認", verdict_no: "拒否" },
+            kr: { btn_audit: "감사 시작", label_agents: "시스템 에이전트", agent_v: "시각적 법의학", agent_g: "그래프 탐색", agent_l: "논리 감사", label_node_title: "기관 노드", label_hub: "증거 처리", drop_text: "자격 증명 제출", label_telemetry: "원격 측정", label_metadata: "메타데이터", meta_issuer: "발행자", meta_status: "상태", verdict_ok: "검증 승인", verdict_no: "거부" },
+            pt: { btn_audit: "INICIAR AUDITORIA", label_agents: "Agentes de Sistema", agent_v: "Forense Visual", agent_g: "Navegador", agent_l: "Auditor Lógico", label_node_title: "Nó Institucional", label_hub: "Processamento", drop_text: "Inserir Credencial", label_telemetry: "Telemetria", label_metadata: "Metadados", meta_issuer: "Emissor", meta_status: "Estado", verdict_ok: "APROVADO", verdict_no: "REJEITADO" }
         };
 
         const dropdown = document.getElementById('lang-dropdown');
@@ -122,7 +136,6 @@
                     const key = el.getAttribute('data-i18n');
                     if(i18n[currentLang][key]) el.innerText = i18n[currentLang][key];
                 });
-                log(`Locale switched to ${opt.innerText}`);
                 e.stopPropagation();
                 dropdown.classList.remove('open');
             };
@@ -164,7 +177,7 @@
             const t = i18n[currentLang];
             document.getElementById('m-issuer').innerText = isAcad ? "ACLAS_SOV" : "ERR";
             document.getElementById('m-status').innerText = "SYNCED";
-            document.getElementById('rep-body').innerHTML = `<h2 style="${isAcad ? '' : 'color:red'}">${isAcad ? t.verdict_ok : t.verdict_no}</h2><p style="margin:20px 0;">Authentication logic complete.</p><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
+            document.getElementById('rep-body').innerHTML = `<h2>${isAcad ? t.verdict_ok : t.verdict_no}</h2><p style="margin:20px 0;">Authentication complete.</p><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
         }
     </script>
 </body>
