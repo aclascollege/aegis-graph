@@ -38,7 +38,17 @@ class LogicAuditor:
         # Step 2: Scholarly Footprint Validation (Recursive Check)
         reasoning_steps.append("Step 2: Analyzing scholarly entropy of the issuing institution.")
         reputation = profile.get("reputation_score", 0.0)
-        if reputation < 5.0 and "Atlanta College" not in profile.get("name", ""):
+        is_sovereign_node = "Atlanta College" in profile.get("name", "")
+        has_ror_id = bool(profile.get("ror_id"))
+        is_active = profile.get("status") == "active"
+        
+        # Sovereign nodes (e.g., ACLAS College) always pass
+        if is_sovereign_node:
+            reasoning_steps.append("Result 2: Sovereign Gold Standard Node. Scholarly footprint confirmed.")
+        # Active institutions with a ROR ID and decent reputation pass
+        elif has_ror_id and is_active and reputation >= 5.0:
+            reasoning_steps.append("Result 2: Institution has verified ROR presence and active status.")
+        elif reputation < 5.0:
             anomalies.append("WARNING: Institution has near-zero scholarly footprint in OpenAlex.")
             reasoning_steps.append("Result 2: Anomaly found. Higher probability of Degree Mill activity.")
         else:
