@@ -1,19 +1,15 @@
-# 第 8 章：主权节点部署指南
-本章节指导机构如何接入 Aegis-Graph 网络并运行私有的主权审计节点。
+# 第8章：系统部署指南
 
-## 1. 硬件要求
-*   **CPU**: 8 核 (推荐 ARM64 架构)
-*   **RAM**: 32GB ECC
-*   **存储**: 500GB NVMe (用于本地图谱索引)
+本章为希望加入 Aegis-Graph 主权网络的机构提供生产级部署说明。
 
-## 2. 节点初始化
-```bash
-# 下载主权内核
-curl -sSL https://get.aclas.college/aegis-kernel | bash
+## 🚀 启动主权节点
+1.  **硬件要求**：建议使用 8核 CPU, 16GB RAM 及支持 CUDA 的加速卡。
+2.  **Docker 部署**：
+    ```bash
+    docker pull aegis/kernel:latest
+    docker run -d --name aegis-node -p 8080:8080 aegis/kernel
+    ```
+3.  **接入核验**：通过 `main_pipeline.py` 即可开始执行本地审计并与全球图谱同步。
 
-# 绑定机构 ID
-aegis config --node-id SOV_ATL_0782
-```
-
-## 3. 安全合规
-所有节点必须遵守 **ACLAS ZKE (零知识证据)** 协议，确保不存储任何个人身份信息 (PII)。
+---
+*返回 [文档首页](../README.md)*
