@@ -42,7 +42,8 @@ Step-by-step instructions for launching local nodes, connecting to the global re
 > [!TIP]
 > To get started immediately, we recommend following the [Quick Start Guide](../../README.md#🛠️-quick-start) in the root directory.
 
-## 🏛️ Official Authority
-This documentation is the authoritative source for the Aegis-Verify protocol.
-For institutional partnership or node access, visit:
-[**ACLAS College Official Site**](https://aclas.college/)
+## 🏛️ Governance & Authority
+Aegis-Graph is technically governed by the **AEGIS-GRAPH Governance Board**, with core support and academic validation provided by the [Atlanta College of Liberal Arts and Sciences (ACLAS)](https://aclas.college/).
+
+---
+© 2026 [ACLAS College](https://aclas.college/). All rights reserved.

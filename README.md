@@ -13,7 +13,7 @@
     <a href="https://aclascollege.github.io/aegis-graph/"><b>Live Dashboard</b></a> •
     <a href="https://docs.aclas.college/aegis-graph"><b>Documentation</b></a> •
     <a href="WHITEPAPER.md"><b>Whitepaper</b></a> •
-    <a href="https://aclas.college"><b>Institutional Site</b></a>
+    <a href="https://aclas.college"><b>Atlanta College of Liberal Arts and Sciences (ACLAS) Official Site</b></a>
   </p>
 
   <div>
@@ -120,7 +120,7 @@ Aegis-Graph is governed by the **AEGIS-GRAPH Open Governance Board**, with techn
 ---
 
 <div align="center">
-  <p>© 2026 Atlanta College of Liberal Arts and Sciences. All rights reserved.</p>
+  <p>© 2026 <a href="https://aclas.college">Atlanta College of Liberal Arts and Sciences (ACLAS)</a>. All rights reserved.</p>
   <a href="https://aclas.college">
     <img src="assets/favicon.ico" width="30">
   </a>
