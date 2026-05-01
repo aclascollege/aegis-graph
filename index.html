@@ -328,7 +328,18 @@
         const langCurrent = document.getElementById('lang-current');
         let currentLang = 'en';
 
-        dropdown.onclick = () => dropdown.classList.toggle('open');
+        dropdown.onclick = (e) => {
+            dropdown.classList.toggle('open');
+            e.stopPropagation();
+        };
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('open');
+            }
+        });
+
         document.querySelectorAll('.dropdown-option').forEach(opt => {
             opt.onclick = (e) => {
                 currentLang = opt.getAttribute('data-value');
