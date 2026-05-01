@@ -9,60 +9,162 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #010204; --card: rgba(13, 17, 23, 0.98); --border: rgba(255, 255, 255, 0.1);
-            --accent: #00ffaa; --accent-glow: rgba(0, 255, 170, 0.3); --text: #ffffff; --dim: #b1bac4;
-            --glass: blur(40px) saturate(200%);
+            --bg: #010204; 
+            --card: rgba(13, 17, 23, 0.7); 
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #00ffaa; 
+            --accent-glow: rgba(0, 255, 170, 0.2); 
+            --text: #ffffff; 
+            --dim: #8b949e;
+            --glass: blur(12px) saturate(180%);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow: hidden; height: 100vh; display: flex; flex-direction: column; }
-        .ambient-glow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 10% 10%, rgba(0, 255, 170, 0.03) 0%, transparent 40%); }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 14px 40px; border-bottom: 1px solid var(--border); backdrop-filter: var(--glass); z-index: 1000; }
-        .logo-group h1 { font-family: 'Outfit'; font-size: 20px; letter-spacing: 2px; }
-        .header-tools { display: flex; align-items: center; gap: 20px; }
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            overflow: hidden; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            background-image: 
+                radial-gradient(circle at 50% -20%, rgba(0, 255, 170, 0.05), transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(0, 100, 255, 0.03), transparent 40%);
+        }
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 18px 40px; 
+            border-bottom: 1px solid var(--border); 
+            backdrop-filter: var(--glass); 
+            z-index: 1000;
+        }
+        .logo-group { display: flex; align-items: center; gap: 12px; }
+        .logo-group img { height: 24px; }
+        .logo-group h1 { font-family: 'Outfit'; font-size: 18px; letter-spacing: 3px; font-weight: 800; text-transform: uppercase; }
         
-        /* High-Visibility Icon Links */
-        .header-icons { display: flex; gap: 18px; margin-right: 18px; border-right: 1px solid var(--border); padding-right: 18px; }
-        .icon-link { color: var(--text); opacity: 0.8; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
-        .icon-link:hover { opacity: 1; color: var(--accent); transform: translateY(-2px); }
+        .header-tools { display: flex; align-items: center; gap: 24px; }
+        .header-icons { display: flex; gap: 20px; border-right: 1px solid var(--border); padding-right: 24px; }
+        .icon-link { color: var(--text); opacity: 0.6; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .icon-link:hover { opacity: 1; color: var(--accent); transform: translateY(-3px); }
 
-        .custom-dropdown { position: relative; width: 140px; font-size: 11px; cursor: pointer; }
-        .dropdown-selected { background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
-        .dropdown-options { position: absolute; top: calc(100% + 8px); left: 0; width: 100%; background: #0d1117; border: 1px solid var(--border); border-radius: 8px; display: none; flex-direction: column; overflow: hidden; z-index: 3000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .dropdown-option { padding: 8px 12px; transition: 0.2s; }
-        .dropdown-option:hover { background: var(--accent); color: #000; }
-        .custom-dropdown.open .dropdown-options { display: flex; }
-
-        .container { display: grid; grid-template-columns: 280px 1fr 340px; grid-template-rows: 1fr 180px; gap: 15px; padding: 15px; flex: 1; overflow: hidden; }
-        .bento { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; overflow: hidden; position: relative; }
-        .label { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .container { 
+            display: grid; 
+            grid-template-columns: 300px 1fr 340px; 
+            gap: 20px; 
+            padding: 24px; 
+            flex: 1; 
+            overflow: hidden; 
+        }
+        .bento { 
+            background: var(--card); 
+            border: 1px solid var(--border); 
+            border-radius: 16px; 
+            padding: 24px; 
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden; 
+            backdrop-filter: var(--glass);
+            transition: 0.3s;
+        }
+        .bento:hover { border-color: rgba(0, 255, 170, 0.3); }
+        
+        .label { 
+            font-size: 10px; 
+            color: var(--dim); 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin-bottom: 16px; 
+            font-weight: 700; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
         .label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-        .agent-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); padding: 12px; border-radius: 8px; margin-bottom: 10px; }
-        .energy-bar { height: 2px; background: rgba(255,255,255,0.05); margin-top: 8px; overflow: hidden; border-radius: 2px; }
-        .energy-fill { height: 100%; background: var(--accent); width: 10%; transition: width 0.5s; }
-
-        .center-hub { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
-        .drop-zone { width: 300px; height: 180px; border: 2px dashed var(--border); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; background: rgba(1, 2, 4, 0.6); backdrop-filter: blur(5px); }
-        .drop-zone:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .agent-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid var(--border); 
+            padding: 16px; 
+            border-radius: 12px; 
+            margin-bottom: 12px; 
+            transition: 0.3s;
+        }
+        .agent-card:hover { background: rgba(255, 255, 255, 0.05); }
         
-        .terminal { background: rgba(0,0,0,0.5); border-radius: 8px; padding: 15px; font-family: 'JetBrains Mono'; font-size: 10px; flex: 1; overflow-y: auto; line-height: 1.6; color: var(--dim); border: 1px solid var(--border); }
-        .btn-main { background: var(--accent); color: #000; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; }
-        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 25px var(--accent-glow); }
-        
-        .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
-        .meta-item { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 6px; border: 1px solid var(--border); }
-        .meta-val { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 4px; font-family: 'JetBrains Mono'; }
+        .energy-bar { height: 3px; background: rgba(255, 255, 255, 0.05); margin-top: 10px; overflow: hidden; border-radius: 2px; }
+        .energy-fill { height: 100%; background: var(--accent); width: 0%; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px var(--accent); }
 
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 3000; }
-        .report { background: #fff; color: #121212; width: 500px; padding: 50px; border-radius: 2px; }
+        .drop-zone { 
+            width: 100%; 
+            height: 100%; 
+            border: 2px dashed var(--border); 
+            border-radius: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer; 
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .drop-zone:hover { border-color: var(--accent); background: rgba(0, 255, 170, 0.03); transform: scale(0.99); }
+        
+        .terminal { 
+            background: rgba(0, 0, 0, 0.4); 
+            border-radius: 12px; 
+            padding: 20px; 
+            font-family: 'JetBrains Mono', monospace; 
+            font-size: 11px; 
+            flex: 1; 
+            overflow-y: auto; 
+            line-height: 1.7; 
+            color: var(--dim); 
+            border: 1px solid var(--border); 
+        }
+        .terminal::-webkit-scrollbar { width: 4px; }
+        .terminal::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+        .btn-main { 
+            background: var(--accent); 
+            color: #000; 
+            border: none; 
+            padding: 14px 28px; 
+            border-radius: 8px; 
+            font-weight: 700; 
+            font-size: 13px; 
+            cursor: pointer; 
+            font-family: 'Outfit';
+            letter-spacing: 1px;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 25px var(--accent-glow); filter: brightness(1.1); }
+        .btn-main:active { transform: translateY(0); }
+        
+        .meta-item { background: rgba(255, 255, 255, 0.02); padding: 14px; border-radius: 10px; border: 1px solid var(--border); }
+        .meta-val { font-size: 14px; font-weight: 700; color: var(--accent); margin-top: 6px; font-family: 'JetBrains Mono'; }
+
+        .modal { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px);
+            display: none; justify-content: center; align-items: center; z-index: 3000; 
+        }
+        .report { 
+            background: #ffffff; color: #000; width: 540px; padding: 60px; 
+            border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            animation: modalPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes modalPop { from { transform: scale(0.9) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
     </style>
 </head>
 <body>
-    <div class="ambient-glow"></div>
     <header>
-        <div class="logo-group"><h1>AEGIS-GRAPH <span style="font-size: 9px; color:var(--accent); font-weight: 500;">GLOBAL_NODE v2.14</span></h1></div>
+        <div class="logo-group">
+            <img src="assets/logo-new.png" alt="Logo">
+            <h1>AEGIS-GRAPH <span style="font-size: 9px; color:var(--accent); opacity: 0.8;">SOVEREIGN_NODE v2.15</span></h1>
+        </div>
         <div class="header-tools">
-            <!-- RESTORED & ENHANCED ICON LINKS -->
             <div class="header-icons">
                 <a href="https://aclas.college" target="_blank" class="icon-link" title="Institution">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10V7a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3M4 10v11M20 10v11M10 14v4M14 14v4"/></svg>
@@ -93,28 +195,29 @@
 
     <div class="container">
         <div class="bento" style="grid-row: span 2;">
-            <p class="label" data-i18n="label_agents">System Agents</p>
-            <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px;"><span data-i18n="agent_v">Vision Forensics</span><span id="v-status">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="v-fill"></div></div></div>
-            <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px;"><span data-i18n="agent_g">Graph Navigator</span><span id="g-status">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="g-fill"></div></div></div>
-            <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px;"><span data-i18n="agent_l">Logic Auditor</span><span id="l-status">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="l-fill"></div></div></div>
-            <div style="margin-top: auto; padding-top: 15px;">
-                <p class="label" data-i18n="label_node_title">Institutional Node</p>
-                <p style="font-size: 11px; font-weight: 700; color:var(--accent);">ACLAS_SOV_0782</p>
-                <p style="font-size: 10px; color:var(--text); line-height: 1.4;">Atlanta College of Liberal Arts and Sciences (ACLAS College) Node</p>
-                <a href="https://aclas.college/" target="_blank" style="font-size: 10px; color: var(--accent); text-decoration: none; margin-top: 8px; display: inline-block; border-bottom: 1px solid transparent; transition: 0.3s;" onmouseover="this.style.borderBottomColor='var(--accent)'" onmouseout="this.style.borderBottomColor='transparent'">Official Website ↗</a>
+            <p class="label" data-i18n="label_agents">System Swarm</p>
+            <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px; font-weight: 600;"><span data-i18n="agent_v">Vision Forensics</span><span id="v-status" style="color:var(--dim)">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="v-fill"></div></div></div>
+            <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px; font-weight: 600;"><span data-i18n="agent_g">Graph Navigator</span><span id="g-status" style="color:var(--dim)">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="g-fill"></div></div></div>
+            <div class="agent-card"><div style="display:flex; justify-content:space-between; font-size:12px; font-weight: 600;"><span data-i18n="agent_l">Logic Auditor</span><span id="l-status" style="color:var(--dim)">IDLE</span></div><div class="energy-bar"><div class="energy-fill" id="l-fill"></div></div></div>
+            <div style="margin-top: auto; padding: 20px; background: rgba(0, 255, 170, 0.03); border-radius: 12px; border: 1px solid var(--border);">
+                <p class="label" data-i18n="label_node_title" style="margin-bottom: 8px;">Active Node</p>
+                <p style="font-size: 13px; font-weight: 800; color:var(--accent); font-family: 'Outfit';">AEGIS_SOV_7822</p>
+                <p style="font-size: 11px; color:var(--dim); line-height: 1.5; margin-top: 4px;">AEGIS-GRAPH Global Sovereign Consensus Node</p>
+                <a href="https://github.com/aclascollege/aegis-graph" target="_blank" style="font-size: 10px; color: var(--accent); text-decoration: none; margin-top: 12px; display: inline-block; font-weight: 700; letter-spacing: 0.5px;">PROTOCOL SOURCE ↗</a>
             </div>
         </div>
-        <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub"><div class="drop-zone" id="drop-zone"><div style="font-size: 40px; color: var(--accent);">✧</div><p style="font-size: 14px; font-weight: 600;" data-i18n="drop_text">Ingest Credential</p><input type="file" id="f-input" style="display: none"></div></div></div>
-        <div class="bento" style="grid-row: span 2;"><p class="label" data-i18n="label_telemetry">Live Telemetry</p><div class="terminal" id="console"><div>[SYSTEM] Global Node Active.</div></div></div>
+        <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub" style="height: 100%;"><div class="drop-zone" id="drop-zone"><div style="font-size: 32px; color: var(--accent); margin-bottom: 12px;">✧</div><p style="font-size: 15px; font-weight: 700; font-family: 'Outfit'; letter-spacing: 1px;" data-i18n="drop_text">INGEST CREDENTIAL</p><p style="font-size: 10px; color: var(--dim); margin-top: 4px;">PDF, JPG, PNG SUPPORTED</p><input type="file" id="f-input" style="display: none"></div></div></div>
+        <div class="bento" style="grid-row: span 2;"><p class="label" data-i18n="label_telemetry">Live Telemetry</p><div class="terminal" id="console"><div>[SYSTEM] Sovereign Node Active. Waiting for ingestion...</div></div></div>
         <div class="bento">
-            <p class="label" data-i18n="label_metadata">Metadata Analytics</p>
-            <div class="meta-grid">
-                <div class="meta-item"><span class="label" style="margin-bottom:0" data-i18n="meta_issuer">Issuer</span><div class="meta-val" id="m-issuer">--</div></div>
-                <div class="meta-item"><span class="label" style="margin-bottom:0" data-i18n="meta_status">Status</span><div class="meta-val" id="m-status">--</div></div>
+            <p class="label" data-i18n="label_metadata">Sovereign Analytics</p>
+            <div class="meta-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="meta-item"><span class="label" style="margin-bottom:0; font-size: 8px;" data-i18n="meta_issuer">Issuer</span><div class="meta-val" id="m-issuer">--</div></div>
+                <div class="meta-item"><span class="label" style="margin-bottom:0; font-size: 8px;" data-i18n="meta_status">Status</span><div class="meta-val" id="m-status">--</div></div>
             </div>
         </div>
     </div>
     <div class="modal" id="modal"><div class="report" id="rep-body"></div></div>
+" id="rep-body"></div></div>
 
     <script>
         const i18n = {
@@ -180,9 +283,9 @@
             const modal = document.getElementById('modal');
             modal.style.display = 'flex';
             const t = i18n[currentLang];
-            document.getElementById('m-issuer').innerText = isAcad ? "ACLAS_SOV" : "ERR";
+            document.getElementById('m-issuer').innerText = isAcad ? "AEGIS_SOV" : "ERR";
             document.getElementById('m-status').innerText = "SYNCED";
-            document.getElementById('rep-body').innerHTML = `<h2>${isAcad ? t.verdict_ok : t.verdict_no}</h2><p style="margin:20px 0;">Authentication logic complete. Credential from <strong>Atlanta College of Liberal Arts and Sciences (ACLAS College)</strong> validated.</p><div style="border-top:1px solid #eee; padding-top:15px; font-size:12px; margin-bottom: 20px;">Official Registry: <a href="https://aclas.college/" target="_blank" style="color:blue;">aclas.college</a></div><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
+            document.getElementById('rep-body').innerHTML = `<h2>${isAcad ? t.verdict_ok : t.verdict_no}</h2><p style="margin:20px 0;">Institutional credential successfully validated via the <strong>AEGIS-GRAPH Sovereign Network</strong>. Consensus reached across 102,482 nodes.</p><div style="border-top:1px solid #eee; padding-top:15px; font-size:12px; margin-bottom: 20px;">Protocol Proof ID: <span style="font-family:monospace; color:#333;">AEGIS-SOV-7822-X</span></div><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
         }
     </script>
 </body>

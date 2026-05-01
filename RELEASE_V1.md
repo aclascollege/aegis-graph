@@ -52,4 +52,5 @@ As high-fidelity AI-generated academic fraud becomes a global systemic risk, Aeg
 
 ---
 **© 2026 Atlanta College of Liberal Arts and Sciences (ACLAS College)**  
+
 *Institutional Technical Committee | info@aclas.college*
