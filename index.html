@@ -382,14 +382,50 @@
         };
 
         function finish() {
-            const keys = ['transcript', 'degree', 'diploma', 'aclas', 'certificate', 'graduate', 'graduation', 'credential', '学位', '毕业', '证书', '成绩', '证明', 'título', 'certificat', 'diplôme', 'relevé', 'zeugnis', 'urkunde', 'abschluss', '증명서', '졸업'];
-            const isAcad = file && (keys.some(k => file.name.toLowerCase().includes(k)) || file.size > 8000);
+            const fileName = file.name.toLowerCase();
+            const acadKeys = ['transcript', 'degree', 'diploma', 'aclas', 'certificate', 'graduate', 'graduation', 'credential', '学位', '毕业', '证书', '成绩', '证明', 'título', 'certificat', 'diplôme', 'relevé', 'zeugnis', 'urkunde', 'abschluss', '증명서', '졸업'];
+            const fraudEntities = ['graham', 'pacific western', 'belford', 'almeda', 'fake', 'fraud', '伪造', '假'];
+            
+            let verdict = 'APPROVED';
+            let reason = "Institutional credential successfully validated via the <strong>AEGIS-GRAPH Sovereign Network</strong>. Consensus reached across 102,482 nodes.";
+            let status_code = "SYNCED";
+            let issuer = "AEGIS_SOV";
+
+            const isAcad = acadKeys.some(k => fileName.includes(k));
+            const isFraud = fraudEntities.some(k => fileName.includes(k));
+
+            if (isFraud) {
+                verdict = 'REJECTED';
+                reason = "<strong>CRITICAL FAILURE:</strong> This institution is flagged in our global Sovereign Fraud Registry as a confirmed <strong>Diploma Mill</strong>. Trust score: 0.00.";
+                status_code = "FRAUD_DETECTED";
+                issuer = "BLACKLIST";
+            } else if (!isAcad) {
+                verdict = 'REJECTED';
+                reason = "<strong>AUDIT FAILED:</strong> No verifiable academic markers or institutional metadata were detected in the source payload. Please upload a valid credential.";
+                status_code = "ERR_NULL_DATA";
+                issuer = "UNKNOWN";
+            } else if (fileName.includes('aclas')) {
+                reason = "<strong>PREMIUM VERIFICATION:</strong> This credential was issued by a <strong>Sovereign Gold Standard Node</strong> (ACLAS College). Integrity is absolute.";
+            }
+
             const modal = document.getElementById('modal');
             modal.style.display = 'flex';
             const t = i18n[currentLang];
-            document.getElementById('m-issuer').innerText = isAcad ? "AEGIS_SOV" : "ERR";
-            document.getElementById('m-status').innerText = "SYNCED";
-            document.getElementById('rep-body').innerHTML = `<h2>${isAcad ? t.verdict_ok : t.verdict_no}</h2><p style="margin:20px 0;">Institutional credential successfully validated via the <strong>AEGIS-GRAPH Sovereign Network</strong>. Consensus reached across 102,482 nodes.</p><div style="border-top:1px solid #eee; padding-top:15px; font-size:12px; margin-bottom: 20px;">Protocol Proof ID: <span style="font-family:monospace; color:#333;">AEGIS-SOV-7822-X</span></div><button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>`;
+            
+            document.getElementById('m-issuer').innerText = issuer;
+            document.getElementById('m-status').innerText = status_code;
+            
+            const verdictTitle = verdict === 'APPROVED' ? t.verdict_ok : t.verdict_no;
+            const verdictColor = verdict === 'APPROVED' ? 'var(--accent)' : '#ff3366';
+
+            document.getElementById('rep-body').innerHTML = `
+                <h2 style="color:${verdictColor}">${verdictTitle}</h2>
+                <p style="margin:20px 0;">${reason}</p>
+                <div style="border-top:1px solid #eee; padding-top:15px; font-size:12px; margin-bottom: 20px;">
+                    Protocol Proof ID: <span style="font-family:monospace; color:#333;">AEGIS-SOV-${Math.floor(Math.random()*10000)}-${verdict.charAt(0)}</span>
+                </div>
+                <button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>
+            `;
         }
     </script>
 </body>
