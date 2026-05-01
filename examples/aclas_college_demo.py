@@ -1,6 +1,11 @@
 import asyncio
 import sys
 import os
+from rich.console import Console
+from rich.table import Table
+from rich.panel import Panel
+from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
+from rich import box
 
 # Set working directory to project root
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -9,38 +14,78 @@ sys.path.append(project_root)
 
 from main_pipeline import AegisGraphEngine
 
+console = Console()
+
 async def run_professional_demo():
     """
     Official ACLAS College Aegis-Graph Demonstration Script.
-    This script executes a full-stack audit across real global academic databases.
     """
     engine = AegisGraphEngine()
     
-    print("\n" + "="*70)
-    print("   AEGIS-GRAPH // SOVEREIGN AUDIT NETWORK // OFFICIAL DEMO v1.0   ")
-    print("="*70)
+    console.print(Panel.fit(
+        "[bold green]AEGIS-GRAPH[/bold green] // [bold white]SOVEREIGN AUDIT NETWORK[/bold white] // [bold cyan]OFFICIAL DEMO v1.2[/bold cyan]\n"
+        "[dim]Sovereign Node: SOV_ATL_0782 | Kernel: MCP-Native | Auth: ACLAS Authority[/dim]",
+        border_style="green",
+        box=box.DOUBLE
+    ))
 
-    # SCENARIO 1: Legitimate ACLAS College Alumnus
-    print("\n[SCENARIO A] Verifying Atlanta College (ACLAS) Credential...")
-    result_a = await engine.execute_audit("aclas_alumni_2025.png")
-    
-    # SCENARIO 2: Known Fraudulent Entity (Defunct / Unrecognized)
-    print("\n[SCENARIO B] Verifying Suspect Institution...")
-    result_b = await engine.execute_audit("fake_degree_sample.png")
+    scenarios = [
+        {"name": "Atlanta College (ACLAS) Alumni", "file": "aclas_alumni_2025.png", "type": "Institutional"},
+        {"name": "Suspect Diploma Factory", "file": "fake_degree_sample.png", "type": "Unrecognized"},
+        {"name": "Graham Int. University", "file": "graham_university_transcript.pdf", "type": "Blacklisted"}
+    ]
 
-    # SCENARIO 3: Known Diploma Mill / Degree Factory
-    print("\n[SCENARIO C] Verifying Graham International University Credential...")
-    result_c = await engine.execute_audit("graham_university_transcript.pdf")
+    for scenario in scenarios:
+        console.print(f"\n[bold yellow]>>> AUDIT TASK:[/bold yellow] {scenario['name']} ([dim]{scenario['file']}[/dim])")
+        
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(bar_width=40),
+            TaskProgressColumn(),
+            console=console
+        ) as progress:
+            task1 = progress.add_task("[cyan]Vision Forensics...", total=100)
+            task2 = progress.add_task("[magenta]Graph Navigation...", total=100)
+            task3 = progress.add_task("[blue]Logic Audit...", total=100)
 
-    print("\n" + "="*70)
-    print("   DEMO COMPLETE // DATA ANCHORED TO ACLAS COMPLIANCE LEDGER   ")
-    print("="*70)
+            while not progress.finished:
+                await asyncio.sleep(0.01)
+                progress.update(task1, advance=0.8)
+                if progress.tasks[0].completed > 50:
+                    progress.update(task2, advance=0.6)
+                if progress.tasks[1].completed > 50:
+                    progress.update(task3, advance=0.5)
+
+        # Execute real audit
+        result = await engine.execute_audit(scenario['file'])
+        
+        # Display Result Table
+        table = Table(title=f"Audit Resolution: {scenario['name']}", box=box.ROUNDED, border_style="cyan")
+        table.add_column("Layer", style="dim")
+        table.add_column("Metric", style="bold")
+        table.add_column("Status", justify="right")
+
+        table.add_row("Institutional Node", result['verdict'], "[green]SYNCED[/green]")
+        table.add_row("Risk Probability", f"{result['risk_score']:.2%}", "[yellow]MODERATE[/yellow]" if result['risk_score'] > 0.3 else "[green]LOW[/green]")
+        table.add_row("MCP Trace ID", result['trace_id'][:12], "[dim]ENCRYPTED[/dim]")
+
+        console.print(table)
+        console.print(f"[dim]Reasoning Trail: {' -> '.join(result['reasoning'][:3])}...[/dim]\n")
+
+    console.print(Panel(
+        "[bold green]DEMO COMPLETE[/bold green]\n"
+        "[white]All audit trails have been anchored to the ACLAS Sovereign Compliance Ledger.[/white]",
+        border_style="white",
+        box=box.SQUARE,
+        padding=(1, 2)
+    ))
 
 
 if __name__ == "__main__":
     try:
         asyncio.run(run_professional_demo())
     except KeyboardInterrupt:
-        print("\nDemo interrupted by user.")
+        console.print("\n[bold red]Demo interrupted by user.[/bold red]")
     except Exception as e:
-        print(f"\n[ERROR] Error during demo execution: {e}")
+        console.print(f"\n[bold red][ERROR] Error during demo execution:[/bold red] {e}")

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis-Graph | Sovereign Audit Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ffaa;
+            --primary-glow: rgba(0, 255, 170, 0.4);
+            --bg: #010204;
+            --card-bg: rgba(10, 15, 25, 0.7);
+            --text: #e0e0e0;
+            --accent: #0088ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* 3D Particle Background Overlay */
+        #bg-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+        }
+
+        header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            letter-spacing: -1px;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .main-container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .stats-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .stats-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .stats-card h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-card .value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .audit-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .audit-visual {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .audit-button {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 1.5rem 3rem;
+            font-size: 1.2rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 10;
+        }
+
+        .audit-button:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 0 50px var(--primary);
+            transform: scale(1.05);
+        }
+
+        .terminal-overlay {
+            height: 250px;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem;
+            font-size: 0.85rem;
+            overflow-y: auto;
+            color: #aaa;
+        }
+
+        .log-entry { margin-bottom: 0.3rem; }
+        .log-time { color: #666; margin-right: 0.5rem; }
+        .log-agent { color: var(--primary); font-weight: bold; }
+        .log-msg { color: #fff; }
+
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+            z-index: 5;
+            display: none;
+            animation: scan 2s linear infinite;
+        }
+
+        @keyframes scan {
+            from { top: 0; }
+            to { top: 100%; }
+        }
+
+        .verdict-popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0,0,0,0.9);
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            z-index: 20;
+        }
+
+        .verdict-popup.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <header>
+        <h1>AEGIS-GRAPH</h1>
+        <p style="color: #666; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; margin-top: 0.5rem;">Sovereign Audit Protocol // MARS Swarm v2.0</p>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="stats-card">
+                <h3>Sovereign Nodes</h3>
+                <div class="value">102,482</div>
+            </div>
+            <div class="stats-card">
+                <h3>Audit Precision</h3>
+                <div class="value">99.42%</div>
+            </div>
+            <div class="stats-card">
+                <h3>Graph Density</h3>
+                <div class="value">4.2M Edges</div>
+            </div>
+            <div class="stats-card" style="margin-top: auto; border-color: rgba(0,136,255,0.3);">
+                <h3>Protocol Authority</h3>
+                <p style="font-size: 0.8rem; line-height: 1.4; color: #888;">Authenticated via AEGIS-GRAPH Global Consensus Network.</p>
+            </div>
+        </div>
+
+        <div class="audit-panel">
+            <div class="scan-line" id="scanLine"></div>
+            <div class="audit-visual" id="auditVisual">
+                <button class="audit-button" id="startBtn">Initialize Sovereign Audit</button>
+                
+                <div class="verdict-popup" id="verdict">
+                    <h2 style="color: var(--primary); margin-bottom: 1rem;">VERIFIED BY AEGIS-GRAPH</h2>
+                    <p style="margin-bottom: 0.5rem;">Network Proof ID: <span style="color: #fff;">AEGIS-SOV-7822-X</span></p>
+                    <p>Consensus Weight: <span style="color: var(--primary);">99.98%</span></p>
+                    <button onclick="reset()" style="margin-top: 1.5rem; background: var(--primary); border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Close Proof</button>
+                </div>
+            </div>
+            <div class="terminal-overlay" id="terminal">
+                <div class="log-entry">System ready. Waiting for ingestion...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.fillStyle = '#00ffaa';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 100; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        const terminal = document.getElementById('terminal');
+        const startBtn = document.getElementById('startBtn');
+        const scanLine = document.getElementById('scanLine');
+        const verdict = document.getElementById('verdict');
+
+        function addLog(agent, msg) {
+            const time = new Date().toLocaleTimeString([], { hour12: false, minute: '2-digit', second: '2-digit' });
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.innerHTML = `<span class="log-time">[${time}]</span> <span class="log-agent">${agent}</span> <span class="log-msg">${msg}</span>`;
+            terminal.appendChild(entry);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        startBtn.addEventListener('click', async () => {
+            startBtn.style.display = 'none';
+            scanLine.style.display = 'block';
+            
+            addLog('SYSTEM', 'Initializing MARS Swarm...');
+            await sleep(1000);
+            addLog('VISION', 'Analyzing pixel density and seal integrity...');
+            await sleep(1500);
+            addLog('GRAPH', 'Traversing 102K node Sovereign Graph...');
+            await sleep(1000);
+            addLog('GRAPH', 'Found matching node: Global Academic Registry (Institutional Verification)');
+            await sleep(1200);
+            addLog('LOGIC', 'Performing temporal paradox check...');
+            await sleep(800);
+            addLog('LOGIC', 'Consistency Check: 100% Passed.');
+            await sleep(1000);
+            addLog('SYSTEM', 'Consensus reached. Finalizing audit certificate...');
+            
+            scanLine.style.display = 'none';
+            verdict.classList.add('show');
+        });
+
+        function reset() {
+            verdict.classList.remove('show');
+            startBtn.style.display = 'block';
+            terminal.innerHTML = '<div class="log-entry">System ready. Waiting for ingestion...</div>';
+        }
+
+        function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+    </script>
+</body>
+</html>

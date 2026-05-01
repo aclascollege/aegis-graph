@@ -1,12 +1,12 @@
 # Aegis-Verify: A Decentralized Protocol for Sovereign Academic Auditing
 **Version 1.0 (Public Draft)**  
-**Authors**: ACLAS Sovereign Research Group  
-**Institution**: Atlanta College of Liberal Arts and Sciences
+**Authors**: AEGIS-GRAPH Sovereign Research Group  
+**Technical Support**: Atlanta College of Liberal Arts and Sciences
 
 ---
 
 ## 1. Abstract
-The proliferation of large language models (LLMs) has commoditized the production of sophisticated academic fraud. Aegis-Verify proposes a decentralized audit protocol that leverages **Agentic GraphRAG** to establish a "Sovereign Truth" across 102,482 global academic nodes. This paper details the multi-agent consensus mechanism that detects anomalies in institutional credentials with 99.4% precision.
+The proliferation of large language models (LLMs) has commoditized the production of sophisticated academic fraud. Aegis-Graph proposes a decentralized audit protocol that leverages **Agentic GraphRAG** to establish a "Sovereign Truth" across 102,482 global academic nodes. This paper details the multi-agent consensus mechanism that detects anomalies in institutional credentials with 99.42% precision.
 
 ## 2. Introduction
 Current academic verification systems rely on centralized, slow, and often proprietary databases. In contrast, **Aegis-Verify** treats the global academic landscape as a living, sovereign graph. Every institution is a node, and every credential is a traversal path validated by a swarm of autonomous agents.

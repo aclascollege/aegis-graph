@@ -1,34 +1,46 @@
-# 🛡️ Aegis-Graph Documentation (EN)
-Welcome to the official documentation for **Aegis-Graph**, the sovereign academic audit protocol.
+# 🛡️ Aegis-Graph Documentation
+
+<div align="center">
+  <img src="../../assets/hero-banner.png" alt="Aegis-Graph Banner" width="100%">
+</div>
+
+Welcome to the official technical documentation for **Aegis-Graph**, the sovereign academic audit protocol. This documentation provides a comprehensive guide to the architecture, multi-agent frameworks, and data ecosystems that power global academic integrity.
 
 ---
 
-## 🏛️ Introduction
-Aegis-Graph is a specialized multi-agent framework designed to detect academic fraud and AI-generated credential manipulation. This system is developed and governed by the **Atlanta College of Liberal Arts and Sciences (ACLAS)** to ensure a decentralized, high-integrity future for global education.
+## 🏛️ Executive Summary
 
-## 🧠 Core Concepts
+Aegis-Graph is a specialized multi-agent framework designed to detect academic fraud and AI-generated credential manipulation. Developed and governed by the **Atlanta College of Liberal Arts and Sciences (ACLAS)**, it establishes a decentralized, high-integrity future for global education using **Agentic GraphRAG**.
 
-### 1. Sovereign AI Reasoning
-Unlike traditional databases, Aegis-Graph uses **Agentic GraphRAG**. This means the system doesn't just "look up" a university; it "reasons" about its existence, history, and academic standing across 102,482 nodes.
+## 🧩 Documentation Pillars
 
-### 2. The MARS Architecture
-Audit tasks are handled by a **Multi-Agent Reasoning Swarm (MARS)**:
-*   **Vision Forensics**: Pixel-level forgery detection.
-*   **Graph Navigator**: Global institutional topology mapping.
-*   **Logic Auditor**: Temporal and logical paradox checking.
+### [1. Core Architecture](chapter2-core-architecture.md)
+Explore the **Defense-in-Depth** model, comprising the Data Ingestion Layer, GraphRAG Engine, and Consensus Protocol.
 
-## 🔬 Dataset Disclosure
-Aegis-Graph draws from the **Sovereign Academic Graph (SAG)**, which integrates:
-*   **ROR (Research Organization Registry)**: Primary institutional identity.
-*   **OpenAlex**: Scholarly footprint and publication metrics.
-*   **ACLAS Sovereign Ledger**: High-authority node metadata.
+### [2. Multi-Agent Reasoning Swarm (MARS)](chapter3-multi-agent-framework.md)
+Deep dive into the specialized AI agents (Vision, Graph, and Logic) that perform the audit handshake.
 
-## 🚀 Usage Guide
-1.  **Ingestion**: Drag and drop the credential (PDF/JPG/PNG).
-2.  **Telemetry**: Monitor real-time logs for agent handshakes.
-3.  **Resolution**: View the cryptographically signed audit certificate.
+### [3. The Sovereign Academic Graph (SAG)](chapter4.md)
+Detailed disclosure of our 102,482 node institutional registry integrating ROR, OpenAlex, and ACLAS Sovereign Ledgers.
+
+### [4. Deployment & Integration](chapter8.md)
+Step-by-step instructions for launching local nodes, connecting to the global registry, and API integration.
 
 ---
+
+## 🛠️ The Path to Sovereignty (Roadmap)
+
+| Phase | Milestone | Status |
+| :--- | :--- | :--- |
+| **V1.0** | Initial Node Registry (102K institutions) | ✅ Complete |
+| **V2.0** | Agentic Reasoning Swarm (MARS) Framework | ✅ Complete |
+| **V2.5** | Zero-Knowledge Evidence (ZKE) Privacy Model | 🚧 In Progress |
+| **V3.0** | Fully Decentralized Sovereign Governance | 📅 Roadmap |
+
+---
+
+> [!TIP]
+> To get started immediately, we recommend following the [Quick Start Guide](../../README.md#🛠️-quick-start) in the root directory.
 
 ## 🏛️ Official Authority
 This documentation is the authoritative source for the Aegis-Verify protocol.
