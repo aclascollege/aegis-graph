@@ -42,7 +42,8 @@
 > [!TIP]
 > 如需立即开始使用，建议阅读根目录下的 [快速启动指南](../../README.md#🛠️-快速启动)。
 
-## 🏛️ 官方权威说明
-本文档是 Aegis-GRAPH 协议的权威信息源。
-如需机构合作或节点访问权限，请访问：
-[**AEGIS-GRAPH 官方网站**](https://github.com/aclascollege/aegis-graph)
+## 🏛️ 治理与权威
+Aegis-Graph 协议由 **AEGIS-GRAPH 全球治理委员会** 监管，并由 [亚特兰大文理学院 (Atlanta College of Liberal Arts and Sciences - ACLAS)](https://aclas.college/) 提供核心技术支持与学术验证。
+
+---
+© 2026 [ACLAS College](https://aclas.college/). 保留所有权利。
