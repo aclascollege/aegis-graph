@@ -224,7 +224,7 @@
             </div>
             <div class="stats-card" style="margin-top: auto; border-color: rgba(0,136,255,0.3);">
                 <h3>Protocol Authority</h3>
-                <p style="font-size: 0.8rem; line-height: 1.4; color: #888;">Authenticated via AEGIS-GRAPH Global Consensus Network.</p>
+                <p style="font-size: 0.8rem; line-height: 1.4; color: #888;">Demo visualization only; production verification requires server-signed audit evidence.</p>
             </div>
         </div>
 
@@ -234,9 +234,9 @@
                 <button class="audit-button" id="startBtn">Initialize Sovereign Audit</button>
                 
                 <div class="verdict-popup" id="verdict">
-                    <h2 style="color: var(--primary); margin-bottom: 1rem;">VERIFIED BY AEGIS-GRAPH</h2>
-                    <p style="margin-bottom: 0.5rem;">Network Proof ID: <span style="color: #fff;">AEGIS-SOV-7822-X</span></p>
-                    <p>Consensus Weight: <span style="color: var(--primary);">99.98%</span></p>
+                    <h2 style="color: var(--primary); margin-bottom: 1rem;">SERVER AUDIT REQUIRED</h2>
+                    <p style="margin-bottom: 0.5rem;">Local Demo ID: <span style="color: #fff;">UNSIGNED-PREVIEW</span></p>
+                    <p>Credential Status: <span style="color: var(--primary);">NEEDS SERVER REVIEW</span></p>
                     <button onclick="reset()" style="margin-top: 1.5rem; background: var(--primary); border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Close Proof</button>
                 </div>
             </div>
@@ -301,7 +301,24 @@
             const time = new Date().toLocaleTimeString([], { hour12: false, minute: '2-digit', second: '2-digit' });
             const entry = document.createElement('div');
             entry.className = 'log-entry';
-            entry.innerHTML = `<span class="log-time">[${time}]</span> <span class="log-agent">${agent}</span> <span class="log-msg">${msg}</span>`;
+
+            const timeNode = document.createElement('span');
+            timeNode.className = 'log-time';
+            timeNode.innerText = `[${time}]`;
+            entry.appendChild(timeNode);
+            entry.appendChild(document.createTextNode(' '));
+
+            const agentNode = document.createElement('span');
+            agentNode.className = 'log-agent';
+            agentNode.innerText = agent;
+            entry.appendChild(agentNode);
+            entry.appendChild(document.createTextNode(' '));
+
+            const msgNode = document.createElement('span');
+            msgNode.className = 'log-msg';
+            msgNode.innerText = msg;
+            entry.appendChild(msgNode);
+
             terminal.appendChild(entry);
             terminal.scrollTop = terminal.scrollHeight;
         }
@@ -310,19 +327,19 @@
             startBtn.style.display = 'none';
             scanLine.style.display = 'block';
             
-            addLog('SYSTEM', 'Initializing MARS Swarm...');
+            addLog('SYSTEM', 'Initializing local demo visualization...');
             await sleep(1000);
-            addLog('VISION', 'Analyzing pixel density and seal integrity...');
+            addLog('VISION', 'Demo animation only; no credential bytes are authenticated here...');
             await sleep(1500);
-            addLog('GRAPH', 'Traversing 102K node Sovereign Graph...');
+            addLog('GRAPH', 'Skipping browser-side registry approval; server audit required...');
             await sleep(1000);
-            addLog('GRAPH', 'Found matching node: Global Academic Registry (Institutional Verification)');
+            addLog('GRAPH', 'Institution registry evidence must be resolved by a trusted service.');
             await sleep(1200);
-            addLog('LOGIC', 'Performing temporal paradox check...');
+            addLog('LOGIC', 'Refusing automatic approval without signed server evidence...');
             await sleep(800);
-            addLog('LOGIC', 'Consistency Check: 100% Passed.');
+            addLog('LOGIC', 'Credential status: NEEDS SERVER REVIEW.');
             await sleep(1000);
-            addLog('SYSTEM', 'Consensus reached. Finalizing audit certificate...');
+            addLog('SYSTEM', 'Demo complete. No audit certificate was issued.');
             
             scanLine.style.display = 'none';
             verdict.classList.add('show');
@@ -331,7 +348,11 @@
         function reset() {
             verdict.classList.remove('show');
             startBtn.style.display = 'block';
-            terminal.innerHTML = '<div class="log-entry">System ready. Waiting for ingestion...</div>';
+            terminal.replaceChildren();
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.innerText = 'System ready. Waiting for ingestion...';
+            terminal.appendChild(entry);
         }
 
         function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
