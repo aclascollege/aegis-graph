@@ -13,52 +13,36 @@ tags:
 - agentic-ai
 - graphrag
 - academic-integrity
-- sovereign-ai
 - knowledge-graph
 - security
-metrics:
-- precision
-- latency
 ---
 
-# 🛡️ Aegis-Graph: The Sovereign Academic Audit Protocol
+# 🛡️ Aegis-Graph: Sovereign Academic Audit Protocol
 
-**Aegis-Graph** is a decentralized multi-agent framework designed to safeguard academic integrity in the age of synthetic data. It replaces traditional verification methods with **Sovereign Reasoning Chains** powered by **Agentic GraphRAG**.
+Aegis-Graph is an open prototype for academic credential review using a multi-agent pipeline, institutional graph evidence, and logic-auditing rules.
 
-## 🧠 Model / System Architecture
+> **Current status:** public dashboards are demos/local previews. They do not issue browser-side credential approvals. Production verification requires server-side document parsing, issuer evidence, revocation checks, and a signed audit response.
 
-The system operates via the **MARS (Multi-Agent Reasoning Swarm)** architecture:
+## Current Components
 
-1.  **Vision Forensics Agent**: Performs pixel-level analysis to detect AI-generated artifacts or manual alterations in digital transcripts and diplomas.
-2.  **Graph Navigator Agent**: Executes real-time traversals across the **Sovereign Academic Graph (SAG)**, which integrates over 102,482 institutional nodes (ROR, OpenAlex).
-3.  **Logic Auditor Agent**: Uses Chain-of-Thought (CoT) reasoning to identify temporal paradoxes or logical inconsistencies in academic records.
+1. **Vision Forensics Agent** — currently a deterministic demo extractor; OCR and pixel-level forensics are roadmap work.
+2. **Graph Navigator Agent** — resolves institution evidence from a local index and optional ROR lookup. A ROR match is supporting evidence, not proof that a credential is authentic.
+3. **Logic Auditor Agent** — applies blacklist alias checks, lifecycle/timeline checks, registry status checks, and credential-evidence checks to return `APPROVED`, `NEEDS_REVIEW`, or `REJECTED`.
 
-## 📊 Performance
+## Evaluation
 
-| Metric | Result |
-| :--- | :--- |
-| **Audit Precision** | 99.42% |
-| **Verification Latency** | < 1.4s |
-| **Node Coverage** | 102,482 Verified Entities |
-| **Privacy** | Zero-Knowledge Evidence (ZKE) |
+Reproducible production benchmark numbers are not published yet. Earlier precision/latency claims have been removed until a public benchmark suite is available.
 
-## 🚀 Getting Started
+## Local Smoke Test
 
-```python
-from aegis_graph.core import SovereignAuditor
-
-# Initialize the MARS Swarm
-auditor = SovereignAuditor(node_type="ACLAS_SOV")
-
-# Ingest and Audit a Credential
-verdict = auditor.audit_credential("path/to/transcript.pdf")
-
-print(f"Audit Result: {verdict.status}")
-print(f"Confidence Score: {verdict.confidence}%")
+```bash
+pip install -r requirements.txt
+python main_pipeline.py
+python examples/aclas_college_demo.py
 ```
 
-## 🏛️ Governance
+## Governance
 
-Developed and maintained by the **Atlanta College of Liberal Arts and Sciences (ACLAS)**. Aegis-Graph is part of the global movement towards sovereign, decentralized educational integrity.
+Maintained by Atlanta College of Liberal Arts and Sciences (ACLAS).
 
-For more information, visit the [Official Documentation](https://docs.aclas.college/aegis-graph).
+For more information, visit the [GitHub repository](https://github.com/aclascollege/aegis-graph).
