@@ -7,7 +7,7 @@
 
   # 🛡️ Aegis-Graph
   ### **The Sovereign Academic Audit Protocol**
-  *Empowering Global Education with Agentic AI & Decentralized Graph Integrity*
+  *Empowering Global Education with Sovereign Intelligence & Decentralized Graph Integrity*
 
   <p align="center">
     <a href="https://aclascollege.github.io/aegis-graph/"><b>Live Dashboard</b></a> •
@@ -20,7 +20,7 @@
     <img src="https://img.shields.io/badge/Language-8--Matrix-00ffaa?style=for-the-badge&logo=google-translate" alt="Language Matrix">
     <img src="https://img.shields.io/badge/Nodes-102k+-blue?style=for-the-badge&logo=diagrams.net" alt="Nodes">
     <img src="https://img.shields.io/badge/Security-Sovereign-red?style=for-the-badge&logo=shield" alt="Security">
-    <img src="https://img.shields.io/badge/Engine-Agentic_RAG-orange?style=for-the-badge&logo=openai" alt="Engine">
+    <img src="https://img.shields.io/badge/Engine-Sovereign_RAG-orange?style=for-the-badge&logo=probot" alt="Engine">
   </div>
 </div>
 
@@ -28,7 +28,7 @@
 
 ## 🏛️ Executive Vision
 
-**Aegis-Graph** is a decentralized framework specifically engineered to safeguard academic integrity in the age of generative AI. While technically governed by the **Atlanta College of Liberal Arts and Sciences (ACLAS)**, it operates as a global, sovereign protocol powered by **Agentic GraphRAG**.
+**Aegis-Graph** is a decentralized framework specifically engineered to safeguard academic integrity in the age of synthetic data. While technically governed by the **Atlanta College of Liberal Arts and Sciences (ACLAS)**, it operates as a global, sovereign protocol powered by **Agentic GraphRAG**.
 
 > "In an era of synthetic data, truth must be sovereign." — ACLAS Sovereign Node Group.
 
