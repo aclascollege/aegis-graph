@@ -300,7 +300,7 @@
                 <a href="https://github.com/aclascollege/aegis-graph" target="_blank" style="font-size: 10px; color: var(--accent); text-decoration: none; margin-top: 12px; display: inline-block; font-weight: 700; letter-spacing: 0.5px;">PROTOCOL SOURCE ↗</a>
             </div>
         </div>
-        <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub" style="height: 100%;"><div class="drop-zone" id="drop-zone"><div style="font-size: 32px; color: var(--accent); margin-bottom: 12px;">✧</div><p style="font-size: 15px; font-weight: 700; font-family: 'Outfit'; letter-spacing: 1px;" data-i18n="drop_text">INGEST CREDENTIAL</p><p style="font-size: 10px; color: var(--dim); margin-top: 4px;">PDF, JPG, PNG SUPPORTED</p><input type="file" id="f-input" style="display: none"></div></div></div>
+        <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub" style="height: 100%;"><div class="drop-zone" id="drop-zone"><div style="font-size: 32px; color: var(--accent); margin-bottom: 12px;">✧</div><p style="font-size: 15px; font-weight: 700; font-family: 'Outfit'; letter-spacing: 1px;" data-i18n="drop_text">INGEST CREDENTIAL</p><p style="font-size: 10px; color: var(--dim); margin-top: 4px;">PDF, JPG, PNG SUPPORTED</p><p style="font-size: 9px; color: #ffcc66; margin-top: 8px; max-width: 260px; line-height: 1.4;">DEMO MODE: local preview only. Final credential verification requires a server-signed audit.</p><input type="file" id="f-input" accept=".pdf,image/png,image/jpeg" style="display: none"></div></div></div>
         <div class="bento" style="grid-row: span 2;"><p class="label" data-i18n="label_telemetry">Live Telemetry</p><div class="terminal" id="console"><div>[SYSTEM] Sovereign Node Active. Waiting for ingestion...</div></div></div>
         <div class="bento">
             <p class="label" data-i18n="label_metadata">Sovereign Analytics</p>
@@ -343,7 +343,12 @@
         document.querySelectorAll('.dropdown-option').forEach(opt => {
             opt.onclick = (e) => {
                 currentLang = opt.getAttribute('data-value');
-                langCurrent.innerHTML = `${opt.innerText} <span style="font-size: 8px;">▼</span>`;
+                langCurrent.replaceChildren();
+                langCurrent.appendChild(document.createTextNode(`${opt.innerText} `));
+                const arrow = document.createElement('span');
+                arrow.style.fontSize = '8px';
+                arrow.innerText = '▼';
+                langCurrent.appendChild(arrow);
                 document.querySelectorAll('[data-i18n]').forEach(el => {
                     const key = el.getAttribute('data-i18n');
                     if(i18n[currentLang][key]) el.innerText = i18n[currentLang][key];
@@ -358,14 +363,38 @@
         let file = null;
 
         function log(msg) {
-            const d = document.createElement('div'); d.innerHTML = `<span style="color:var(--accent)">></span> ${msg}`;
+            const d = document.createElement('div');
+            const prompt = document.createElement('span');
+            prompt.style.color = 'var(--accent)';
+            prompt.innerText = '> ';
+            d.appendChild(prompt);
+            d.appendChild(document.createTextNode(msg));
             cons.appendChild(d); cons.scrollTop = cons.scrollHeight;
         }
 
         document.getElementById('f-input').onchange = (e) => {
             if(e.target.files.length) {
                 file = e.target.files[0];
-                document.getElementById('drop-zone').innerHTML = `<div style="color:var(--accent)">✓</div><p style="font-size:10px;">${file.name}</p>`;
+                const dropZone = document.getElementById('drop-zone');
+                dropZone.replaceChildren();
+
+                const check = document.createElement('div');
+                check.style.color = 'var(--accent)';
+                check.innerText = '✓';
+                dropZone.appendChild(check);
+
+                const name = document.createElement('p');
+                name.style.fontSize = '10px';
+                name.innerText = file.name;
+                dropZone.appendChild(name);
+
+                const note = document.createElement('p');
+                note.style.fontSize = '9px';
+                note.style.color = '#ffcc66';
+                note.style.marginTop = '8px';
+                note.innerText = 'Demo intake only; no browser-side approval will be issued.';
+                dropZone.appendChild(note);
+
                 log(`INGESTED: ${file.name}`);
             }
         };
@@ -374,84 +403,43 @@
         btn.onclick = async () => {
             if(!file) return;
             btn.disabled = true;
-            log("INIT: Handshaking with sovereign consensus...");
+            log("INIT: Preparing local demo intake...");
             
             // Vision Agent
             document.getElementById('v-fill').style.width = "100%";
-            log("VISION: Analyzing document forensics for institutional markers...");
+            log("VISION: Demo animation only; document bytes are not authenticated in-browser...");
             await new Promise(r => setTimeout(r, 800));
             
             // Graph Agent
             document.getElementById('g-fill').style.width = "100%";
-            log("GRAPH: Querying global ROR registry (102,482 nodes)...");
+            log("GRAPH: Skipping browser-side registry approval; server audit required...");
             await new Promise(r => setTimeout(r, 1500)); // Simulating a deeper search
             
             // Logic Agent
             document.getElementById('l-fill').style.width = "100%";
-            log("LOGIC: Verifying temporal consistency and authority entropy...");
+            log("LOGIC: Refusing automatic approval without signed server evidence...");
             await new Promise(r => setTimeout(r, 800));
             
             await finish();
         };
 
         async function finish() {
-            const fileName = file.name.toLowerCase();
-            const fraudEntities = ['graham', 'pacific western', 'belford', 'almeda', 'fake', 'fraud', 'manipulated', '伪造', '假'];
-            
-            let verdict = 'REJECTED';
-            let reason = "";
-            let status_code = "ERR_NULL";
-            let issuer = "UNKNOWN";
-            let ror_id = "--";
+            let verdict = 'NEEDS_REVIEW';
+            let reason = 'DEMO MODE: This browser-only page does not read or authenticate document contents. A professional credential decision requires OCR/forensics, issuer registry checks, revocation checks, and a server-signed audit certificate.';
+            let status_code = 'DEMO_ONLY';
+            let issuer = 'UNVERIFIED';
+            let ror_id = '--';
 
-            // 1. Check Fraud Blacklist
-            const isFraud = fraudEntities.some(k => fileName.includes(k));
-            if (isFraud) {
-                reason = "<strong>CRITICAL FAILURE:</strong> Flagged in Sovereign Fraud Registry as a confirmed Degree Mill. Trust score: 0.00.";
-                status_code = "FRAUD_DETECTED";
-                issuer = "BLACKLIST";
-                log("SYSTEM: REJECTED - Fraud match found in blacklist.");
+            const allowedTypes = ['application/pdf', 'image/png', 'image/jpeg'];
+            const fileTypeKnown = allowedTypes.includes(file.type);
+            if (!fileTypeKnown) {
+                verdict = 'REJECTED';
+                status_code = 'UNSUPPORTED_TYPE';
+                reason = 'Unsupported file type. Upload a PDF, PNG, or JPEG credential for a production server-side audit.';
+                log('SYSTEM: REJECTED - Unsupported file type for audit intake.');
             } else {
-                // 2. Extract query from filename
-                const query = fileName.replace(/\.[^/.]+$/, "").replace(/[_-]/g, " ").replace(/transcript|degree|diploma|certificate|aclas|verification/g, "").trim();
-                
-                if (query.length > 2) {
-                    try {
-                        const response = await fetch(`https://api.ror.org/organizations?query=${encodeURIComponent(query)}`);
-                        const data = await response.json();
-                        if (data.items && data.items.length > 0) {
-                            const inst = data.items[0];
-                            verdict = 'APPROVED';
-                            reason = `<strong>INSTITUTION VERIFIED:</strong> Real-time consensus reached via ROR Registry.<br><br><strong>${inst.name}</strong><br>Location: ${inst.addresses[0]?.city || 'N/A'}, ${inst.country.country_name}`;
-                            status_code = "SYNCED";
-                            issuer = "ROR_GLOBAL";
-                            ror_id = inst.id;
-                            log(`SYSTEM: MATCH FOUND - Verified as ${inst.name}`);
-                        } else {
-                            reason = "<strong>AUDIT FAILED:</strong> Institution name not found in global academic consensus network (102k nodes).";
-                            status_code = "NOT_FOUND";
-                            log("SYSTEM: REJECTED - No institutional consensus reached.");
-                        }
-                    } catch (e) {
-                        // Fallback to local logic if API fails or offline
-                        if (fileName.includes('aclas')) {
-                            verdict = 'APPROVED';
-                            reason = "<strong>PREMIUM VERIFICATION:</strong> Verified via ACLAS Sovereign Node (Internal Index).";
-                            status_code = "SYNCED";
-                            issuer = "AEGIS_SOV";
-                        } else {
-                            reason = "<strong>API TIMEOUT:</strong> Could not connect to global registry. Using local fallback...";
-                        }
-                    }
-                } else if (fileName.includes('aclas')) {
-                    verdict = 'APPROVED';
-                    reason = "<strong>PREMIUM VERIFICATION:</strong> Verified via ACLAS Sovereign Node.";
-                    status_code = "SYNCED";
-                    issuer = "AEGIS_SOV";
-                } else {
-                    reason = "<strong>AUDIT FAILED:</strong> Filename too ambiguous to extract institutional identity.";
-                    log("SYSTEM: REJECTED - Insufficient metadata.");
-                }
+                log('SYSTEM: DEMO ONLY - File content was not sent to a trusted audit service.');
+                log('SYSTEM: NEEDS REVIEW - No browser-side approval is issued.');
             }
 
             const modal = document.getElementById('modal');
@@ -461,18 +449,38 @@
             document.getElementById('m-issuer').innerText = issuer;
             document.getElementById('m-status').innerText = status_code;
             
-            const verdictTitle = verdict === 'APPROVED' ? t.verdict_ok : t.verdict_no;
-            const verdictColor = verdict === 'APPROVED' ? 'var(--accent)' : '#ff3366';
+            const verdictTitle = verdict === 'REJECTED' ? t.verdict_no : 'SERVER AUDIT REQUIRED';
+            const verdictColor = verdict === 'REJECTED' ? '#ff3366' : '#ffcc66';
 
-            document.getElementById('rep-body').innerHTML = `
-                <h2 style="color:${verdictColor}">${verdictTitle}</h2>
-                <p style="margin:20px 0; line-height: 1.6;">${reason}</p>
-                <div style="border-top:1px solid #eee; padding-top:15px; font-size:11px; color:#666; margin-bottom: 20px;">
-                    ROR ID: <span style="font-family:monospace; color:var(--accent);">${ror_id}</span><br>
-                    Audit Trace: <span style="font-family:monospace; color:#333;">AEGIS-SOV-${Math.floor(Math.random()*100000)}</span>
-                </div>
-                <button class="btn-main" style="width:100%;" onclick="location.reload()">DONE</button>
-            `;
+            const report = document.getElementById('rep-body');
+            report.replaceChildren();
+
+            const title = document.createElement('h2');
+            title.style.color = verdictColor;
+            title.innerText = verdictTitle;
+            report.appendChild(title);
+
+            const summary = document.createElement('p');
+            summary.style.margin = '20px 0';
+            summary.style.lineHeight = '1.6';
+            summary.innerText = reason;
+            report.appendChild(summary);
+
+            const details = document.createElement('div');
+            details.style.borderTop = '1px solid #eee';
+            details.style.paddingTop = '15px';
+            details.style.fontSize = '11px';
+            details.style.color = '#666';
+            details.style.marginBottom = '20px';
+            details.innerText = `ROR ID: ${ror_id}\nAudit Trace: LOCAL-DEMO-NOT-SIGNED`;
+            report.appendChild(details);
+
+            const done = document.createElement('button');
+            done.className = 'btn-main';
+            done.style.width = '100%';
+            done.innerText = 'DONE';
+            done.onclick = () => location.reload();
+            report.appendChild(done);
         }
     </script>
 </body>

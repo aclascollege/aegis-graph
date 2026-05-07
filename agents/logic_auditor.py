@@ -1,8 +1,11 @@
-import asyncio
 import json
-from typing import List, Dict, Any
-from pydantic import BaseModel, Field
+from pathlib import Path
+from typing import Any, Dict, List
+
+from pydantic import BaseModel
+
 from core.mcp_protocol import mcp_call
+
 
 class AuditResolution(BaseModel):
     verdict: str
@@ -11,105 +14,115 @@ class AuditResolution(BaseModel):
     mcp_trace: str
     warning: str = ""
 
+
 class LogicAuditor:
     """
-    Next-Gen Logic-Auditor: Employs a 'Sovereign Reasoning Chain'.
-    Uses multi-step reflection to identify sophisticated academic fraud.
+    Evidence-weighted logic auditor for credential review.
+
+    The auditor treats registry matches as supporting evidence only. It does not
+    approve a credential solely because an institution exists in ROR or because a
+    file name contains a trusted-looking keyword.
     """
 
-    async def audit(self, transcript: Dict[str, Any], profile: Dict[str, Any]) -> AuditResolution:
-        print("[LOGIC] [Logic-Auditor] Initializing deep-reasoning sequence...")
-        
-        # Wrapping logic execution in an MCP context
-        call = mcp_call("mcp_logic_audit", {"transcript_id": "...", "context_level": "deep"})
-        
-        reasoning_steps = []
-        anomalies = []
-        diploma_mill_warning = ""
+    def __init__(self, blacklist_path: str = "data/fraud_blacklist.json"):
+        self.blacklist_path = Path(blacklist_path)
 
-        # Step 0: Known Diploma Mill / Degree Factory Hard-Rejection
-        is_diploma_mill = profile.get("is_diploma_mill", False)
-        profile_status = profile.get("status", "")
-        inst_name = profile.get("name", "").lower()
+    @staticmethod
+    def _normalize(value: str) -> str:
+        return " ".join(value.lower().replace("&", "and").split())
 
-        # Load global blacklist for safety
+    def _load_blacklist_names(self) -> set[str]:
+        names: set[str] = set()
         try:
-            with open("data/fraud_blacklist.json", "r", encoding="utf-8") as f:
+            with self.blacklist_path.open("r", encoding="utf-8") as f:
                 blacklist_data = json.load(f)
-                global_blacklist = [b["name"].lower() for b in blacklist_data["blacklist"]]
-                if inst_name in global_blacklist:
-                    is_diploma_mill = True
-        except Exception:
-            pass
+        except (OSError, json.JSONDecodeError):
+            return names
 
+        for entry in blacklist_data.get("blacklist", []):
+            if entry.get("name"):
+                names.add(self._normalize(entry["name"]))
+            for alias in entry.get("aliases", []):
+                names.add(self._normalize(alias))
+        return names
+
+    async def audit(self, transcript: Dict[str, Any], profile: Dict[str, Any]) -> AuditResolution:
+        print("[LOGIC] [Logic-Auditor] Initializing evidence-weighted review...")
+        call = mcp_call("mcp_logic_audit", {"transcript_id": "...", "context_level": "deep"})
+
+        reasoning_steps: List[str] = []
+        anomalies: List[tuple[str, float]] = []
+        warnings: List[str] = []
+
+        inst_name = self._normalize(profile.get("name", ""))
+        blacklist_names = self._load_blacklist_names()
+        is_diploma_mill = profile.get("is_diploma_mill", False) or inst_name in blacklist_names
+        profile_status = profile.get("status", "unknown")
+
+        reasoning_steps.append("Step 0: Checking known diploma-mill and degree-factory indicators.")
         if is_diploma_mill or profile_status == "fraudulent":
-            warning_msg = profile.get("warning", "")
-            diploma_mill_warning = warning_msg or "[!!!] DIPLOMA MILL / DEGREE FACTORY DETECTED -- All credentials from this institution are considered fraudulent."
-            print(f"\n{'!'*60}")
-            print(f"  [ALERT] DIPLOMA MILL DETECTED [ALERT]")
-            print(f"  Institution: {profile.get('name', 'Unknown')}")
-            print(f"  {diploma_mill_warning}")
-            print(f"{'!'*60}\n")
-
+            warning_msg = profile.get("warning") or "DIPLOMA MILL / DEGREE FACTORY DETECTED -- credentials from this institution require hard rejection."
             return AuditResolution(
                 verdict="REJECTED — DIPLOMA MILL / DEGREE FACTORY",
                 risk_score=100.0,
                 reasoning_steps=[
-                    "Step 0: Known Diploma Mill / Degree Factory check.",
-                    f"Result 0: HARD REJECTION. '{profile.get('name', 'Unknown')}' is flagged as a confirmed diploma mill.",
-                    "No further analysis required. All credentials from this entity are fraudulent."
+                    *reasoning_steps,
+                    f"Result 0: HARD REJECTION. '{profile.get('name', 'Unknown')}' is flagged by the fraud registry.",
+                    "No approval is issued because the issuing entity is disqualified.",
                 ],
                 mcp_trace=call.trace_id,
-                warning=diploma_mill_warning
+                warning=warning_msg,
             )
+        reasoning_steps.append("Result 0: No exact blacklist or alias match found.")
 
-        # Step 1: Temporal Contextualization
-        reasoning_steps.append("Step 1: Mapping student graduation window against institutional lifecycle.")
-        grad_year = transcript.get("graduation_year", 0)
-        est_year = profile.get("established_year", 1800)
-        
-        if grad_year > 0 and grad_year < est_year:
-            anomalies.append("CRITICAL: Temporal paradox detected. Graduation predates founding.")
-            reasoning_steps.append("Result 1: Violation found. Graduation window is historically impossible.")
+        reasoning_steps.append("Step 1: Mapping graduation window against institutional lifecycle.")
+        grad_year = int(transcript.get("graduation_year") or 0)
+        est_year = profile.get("established_year")
+        if grad_year > 0 and est_year and grad_year < int(est_year):
+            anomalies.append(("CRITICAL: Graduation predates the institution founding year.", 55.0))
+            reasoning_steps.append("Result 1: Temporal violation found.")
+        elif est_year:
+            reasoning_steps.append("Result 1: Timeline is internally consistent.")
         else:
-            reasoning_steps.append("Result 1: Timeline verified.")
+            warnings.append("Founding year unavailable; temporal validation is incomplete.")
+            reasoning_steps.append("Result 1: Founding year unavailable; timeline needs review.")
 
-        # Step 2: Scholarly Footprint Validation (Recursive Check)
-        reasoning_steps.append("Step 2: Analyzing scholarly entropy of the issuing institution.")
-        reputation = profile.get("reputation_score", 0.0)
-        is_sovereign_node = "Atlanta College" in profile.get("name", "")
+        reasoning_steps.append("Step 2: Evaluating registry evidence without granting automatic approval.")
         has_ror_id = bool(profile.get("ror_id"))
-        is_active = profile.get("status") == "active"
-        
-        # Sovereign nodes (e.g., ACLAS College) always pass
-        if is_sovereign_node:
-            reasoning_steps.append("Result 2: Sovereign Gold Standard Node. Scholarly footprint confirmed.")
-        # Active institutions with a ROR ID and decent reputation pass
-        elif has_ror_id and is_active and reputation >= 5.0:
-            reasoning_steps.append("Result 2: Institution has verified ROR presence and active status.")
-        elif reputation < 5.0:
-            anomalies.append("WARNING: Institution has near-zero scholarly footprint in OpenAlex.")
-            reasoning_steps.append("Result 2: Anomaly found. Higher probability of Degree Mill activity.")
+        source = profile.get("source", "none")
+        match_confidence = float(profile.get("match_confidence") or 0.0)
+        if has_ror_id and profile_status == "active":
+            reasoning_steps.append("Result 2: Active ROR presence found as supporting institution-existence evidence.")
+        elif has_ror_id:
+            anomalies.append((f"WARNING: ROR status is '{profile_status}', not active.", 30.0))
+            reasoning_steps.append("Result 2: Registry presence found, but status requires review.")
         else:
-            reasoning_steps.append("Result 2: Academic reputation within acceptable variance.")
+            anomalies.append(("WARNING: No verified registry identifier was resolved.", 35.0))
+            reasoning_steps.append("Result 2: No ROR identifier available.")
 
-        # Step 3: Global Registry Conflict Resolution
-        reasoning_steps.append("Step 3: Checking ROR 'Status' history.")
-        status = profile.get("status", "active")
-        if status != "active":
-            anomalies.append(f"REJECTION: Registry status is '{status}'.")
-            reasoning_steps.append(f"Result 3: Conflict confirmed. Institution is currently {status}.")
+        if source in {"ror", "local_index"} and 0 < match_confidence < 0.80:
+            anomalies.append(("WARNING: Institution match confidence is below the production threshold.", 25.0))
+            reasoning_steps.append("Result 2b: Match confidence is low and should be manually reviewed.")
 
-        # Final Synthesis Logic
-        risk_score = min(100.0, len(anomalies) * 45.0)
-        verdict = "APPROVED" if risk_score < 40 else "REJECTED"
-        if 0 < risk_score < 70 and verdict == "REJECTED":
-            # Some leniency for warnings
-            pass
+        reasoning_steps.append("Step 3: Checking credential-authenticity evidence.")
+        if not transcript.get("credential_id") and not transcript.get("signature_verified"):
+            anomalies.append(("WARNING: No credential ID or cryptographic issuer signature was verified.", 35.0))
+            reasoning_steps.append("Result 3: Credential authenticity remains unproven.")
+        else:
+            reasoning_steps.append("Result 3: Credential-level evidence is present.")
+
+        risk_score = min(100.0, sum(weight for _, weight in anomalies))
+        if risk_score >= 85:
+            verdict = "REJECTED"
+        elif risk_score > 0 or warnings:
+            verdict = "NEEDS_REVIEW"
+        else:
+            verdict = "APPROVED"
 
         return AuditResolution(
             verdict=verdict,
             risk_score=risk_score,
-            reasoning_steps=reasoning_steps,
-            mcp_trace=call.trace_id
+            reasoning_steps=[*reasoning_steps, *[item for item, _ in anomalies], *warnings],
+            mcp_trace=call.trace_id,
+            warning="; ".join(warnings),
         )

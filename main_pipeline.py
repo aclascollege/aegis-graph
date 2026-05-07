@@ -41,7 +41,7 @@ class AegisGraphEngine:
         
         # 4. Deep Logic Audit (MCP: mcp_logic_audit)
         mcp_call("mcp_logic_audit", {"cot": True})
-        resolution = await self.auditor.audit(raw_transcript.dict(), inst_profile.dict())
+        resolution = await self.auditor.audit(raw_transcript.model_dump(), inst_profile.model_dump())
         
         print("-" * 60)
         print(f"REPORT: FINAL VERDICT: {resolution.verdict}")
