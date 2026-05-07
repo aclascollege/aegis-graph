@@ -1,6 +1,6 @@
 # Multi-Agent Reasoning Swarm (MARS)
 
-The **Multi-Agent Reasoning Swarm (MARS)** is the decentralized intelligence core of the Aegis-Graph protocol. Unlike traditional rule-based verification, MARS utilizes a swarm of specialized AI agents that collaborate to reach a sovereign consensus on academic integrity.
+The **Multi-Agent Reasoning Swarm (MARS)** is the decentralized intelligence core of the Aegis-Graph protocol. Unlike traditional rule-based verification, MARS utilizes a swarm of specialized Sovereign agents that collaborate to reach a sovereign consensus on academic integrity.
 
 ## 👁️ Agent Alpha: Vision Forensics (VF)
 The VF Agent is responsible for the pixel-level forensic analysis of digital artifacts. It acts as the "first responder" in the audit pipeline.
