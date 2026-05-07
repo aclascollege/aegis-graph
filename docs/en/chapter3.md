@@ -1,48 +1,48 @@
 # Multi-Agent Reasoning Swarm (MARS)
 
-The **Multi-Agent Reasoning Swarm (MARS)** is the decentralized intelligence core of the Aegis-Graph protocol. Unlike traditional rule-based verification, MARS utilizes a swarm of specialized Sovereign agents that collaborate to reach a sovereign consensus on academic integrity.
+The **Multi-Agent Reasoning Swarm (MARS)** is the intelligence core of the Aegis-Graph protocol. Unlike traditional rule-based verification, MARS utilizes a pipeline of specialized agents that collaborate to reach an audit consensus on academic integrity markers.
 
 ## 👁️ Agent Alpha: Vision Forensics (VF)
-The VF Agent is responsible for the pixel-level forensic analysis of digital artifacts. It acts as the "first responder" in the audit pipeline.
+The VF Agent is responsible for the initial structural analysis of digital artifacts. It acts as the "first responder" in the audit pipeline.
 
-### Technical Specifications
-*   **Model Architecture**: Optimized ResNet-50 backbone with custom attention layers for document fraud.
-*   **Detection Vectors**:
-    *   **Diffusion Artifacts**: Identifies high-frequency noise patterns typical of Stable Diffusion and Midjourney.
-    *   **Vector Consistency**: Analyzes kerning, font weight, and SVG path integrity in PDF objects.
-    *   **Seal Forensics**: Pixel-level comparison of institutional seals against a reference database of 40,000+ official stamps.
-*   **Output**: A `Confidence Score [0.0 - 1.0]` and a heatmap of suspected manipulated regions.
+### Current Scope (Prototype)
+*   **Structural Extraction**: Identifies key layout elements like seals, headers, and signature lines.
+*   **OCR Normalization**: Converts visual data into semantic metadata for the reasoning layer.
+*   **Detection Markers**: Identifies obvious document layout inconsistencies (Pixel-level GAN forensics is a roadmap item).
 
 ---
 
 ## 🗺️ Agent Beta: Graph Navigator (GN)
-The GN Agent is the specialized intelligence for traversing the **Sovereign Academic Graph (SAG)**. It establishes the institutional context of the credential.
+The GN Agent is the specialized intelligence for resolving institutional evidence. It establishes the context of the credential's issuer.
 
 ### Capabilities
 *   **Identity Resolution**: Queries the **Research Organization Registry (ROR)** and **OpenAlex** to verify the issuer's global identity.
-*   **Lineage Mapping**: Traces the history of institutions, including mergers, name changes, and dissolutions.
-*   **Scholarly Footprint**: Cross-references the issuer with global publication metrics to ensure the institution is active in the academic ecosystem.
-*   **Connectivity**: Validates the relationship between the degree-granting body and its parent or affiliate organizations.
+*   **Lineage Mapping**: Reviews the history of institutions, including mergers, name changes, and dissolutions.
+*   **Registry Evidence**: Provides supporting evidence of an institution's existence and status.
 
 ---
 
 ## ⚖️ Agent Gamma: Logic Auditor (LA)
-The LA Agent is the "Chief Justice" of the swarm, responsible for cross-layer reasoning and paradox detection.
+The LA Agent is responsible for cross-layer reasoning and consistency checks.
 
 ### Logic Layers
-*   **Temporal Paradox Checking**: Ensures that the degree issuance date aligns with the institution's operational timeline (e.g., degree cannot pre-date founding).
-*   **Program Credibility**: Verifies that the specific degree program exists within the institution's accredited curriculum for that specific period.
-*   **Consensus Orchestration**: Aggregates the evidence from VF and GN agents. If a conflict arises (e.g., VF flags a seal but GN finds a high-authority node), the LA Agent initiates a **Chain-of-Thought (CoT)** reasoning path to resolve the discrepancy.
+*   **Temporal Consistency**: Ensures that the degree issuance date aligns with the institution's operational timeline.
+*   **Fraud Detection**: Cross-references institution names and aliases against known fraud registries and blacklists.
+*   **Consensus Orchestration**: Aggregates findings from the VF and GN agents. If a conflict arises, the LA Agent performs **Chain-of-Thought (CoT)** reasoning to determine the final risk score.
 
 ---
 
-## 🤝 The Consensus Handshake
-A final **Sovereign Audit Certificate** is only issued when the MARS swarm reaches a consensus threshold of `> 0.90`.
+## 🤝 The Audit Handshake
+A final audit verdict is issued based on the MARS swarm's cumulative evidence.
 
-1.  **Initial Ingestion**: Multi-spectral data extraction.
-2.  **Parallel Processing**: Agents execute specialized audits simultaneously.
-3.  **Evidence Exchange**: Agents share intermediate findings via a secure handshake protocol.
-4.  **Final Resolution**: The Logic Auditor issues the definitive verdict and anchors the cryptographic proof to the ledger.
+1.  **Ingestion**: Normalization of document data.
+2.  **Parallel Audit**: Agents execute specialized evidence checks.
+3.  **Consensus**: The Logic Auditor resolves contradictions and calculates the final evidence weight.
+4.  **Reporting**: A non-production audit report is generated detailing the reasoning trail.
+
+---
+> [!IMPORTANT]
+> **Production Status:** Professional verification requires server-side document parsing, issuer evidence, revocation checks, and a signed audit response.
 
 ---
 *Return to [Documentation Home](README.md)*
