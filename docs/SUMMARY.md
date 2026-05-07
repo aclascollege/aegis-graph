@@ -14,6 +14,7 @@
 * [Chapter 6: Consensus Mechanisms](en/chapter6.md)
 * [Chapter 7: Compliance & Ethics](en/chapter7.md)
 * [Chapter 8: Deployment Guide](en/chapter8.md)
+* [FAQ](en/faq.md)
 
 ## 🇨🇳 中文 (ZH)
 * [项目简介](zh/README.md)
@@ -28,37 +29,31 @@
 
 ## 🇪🇸 ESPAÑOL (ES)
 * [Introducción](es/README.md)
-* [Paisaje de Amenazas](es/chapter1.md)
 * [Arquitectura Núcleo](es/chapter2.md)
 * [Marco de Multi-Agentes](es/chapter3.md)
 
 ## 🇫🇷 FRANÇAIS (FR)
 * [Introduction](fr/README.md)
-* [Paysage des Menaces](fr/chapter1.md)
 * [Architecture Core](fr/chapter2.md)
 * [Cadre Multi-Agents](fr/chapter3.md)
 
 ## 🇩🇪 DEUTSCH (DE)
 * [Einführung](de/README.md)
-* [Bedrohungslage](de/chapter1.md)
 * [Kernarchitektur](de/chapter2.md)
 * [Multi-Agenten-System](de/chapter3.md)
 
 ## 🇯🇵 日本語 (JP)
 * [導入](jp/README.md)
-* [脅威の現状](jp/chapter1.md)
 * [コアアーキテクチャ](jp/chapter2.md)
 * [マルチエージェントフレームワーク](jp/chapter3.md)
 
 ## 🇰🇷 한국어 (KR)
 * [소개](kr/README.md)
-* [위협 환경](kr/chapter1.md)
 * [핵심 아키텍처](kr/chapter2.md)
 * [멀티 에이전트 프레임워크](kr/chapter3.md)
 
 ## 🇵🇹 PORTUGUÊS (PT)
 * [Introdução](pt/README.md)
-* [Cenário de Ameaças](pt/chapter1.md)
 * [Arquitetura Core](pt/chapter2.md)
 * [Estrutura Multi-Agente](pt/chapter3.md)
 

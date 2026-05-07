@@ -1,44 +1,38 @@
-# The Sovereign Academic Graph (SAG)
+# Institutional Evidence (SAG)
 
-The **Sovereign Academic Graph (SAG)** is the definitive global registry of academic institutions, serving as the "ground truth" for the Aegis-Graph protocol. It consists of over **102,482 verified institutional nodes** and millions of contextual relationships.
+The **Sovereign Academic Graph (SAG)** is the institutional evidence layer of the Aegis-Graph protocol. It integrates locally maintained institutional indices with global public registries (such as ROR and OpenAlex) to provide the necessary context for credential auditing.
 
 ## 📊 Data Topology
 
-The SAG is not a static database but a dynamic, multi-layered graph that integrates authoritative data from global academic registries and institutional ledgers.
+The SAG is not a "judgment database" that proves a credential's authenticity; rather, it is a dynamic model that provides institutional background evidence.
 
-### Core Data Sources
-| Source | Contribution |
+### Core Evidence Sources
+| Source | Role |
 | :--- | :--- |
-| **ROR** | Primary Research Organization IDs and institutional metadata. |
-| **OpenAlex** | Scholarly footprint, publication metrics, and institutional impact. |
-| **Crossref** | DOI-level institutional affiliations and metadata accuracy. |
-| **ACLAS Ledger** | High-authority sovereign node metadata and historical accreditation. |
+| **Local Index** | Caches metadata for high-trust institutions, blacklist aliases, and known fraud patterns. |
+| **ROR** | Provides standardized identities (ROR IDs) and operational status for global research organizations. |
+| **OpenAlex** | Provides scholarly output background and institutional impact metrics as supporting evidence. |
 
 ---
 
-## 🏛️ Node Anatomy
-Each institutional node in the SAG contains a rich set of attributes required for sovereign auditing:
+## 🏛️ Evidence Logic
 
-*   **Temporal Bounds**: Founding date, operational status, and dissolution history.
-*   **Geospatial Vectors**: Precise coordinates and physical campus locations to detect geographic spoofing.
-*   **Issuer Fingerprints**: Cryptographic identities and public keys for digital signature verification.
-*   **Hierarchy Edges**: Relationships between parent universities, satellite campuses, and research institutes.
+During the audit process, the SAG is used to answer critical questions:
+1. **Institutional Existence**: Does the institution have a record in recognized global registries?
+2. **Lifecycle Consistency**: Is the credential issuance date within the institution's operational lifespan?
+3. **Status Validation**: Is the institution currently active, or has it been flagged for revocation or fraud?
 
----
-
-## ⚡ Indexing & Performance
-To achieve sub-second verification latency, Aegis-Graph utilizes a high-performance indexing strategy:
-
-1.  **Vectorized Search**: Institutional names and metadata are vectorized to allow for fuzzy matching against slight variations or misspellings.
-2.  **Distributed Caching**: High-frequency institutional nodes are cached at the **Edge Node** layer for near-instant resolution.
-3.  **Cross-Validation**: Every node is periodically re-validated across multiple global registries to ensure data freshness and integrity.
+> [!IMPORTANT]
+> **Key Clarification:** The presence of an institution in registries like ROR is evidence that the organization exists, but it is **not** proof that a specific credential issued in its name is authentic.
 
 ---
 
-## 🔒 Data Sovereignty
-In alignment with the **ACLAS ZKE (Zero-Knowledge Evidence)** protocol, the SAG only stores institutional metadata. 
-*   **No PII Storage**: Personal student records are never stored on the graph.
-*   **Verifiable Proofs**: The graph provides the *infrastructure* for verification, while the specific audit evidence remains private and decentralized.
+## ⚡ Indexing & Matching
+
+To ensure accuracy in evidence resolution, Aegis-Graph utilizes several strategies:
+1. **Normalization**: Institutional names are standardized to eliminate variations in spelling or symbols.
+2. **Multi-Factor Matching**: Cross-references geographic location, founding year, and official domains.
+3. **Evidence Weighting**: Matching results are assigned a confidence score, which serves as a key input for the LogicAuditor's final decision.
 
 ---
 *Return to [Documentation Home](README.md)*
