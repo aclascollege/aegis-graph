@@ -1,0 +1,12 @@
+diff a/dashboard/index.html b/dashboard/index.html	(rejected hunks)
+@@ -20,6 +20,10 @@
+     <meta property="og:site_name" content="Aegis-Graph Sovereign Network">
+     <meta property="og:type" content="website">
+     
++    <!-- Status -->
++    <!-- DEMO DASHBOARD: SAMPLE DATA -->
++    <!-- SAMPLE SNAPSHOT — NOT A LIVE LEDGER -->
++    
+     <!-- Structured Data for AEO (JSON-LD) -->
+     <script type="application/ld+json">
+     {
