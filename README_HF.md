@@ -23,7 +23,7 @@ metrics:
 
 # 🛡️ Aegis-Graph: The Sovereign Academic Audit Protocol
 
-**Aegis-Graph** is a decentralized multi-agent framework designed to safeguard academic integrity in the age of generative AI. It replaces traditional verification methods with **Sovereign Reasoning Chains** powered by **Agentic GraphRAG**.
+**Aegis-Graph** is a decentralized multi-agent framework designed to safeguard academic integrity in the age of synthetic data. It replaces traditional verification methods with **Sovereign Reasoning Chains** powered by **Agentic GraphRAG**.
 
 ## 🧠 Model / System Architecture
 
