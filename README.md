@@ -34,27 +34,33 @@
 
 ---
 
+## ⚠️ Current Status
+
+The hosted dashboard is a **non-production UI demo**. It no longer issues browser-side credential approvals; professional verification requires server-side document parsing, issuer evidence, revocation checks, and a signed audit response.
+
+---
+
 ## 🚀 Key Features
 
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
       <h4>👁️ Vision Forensics</h4>
-      <p>Pixel-level analysis to detect AI-generated artifacts in digital credentials and transcripts.</p>
+      <p>Planned pixel-level and OCR-based analysis to detect AI-generated artifacts in digital credentials and transcripts.</p>
     </td>
     <td width="50%" valign="top">
       <h4>🗺️ Graph Navigator</h4>
-      <p>Real-time traversal across 102,482 global ROR institutional nodes for instant verification.</p>
+      <p>Institution evidence resolution using a local index plus optional ROR lookup; ROR matches are supporting evidence, not automatic credential approval.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <h4>⚖️ Logic Auditor</h4>
-      <p>Logical paradox detection using Chain-of-Thought (CoT) reasoning to identify inconsistent records.</p>
+      <p>Evidence-weighted consistency checks for registry status, timelines, blacklist aliases, and missing credential-authenticity proof.</p>
     </td>
     <td width="50%" valign="top">
       <h4>🔒 Sovereign Ledger</h4>
-      <p>Cryptographically signed audit trails that ensure the permanence and immutability of academic truth.</p>
+      <p>Planned cryptographically signed audit trails for reproducible, tamper-evident credential review.</p>
     </td>
   </tr>
 </table>
@@ -80,12 +86,14 @@ graph TD
 
 ---
 
-## 📊 Performance Benchmarks
+## 📊 Performance and Evaluation
 
-*   **Audit Precision**: `99.42%` (Multi-Agent Consensus)
-*   **Verification Latency**: `< 1.4s` (Distributed Graph Query)
-*   **Privacy Model**: `Zero-Knowledge Evidence (ZKE)`
-*   **Global Node Coverage**: `102,482 Verified Entities`
+Production benchmark claims are not published yet. Current development focuses on eliminating browser-side approvals, normalizing graph evidence, and making audit decisions reproducible before publishing precision/latency metrics.
+
+*   **Audit Precision**: pending reproducible benchmark suite
+*   **Verification Latency**: pending server-side implementation
+*   **Privacy Model**: local PII scrubbing prototype; ZK evidence is roadmap work
+*   **Global Node Coverage**: local index plus optional ROR lookup
 
 ---
 

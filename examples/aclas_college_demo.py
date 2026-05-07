@@ -61,13 +61,30 @@ async def run_professional_demo():
         result = await engine.execute_audit(scenario['file'])
         
         # Display Result Table
+        verdict = result['verdict']
+        risk_score = result['risk_score']
+        if verdict.startswith("REJECTED"):
+            node_status = "[red]BLOCKED[/red]"
+        elif verdict == "NEEDS_REVIEW":
+            node_status = "[yellow]REVIEW[/yellow]"
+        else:
+            node_status = "[green]SYNCED[/green]"
+
+        if risk_score >= 85:
+            risk_status = "[red]HIGH[/red]"
+        elif risk_score >= 40:
+            risk_status = "[yellow]MODERATE[/yellow]"
+        else:
+            risk_status = "[green]LOW[/green]"
+
+        # Display Result Table
         table = Table(title=f"Audit Resolution: {scenario['name']}", box=box.ROUNDED, border_style="cyan")
         table.add_column("Layer", style="dim")
         table.add_column("Metric", style="bold")
         table.add_column("Status", justify="right")
 
-        table.add_row("Institutional Node", result['verdict'], "[green]SYNCED[/green]")
-        table.add_row("Risk Probability", f"{result['risk_score']:.2%}", "[yellow]MODERATE[/yellow]" if result['risk_score'] > 0.3 else "[green]LOW[/green]")
+        table.add_row("Institutional Node", verdict, node_status)
+        table.add_row("Risk Score", f"{risk_score:.1f}/100", risk_status)
         table.add_row("MCP Trace ID", result['trace_id'][:12], "[dim]ENCRYPTED[/dim]")
 
         console.print(table)
@@ -75,7 +92,7 @@ async def run_professional_demo():
 
     console.print(Panel(
         "[bold green]DEMO COMPLETE[/bold green]\n"
-        "[white]All audit trails have been anchored to the ACLAS Sovereign Compliance Ledger.[/white]",
+        "[white]Demo complete. Production deployments must anchor server-signed audit trails before issuing verification certificates.[/white]",
         border_style="white",
         box=box.SQUARE,
         padding=(1, 2)
