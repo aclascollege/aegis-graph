@@ -465,6 +465,23 @@
             cons.appendChild(d); cons.scrollTop = cons.scrollHeight;
         }
 
+        function setAgent(id, label, width, color = 'var(--accent)') {
+            const status = document.getElementById(`${id}-status`);
+            const fill = document.getElementById(`${id}-fill`);
+            status.innerText = label;
+            status.style.color = color;
+            fill.style.width = width;
+        }
+
+        function resetRunState() {
+            btn.disabled = false;
+            btn.innerText = i18n[currentLang].btn_audit;
+            setAgent('v', 'IDLE', '0%', 'var(--dim)');
+            setAgent('g', 'IDLE', '0%', 'var(--dim)');
+            setAgent('l', 'IDLE', '0%', 'var(--dim)');
+            document.getElementById('modal').style.display = 'none';
+        }
+
         function showSelectedFile(name, noteText) {
             const dropZone = document.getElementById('drop-zone');
             dropZone.replaceChildren();
@@ -516,22 +533,29 @@
                 return;
             }
             btn.disabled = true;
+            btn.innerText = 'AUDITING...';
+            setAgent('v', 'IDLE', '0%', 'var(--dim)');
+            setAgent('g', 'IDLE', '0%', 'var(--dim)');
+            setAgent('l', 'IDLE', '0%', 'var(--dim)');
             log("INIT: Preparing local demo intake...");
             
             // Vision Agent
-            document.getElementById('v-fill').style.width = "100%";
+            setAgent('v', 'SCANNING', '100%');
             log("VISION: Demo animation only; document bytes are not authenticated in-browser...");
             await new Promise(r => setTimeout(r, 800));
+            setAgent('v', 'DONE', '100%');
             
             // Graph Agent
-            document.getElementById('g-fill').style.width = "100%";
+            setAgent('g', 'RESOLVING', '100%');
             log("GRAPH: Skipping browser-side registry approval; server audit required...");
             await new Promise(r => setTimeout(r, 1500)); // Simulating a deeper search
+            setAgent('g', 'DONE', '100%');
             
             // Logic Agent
-            document.getElementById('l-fill').style.width = "100%";
+            setAgent('l', 'AUDITING', '100%');
             log("LOGIC: Refusing automatic approval without signed server evidence...");
             await new Promise(r => setTimeout(r, 800));
+            setAgent('l', 'DONE', '100%');
             
             await finish();
         };
@@ -627,8 +651,8 @@
             const done = document.createElement('button');
             done.className = 'btn-main';
             done.style.width = '100%';
-            done.innerText = 'DONE';
-            done.onclick = () => location.reload();
+            done.innerText = 'RUN ANOTHER AUDIT';
+            done.onclick = resetRunState;
             report.appendChild(done);
         }
     </script>
