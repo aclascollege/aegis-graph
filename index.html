@@ -151,6 +151,34 @@
             background: rgba(255, 255, 255, 0.01);
         }
         .drop-zone:hover { border-color: var(--accent); background: rgba(0, 255, 170, 0.03); transform: scale(0.99); }
+
+        .sample-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        .sample-btn {
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text);
+            border-radius: 8px;
+            padding: 10px 8px;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: 'Outfit';
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            min-height: 44px;
+        }
+
+        .sample-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(0, 255, 170, 0.06);
+        }
         
         .terminal { 
             background: rgba(0, 0, 0, 0.4); 
@@ -363,6 +391,11 @@
                 <div class="meta-item"><span class="label" style="margin-bottom:0; font-size: 8px;" data-i18n="meta_issuer">Issuer</span><div class="meta-val" id="m-issuer">--</div></div>
                 <div class="meta-item"><span class="label" style="margin-bottom:0; font-size: 8px;" data-i18n="meta_status">Status</span><div class="meta-val" id="m-status">--</div></div>
             </div>
+            <div class="sample-grid">
+                <button class="sample-btn" data-sample="aclas_alumni_2025.png">ACLAS</button>
+                <button class="sample-btn" data-sample="fake_degree_sample.png">FAKE</button>
+                <button class="sample-btn" data-sample="graham_university_transcript.pdf">GRAHAM</button>
+            </div>
         </div>
     </div>
     <div class="modal" id="modal"><div class="report" id="rep-body"></div></div>
@@ -427,33 +460,46 @@
             cons.appendChild(d); cons.scrollTop = cons.scrollHeight;
         }
 
+        function showSelectedFile(name, noteText) {
+            const dropZone = document.getElementById('drop-zone');
+            dropZone.replaceChildren();
+
+            const check = document.createElement('div');
+            check.style.color = 'var(--accent)';
+            check.innerText = '✓';
+            dropZone.appendChild(check);
+
+            const selectedName = document.createElement('p');
+            selectedName.style.fontSize = '10px';
+            selectedName.innerText = name;
+            dropZone.appendChild(selectedName);
+
+            const note = document.createElement('p');
+            note.style.fontSize = '9px';
+            note.style.color = '#ffcc66';
+            note.style.marginTop = '8px';
+            note.innerText = noteText;
+            dropZone.appendChild(note);
+        }
+
         document.getElementById('f-input').onchange = (e) => {
             if(e.target.files.length) {
                 file = e.target.files[0];
-                const dropZone = document.getElementById('drop-zone');
-                dropZone.replaceChildren();
-
-                const check = document.createElement('div');
-                check.style.color = 'var(--accent)';
-                check.innerText = '✓';
-                dropZone.appendChild(check);
-
-                const name = document.createElement('p');
-                name.style.fontSize = '10px';
-                name.innerText = file.name;
-                dropZone.appendChild(name);
-
-                const note = document.createElement('p');
-                note.style.fontSize = '9px';
-                note.style.color = '#ffcc66';
-                note.style.marginTop = '8px';
-                note.innerText = 'Demo intake only; no browser-side approval will be issued.';
-                dropZone.appendChild(note);
-
+                showSelectedFile(file.name, 'Demo intake only; no browser-side approval will be issued.');
                 log(`INGESTED: ${file.name}`);
             }
         };
         document.getElementById('drop-zone').onclick = () => document.getElementById('f-input').click();
+
+        document.querySelectorAll('.sample-btn').forEach(sampleBtn => {
+            sampleBtn.onclick = () => {
+                const sampleName = sampleBtn.getAttribute('data-sample');
+                const mimeType = sampleName.endsWith('.pdf') ? 'application/pdf' : 'image/png';
+                file = { name: sampleName, type: mimeType, demoSample: true };
+                showSelectedFile(sampleName, 'Built-in demo fixture selected.');
+                log(`SAMPLE LOADED: ${sampleName}`);
+            };
+        });
 
         btn.onclick = async () => {
             if(!file) {
@@ -484,6 +530,9 @@
 
         function inferDemoOutcome(uploadedFile) {
             const name = uploadedFile.name.toLowerCase();
+            const demoApprovals = [
+                { pattern: 'aclas', issuer: 'Atlanta College of Liberal Arts and Sciences' }
+            ];
             const demoBlacklist = [
                 { pattern: 'graham', issuer: 'Graham International University' },
                 { pattern: 'giu', issuer: 'Graham International University' },
@@ -493,7 +542,11 @@
                 { pattern: 'belford', issuer: 'Belford University' },
                 { pattern: 'almeda', issuer: 'Almeda University' }
             ];
-            return demoBlacklist.find(item => name.includes(item.pattern));
+            const rejected = demoBlacklist.find(item => name.includes(item.pattern));
+            if (rejected) return { ...rejected, verdict: 'REJECTED' };
+            const approved = demoApprovals.find(item => name.includes(item.pattern));
+            if (approved) return { ...approved, verdict: 'APPROVED' };
+            return null;
         }
 
         async function finish() {
@@ -513,11 +566,18 @@
                 log('SYSTEM: REJECTED - Unsupported file type for audit intake.');
             } else if (inferDemoOutcome(file)) {
                 const fixture = inferDemoOutcome(file);
-                verdict = 'REJECTED';
-                status_code = 'DEMO_BLACKLIST_MATCH';
                 issuer = fixture.issuer;
-                reason = `${fixture.issuer} matches the public demo blacklist fixture. This is a browser-side demo result only; production rejection still requires a server-signed audit trail.`;
-                log(`SYSTEM: DEMO REJECTED - ${fixture.issuer} matched the local demo blacklist fixture.`);
+                if (fixture.verdict === 'REJECTED') {
+                    verdict = 'REJECTED';
+                    status_code = 'DEMO_BLACKLIST_MATCH';
+                    reason = `${fixture.issuer} matches the public demo blacklist fixture. This is a browser-side demo result only; production rejection still requires a server-signed audit trail.`;
+                    log(`SYSTEM: DEMO REJECTED - ${fixture.issuer} matched the local demo blacklist fixture.`);
+                } else {
+                    verdict = 'APPROVED';
+                    status_code = 'DEMO_VERIFIED';
+                    reason = `${fixture.issuer} matches the built-in verified demo fixture. This browser-side status is only a UI demonstration, not a production credential approval.`;
+                    log(`SYSTEM: DEMO VERIFIED - ${fixture.issuer} matched the local verified fixture.`);
+                }
             } else {
                 log('SYSTEM: DEMO ONLY - File content was not sent to a trusted audit service.');
                 log('SYSTEM: NEEDS REVIEW - No browser-side approval is issued.');
@@ -530,8 +590,8 @@
             document.getElementById('m-issuer').innerText = issuer;
             document.getElementById('m-status').innerText = status_code;
             
-            const verdictTitle = verdict === 'REJECTED' ? t.verdict_no : 'SERVER AUDIT REQUIRED';
-            const verdictColor = verdict === 'REJECTED' ? '#ff3366' : '#ffcc66';
+            const verdictTitle = verdict === 'REJECTED' ? t.verdict_no : (verdict === 'APPROVED' ? 'DEMO VERIFIED' : 'SERVER AUDIT REQUIRED');
+            const verdictColor = verdict === 'REJECTED' ? '#ff3366' : (verdict === 'APPROVED' ? '#00ffaa' : '#ffcc66');
 
             const report = document.getElementById('rep-body');
             report.replaceChildren();
