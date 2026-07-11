@@ -184,6 +184,15 @@
             margin-top: 3px;
         }
 
+        .sample-btn span:first-child {
+            color: inherit;
+            font-size: 10px;
+            font-family: 'Outfit';
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-top: 0;
+        }
+
         .sample-btn:hover {
             border-color: var(--accent);
             color: var(--accent);
@@ -220,6 +229,7 @@
         }
         .btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 25px var(--accent-glow); filter: brightness(1.1); }
         .btn-main:active { transform: translateY(0); }
+        .btn-main:disabled { opacity: 0.65; cursor: wait; transform: none; }
         
         .meta-item { background: rgba(255, 255, 255, 0.02); padding: 14px; border-radius: 10px; border: 1px solid var(--border); }
         .meta-val { font-size: 14px; font-weight: 700; color: var(--accent); margin-top: 6px; font-family: 'JetBrains Mono'; }
@@ -402,7 +412,7 @@
                 <a href="https://github.com/aclascollege/aegis-graph" target="_blank" style="font-size: 10px; color: var(--accent); text-decoration: none; margin-top: 12px; display: inline-block; font-weight: 700; letter-spacing: 0.5px;">PROTOCOL SOURCE ↗</a>
             </div>
         </div>
-        <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub" style="height: 100%;"><div class="drop-zone" id="drop-zone"><div style="font-size: 32px; color: var(--accent); margin-bottom: 12px;">✧</div><p style="font-size: 15px; font-weight: 700; font-family: 'Outfit'; letter-spacing: 1px;" data-i18n="drop_text">INGEST CREDENTIAL</p><p style="font-size: 10px; color: var(--dim); margin-top: 4px;">PDF, JPG, PNG SUPPORTED</p><p style="font-size: 9px; color: #ffcc66; margin-top: 8px; max-width: 260px; line-height: 1.4;">DEMO MODE: local preview only. Final credential verification requires a server-signed audit.</p><input type="file" id="f-input" accept=".pdf,image/png,image/jpeg" style="display: none"></div><div class="sample-grid"><button class="sample-btn" data-sample="aclas_alumni_2025.png">VERIFIED<span>ACLAS</span></button><button class="sample-btn" data-sample="fake_degree_sample.png">FRAUD<span>Pacific Western</span></button><button class="sample-btn" data-sample="graham_university_transcript.pdf">BLACKLIST<span>Graham</span></button></div></div></div>
+        <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub" style="height: 100%;"><div class="drop-zone" id="drop-zone"><div style="font-size: 32px; color: var(--accent); margin-bottom: 12px;">✧</div><p style="font-size: 15px; font-weight: 700; font-family: 'Outfit'; letter-spacing: 1px;" data-i18n="drop_text">INGEST CREDENTIAL</p><p style="font-size: 10px; color: var(--dim); margin-top: 4px;" data-i18n="file_support">PDF, JPG, PNG SUPPORTED</p><p style="font-size: 9px; color: #ffcc66; margin-top: 8px; max-width: 260px; line-height: 1.4;" data-i18n="demo_disclaimer">DEMO MODE: local preview only. Final credential verification requires a server-signed audit.</p><input type="file" id="f-input" accept=".pdf,image/png,image/jpeg" style="display: none"></div><div class="sample-grid"><button class="sample-btn" data-sample="aclas_alumni_2025.png"><span data-i18n="sample_verified_main">VERIFIED</span><span data-i18n="sample_verified_sub">ACLAS</span></button><button class="sample-btn" data-sample="fake_degree_sample.png"><span data-i18n="sample_fraud_main">FRAUD</span><span data-i18n="sample_fraud_sub">Pacific Western</span></button><button class="sample-btn" data-sample="graham_university_transcript.pdf"><span data-i18n="sample_blacklist_main">BLACKLIST</span><span data-i18n="sample_blacklist_sub">Graham</span></button></div></div></div>
         <div class="bento" style="grid-row: span 2;"><p class="label" data-i18n="label_telemetry">Live Telemetry</p><div class="terminal" id="console"><div>[SYSTEM] Sovereign Node Active. Waiting for ingestion...</div></div></div>
         <div class="bento">
             <p class="label" data-i18n="label_metadata">Sovereign Analytics</p>
@@ -416,19 +426,215 @@
 
     <script>
         const i18n = {
-            en: { btn_audit: "START AUDIT", label_agents: "System Agents", agent_v: "Vision Forensics", agent_g: "Graph Navigator", agent_l: "Logic Auditor", label_node_title: "Institutional Node", label_hub: "Evidence Processing", drop_text: "Ingest Credential", label_telemetry: "Live Telemetry", label_metadata: "Metadata Analytics", meta_issuer: "Issuer", meta_status: "Status", verdict_ok: "SERVER AUDIT REQUIRED", verdict_no: "AUDIT REJECTED" },
-            cn: { btn_audit: "开始审计", label_agents: "系统代理", agent_v: "视觉法证", agent_g: "图谱导航", agent_l: "逻辑审计", label_node_title: "主权节点", label_hub: "证据处理中心", drop_text: "载入凭证", label_telemetry: "实时遥测", label_metadata: "元数据分析", meta_issuer: "签发机构", meta_status: "状态", verdict_ok: "需要服务端审计", verdict_no: "审计拒绝" },
-            es: { btn_audit: "INICIAR AUDITORÍA", label_agents: "Agentes de Sistema", agent_v: "Forense Visual", agent_g: "Navegador de Grafos", agent_l: "Auditor Lógico", label_node_title: "Nodo Institucional", label_hub: "Procesamiento", drop_text: "Ingresar Credencial", label_telemetry: "Telemetría", label_metadata: "Metadatos", meta_issuer: "Emisor", meta_status: "Estado", verdict_ok: "AUDITORÍA REQUERIDA", verdict_no: "RECHAZADO" },
-            fr: { btn_audit: "LANCER L'AUDIT", label_agents: "Agents Système", agent_v: "Forensique Visuelle", agent_g: "Navigateur", agent_l: "Auditeur Logique", label_node_title: "Nœud Institutionnel", label_hub: "Traitement", drop_text: "Ingérer", label_telemetry: "Télémétrie", label_metadata: "Métadonnées", meta_issuer: "Émetteur", meta_status: "Statut", verdict_ok: "AUDIT REQUIS", verdict_no: "REJETÉ" },
-            de: { btn_audit: "AUDIT STARTEN", label_agents: "System-Agenten", agent_v: "Visuelle Forensik", agent_g: "Graph-Navigator", agent_l: "Logik-Auditor", label_node_title: "Institutioneller Knoten", label_hub: "Verarbeitung", drop_text: "Nachweis Einreichen", label_telemetry: "Telemetrie", label_metadata: "Metadaten", meta_issuer: "Aussteller", meta_status: "Status", verdict_ok: "SERVER-AUDIT ERFORDERLICH", verdict_no: "ABGELEHNT" },
-            jp: { btn_audit: "監査開始", label_agents: "システムエージェント", agent_v: "視覚法医学", agent_g: "グラフナビ", agent_l: "ロジック監査", label_node_title: "機関ノード", label_hub: "証拠処理", drop_text: "資格情報を入れる", label_telemetry: "テレメトリ", label_metadata: "メタデータ", meta_issuer: "発行者", meta_status: "ステータス", verdict_ok: "サーバー監査が必要", verdict_no: "拒否" },
-            kr: { btn_audit: "감사 시작", label_agents: "시스템 에이전트", agent_v: "시각적 법의학", agent_g: "그래프 탐색", agent_l: "논리 감사", label_node_title: "기관 노드", label_hub: "증거 처리", drop_text: "자격 증명 제출", label_telemetry: "원격 측정", label_metadata: "메타데이터", meta_issuer: "발행자", meta_status: "상태", verdict_ok: "서버 감사 필요", verdict_no: "거부" },
-            pt: { btn_audit: "INICIAR AUDITORIA", label_agents: "Agentes de Sistema", agent_v: "Forense Visual", agent_g: "Navegador", agent_l: "Auditor Lógico", label_node_title: "Nó Institucional", label_hub: "Processamento", drop_text: "Inserir Credencial", label_telemetry: "Telemetria", label_metadata: "Metadados", meta_issuer: "Emissor", meta_status: "Estado", verdict_ok: "AUDITORIA REQUERIDA", verdict_no: "REJEITADO" }
+            en: { btn_audit: "START AUDIT", label_agents: "System Agents", agent_v: "Vision Forensics", agent_g: "Graph Navigator", agent_l: "Logic Auditor", label_node_title: "Institutional Node", label_hub: "Evidence Processing", drop_text: "Ingest Credential", file_support: "PDF, JPG, PNG SUPPORTED", demo_disclaimer: "DEMO MODE: local preview only. Final credential verification requires a server-signed audit.", label_telemetry: "Live Telemetry", label_metadata: "Metadata Analytics", meta_issuer: "Issuer", meta_status: "Status", sample_verified_main: "VERIFIED", sample_verified_sub: "ACLAS", sample_fraud_main: "FRAUD", sample_fraud_sub: "Pacific Western", sample_blacklist_main: "BLACKLIST", sample_blacklist_sub: "Graham", verdict_ok: "SERVER AUDIT REQUIRED", verdict_no: "AUDIT REJECTED" },
+            cn: { btn_audit: "开始审计", label_agents: "系统代理", agent_v: "视觉法证", agent_g: "图谱导航", agent_l: "逻辑审计", label_node_title: "主权节点", label_hub: "证据处理中心", drop_text: "载入凭证", file_support: "支持 PDF、JPG、PNG", demo_disclaimer: "演示模式：仅本地预览。正式凭证验证需要服务端签名审计。", label_telemetry: "实时遥测", label_metadata: "元数据分析", meta_issuer: "签发机构", meta_status: "状态", sample_verified_main: "通过样本", sample_verified_sub: "ACLAS", sample_fraud_main: "欺诈样本", sample_fraud_sub: "Pacific Western", sample_blacklist_main: "黑名单", sample_blacklist_sub: "Graham", verdict_ok: "需要服务端审计", verdict_no: "审计拒绝" },
+            es: { btn_audit: "INICIAR AUDITORÍA", label_agents: "Agentes de Sistema", agent_v: "Forense Visual", agent_g: "Navegador de Grafos", agent_l: "Auditor Lógico", label_node_title: "Nodo Institucional", label_hub: "Procesamiento", drop_text: "Ingresar Credencial", file_support: "PDF, JPG, PNG SOPORTADOS", demo_disclaimer: "MODO DEMO: vista previa local. La verificación final requiere auditoría firmada por servidor.", label_telemetry: "Telemetría", label_metadata: "Metadatos", meta_issuer: "Emisor", meta_status: "Estado", sample_verified_main: "VÁLIDA", sample_verified_sub: "ACLAS", sample_fraud_main: "FRAUDE", sample_fraud_sub: "Pacific Western", sample_blacklist_main: "LISTA NEGRA", sample_blacklist_sub: "Graham", verdict_ok: "AUDITORÍA REQUERIDA", verdict_no: "RECHAZADO" },
+            fr: { btn_audit: "LANCER L'AUDIT", label_agents: "Agents Système", agent_v: "Forensique Visuelle", agent_g: "Navigateur", agent_l: "Auditeur Logique", label_node_title: "Nœud Institutionnel", label_hub: "Traitement", drop_text: "Ingérer", file_support: "PDF, JPG, PNG PRIS EN CHARGE", demo_disclaimer: "MODE DÉMO: aperçu local. La vérification finale exige un audit signé serveur.", label_telemetry: "Télémétrie", label_metadata: "Métadonnées", meta_issuer: "Émetteur", meta_status: "Statut", sample_verified_main: "VÉRIFIÉ", sample_verified_sub: "ACLAS", sample_fraud_main: "FRAUDE", sample_fraud_sub: "Pacific Western", sample_blacklist_main: "LISTE NOIRE", sample_blacklist_sub: "Graham", verdict_ok: "AUDIT REQUIS", verdict_no: "REJETÉ" },
+            de: { btn_audit: "AUDIT STARTEN", label_agents: "System-Agenten", agent_v: "Visuelle Forensik", agent_g: "Graph-Navigator", agent_l: "Logik-Auditor", label_node_title: "Institutioneller Knoten", label_hub: "Verarbeitung", drop_text: "Nachweis Einreichen", file_support: "PDF, JPG, PNG UNTERSTÜTZT", demo_disclaimer: "DEMO-MODUS: lokale Vorschau. Finale Verifikation erfordert serverseitig signierten Audit.", label_telemetry: "Telemetrie", label_metadata: "Metadaten", meta_issuer: "Aussteller", meta_status: "Status", sample_verified_main: "VERIFIZIERT", sample_verified_sub: "ACLAS", sample_fraud_main: "BETRUG", sample_fraud_sub: "Pacific Western", sample_blacklist_main: "BLACKLIST", sample_blacklist_sub: "Graham", verdict_ok: "SERVER-AUDIT ERFORDERLICH", verdict_no: "ABGELEHNT" },
+            jp: { btn_audit: "監査開始", label_agents: "システムエージェント", agent_v: "視覚法医学", agent_g: "グラフナビ", agent_l: "ロジック監査", label_node_title: "機関ノード", label_hub: "証拠処理", drop_text: "資格情報を入れる", file_support: "PDF、JPG、PNG対応", demo_disclaimer: "デモモード: ローカルプレビューのみ。最終検証にはサーバー署名監査が必要です。", label_telemetry: "テレメトリ", label_metadata: "メタデータ", meta_issuer: "発行者", meta_status: "ステータス", sample_verified_main: "検証済み", sample_verified_sub: "ACLAS", sample_fraud_main: "不正", sample_fraud_sub: "Pacific Western", sample_blacklist_main: "ブラックリスト", sample_blacklist_sub: "Graham", verdict_ok: "サーバー監査が必要", verdict_no: "拒否" },
+            kr: { btn_audit: "감사 시작", label_agents: "시스템 에이전트", agent_v: "시각적 법의학", agent_g: "그래프 탐색", agent_l: "논리 감사", label_node_title: "기관 노드", label_hub: "증거 처리", drop_text: "자격 증명 제출", file_support: "PDF, JPG, PNG 지원", demo_disclaimer: "데모 모드: 로컬 미리보기 전용. 최종 검증에는 서버 서명 감사가 필요합니다.", label_telemetry: "원격 측정", label_metadata: "메타데이터", meta_issuer: "발행자", meta_status: "상태", sample_verified_main: "검증됨", sample_verified_sub: "ACLAS", sample_fraud_main: "사기", sample_fraud_sub: "Pacific Western", sample_blacklist_main: "블랙리스트", sample_blacklist_sub: "Graham", verdict_ok: "서버 감사 필요", verdict_no: "거부" },
+            pt: { btn_audit: "INICIAR AUDITORIA", label_agents: "Agentes de Sistema", agent_v: "Forense Visual", agent_g: "Navegador", agent_l: "Auditor Lógico", label_node_title: "Nó Institucional", label_hub: "Processamento", drop_text: "Inserir Credencial", file_support: "PDF, JPG, PNG SUPORTADOS", demo_disclaimer: "MODO DEMO: prévia local. A verificação final requer auditoria assinada pelo servidor.", label_telemetry: "Telemetria", label_metadata: "Metadados", meta_issuer: "Emissor", meta_status: "Estado", sample_verified_main: "VERIFICADO", sample_verified_sub: "ACLAS", sample_fraud_main: "FRAUDE", sample_fraud_sub: "Pacific Western", sample_blacklist_main: "LISTA NEGRA", sample_blacklist_sub: "Graham", verdict_ok: "AUDITORIA REQUERIDA", verdict_no: "REJEITADO" }
+        };
+
+        const extraText = {
+            en: {
+                auditing: "AUDITING...",
+                idle: "IDLE",
+                scanning: "SCANNING",
+                resolving: "RESOLVING",
+                done: "DONE",
+                logicAuditing: "AUDITING",
+                needsReview: "NEEDS REVIEW",
+                demoVerified: "DEMO VERIFIED",
+                runAnother: "RUN ANOTHER AUDIT",
+                runFraud: "RUN FRAUD SAMPLE",
+                runVerified: "RUN VERIFIED SAMPLE",
+                uploadNote: "Demo intake only; no browser-side approval will be issued.",
+                sampleNote: "Built-in demo fixture selected.",
+                noFile: "SYSTEM: Select a PDF, PNG, or JPEG credential before starting the demo audit.",
+                init: "INIT: Preparing local demo intake...",
+                vision: "VISION: Demo animation only; document bytes are not authenticated in-browser...",
+                graph: "GRAPH: Resolving institution evidence in local demo mode...",
+                logic: "LOGIC: Applying demo policy rules...",
+                unsupported: "Unsupported file type. Upload a PDF, PNG, or JPEG credential for a production server-side audit.",
+                unknownReason: "This uploaded file is accepted by the demo intake, but this static browser page cannot read document contents or issue credential approval. Use the built-in samples to demonstrate verified and rejected outcomes, or connect a server-side audit API for real files.",
+                rejectedReason: issuer => `${issuer} matches the public demo blacklist fixture. This is a browser-side demo result only; production rejection still requires a server-signed audit trail.`,
+                verifiedReason: issuer => `${issuer} matches the built-in verified demo fixture. This browser-side status is only a UI demonstration, not a production credential approval.`
+            },
+            cn: {
+                auditing: "审计中...",
+                idle: "待命",
+                scanning: "扫描中",
+                resolving: "解析中",
+                done: "完成",
+                logicAuditing: "审计中",
+                needsReview: "需要复核",
+                demoVerified: "演示验证通过",
+                runAnother: "继续测试",
+                runFraud: "运行欺诈样本",
+                runVerified: "运行通过样本",
+                uploadNote: "仅演示载入；浏览器端不会签发审核结论。",
+                sampleNote: "已选择内置演示样本。",
+                noFile: "系统：请先选择 PDF、PNG 或 JPEG 凭证。",
+                init: "初始化：准备本地演示审计...",
+                vision: "视觉：浏览器演示不会认证文件字节...",
+                graph: "图谱：正在本地演示模式解析机构证据...",
+                logic: "逻辑：正在应用演示规则...",
+                unsupported: "文件类型不支持。请上传 PDF、PNG 或 JPEG。",
+                unknownReason: "该文件已进入演示流程，但静态网页无法读取文件内容或签发凭证结论。请使用内置样本演示通过/拒绝结果，或接入服务端审计 API 处理真实文件。",
+                rejectedReason: issuer => `${issuer} 命中公开演示黑名单样本。该结果仅为浏览器端演示；正式拒绝仍需要服务端签名审计轨迹。`,
+                verifiedReason: issuer => `${issuer} 命中内置通过样本。该状态仅为界面演示，不代表正式凭证批准。`
+            },
+            es: {
+                auditing: "AUDITANDO...",
+                idle: "INACTIVO",
+                scanning: "ESCANEANDO",
+                resolving: "RESOLVIENDO",
+                done: "LISTO",
+                logicAuditing: "AUDITANDO",
+                needsReview: "REVISIÓN NECESARIA",
+                demoVerified: "DEMO VERIFICADA",
+                runAnother: "EJECUTAR OTRA AUDITORÍA",
+                runFraud: "EJECUTAR MUESTRA FRAUDE",
+                runVerified: "EJECUTAR MUESTRA VÁLIDA",
+                uploadNote: "Solo entrada demo; no se emite aprobación en el navegador.",
+                sampleNote: "Muestra demo integrada seleccionada.",
+                noFile: "SISTEMA: Seleccione PDF, PNG o JPEG antes de iniciar.",
+                init: "INIT: Preparando auditoría demo local...",
+                vision: "VISIÓN: La demo no autentica bytes del documento en navegador...",
+                graph: "GRAFO: Resolviendo evidencia institucional en modo demo...",
+                logic: "LÓGICA: Aplicando reglas demo...",
+                unsupported: "Tipo de archivo no compatible. Suba PDF, PNG o JPEG.",
+                unknownReason: "El archivo fue aceptado por la demo, pero esta página estática no puede leer contenidos ni emitir aprobación. Use las muestras integradas o conecte una API de auditoría.",
+                rejectedReason: issuer => `${issuer} coincide con la lista negra demo. Es solo un resultado de navegador; producción requiere auditoría firmada por servidor.`,
+                verifiedReason: issuer => `${issuer} coincide con la muestra verificada demo. Es solo demostración de UI, no aprobación real.`
+            },
+            fr: {
+                auditing: "AUDIT EN COURS...",
+                idle: "INACTIF",
+                scanning: "ANALYSE",
+                resolving: "RÉSOLUTION",
+                done: "TERMINÉ",
+                logicAuditing: "AUDIT",
+                needsReview: "REVUE REQUISE",
+                demoVerified: "DÉMO VÉRIFIÉE",
+                runAnother: "RELANCER UN AUDIT",
+                runFraud: "LANCER ÉCHANTILLON FRAUDE",
+                runVerified: "LANCER ÉCHANTILLON VALIDE",
+                uploadNote: "Entrée de démonstration uniquement; aucune approbation navigateur.",
+                sampleNote: "Échantillon démo intégré sélectionné.",
+                noFile: "SYSTÈME: Sélectionnez un PDF, PNG ou JPEG avant l'audit.",
+                init: "INIT: Préparation de l'audit démo local...",
+                vision: "VISION: La démo n'authentifie pas les octets du document...",
+                graph: "GRAPHE: Résolution des preuves institutionnelles en mode démo...",
+                logic: "LOGIQUE: Application des règles de démonstration...",
+                unsupported: "Type de fichier non pris en charge. Chargez un PDF, PNG ou JPEG.",
+                unknownReason: "Le fichier est accepté par la démo, mais cette page statique ne peut pas lire le contenu ni approuver un diplôme. Utilisez les exemples intégrés ou connectez une API serveur.",
+                rejectedReason: issuer => `${issuer} correspond à la liste noire de démonstration. Résultat navigateur uniquement; la production exige un audit signé serveur.`,
+                verifiedReason: issuer => `${issuer} correspond à l'exemple vérifié intégré. C'est une démonstration UI, pas une approbation réelle.`
+            },
+            de: {
+                auditing: "AUDIT LÄUFT...",
+                idle: "BEREIT",
+                scanning: "SCANNT",
+                resolving: "PRÜFT",
+                done: "FERTIG",
+                logicAuditing: "AUDIT",
+                needsReview: "PRÜFUNG NÖTIG",
+                demoVerified: "DEMO VERIFIZIERT",
+                runAnother: "WEITEREN AUDIT STARTEN",
+                runFraud: "BETRUGSBEISPIEL",
+                runVerified: "VERIFIZIERTES BEISPIEL",
+                uploadNote: "Nur Demo-Eingabe; keine Browser-Freigabe.",
+                sampleNote: "Integriertes Demo-Beispiel ausgewählt.",
+                noFile: "SYSTEM: Bitte PDF, PNG oder JPEG auswählen.",
+                init: "INIT: Lokalen Demo-Audit vorbereiten...",
+                vision: "VISION: Browser-Demo authentifiziert keine Dokumentbytes...",
+                graph: "GRAPH: Institutionelle Evidenz im Demo-Modus wird geprüft...",
+                logic: "LOGIK: Demo-Regeln werden angewendet...",
+                unsupported: "Nicht unterstützter Dateityp. PDF, PNG oder JPEG hochladen.",
+                unknownReason: "Die Datei wurde angenommen, aber diese statische Seite kann Inhalte nicht lesen oder genehmigen. Nutzen Sie die Beispiele oder verbinden Sie eine Server-API.",
+                rejectedReason: issuer => `${issuer} passt zum Demo-Blacklist-Beispiel. Nur Browser-Demo; Produktion braucht serverseitig signierten Audit.`,
+                verifiedReason: issuer => `${issuer} passt zum verifizierten Demo-Beispiel. Das ist UI-Demo, keine echte Freigabe.`
+            },
+            jp: {
+                auditing: "監査中...",
+                idle: "待機",
+                scanning: "解析中",
+                resolving: "照合中",
+                done: "完了",
+                logicAuditing: "監査中",
+                needsReview: "レビュー必要",
+                demoVerified: "デモ検証済み",
+                runAnother: "別の監査を実行",
+                runFraud: "不正サンプル実行",
+                runVerified: "検証サンプル実行",
+                uploadNote: "デモ取込のみ。ブラウザでは承認しません。",
+                sampleNote: "内蔵デモサンプルを選択しました。",
+                noFile: "システム: PDF、PNG、JPEGを選択してください。",
+                init: "INIT: ローカルデモ監査を準備中...",
+                vision: "VISION: ブラウザデモでは文書バイトを認証しません...",
+                graph: "GRAPH: デモモードで機関証拠を照合中...",
+                logic: "LOGIC: デモルールを適用中...",
+                unsupported: "非対応ファイルです。PDF、PNG、JPEGをアップロードしてください。",
+                unknownReason: "ファイルはデモに受理されましたが、静的ページでは内容読取や承認はできません。内蔵サンプルを使うか、サーバーAPIを接続してください。",
+                rejectedReason: issuer => `${issuer} はデモ用ブラックリストに一致しました。これはブラウザデモであり、本番拒否には署名済み監査が必要です。`,
+                verifiedReason: issuer => `${issuer} は検証済みデモサンプルに一致しました。これはUIデモであり正式承認ではありません。`
+            },
+            kr: {
+                auditing: "감사 중...",
+                idle: "대기",
+                scanning: "스캔 중",
+                resolving: "확인 중",
+                done: "완료",
+                logicAuditing: "감사 중",
+                needsReview: "검토 필요",
+                demoVerified: "데모 검증됨",
+                runAnother: "다른 감사 실행",
+                runFraud: "사기 샘플 실행",
+                runVerified: "검증 샘플 실행",
+                uploadNote: "데모 입력 전용이며 브라우저 승인은 발급되지 않습니다.",
+                sampleNote: "내장 데모 샘플이 선택되었습니다.",
+                noFile: "시스템: PDF, PNG 또는 JPEG를 먼저 선택하세요.",
+                init: "INIT: 로컬 데모 감사를 준비 중...",
+                vision: "VISION: 브라우저 데모는 문서 바이트를 인증하지 않습니다...",
+                graph: "GRAPH: 데모 모드에서 기관 증거를 확인 중...",
+                logic: "LOGIC: 데모 정책 규칙 적용 중...",
+                unsupported: "지원하지 않는 파일 형식입니다. PDF, PNG 또는 JPEG를 업로드하세요.",
+                unknownReason: "파일은 데모 입력으로 허용되었지만 정적 페이지는 내용을 읽거나 승인할 수 없습니다. 내장 샘플을 사용하거나 서버 감사 API를 연결하세요.",
+                rejectedReason: issuer => `${issuer} 이 데모 블랙리스트 샘플과 일치합니다. 브라우저 데모 결과이며 실제 거부에는 서버 서명 감사가 필요합니다.`,
+                verifiedReason: issuer => `${issuer} 이 내장 검증 샘플과 일치합니다. UI 데모일 뿐 실제 승인이 아닙니다.`
+            },
+            pt: {
+                auditing: "AUDITANDO...",
+                idle: "OCIOSO",
+                scanning: "ESCANEANDO",
+                resolving: "RESOLVENDO",
+                done: "CONCLUÍDO",
+                logicAuditing: "AUDITANDO",
+                needsReview: "REVISÃO NECESSÁRIA",
+                demoVerified: "DEMO VERIFICADA",
+                runAnother: "EXECUTAR OUTRA AUDITORIA",
+                runFraud: "EXECUTAR AMOSTRA FRAUDE",
+                runVerified: "EXECUTAR AMOSTRA VÁLIDA",
+                uploadNote: "Entrada de demo; nenhuma aprovação no navegador.",
+                sampleNote: "Amostra demo integrada selecionada.",
+                noFile: "SISTEMA: selecione PDF, PNG ou JPEG antes de iniciar.",
+                init: "INIT: Preparando auditoria demo local...",
+                vision: "VISÃO: a demo não autentica bytes do documento no navegador...",
+                graph: "GRAFO: resolvendo evidências institucionais em modo demo...",
+                logic: "LÓGICA: aplicando regras de demo...",
+                unsupported: "Tipo de arquivo não suportado. Envie PDF, PNG ou JPEG.",
+                unknownReason: "O arquivo foi aceito pela demo, mas esta página estática não lê conteúdo nem emite aprovação. Use as amostras integradas ou conecte uma API de auditoria.",
+                rejectedReason: issuer => `${issuer} corresponde à lista negra de demonstração. É apenas resultado no navegador; produção exige auditoria assinada pelo servidor.`,
+                verifiedReason: issuer => `${issuer} corresponde à amostra verificada integrada. É demonstração de UI, não aprovação real.`
+            }
         };
 
         const dropdown = document.getElementById('lang-dropdown');
         const langCurrent = document.getElementById('lang-current');
         let currentLang = 'en';
+        const htmlLangMap = { en: 'en', cn: 'zh-CN', es: 'es', fr: 'fr', de: 'de', jp: 'ja', kr: 'ko', pt: 'pt' };
 
         dropdown.onclick = (e) => {
             dropdown.classList.toggle('open');
@@ -445,6 +651,7 @@
         document.querySelectorAll('.dropdown-option').forEach(opt => {
             opt.onclick = (e) => {
                 currentLang = opt.getAttribute('data-value');
+                document.documentElement.lang = htmlLangMap[currentLang] || 'en';
                 langCurrent.replaceChildren();
                 langCurrent.appendChild(document.createTextNode(`${opt.innerText} `));
                 const arrow = document.createElement('span');
@@ -455,6 +662,9 @@
                     const key = el.getAttribute('data-i18n');
                     if(i18n[currentLang][key]) el.innerText = i18n[currentLang][key];
                 });
+                if (!btn.disabled && document.getElementById('modal').style.display !== 'flex') {
+                    resetRunState();
+                }
                 e.stopPropagation();
                 dropdown.classList.remove('open');
             };
@@ -463,6 +673,10 @@
         const btn = document.getElementById('audit-btn');
         const cons = document.getElementById('console');
         let file = null;
+
+        function tx(key) {
+            return (extraText[currentLang] && extraText[currentLang][key]) || extraText.en[key];
+        }
 
         function log(msg) {
             const d = document.createElement('div');
@@ -485,9 +699,9 @@
         function resetRunState() {
             btn.disabled = false;
             btn.innerText = i18n[currentLang].btn_audit;
-            setAgent('v', 'IDLE', '0%', 'var(--dim)');
-            setAgent('g', 'IDLE', '0%', 'var(--dim)');
-            setAgent('l', 'IDLE', '0%', 'var(--dim)');
+            setAgent('v', tx('idle'), '0%', 'var(--dim)');
+            setAgent('g', tx('idle'), '0%', 'var(--dim)');
+            setAgent('l', tx('idle'), '0%', 'var(--dim)');
             document.getElementById('modal').style.display = 'none';
         }
 
@@ -516,7 +730,7 @@
         document.getElementById('f-input').onchange = (e) => {
             if(e.target.files.length) {
                 file = e.target.files[0];
-                showSelectedFile(file.name, 'Demo intake only; no browser-side approval will be issued.');
+                showSelectedFile(file.name, tx('uploadNote'));
                 log(`INGESTED: ${file.name}`);
             }
         };
@@ -526,7 +740,7 @@
             resetRunState();
             const mimeType = sampleName.endsWith('.pdf') ? 'application/pdf' : 'image/png';
             file = { name: sampleName, type: mimeType, demoSample: true };
-            showSelectedFile(sampleName, 'Built-in demo fixture selected.');
+            showSelectedFile(sampleName, tx('sampleNote'));
             log(`SAMPLE LOADED: ${sampleName}`);
             setTimeout(() => btn.click(), 80);
         }
@@ -540,35 +754,36 @@
         });
 
         btn.onclick = async () => {
+            if (document.getElementById('modal').style.display === 'flex') return;
             if(!file) {
-                log("SYSTEM: Select a PDF, PNG, or JPEG credential before starting the demo audit.");
+                log(tx('noFile'));
                 document.getElementById('drop-zone').style.borderColor = '#ffcc66';
                 return;
             }
             btn.disabled = true;
-            btn.innerText = 'AUDITING...';
-            setAgent('v', 'IDLE', '0%', 'var(--dim)');
-            setAgent('g', 'IDLE', '0%', 'var(--dim)');
-            setAgent('l', 'IDLE', '0%', 'var(--dim)');
-            log("INIT: Preparing local demo intake...");
+            btn.innerText = tx('auditing');
+            setAgent('v', tx('idle'), '0%', 'var(--dim)');
+            setAgent('g', tx('idle'), '0%', 'var(--dim)');
+            setAgent('l', tx('idle'), '0%', 'var(--dim)');
+            log(tx('init'));
             
             // Vision Agent
-            setAgent('v', 'SCANNING', '100%');
-            log("VISION: Demo animation only; document bytes are not authenticated in-browser...");
+            setAgent('v', tx('scanning'), '100%');
+            log(tx('vision'));
             await new Promise(r => setTimeout(r, 800));
-            setAgent('v', 'DONE', '100%');
+            setAgent('v', tx('done'), '100%');
             
             // Graph Agent
-            setAgent('g', 'RESOLVING', '100%');
-            log("GRAPH: Skipping browser-side registry approval; server audit required...");
+            setAgent('g', tx('resolving'), '100%');
+            log(tx('graph'));
             await new Promise(r => setTimeout(r, 1500)); // Simulating a deeper search
-            setAgent('g', 'DONE', '100%');
+            setAgent('g', tx('done'), '100%');
             
             // Logic Agent
-            setAgent('l', 'AUDITING', '100%');
-            log("LOGIC: Refusing automatic approval without signed server evidence...");
+            setAgent('l', tx('logicAuditing'), '100%');
+            log(tx('logic'));
             await new Promise(r => setTimeout(r, 800));
-            setAgent('l', 'DONE', '100%');
+            setAgent('l', tx('done'), '100%');
             
             await finish();
         };
@@ -596,7 +811,7 @@
 
         async function finish() {
             let verdict = 'NEEDS_REVIEW';
-            let reason = 'This uploaded file is accepted by the demo intake, but this static browser page cannot read document contents or issue credential approval. Use the built-in samples to demonstrate verified and rejected outcomes, or connect a server-side audit API for real files.';
+            let reason = tx('unknownReason');
             let status_code = 'DEMO_ONLY';
             let issuer = 'UNVERIFIED';
             let ror_id = '--';
@@ -607,7 +822,7 @@
             if (!fileTypeKnown) {
                 verdict = 'REJECTED';
                 status_code = 'UNSUPPORTED_TYPE';
-                reason = 'Unsupported file type. Upload a PDF, PNG, or JPEG credential for a production server-side audit.';
+                reason = tx('unsupported');
                 log('SYSTEM: REJECTED - Unsupported file type for audit intake.');
             } else if (inferDemoOutcome(file)) {
                 const fixture = inferDemoOutcome(file);
@@ -615,12 +830,12 @@
                 if (fixture.verdict === 'REJECTED') {
                     verdict = 'REJECTED';
                     status_code = 'DEMO_BLACKLIST_MATCH';
-                    reason = `${fixture.issuer} matches the public demo blacklist fixture. This is a browser-side demo result only; production rejection still requires a server-signed audit trail.`;
+                    reason = tx('rejectedReason')(fixture.issuer);
                     log(`SYSTEM: DEMO REJECTED - ${fixture.issuer} matched the local demo blacklist fixture.`);
                 } else {
                     verdict = 'APPROVED';
                     status_code = 'DEMO_VERIFIED';
-                    reason = `${fixture.issuer} matches the built-in verified demo fixture. This browser-side status is only a UI demonstration, not a production credential approval.`;
+                    reason = tx('verifiedReason')(fixture.issuer);
                     log(`SYSTEM: DEMO VERIFIED - ${fixture.issuer} matched the local verified fixture.`);
                 }
             } else {
@@ -631,11 +846,13 @@
             const modal = document.getElementById('modal');
             modal.style.display = 'flex';
             const t = i18n[currentLang];
+            btn.disabled = false;
+            btn.innerText = i18n[currentLang].btn_audit;
             
             document.getElementById('m-issuer').innerText = issuer;
             document.getElementById('m-status').innerText = status_code;
             
-            const verdictTitle = verdict === 'REJECTED' ? t.verdict_no : (verdict === 'APPROVED' ? 'DEMO VERIFIED' : 'NEEDS REVIEW');
+            const verdictTitle = verdict === 'REJECTED' ? t.verdict_no : (verdict === 'APPROVED' ? tx('demoVerified') : tx('needsReview'));
             const verdictColor = verdict === 'REJECTED' ? '#ff3366' : (verdict === 'APPROVED' ? '#00ffaa' : '#ffcc66');
 
             const report = document.getElementById('rep-body');
@@ -667,13 +884,13 @@
 
                 const fraudSample = document.createElement('button');
                 fraudSample.className = 'btn-main';
-                fraudSample.innerText = 'RUN FRAUD SAMPLE';
+                fraudSample.innerText = tx('runFraud');
                 fraudSample.onclick = () => runSampleAudit('fake_degree_sample.png');
                 sampleActions.appendChild(fraudSample);
 
                 const verifiedSample = document.createElement('button');
                 verifiedSample.className = 'btn-main';
-                verifiedSample.innerText = 'RUN VERIFIED SAMPLE';
+                verifiedSample.innerText = tx('runVerified');
                 verifiedSample.onclick = () => runSampleAudit('aclas_alumni_2025.png');
                 sampleActions.appendChild(verifiedSample);
 
@@ -683,7 +900,7 @@
             const done = document.createElement('button');
             done.className = 'btn-main';
             done.style.width = '100%';
-            done.innerText = 'RUN ANOTHER AUDIT';
+            done.innerText = tx('runAnother');
             done.onclick = resetRunState;
             report.appendChild(done);
         }
