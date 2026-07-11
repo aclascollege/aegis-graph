@@ -288,6 +288,12 @@
             border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             animation: modalPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+        .modal-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
         @keyframes modalPop { from { transform: scale(0.9) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
 
         @media (max-width: 900px) {
@@ -341,6 +347,9 @@
                 width: min(100%, 540px);
                 padding: 32px 24px;
                 border-radius: 16px;
+            }
+            .modal-actions {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -513,16 +522,20 @@
         };
         document.getElementById('drop-zone').onclick = () => document.getElementById('f-input').click();
 
+        function runSampleAudit(sampleName) {
+            resetRunState();
+            const mimeType = sampleName.endsWith('.pdf') ? 'application/pdf' : 'image/png';
+            file = { name: sampleName, type: mimeType, demoSample: true };
+            showSelectedFile(sampleName, 'Built-in demo fixture selected.');
+            log(`SAMPLE LOADED: ${sampleName}`);
+            setTimeout(() => btn.click(), 80);
+        }
+
         document.querySelectorAll('.sample-btn').forEach(sampleBtn => {
             sampleBtn.onclick = (e) => {
                 e.stopPropagation();
                 if (btn.disabled) return;
-                const sampleName = sampleBtn.getAttribute('data-sample');
-                const mimeType = sampleName.endsWith('.pdf') ? 'application/pdf' : 'image/png';
-                file = { name: sampleName, type: mimeType, demoSample: true };
-                showSelectedFile(sampleName, 'Built-in demo fixture selected.');
-                log(`SAMPLE LOADED: ${sampleName}`);
-                setTimeout(() => btn.click(), 80);
+                runSampleAudit(sampleBtn.getAttribute('data-sample'));
             };
         });
 
@@ -583,7 +596,7 @@
 
         async function finish() {
             let verdict = 'NEEDS_REVIEW';
-            let reason = 'DEMO MODE: This browser-only page does not read or authenticate document contents. A professional credential decision requires OCR/forensics, issuer registry checks, revocation checks, and a server-signed audit certificate.';
+            let reason = 'This uploaded file is accepted by the demo intake, but this static browser page cannot read document contents or issue credential approval. Use the built-in samples to demonstrate verified and rejected outcomes, or connect a server-side audit API for real files.';
             let status_code = 'DEMO_ONLY';
             let issuer = 'UNVERIFIED';
             let ror_id = '--';
@@ -622,7 +635,7 @@
             document.getElementById('m-issuer').innerText = issuer;
             document.getElementById('m-status').innerText = status_code;
             
-            const verdictTitle = verdict === 'REJECTED' ? t.verdict_no : (verdict === 'APPROVED' ? 'DEMO VERIFIED' : 'SERVER AUDIT REQUIRED');
+            const verdictTitle = verdict === 'REJECTED' ? t.verdict_no : (verdict === 'APPROVED' ? 'DEMO VERIFIED' : 'NEEDS REVIEW');
             const verdictColor = verdict === 'REJECTED' ? '#ff3366' : (verdict === 'APPROVED' ? '#00ffaa' : '#ffcc66');
 
             const report = document.getElementById('rep-body');
@@ -647,6 +660,25 @@
             details.style.marginBottom = '20px';
             details.innerText = `ROR ID: ${ror_id}\nAudit Trace: LOCAL-DEMO-NOT-SIGNED`;
             report.appendChild(details);
+
+            if (verdict === 'NEEDS_REVIEW') {
+                const sampleActions = document.createElement('div');
+                sampleActions.className = 'modal-actions';
+
+                const fraudSample = document.createElement('button');
+                fraudSample.className = 'btn-main';
+                fraudSample.innerText = 'RUN FRAUD SAMPLE';
+                fraudSample.onclick = () => runSampleAudit('fake_degree_sample.png');
+                sampleActions.appendChild(fraudSample);
+
+                const verifiedSample = document.createElement('button');
+                verifiedSample.className = 'btn-main';
+                verifiedSample.innerText = 'RUN VERIFIED SAMPLE';
+                verifiedSample.onclick = () => runSampleAudit('aclas_alumni_2025.png');
+                sampleActions.appendChild(verifiedSample);
+
+                report.appendChild(sampleActions);
+            }
 
             const done = document.createElement('button');
             done.className = 'btn-main';
