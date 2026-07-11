@@ -156,7 +156,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 8px;
-            margin-top: 16px;
+            margin-top: 14px;
             width: 100%;
         }
 
@@ -172,6 +172,16 @@
             letter-spacing: 0.5px;
             cursor: pointer;
             min-height: 44px;
+        }
+
+        .sample-btn span {
+            display: block;
+            color: var(--dim);
+            font-size: 9px;
+            font-family: 'Inter';
+            font-weight: 600;
+            letter-spacing: 0;
+            margin-top: 3px;
         }
 
         .sample-btn:hover {
@@ -383,18 +393,13 @@
                 <a href="https://github.com/aclascollege/aegis-graph" target="_blank" style="font-size: 10px; color: var(--accent); text-decoration: none; margin-top: 12px; display: inline-block; font-weight: 700; letter-spacing: 0.5px;">PROTOCOL SOURCE ↗</a>
             </div>
         </div>
-        <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub" style="height: 100%;"><div class="drop-zone" id="drop-zone"><div style="font-size: 32px; color: var(--accent); margin-bottom: 12px;">✧</div><p style="font-size: 15px; font-weight: 700; font-family: 'Outfit'; letter-spacing: 1px;" data-i18n="drop_text">INGEST CREDENTIAL</p><p style="font-size: 10px; color: var(--dim); margin-top: 4px;">PDF, JPG, PNG SUPPORTED</p><p style="font-size: 9px; color: #ffcc66; margin-top: 8px; max-width: 260px; line-height: 1.4;">DEMO MODE: local preview only. Final credential verification requires a server-signed audit.</p><input type="file" id="f-input" accept=".pdf,image/png,image/jpeg" style="display: none"></div></div></div>
+        <div class="bento"><p class="label" data-i18n="label_hub">Evidence Processing</p><div class="center-hub" style="height: 100%;"><div class="drop-zone" id="drop-zone"><div style="font-size: 32px; color: var(--accent); margin-bottom: 12px;">✧</div><p style="font-size: 15px; font-weight: 700; font-family: 'Outfit'; letter-spacing: 1px;" data-i18n="drop_text">INGEST CREDENTIAL</p><p style="font-size: 10px; color: var(--dim); margin-top: 4px;">PDF, JPG, PNG SUPPORTED</p><p style="font-size: 9px; color: #ffcc66; margin-top: 8px; max-width: 260px; line-height: 1.4;">DEMO MODE: local preview only. Final credential verification requires a server-signed audit.</p><input type="file" id="f-input" accept=".pdf,image/png,image/jpeg" style="display: none"></div><div class="sample-grid"><button class="sample-btn" data-sample="aclas_alumni_2025.png">VERIFIED<span>ACLAS</span></button><button class="sample-btn" data-sample="fake_degree_sample.png">FRAUD<span>Pacific Western</span></button><button class="sample-btn" data-sample="graham_university_transcript.pdf">BLACKLIST<span>Graham</span></button></div></div></div>
         <div class="bento" style="grid-row: span 2;"><p class="label" data-i18n="label_telemetry">Live Telemetry</p><div class="terminal" id="console"><div>[SYSTEM] Sovereign Node Active. Waiting for ingestion...</div></div></div>
         <div class="bento">
             <p class="label" data-i18n="label_metadata">Sovereign Analytics</p>
             <div class="meta-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                 <div class="meta-item"><span class="label" style="margin-bottom:0; font-size: 8px;" data-i18n="meta_issuer">Issuer</span><div class="meta-val" id="m-issuer">--</div></div>
                 <div class="meta-item"><span class="label" style="margin-bottom:0; font-size: 8px;" data-i18n="meta_status">Status</span><div class="meta-val" id="m-status">--</div></div>
-            </div>
-            <div class="sample-grid">
-                <button class="sample-btn" data-sample="aclas_alumni_2025.png">ACLAS</button>
-                <button class="sample-btn" data-sample="fake_degree_sample.png">FAKE</button>
-                <button class="sample-btn" data-sample="graham_university_transcript.pdf">GRAHAM</button>
             </div>
         </div>
     </div>
@@ -492,12 +497,15 @@
         document.getElementById('drop-zone').onclick = () => document.getElementById('f-input').click();
 
         document.querySelectorAll('.sample-btn').forEach(sampleBtn => {
-            sampleBtn.onclick = () => {
+            sampleBtn.onclick = (e) => {
+                e.stopPropagation();
+                if (btn.disabled) return;
                 const sampleName = sampleBtn.getAttribute('data-sample');
                 const mimeType = sampleName.endsWith('.pdf') ? 'application/pdf' : 'image/png';
                 file = { name: sampleName, type: mimeType, demoSample: true };
                 showSelectedFile(sampleName, 'Built-in demo fixture selected.');
                 log(`SAMPLE LOADED: ${sampleName}`);
+                setTimeout(() => btn.click(), 80);
             };
         });
 
