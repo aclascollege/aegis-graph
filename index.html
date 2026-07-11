@@ -482,6 +482,20 @@
             await finish();
         };
 
+        function inferDemoOutcome(uploadedFile) {
+            const name = uploadedFile.name.toLowerCase();
+            const demoBlacklist = [
+                { pattern: 'graham', issuer: 'Graham International University' },
+                { pattern: 'giu', issuer: 'Graham International University' },
+                { pattern: 'pacific', issuer: 'Pacific Western University' },
+                { pattern: 'fake', issuer: 'Pacific Western University' },
+                { pattern: 'fraud', issuer: 'Pacific Western University' },
+                { pattern: 'belford', issuer: 'Belford University' },
+                { pattern: 'almeda', issuer: 'Almeda University' }
+            ];
+            return demoBlacklist.find(item => name.includes(item.pattern));
+        }
+
         async function finish() {
             let verdict = 'NEEDS_REVIEW';
             let reason = 'DEMO MODE: This browser-only page does not read or authenticate document contents. A professional credential decision requires OCR/forensics, issuer registry checks, revocation checks, and a server-signed audit certificate.';
@@ -490,12 +504,20 @@
             let ror_id = '--';
 
             const allowedTypes = ['application/pdf', 'image/png', 'image/jpeg'];
-            const fileTypeKnown = allowedTypes.includes(file.type);
+            const allowedExtensions = ['.pdf', '.png', '.jpg', '.jpeg'];
+            const fileTypeKnown = allowedTypes.includes(file.type) || allowedExtensions.some(ext => file.name.toLowerCase().endsWith(ext));
             if (!fileTypeKnown) {
                 verdict = 'REJECTED';
                 status_code = 'UNSUPPORTED_TYPE';
                 reason = 'Unsupported file type. Upload a PDF, PNG, or JPEG credential for a production server-side audit.';
                 log('SYSTEM: REJECTED - Unsupported file type for audit intake.');
+            } else if (inferDemoOutcome(file)) {
+                const fixture = inferDemoOutcome(file);
+                verdict = 'REJECTED';
+                status_code = 'DEMO_BLACKLIST_MATCH';
+                issuer = fixture.issuer;
+                reason = `${fixture.issuer} matches the public demo blacklist fixture. This is a browser-side demo result only; production rejection still requires a server-signed audit trail.`;
+                log(`SYSTEM: DEMO REJECTED - ${fixture.issuer} matched the local demo blacklist fixture.`);
             } else {
                 log('SYSTEM: DEMO ONLY - File content was not sent to a trusted audit service.');
                 log('SYSTEM: NEEDS REVIEW - No browser-side approval is issued.');
