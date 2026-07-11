@@ -18,6 +18,7 @@
     <meta property="og:url" content="https://aclascollege.github.io/aegis-graph/">
     <meta property="og:site_name" content="Aegis-Graph Sovereign Network">
     <meta property="og:type" content="website">
+    <link rel="icon" href="assets/favicon.ico">
     
     <!-- Structured Data for AEO (JSON-LD) -->
     <script type="application/ld+json">
@@ -250,6 +251,60 @@
             animation: modalPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         @keyframes modalPop { from { transform: scale(0.9) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+
+        @media (max-width: 900px) {
+            body {
+                overflow-y: auto;
+                height: auto;
+                min-height: 100vh;
+            }
+            header {
+                flex-wrap: wrap;
+                gap: 14px;
+                padding: 16px;
+            }
+            .logo-group h1 {
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+            .header-tools {
+                width: 100%;
+                justify-content: space-between;
+                gap: 12px;
+            }
+            .header-icons {
+                gap: 14px;
+                padding-right: 12px;
+            }
+            .custom-dropdown {
+                min-width: 112px;
+            }
+            .btn-main {
+                padding: 12px 14px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                padding: 16px;
+                overflow: visible;
+            }
+            .bento {
+                min-height: 220px;
+            }
+            .terminal {
+                min-height: 220px;
+            }
+            .modal {
+                padding: 16px;
+            }
+            .report {
+                width: min(100%, 540px);
+                padding: 32px 24px;
+                border-radius: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -401,7 +456,11 @@
         document.getElementById('drop-zone').onclick = () => document.getElementById('f-input').click();
 
         btn.onclick = async () => {
-            if(!file) return;
+            if(!file) {
+                log("SYSTEM: Select a PDF, PNG, or JPEG credential before starting the demo audit.");
+                document.getElementById('drop-zone').style.borderColor = '#ffcc66';
+                return;
+            }
             btn.disabled = true;
             log("INIT: Preparing local demo intake...");
             
