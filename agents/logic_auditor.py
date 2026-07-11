@@ -54,20 +54,24 @@ class LogicAuditor:
         anomalies: List[tuple[str, float]] = []
         warnings: List[str] = []
 
-        inst_name = self._normalize(profile.get("name", ""))
+        profile_name = self._normalize(profile.get("name", ""))
+        transcript_name = self._normalize(transcript.get("institution_name", ""))
         blacklist_names = self._load_blacklist_names()
-        is_diploma_mill = profile.get("is_diploma_mill", False) or inst_name in blacklist_names
+        profile_blacklisted = profile_name in blacklist_names
+        transcript_blacklisted = transcript_name in blacklist_names
+        is_diploma_mill = profile.get("is_diploma_mill", False) or profile_blacklisted or transcript_blacklisted
         profile_status = profile.get("status", "unknown")
 
         reasoning_steps.append("Step 0: Checking known diploma-mill and degree-factory indicators.")
         if is_diploma_mill or profile_status == "fraudulent":
             warning_msg = profile.get("warning") or "DIPLOMA MILL / DEGREE FACTORY DETECTED -- credentials from this institution require hard rejection."
+            rejected_name = transcript.get("institution_name") if transcript_blacklisted else profile.get("name", "Unknown")
             return AuditResolution(
-                verdict="REJECTED — DIPLOMA MILL / DEGREE FACTORY",
+                verdict="REJECTED - DIPLOMA MILL / DEGREE FACTORY",
                 risk_score=100.0,
                 reasoning_steps=[
                     *reasoning_steps,
-                    f"Result 0: HARD REJECTION. '{profile.get('name', 'Unknown')}' is flagged by the fraud registry.",
+                    f"Result 0: HARD REJECTION. '{rejected_name}' is flagged by the fraud registry.",
                     "No approval is issued because the issuing entity is disqualified.",
                 ],
                 mcp_trace=call.trace_id,
