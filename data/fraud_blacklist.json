@@ -1,31 +1,82 @@
 {
-    "version": "1.0.0",
-    "last_updated": "2026-04-30",
-    "authority": "Atlanta College of Liberal Arts and Sciences (ACLAS)",
     "blacklist": [
         {
+            "aliases": [
+                "GIU",
+                "Graham University"
+            ],
+            "evidence_level": "government",
             "name": "Graham International University",
-            "aliases": ["GIU", "Graham University"],
-            "reason": "Confirmed Diploma Mill - No physical campus, unauthorized degree granting.",
-            "severity": "CRITICAL"
+            "reason": "Not authorized to operate or award degrees by the Pennsylvania Department of Education (confirmed in writing, Nov 2025); falsely claims CHEA recognition (CHEA verified no such recognition exists); not authorized by the California Bureau for Private Postsecondary Education.",
+            "severity": "CRITICAL",
+            "sources": [
+                "https://www.degreeforum.net/mybb/Thread-Graham-International-University?pid=447470"
+            ]
         },
         {
-            "name": "Pacific Western University",
-            "aliases": ["PWU"],
-            "reason": "Historically flagged as a degree mill in multiple jurisdictions.",
-            "severity": "HIGH"
+            "aliases": [
+                "St. Regis",
+                "SRU"
+            ],
+            "evidence_level": "court_record",
+            "name": "Saint Regis University",
+            "reason": "Operators indicted October 2005 (E.D. Washington); principals pleaded guilty to conspiracy to commit mail and wire fraud (2006). DOJ-estimated ~10,800 degrees sold to ~9,600 buyers in 131 countries.",
+            "severity": "CRITICAL",
+            "sources": [
+                "https://en.wikipedia.org/wiki/Saint_Regis_University"
+            ]
         },
         {
+            "aliases": [],
+            "evidence_level": "court_record",
+            "name": "LaSalle University (Louisiana)",
+            "reason": "Owner James Kirk imprisoned; targeted by the FBI's DipScam task force. U.S. GAO documented federal employees holding bogus LaSalle degrees (one paid $5,000 for a master's with no classes or tests). Not the accredited La Salle University in Philadelphia.",
+            "severity": "CRITICAL",
+            "sources": [
+                "https://www.chronicle.com/article/fbi-agents-raid-correspondence-school/"
+            ]
+        },
+        {
+            "aliases": [
+                "CSU"
+            ],
+            "evidence_level": "court_record",
+            "name": "Columbia State University",
+            "reason": "Operator Ronald Pellar pleaded guilty to nine felony counts of mail fraud (U.S. District Court, Santa Ana, January 2004) for running a diploma mill from a Metairie, Louisiana mailbox.",
+            "severity": "CRITICAL",
+            "sources": [
+                "https://hep.physics.illinois.edu/home/g-gollin/pigeons/index.html"
+            ]
+        },
+        {
+            "aliases": [],
+            "evidence_level": "court_record",
             "name": "Belford University",
-            "aliases": [],
             "reason": "Online degree mill shut down by court order.",
-            "severity": "CRITICAL"
+            "severity": "CRITICAL",
+            "sources": []
         },
         {
-            "name": "Almeda University",
             "aliases": [],
+            "evidence_level": "investigative",
+            "name": "Almeda University",
             "reason": "Unaccredited life-experience degree mill.",
-            "severity": "CRITICAL"
+            "severity": "HIGH",
+            "sources": []
+        },
+        {
+            "aliases": [
+                "PWU"
+            ],
+            "evidence_level": "investigative",
+            "name": "Pacific Western University",
+            "reason": "Historically flagged as a degree mill in multiple jurisdictions.",
+            "severity": "HIGH",
+            "sources": []
         }
-    ]
+    ],
+    "compiled_by": "Atlanta College of Liberal Arts and Sciences (ACLAS) \u2014 Study Intelligence",
+    "disclaimer": "Informational research list. Entries are based on court records, government agency statements, and investigative reporting cited per entry. Inclusion reflects documented findings, not an ACLAS legal determination. Verify independently before any consequential use.",
+    "last_updated": "2026-10-18",
+    "version": "2.0.0"
 }
