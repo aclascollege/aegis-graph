@@ -97,7 +97,7 @@ class GraphNavigator:
                 response = await client.get(self.api_url, params={"query": name})
                 response.raise_for_status()
                 results = response.json().get("items", [])
-        except (httpx.HTTPError, json.JSONDecodeError) as exc:
+        except (httpx.HTTPError, httpx.InvalidURL, json.JSONDecodeError) as exc:
             return InstitutionProfile(
                 name=name,
                 status="unverified",

@@ -18,7 +18,7 @@
 
   <div>
     <img src="https://img.shields.io/badge/Language-8--Matrix-00ffaa?style=for-the-badge&logo=google-translate" alt="Language Matrix">
-    <img src="https://img.shields.io/badge/Nodes-102k+-blue?style=for-the-badge&logo=diagrams.net" alt="Nodes">
+    <img src="https://img.shields.io/badge/Nodes-10k+-blue?style=for-the-badge&logo=diagrams.net" alt="Nodes">
     <img src="https://img.shields.io/badge/Security-Sovereign-red?style=for-the-badge&logo=shield" alt="Security">
     <img src="https://img.shields.io/badge/Engine-Sovereign_RAG-orange?style=for-the-badge&logo=probot" alt="Engine">
   </div>
