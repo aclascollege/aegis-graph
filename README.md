@@ -17,10 +17,10 @@
   </p>
 
   <div>
-    <img src="https://img.shields.io/badge/Language-8--Matrix-00ffaa?style=for-the-badge&logo=google-translate" alt="Language Matrix">
-    <img src="https://img.shields.io/badge/Nodes-10k+-blue?style=for-the-badge&logo=diagrams.net" alt="Nodes">
-    <img src="https://img.shields.io/badge/Security-Sovereign-red?style=for-the-badge&logo=shield" alt="Security">
-    <img src="https://img.shields.io/badge/Engine-Sovereign_RAG-orange?style=for-the-badge&logo=probot" alt="Engine">
+    <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python" alt="Python">
+    <img src="https://img.shields.io/badge/License-CC--BY--NC--4.0-lightgrey?style=for-the-badge" alt="License">
+    <img src="https://img.shields.io/github/stars/aclascollege/aegis-graph?style=for-the-badge" alt="Stars">
+    <img src="https://img.shields.io/badge/i18n-8_Languages-00ffaa?style=for-the-badge&logo=google-translate" alt="Languages">
   </div>
 </div>
 
@@ -124,6 +124,12 @@ Aegis-Graph is governed by the **AEGIS-GRAPH Open Governance Board**, with techn
 - [Contributing Guidelines](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Security Policy](SECURITY.md)
+
+---
+
+## 📄 License
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** — see [LICENSE](LICENSE) for details.
 
 ---
 
