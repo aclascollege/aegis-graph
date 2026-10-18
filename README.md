@@ -11,7 +11,6 @@
 
   <p align="center">
     <a href="https://aclascollege.github.io/aegis-graph/"><b>Live Dashboard</b></a> •
-    <a href="https://docs.aclas.college/aegis-graph"><b>Documentation</b></a> •
     <a href="WHITEPAPER.md"><b>Whitepaper</b></a> •
     <a href="https://aclas.college"><b>Atlanta College of Liberal Arts and Sciences (ACLAS) Official Site</b></a>
   </p>
@@ -106,15 +105,47 @@ Our dashboard and documentation are fully localized for international adoption:
 
 ## 🛠️ Quick Start
 
-```bash
-# Clone the Sovereign Registry
-git clone https://github.com/aclascollege/aegis-graph.git
+**Prerequisites:** Python 3.10+, `pip`, `git`.
 
-# Initialize the Multi-Agent Swarm
+```bash
+# 1. Clone the repository
+git clone https://github.com/aclascollege/aegis-graph.git
+cd aegis-graph
+
+# 2. Install dependencies (creates the multi-agent runtime environment)
 pip install -r requirements.txt
 
-# Launch Local Auditor
+# 3. Launch the local auditor (runs the full verification pipeline)
 python main_pipeline.py
+```
+
+**Python usage:**
+
+```python
+from core import AegisAuditor
+
+auditor = AegisAuditor()
+result = auditor.verify("example.edu")
+print(result.verdict, result.evidence)
+```
+
+## 🗂️ Fraud Blacklist v2.0
+
+`data/fraud_blacklist.json` (v2.0.0) lists **7 documented diploma mills** with per-entry evidence:
+
+| Field | Meaning |
+|-------|---------|
+| `name` / `aliases` | Institution name and known aliases |
+| `evidence_level` | `court_record` / `regulatory_action` / `investigative_report` |
+| `sources` | URLs to primary sources (court filings, AG suits) |
+| `severity` / `reason` | Risk rating and human-readable explanation |
+
+```python
+import json
+with open("data/fraud_blacklist.json") as f:
+    bl = json.load(f)
+for e in bl["entries"]:
+    print(e["name"], "—", e["evidence_level"])
 ```
 
 ---
