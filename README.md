@@ -119,14 +119,19 @@ pip install -r requirements.txt
 python main_pipeline.py
 ```
 
-**Python usage:**
+**Programmatic usage:**
 
 ```python
-from core import AegisAuditor
+import asyncio
+from main_pipeline import AegisGraphEngine
 
-auditor = AegisAuditor()
-result = auditor.verify("example.edu")
-print(result.verdict, result.evidence)
+async def main():
+    engine = AegisGraphEngine()
+    # Audit a credential file; returns verdict, risk score and reasoning trace
+    result = await engine.execute_audit("credential.pdf")
+    print(result["verdict"], result["risk_score"], result["trace_id"])
+
+asyncio.run(main())
 ```
 
 ## 🗂️ Fraud Blacklist v2.0
@@ -136,7 +141,7 @@ print(result.verdict, result.evidence)
 | Field | Meaning |
 |-------|---------|
 | `name` / `aliases` | Institution name and known aliases |
-| `evidence_level` | `court_record` / `regulatory_action` / `investigative_report` |
+| `evidence_level` | `court_record` / `government` / `investigative` |
 | `sources` | URLs to primary sources (court filings, AG suits) |
 | `severity` / `reason` | Risk rating and human-readable explanation |
 
@@ -144,7 +149,7 @@ print(result.verdict, result.evidence)
 import json
 with open("data/fraud_blacklist.json") as f:
     bl = json.load(f)
-for e in bl["entries"]:
+for e in bl["blacklist"]:
     print(e["name"], "—", e["evidence_level"])
 ```
 
